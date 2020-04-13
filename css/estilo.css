@@ -1,0 +1,222 @@
+@font-face {
+	font-family: 'tauriregular';
+	src: url('tauri-regular-webfont.woff2') format('woff2'),
+		url('tauri-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+.container, .container-fluid {
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.row {
+	background-color: Moccasin;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.menu {
+	text-align: left;	
+	background-color: white;
+	border-bottom: thin solid silver;
+	padding: 5px;
+	text-decoration: blink;
+}
+
+body {
+	font-size: 16px;
+	font-style: normal;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+    margin: 0;;
+	position: absolute;
+	background-color: Moccasin;
+	overflow: -moz-scrollbars-vertical;
+	overflow-y: scroll;
+	font-family: tauriregular;
+	padding-top: 0px;
+	color: black;	
+}
+
+textarea:focus, input:focus, select:focus {
+	border-color: none !important;
+	outline: 0;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+p {
+	text-align: justify;
+	text-indent: 2em;
+}
+
+a, a:hover, a:visited {
+	color: black;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+	font-stretch: initial;
+	font-weight: initial;
+}
+
+.entrada {
+	color: black;
+	text-align: left;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0px;
+}
+
+.minusculo {
+	text-transform: lowercase;
+}
+
+input {
+	text-transform: uppercase;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0px;
+	border-color: black;
+}
+
+textarea {
+	text-transform: uppercase;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0px;
+}
+
+
+table tr td {
+	text-align: left;
+	color: black;
+	border: none;
+}
+
+input[type="submit"] {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0px;
+	text-transform: none;
+}
+/* Change the white to any color ;) */
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 30px white inset;
+}
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+	-webkit-text-fill-color: black;
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus,
+	input:-webkit-autofill:active {
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+label {
+	color: black;
+	font-size: 16px;
+	font-style: initial;
+	font-stretch: initial;
+	font-weight: 100;
+}
+
+.ancora {
+	text-align: left;
+}
+
+.row {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+p {
+	text-align: justify;
+	text-indent: 2em;
+}
+
+.anuncio {
+	width: auto;
+	height: auto;
+	min-height: 100%;
+	min-width: 100%;
+	margin-bottom: 0px;
+	padding-top: 0px;
+}
+
+div {
+	padding: 0px;
+}
+
+img {
+	max-height: 300px;
+	max-width: 600px;
+	border: thin solid #fff;
+	padding: 0px;
+}
+
+.novo {
+	text-align: center;
+}
+
+.minusculo {
+	text-transform: lowercase;
+}
+
+input {
+	text-transform: uppercase;
+	border-radius: 0px;
+}
+
+textarea {
+	text-transform: uppercase;
+	border-radius: 0px;
+}
+
+.mensagem {
+	border-radius: 0px;
+	border: 1px white solid;
+	width: 600px;
+	text-align: center;
+}
+
+.tabela {
+	width: 800px;
+}
+
+.tabela td:nth-child(1) {
+	width: 250px;
+}
+
+.esquerda {
+	text-align: left;
+}
+
+.direita {
+	text-align: right;
+}
+
+.centro {
+	text-align: center;
+}
