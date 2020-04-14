@@ -7,8 +7,4 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Currículo - CeBusca</title>
 <link rel="icon" type="image/ico" href="../img/favicon.ico">
-<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-<script src="../bootstrap/js/jquery-3.2.1.min.js"></script>
-<script src="../bootstrap/js/popper.min.js"></script>
-<script src="../bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/estilo.css">
