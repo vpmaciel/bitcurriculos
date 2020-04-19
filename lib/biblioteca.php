@@ -454,9 +454,17 @@ class Situacao
 class Html
 {
     
-    public static function formatarValor($valor)
+    public static function configurar($valor)
     {
         return '"' . $valor . '"';
+    }
+    
+    public static function formatar($valor) {
+        $valor = trim($valor);
+        $valor = stripslashes($valor);
+        $valor = htmlspecialchars($valor);
+        $valor = strtoupper($valor);
+        return $valor;
     }
 }
 ?>

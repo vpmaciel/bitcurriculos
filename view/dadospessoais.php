@@ -40,11 +40,11 @@ $resposta_array = Resposta::$valor_array;
 <div class="main">
 		<h1>BitCurriculos</h1>
 		<div align="center">
-			<form action="/action_page.php">
+			<form action="../controller/dadospessoais.php">
 				<table class="tabela">
 					<tr>
 						<td><label for="nome">NOME</label></td>
-						<td><input type="text" name="nome" size="80" maxlength="50" value="John"></td>
+						<td><input type="text" name="nome" size="80" maxlength="50" value="<?=isset($_POST['nome'])?$_POST['nome']:''?>" ></td>
 					</tr>
 					<tr>
 						<td><label for="data_nascimento">DATA DE NASCIMENTO</label></td>
@@ -55,7 +55,7 @@ $resposta_array = Resposta::$valor_array;
 						<td><select id="cars">
 						<?php
                         foreach ($sexo_array as $indice => $sexo) {
-                            $indice = Html::formatarValor($indice);
+                            $indice = Html::configurar($indice);
                             echo "<option value=$indice>$sexo</option>";
                         }
                         ?>
@@ -87,14 +87,6 @@ $resposta_array = Resposta::$valor_array;
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
 						</select></td>
-					</tr>
-					<tr>
-						<td><label for="lname">TELEFONE RESIDENCIAL (DDD)</label></td>
-						<td><input type="text" name="lname" size="80" maxlength="50" value="Doe"></td>
-					</tr>
-					<tr>
-						<td><label for="lname">TELEFONE RESIDENCIAL (NÚMERO)</label></td>
-						<td><input type="text" name="lname" size="80" maxlength="50" value="Doe"></td>
 					</tr>
 					<tr>
 						<td><label for="lname">CELULAR (DDD)</label></td>

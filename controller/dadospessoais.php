@@ -1,7 +1,39 @@
 <?php
-defined('BASEPATH') || exit('No direct script access allowed');
 
-class PessoaController extends CI_Controller
+$dados = array(
+    'nome' => $this->input->post('nome'),
+    'data_nascimento' => $this->input->post('data_nascimento'),
+    'idade' => $this->input->post('idade'),
+    'sexo' => $this->input->post('sexo'),
+    'escolaridade' => $this->input->post('escolaridade'),
+    'estado_civil' => $this->input->post('estado_civil'),
+    'nacionalidade' => $this->input->post('nacionalidade'),
+    'fone_residencial_codigo_area' => $this->input->post('fone_residencial_codigo_area'),
+    'fone_residencial_numero' => $this->input->post('fone_residencial_numero'),
+    'celular_codigo_area' => $this->input->post('celular_codigo_area'),
+    'celular_numero' => $this->input->post('celular_numero'),
+    'pais' => $this->input->post('pais'),
+    'estado' => $this->input->post('estado'),
+    'cidade' => $this->input->post('cidade'),
+    'bairro' => $this->input->post('bairro'),
+    'logradouro' => $this->input->post('logradouro'),
+    'complemento' => $this->input->post('complemento'),
+    'cep' => $this->input->post('cep'),
+    'possui_filhos' => $this->input->post('possui_filhos'),
+    'possui_deficiencia' => $this->input->post('possui_deficiencia'),
+    'cnh' => $this->input->post('cnh'),
+    'empregado_atualmente' => $this->input->post('empregado_atualmente'),
+    'disponivel_viagens' => $this->input->post('disponivel_viagens'),
+    'trabalha_outras_cidades' => $this->input->post('trabalha_outras_cidades'),
+    'ultimo_salario' => $this->input->post('ultimo_salario'),
+    'possui_carro' => $this->input->post('possui_carro'),
+    'possui_moto' => $this->input->post('possui_moto'),
+    'trabalha_exterior' => $this->input->post('trabalha_exterior')
+);
+
+
+
+class dadospessoais extends CI_Controller
 {
 
     public function VerRegistro()
