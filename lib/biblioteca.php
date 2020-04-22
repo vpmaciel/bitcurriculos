@@ -436,8 +436,8 @@ class Sexo
 {
 
     public static $valor_array = array(
-        1 => 'MASCULINO',
-        2 => 'FEMININO'
+        1 => 'Masculino',
+        2 => 'Feminino'
     );
 }
 
