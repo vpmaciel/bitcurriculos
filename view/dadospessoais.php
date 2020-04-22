@@ -38,7 +38,7 @@ $resposta_array = Resposta::$valor_array;
 <?php require_once 'menu.php';?>
 
 <div class="main">
-		<h1>BitCurriculos</h1>
+		<h1>DADOS PESSOAIS</h1>
 		<div align="center">
 			<form action="../controller/dadospessoais.php">
 				<table class="tabela">
@@ -52,41 +52,50 @@ $resposta_array = Resposta::$valor_array;
 					</tr>
 					<tr>
 						<td><label for="lname">SEXO</label></td>
-						<td><select id="cars">
-						<?php
-                        foreach ($sexo_array as $indice => $sexo) {
-                            $indice = Html::configurar($indice);
-                            echo "<option value=$indice>$sexo</option>";
-                        }
-                        ?>
-						</select></td>
+						<td>
+							<select id="cars">
+							<?php
+							foreach ($sexo_array as $indice => $sexo) {
+								$indice = Html::configurar($indice);
+								echo "<option value=$indice>$sexo</option>";
+							}
+							?>
+							</select>
+						</td>
+					</td>
 					</tr>
 					<tr>
 						<td><label for="lname">ESCOLARIDADE</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">ESTADO CIVIL</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">NACIONALIDADE</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">CELULAR (DDD)</label></td>
@@ -102,21 +111,25 @@ $resposta_array = Resposta::$valor_array;
 					</tr>
 					<tr>
 						<td><label for="lname">POSSUI DEFICIÊNCIA</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">PAÍS</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">ESTADO</label></td>
@@ -136,102 +149,124 @@ $resposta_array = Resposta::$valor_array;
 					</tr>
 					<tr>
 						<td><label for="lname">COMPLEMENTO</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">CEP</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">CNH</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">ÚLTIMO SALÁRIO MENSAL (R$)</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">EMPREGADO ATUALMENTE</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">DISPONÍVEL PARA VIAGENS</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">DISPONÍVEL PARA TRABALHAR EM OUTRAS CIDADES</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">DISPONÍVEL PARA TRABALHAR NO EXTERIOR</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">DISPONÍVEL PARA TRABALHAR HOME OFFICE</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">POSSUI CARRO</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">POSSUI MOTO</label></td>
-						<td><select id="cars">
+						<td>
+							<select id="cars">
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
 								<option value="audi">Audi</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><input type="submit" value="Submit"></td>

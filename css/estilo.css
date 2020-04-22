@@ -39,17 +39,9 @@
 	}
 }
 
-@font-face {
-	font-family: 'tauriregular';
-	src: url('tauri-regular-webfont.woff2') format('woff2'),
-		url('tauri-regular-webfont.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
 .menu {
 	text-align: left;
-	border-bottom: thin solid silver;
+	border-bottom: thin soli #c0c0c0;
 	padding: 5px;
 	text-decoration: blink;
 }
@@ -61,9 +53,9 @@ body {
 	height: 100%;
 	margin: 0;
 	position: absolute;
-	background-color: #FFF0F5;
+	background-color: #FFFFFF;
 	overflow: -moz-scrollbars-vertical; overflow-y : scroll;
-	font-family: tauriregular;
+	font-family: "Lucida Console", Courier, monospace;
 	padding-top: 0px;
 	color: black;
 	margin: 0;
