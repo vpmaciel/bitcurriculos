@@ -1,31 +1,5 @@
 <?php
 require_once '../lib/biblioteca.php';
-
-$cnh_array = Cnh::$valor_array;
-
-$sexo_array = Sexo::$valor_array;
-
-$deficiencia_array = Deficiencia::$valor_array;
-
-$escolaridade_array = Escolaridade::$valor_array;
-
-$contrato_array = Contrato::$valor_array;
-
-$ultimo_salario_array = PretensaoSalarial::$valor_array;
-
-$nivel_hierarquico_array = NivelHierarquico::$valor_array;
-
-$area_interesse_array = AreaInteresse::$valor_array;
-
-$estado_array = Estado::$valor_array;
-
-$estado_civil_array = EstadoCivil::$valor_array;
-
-$nacionalidade_array = Nacionalidade::$valor_array;
-
-$pais_array = Pais::$valor_array;
-
-$resposta_array = Resposta::$valor_array;
 ?>
 
 <!DOCTYPE html>
@@ -37,18 +11,18 @@ $resposta_array = Resposta::$valor_array;
 
 <?php require_once 'menu.php';?>
 
-<div class="main">
-		<h1>Dados Pessoais</h1>
+<div class="main">		
 		<div align="center">
+		<h1>Dados Pessoais</h1><br>	
 			<form action="../controller/dadospessoais.php">
 				<table class="tabela">
 					<tr>
 						<td><label for="nome">Nome</label></td>
-						<td><input type="text" name="nome" size="80" maxlength="50" value="<?=isset($_POST['nome'])?$_POST['nome']:''?>" ></td>
+						<td><input type="text" name="nome" size="60" maxlength="50" value="<?=isset($_POST['nome'])?$_POST['nome']:''?>" ></td>
 					</tr>
 					<tr>
 						<td><label for="data_nascimento">Data de Nascimento</label></td>
-						<td><input type="text" name="data_nascimento" size="80" maxlength="50" value="Doe"></td>
+						<td><input type="text" name="data_nascimento" size="60" maxlength="50" value="Doe"></td>
 					</tr>
 					<tr>
 						<td><label for="lname">Sexo</label></td>
@@ -99,7 +73,7 @@ $resposta_array = Resposta::$valor_array;
 					</tr>					
 					<tr>
 						<td><label for="lname">Celular</label></td>
-						<td><input type="text" name="lname" size="80" maxlength="50" value="Doe"></td>
+						<td><input type="text" name="lname" size="60" maxlength="50" value="Doe"></td>
 					</tr>					
 					<tr>
 						<td><label for="lname">Possui Filhos</label></td>
@@ -136,25 +110,17 @@ $resposta_array = Resposta::$valor_array;
 					</tr>
 					<tr>
 						<td><label for="lname">Estado</label></td>
-						<td><input type="text" name="lname" size="80" maxlength="50" value="Doe"></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="lname">Cidade</label></td>
-						<td><input type="text" name="lname" size="80" maxlength="50" value="Doe"></td>
-					</tr>
-					<tr>
-						<td><label for="lname">Bairro</label></td>
-						<td><input type="text" name="lname" size="80" maxlength="50" value="Doe"></td>
-					</tr>
-					<tr>
-						<td><label for="lname">Logradouro</label></td>
-						<td><input type="text" name="lname" size="80" maxlength="50" value="Doe"></td>
-					</tr>
-					<tr>
-						<td><label for="lname">Complemento</label></td>
-						<td><input type="text" name="lname" size="80" maxlength="50" value="Doe"></td>
-					</tr>					<tr>
-						<td><label for="lname">CEP</label></td>
 						<td>
 							<select id="cars">
 								<option value="volvo">Volvo</option>
@@ -265,7 +231,7 @@ $resposta_array = Resposta::$valor_array;
 					</tr>
 					<tr>
 						<td></td>
-						<td><input type="submit" value="Submit"></td>
+						<td><input type="submit" value="Salvar"></td>
 					</tr>
 				</table>
 			</form>

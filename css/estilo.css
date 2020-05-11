@@ -14,34 +14,30 @@
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color:#FFE7BA;
-	overflow-x: hidden;
-	padding: 0px;
+	background-color:#D3D3D3;
+	overflow-x: hidden;	
 	text-align: right;
-	padding: 0px;	
+	padding-top: 5px;
 	overflow-y : scroll;
 }
 /* The navigation menu links */
 .sidenav a {
-  color: #696969;
+  color: #000000;
   padding-right: 10px;
-  padding-top: 0px;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover  {
-  color: #696969;
+  color: #000000;
 }
 .sidenav a:visited  {
-  color: #696969;
+  color: #000000;
 }
-
 .main {
 	margin-left: 270px; /* Same as the width of the sidenav */
 	margin-right: 20px; /* Same as the width of the sidenav */
-	padding: 0px;
+	padding-top: 5px;
 }
-
 @media screen and (max-height: 450px) {
 	.sidenav {
 		padding-top: 15px;
@@ -50,7 +46,27 @@
 		font-size: 18px;
 	}
 }
-
+/* personalizar a barra em geral, aqui estou definindo 10px de largura para a barra vertical
+e 10px de altura para a barra horizontal */
+::-webkit-scrollbar {
+	width:10px;
+	height: 10px;
+	}
+	 
+	/* aqui é para personalizar o fundo da barra, neste caso estou colocando um fundo cinza escuro*/
+	::-webkit-scrollbar-track {
+	background:#D3D3D3;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	}
+	 
+	/* aqui é a alça da barra, que demonstra a altura que você está na página
+	estou colocando uma cor azul clara nela*/
+	::-webkit-scrollbar-thumb {
+	background: white;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	}
 body {	
 	padding: 0px;	
 	width: 100%;
@@ -60,81 +76,71 @@ body {
 	background-color: #FFE7BA;
 	overflow: -moz-scrollbars-vertical; overflow-y : scroll;
 	padding-top: 0px;
-	color: #696969;
+	color: #000000;
 	margin: 0 auto;
 	overflow-y: scroll;
 }
-
 textarea:focus, input:focus, select:focus {
 	border-color: none !important;
 	outline: 0;
 	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
 }
-
 p {
 	text-align: justify;
 	text-indent: 2em;
 }
-
 a, a:hover, a:visited {
-	color: #696969;
+	color: #000000;
 	font-weight: normal;
 	text-decoration: none;
 }
-
 a:hover {
 	text-decoration: underline;
 }
-
 h1, h2, h3, h4, h5, h6 {
-	text-align: center;	
-	color: #696969;
+	text-align: center;		
+	color: #000000;		
 }
-
 .minusculo {
 	text-transform: lowercase;
 }
-
 input {
-	text-transform: capitalize;
+	text-transform: uppercase;
 	border: 1px solid #000000;
 	border-radius: 0px;	
-	
+	font-size: 1em;		
 }
-
 textarea {
-	text-transform: capitalize;
+	text-transform: uppercase;
 	border: 1px solid #000000;	
 	border-radius: 0px;
 }
-
 input[type="submit"] {
 	border: 1px solid #000000;	
 	border-radius: 0px;
 	text-transform: none;	
 }
-
+select {
+	text-transform: uppercase;
+	border-radius: 0px;
+	border: 1px solid #000000;
+	font-size: 1em;
+	width: 400px;
+}
 textarea {
-	text-transform: capitalize;
+	text-transform: uppercase;
 	border-radius: 0px;
 	border: 1px solid #000000;
 }
-
 label {
-	color: #696969;	
+	color: #000000;	
 	padding-right: 5px;
 }
-
-.ancora {
-	text-align: left;
-}
-
 p {
 	text-align: justify;
 	text-indent: 2em;
 }
-
 .anuncio {
 	width: auto;
 	height: auto;
@@ -143,51 +149,40 @@ p {
 	margin-bottom: 0px;
 	padding-top: 0px;
 }
-
 div {
 	padding: 0px;
 }
-
 img {
 	max-height: 300px;
 	max-width: 600px;
 	border: 1px solid #000000;
 	padding: 0px;
 }
-
 .novo {
 	text-align: center;
 }
-
 .minusculo {
 	text-transform: lowercase;
 }
-
-select {
-	text-transform: capitalize;
-	border-radius: 0px;
-	border: 1px solid #000000;
-
-}
 .mensagem {
 	border-radius: 0px;
-	border: 1px #696969 solid;
+	border: 1px #000000 solid;
 	width: 600px;
 	text-align: center;
 }
-
-.tabela td:nth-child(1) {
-	text-align: right;
+table {
+	border-collapse: collapse;
+		
 }
-
-.esquerda {
+table, th, td {
+	min-width: 800px;
+	padding: 1px;	
+}
+.tabela td:nth-child(1) {	
+	text-align: right;
+	min-width: 400px;
+}
+.tabela td:nth-child(2) {
 	text-align: left;
-}
-
-.direita {
-	text-align: right;
-}
-
-.centro {
-	text-align: center;
+	min-width: 400px;
 }

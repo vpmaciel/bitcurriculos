@@ -467,4 +467,29 @@ class Html
         return $valor;
     }
 }
-?>
+
+$cnh_array = Cnh::$valor_array;
+
+$sexo_array = Sexo::$valor_array;
+
+$deficiencia_array = Deficiencia::$valor_array;
+
+$escolaridade_array = Escolaridade::$valor_array;
+
+$contrato_array = Contrato::$valor_array;
+
+$ultimo_salario_array = PretensaoSalarial::$valor_array;
+
+$nivel_hierarquico_array = NivelHierarquico::$valor_array;
+
+$area_interesse_array = AreaInteresse::$valor_array;
+
+$estado_array = Estado::$valor_array;
+
+$estado_civil_array = EstadoCivil::$valor_array;
+
+$nacionalidade_array = Nacionalidade::$valor_array;
+
+$pais_array = Pais::$valor_array;
+
+$resposta_array = Resposta::$valor_array;
