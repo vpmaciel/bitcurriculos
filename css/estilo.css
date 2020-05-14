@@ -14,36 +14,39 @@
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color:#D3D3D3;
+	background-color:#696969;
 	overflow-x: hidden;	
 	text-align: right;
 	padding-top: 5px;
+	padding-bottom: 5px;
 	overflow-y : scroll;
 }
 /* The navigation menu links */
 .sidenav a {
-  color: #000000;
+  color: #A9A9A9;  
   padding-right: 10px;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover  {
-  color: #000000;
+  color: #A9A9A9;
 }
 .sidenav a:visited  {
-  color: #000000;
+  color: #A9A9A9;
 }
 .main {
 	margin-left: 270px; /* Same as the width of the sidenav */
 	margin-right: 20px; /* Same as the width of the sidenav */
 	padding-top: 5px;
+	padding-bottom: 5px;
 }
 @media screen and (max-height: 450px) {
 	.sidenav {
-		padding-top: 15px;
+		padding-top: 5px;
+		padding-bottom: 5px;
 	}
 	.sidenav a {
-		font-size: 18px;
+		font-size: 1em;
 	}
 }
 /* personalizar a barra em geral, aqui estou definindo 10px de largura para a barra vertical
@@ -55,7 +58,7 @@ e 10px de altura para a barra horizontal */
 	 
 	/* aqui é para personalizar o fundo da barra, neste caso estou colocando um fundo cinza escuro*/
 	::-webkit-scrollbar-track {
-	background:#D3D3D3;
+	background:#363636;
 	border-left: 1px solid #000;
 	border-right: 1px solid #000;
 	}

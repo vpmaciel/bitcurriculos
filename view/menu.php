@@ -1,5 +1,5 @@
 <div class="sidenav">
-    <label style='color:blue;'>BitCurriculos</label><br>
+<a href="../index.php">BitCurriculos</a><br>
     <a href="../index.php">Home</a><br>
     <a href="pessoa.php">Dados Pessoais</a><br>
     <a href="#">Objetivo Profissional</a><br>
