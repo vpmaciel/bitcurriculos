@@ -1,65 +1,241 @@
 <?php
-defined('BASEPATH') || exit('No direct script access allowed');
-
-$deficiencia_array = Deficiencia::ObterValorArray();
-
-$estado_array = Estado::ObterValorArray();
-
-$pretensao_salarial_array = PretensaoSalarial::ObterValorArray();
-
+require_once '../lib/biblioteca.php';
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    	<?php $this->load->view(Constante::CABECALHO_VIEW); ?>
-    </head>
+<?php require_once 'cabecalho.php';?>
+</head>
 <body>
-	<div class="row">
-        	<?php $this->load->view(Constante::MENU_VIEW); ?>
-      	
-	<div class="col-lg-12">
-			<h1>Candidatos</h1>
-			<table>
-             	<?php
-            $usuario = null;
-            $empresa = null;
 
-            if ($this->session->userdata(Constante::USUARIO) !== null) {
-                $usuario = $this->session->userdata(Constante::USUARIO);
-            }
-            if ($this->session->userdata(Constante::EMPRESA) !== null) {
-                $empresa = $this->session->userdata(Constante::EMPRESA);
-            }
+<?php require_once 'menu.php';?>
 
-            $cadastrosCandidatoVaga = $this->CandidatoVagaModel->ObterRegistro(null, null, $empresa);
-            while ($cadastroCandidatoVaga = array_shift($cadastrosCandidatoVaga)) {
-                $cadastrosPessoas = $this->PessoaModel->ObterRegistro($cadastroCandidatoVaga['usuario']);
-                $dados0 = $this->PublicaVagaModel->ObterRegistro($cadastroCandidatoVaga['publicacao_vaga'], $empresa);
-                $dados1 = array_shift($dados0);
-                ?>
-            	<tr>
-					<td><span>**********</span><br> <br> <span>DATA DE PUBLICAÇÃO: </span> <?= $dados1['data_publicacao'] ?><br>
-						<span>VAGAS: </span> <?= $dados1['vagas'] ?><br> <span>CARGO:</span> <?= $dados1['cargo'] ?><br>
-						<span>SALÁRIO:</span> <?= $dados1['salario'] ?><br> <span>ESTADO:</span> <?= $estado_array[$dados1['estado']] ?><br>
-						<span>CIDADE:</span> <?= $dados1['cidade'] ?><br>                                
-                        <?php
-                $cadastros = $this->PessoaModel->ObterRegistro($cadastroCandidatoVaga['usuario']);
-                $dados = array_shift($cadastros);
-                ?>
-                        <br> <span>NOME: </span><?= $dados['nome']; ?>
-                        <br> <span>IDADE: </span> <?= $dados['idade']; ?> ANOS
-                        <br> <span>POSSUI DEFICIÊNCIA: </span> <?= $deficiencia_array[$dados['possui_deficiencia']]; ?>
-                        <br> <span>ESTADO: </span> <?= $estado_array[$dados['estado']]; ?>
-                        <br> <span>CIDADE:</span> <?= $dados['cidade']; ?><br>
-						<br>
-                        <?= anchor("CurriculumVitaeController/VerPagina/$cadastroCandidatoVaga[usuario]", "Visualizar currículo", array('target' => '_blank', 'class' => 'new_window')) ?> | 
-                        <?= anchor("CandidatoVagaController/ExcluirRegistro/$dados[usuario]/$cadastroCandidatoVaga[usuario]", "Excluir currículo") ?><br>
-						<br></td>
-				</tr>
-                <?php } ?>
-		</table>
+<div class="main">		
+		<div align="center">
+		<label class="titulo">Selecionar Candidatos</label><br><br>
+			<form action="../controller/dadospessoais.php">
+				<table class="tabela">
+					<tr>
+						<td><label for="nome">Nome</label></td>
+						<td><input type="text" name="nome" maxlength="50" value="<?=isset($_POST['nome'])?$_POST['nome']:''?>" ></td>
+					</tr>
+					<tr>
+						<td><label for="data_nascimento">Data de Nascimento</label></td>
+						<td><input type="text" name="data_nascimento" maxlength="50" value="Doe"></td>
+					</tr>
+					<tr>
+						<td><label for="lname">Sexo</label></td>
+						<td>
+							<select id="cars">
+							<?php
+							foreach ($sexo_array as $indice => $sexo) {
+								$indice = Html::configurar($indice);
+								echo "<option value=$indice>$sexo</option>";
+							}
+							?>
+							</select>
+						</td>
+					</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Escolaridade</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Estado Civil</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Nacionalidade</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>					
+					<tr>
+						<td><label for="lname">Celular</label></td>
+						<td><input type="text" name="lname" maxlength="50" value="Doe"></td>
+					</tr>					
+					<tr>
+						<td><label for="lname">Possui Filhos</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Possui Deficiência</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">País</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Estado</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Cidade</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">CNH</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Último Salário Mensal (R$)</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Empregado Atualmente</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Disponível Para Viagens</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Disponível Para Trabalhar Em Outras Cidades</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Disponível Para Trabalhar No Exterior</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Disponível Para Trabalhar Home Office</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Possui Carro</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Possui Moto</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="submit" value="Salvar"></td>
+					</tr>
+				</table>
+			</form>
 		</div>
-		
 	</div>
 </body>
 </html>

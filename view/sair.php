@@ -8,13 +8,12 @@ require_once '../lib/biblioteca.php';
 <?php require_once 'cabecalho.php';?>
 </head>
 <body>
-<?php require_once 'titulo.php';?>
-<div style="overflow:auto">
+
 <?php require_once 'menu.php';?>
 
 <div class="main">		
 		<div align="center">
-		<label class="titulo">Dados Pessoais</label><br><br>
+		<label class="titulo">Sair</label><br><br>
 			<form action="../controller/dadospessoais.php">
 				<table class="tabela">
 					<tr>
@@ -238,7 +237,5 @@ require_once '../lib/biblioteca.php';
 			</form>
 		</div>
 	</div>
-	</div> 
-<?php require_once 'rodape.php';?>
 </body>
 </html>

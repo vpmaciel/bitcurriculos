@@ -1,0 +1,1 @@
+<div class="rodape">© copyright bitcurriculos.com</div>

@@ -1,205 +1,241 @@
 <?php
-defined('BASEPATH') || exit('No direct script access allowed');
-
-$situacao_array = Situacao::ObterValorArray();
-
-$modalidade_array = Modalidade::ObterValorArray();
-
-$nivel_array = Escolaridade::ObterValorArray();
+require_once '../lib/biblioteca.php';
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <?php
-    $this->load->view(Constante::CABECALHO_VIEW);
-    ?> 
+<?php require_once 'cabecalho.php';?>
 </head>
 <body>
-	<div class="row">
-        <?php $this->load->view(Constante::MENU_VIEW); ?>
-    
-		<div class="col-lg-12">
-			<h1>Curso</h1>
-            <?= form_open('CursoController/GravarRegistro') ?>
-            <?php
 
-            $template = array(
-                'table_open' => '<table align="center" border="0" cellpadding="2" cellspacing="1">'
-            );
+<?php require_once 'menu.php';?>
 
-            $this->table->set_template($template);
-
-            $this->table->add_row(form_label('INSTITUIÇÃO', Constante::INSTITUICAO));
-            $this->table->add_row(form_error(Constante::INSTITUICAO, '<div class="error">', '</div>'));
-
-            if (! isset($instituicao)) {
-                $instituicao = '';
-            }
-
-            $entrada = array(
-                Constante::TYPE => Constante::TEXT,
-                Constante::NAME => Constante::INSTITUICAO,
-                Constante::ID => Constante::INSTITUICAO,
-                Constante::VALUE => set_value(Constante::INSTITUICAO, $instituicao),
-                Constante::CLASSE => Constante::CLASSE_ENTRADA_VALUE,
-                Constante::AUTOFOCUS => Constante::AUTOFOCUS,
-                Constante::REQUIRED => 'true',
-                Constante::MAXLENGTH => '50',
-                Constante::STYLE => Constante::STYLE_WIDTH
-            );
-
-            $this->table->add_row(form_input($entrada));
-
-            $this->table->add_row(form_label('CURSO', Constante::CURSO));
-            $this->table->add_row(form_error(Constante::CURSO, '<div class="error">', '</div>'));
-
-            if (! isset($curso)) {
-                $curso = '';
-            }
-
-            $entrada = array(
-                Constante::TYPE => Constante::TEXT,
-                Constante::NAME => Constante::CURSO,
-                Constante::ID => Constante::CURSO,
-                Constante::VALUE => set_value(Constante::CURSO, $curso),
-                Constante::CLASSE => Constante::CLASSE_ENTRADA_VALUE,
-                Constante::REQUIRED => 'true',
-                Constante::MAXLENGTH => '50',
-                Constante::STYLE => Constante::STYLE_WIDTH
-            );
-
-            $this->table->add_row(form_input($entrada));
-
-            $this->table->add_row(form_label('ANO DE INÍCIO', Constante::ANO_INICIO));
-            $this->table->add_row(form_error(Constante::ANO_INICIO, '<div class="error">', '</div>'));
-
-            if (! isset($ano_inicio)) {
-                $ano_inicio = '';
-            }
-
-            $entrada = array(
-                Constante::TYPE => Constante::NUMBER,
-                Constante::NAME => Constante::ANO_INICIO,
-                Constante::ID => Constante::ANO_INICIO,
-                Constante::VALUE => set_value(Constante::ANO_INICIO, $ano_inicio),
-                Constante::CLASSE => Constante::CLASSE_ENTRADA_VALUE,
-                Constante::REQUIRED => 'true',
-                Constante::MAXLENGTH => '4',
-                Constante::STYLE => Constante::STYLE_WIDTH,
-                Constante::PLACEHOLDER => '0000'
-            );
-
-            $js = 'onblur="validarAno(this);"';
-
-            $this->table->add_row(form_input($entrada, $js));
-
-            $this->table->add_row(form_label('ANO DE CONCLUSÃO', Constante::ANO_CONCLUSAO));
-            $this->table->add_row(form_error(Constante::ANO_CONCLUSAO, '<div class="error">', '</div>'));
-
-            if (! isset($ano_conclusao)) {
-                $ano_conclusao = '';
-            }
-
-            $entrada = array(
-                Constante::TYPE => Constante::NUMBER,
-                Constante::NAME => Constante::ANO_CONCLUSAO,
-                Constante::ID => Constante::ANO_CONCLUSAO,
-                Constante::VALUE => set_value(Constante::ANO_CONCLUSAO, $ano_conclusao),
-                Constante::CLASSE => Constante::CLASSE_ENTRADA_VALUE,
-                Constante::REQUIRED => 'true',
-                Constante::MAXLENGTH => '4',
-                Constante::STYLE => Constante::STYLE_WIDTH,
-                Constante::PLACEHOLDER => '0000'
-            );
-
-            $js = 'onblur="validarAno(this);"';
-
-            $this->table->add_row(form_input($entrada, $js));
-
-            $this->table->add_row(form_label('SITUAÇÃO', Constante::SITUACAO));
-            $this->table->add_row(form_error(Constante::SITUACAO, '<div class="error">', '</div>'));
-
-            if (! isset($situacao)) {
-                $situacao = '';
-            }
-
-            $entrada = array(
-                Constante::NAME => Constante::SITUACAO,
-                Constante::ID => Constante::SITUACAO,
-                Constante::CLASSE => Constante::CLASSE_ENTRADA_VALUE,
-                Constante::REQUIRED => 'true',
-                Constante::STYLE => Constante::STYLE_WIDTH
-            );
-
-            $situacao = ($this->input->post(Constante::SITUACAO)) ? $this->input->post(Constante::SITUACAO) : $situacao;
-
-            $this->table->add_row(form_dropdown($entrada, $situacao_array, $situacao));
-
-            $this->table->add_row(form_label('MODALIDADE', Constante::MODALIDADE));
-            $this->table->add_row(form_error(Constante::MODALIDADE, '<div class="error">', '</div>'));
-
-            if (! isset($modalidade)) {
-                $modalidade = '';
-            }
-
-            $entrada = array(
-                Constante::NAME => Constante::MODALIDADE,
-                Constante::ID => Constante::MODALIDADE,
-                Constante::CLASSE => Constante::CLASSE_ENTRADA_VALUE,
-                Constante::REQUIRED => 'true',
-                Constante::STYLE => Constante::STYLE_WIDTH
-            );
-
-            $modalidade = ($this->input->post(Constante::MODALIDADE)) ? $this->input->post(Constante::MODALIDADE) : $modalidade;
-
-            $this->table->add_row(form_dropdown($entrada, $modalidade_array, $modalidade));
-
-            $this->table->add_row(form_label('NÍVEL', Constante::NIVEL));
-            $this->table->add_row(form_error(Constante::NIVEL, '<div class="error">', '</div>'));
-
-            if (! isset($nivel)) {
-                $nivel = '';
-            }
-
-            $entrada = array(
-                Constante::NAME => Constante::NIVEL,
-                Constante::ID => Constante::NIVEL,
-                Constante::CLASSE => Constante::CLASSE_ENTRADA_VALUE,
-                Constante::REQUIRED => 'true',
-                Constante::STYLE => Constante::STYLE_WIDTH
-            );
-
-            $nivel = ($this->input->post(Constante::NIVEL)) ? $this->input->post(Constante::NIVEL) : $nivel;
-
-            $this->table->add_row(form_dropdown($entrada, $nivel_array, $nivel));
-
-            $entrada = array(
-                Constante::TYPE => Constante::SUBMIT,
-                Constante::VALUE => 'Salvar',
-                Constante::CLASSE => Constante::CLASSE_BTN_VALUE
-            );
-
-            $this->table->add_row(form_label('', ''));
-            $this->table->add_row(form_input($entrada));
-
-            echo $this->table->generate();
-
-            if (! isset($id)) {
-                $id = '';
-            }
-
-            $entrada = array(
-                Constante::TYPE => Constante::HIDDEN,
-                Constante::NAME => Constante::ID,
-                Constante::ID => Constante::ID,
-                Constante::VALUE => set_value(Constante::ID, $id)
-            );
-
-            echo form_input($entrada);
-            ?>
-            <?= form_close(); ?>
+<div class="main">		
+		<div align="center">
+		<label class="titulo">Curso</label><br><br>
+			<form action="../controller/dadospessoais.php">
+				<table class="tabela">
+					<tr>
+						<td><label for="nome">Nome</label></td>
+						<td><input type="text" name="nome" maxlength="50" value="<?=isset($_POST['nome'])?$_POST['nome']:''?>" ></td>
+					</tr>
+					<tr>
+						<td><label for="data_nascimento">Data de Nascimento</label></td>
+						<td><input type="text" name="data_nascimento" maxlength="50" value="Doe"></td>
+					</tr>
+					<tr>
+						<td><label for="lname">Sexo</label></td>
+						<td>
+							<select id="cars">
+							<?php
+							foreach ($sexo_array as $indice => $sexo) {
+								$indice = Html::configurar($indice);
+								echo "<option value=$indice>$sexo</option>";
+							}
+							?>
+							</select>
+						</td>
+					</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Escolaridade</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Estado Civil</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Nacionalidade</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>					
+					<tr>
+						<td><label for="lname">Celular</label></td>
+						<td><input type="text" name="lname" maxlength="50" value="Doe"></td>
+					</tr>					
+					<tr>
+						<td><label for="lname">Possui Filhos</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Possui Deficiência</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">País</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Estado</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Cidade</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">CNH</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Último Salário Mensal (R$)</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Empregado Atualmente</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Disponível Para Viagens</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Disponível Para Trabalhar Em Outras Cidades</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Disponível Para Trabalhar No Exterior</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Disponível Para Trabalhar Home Office</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Possui Carro</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="lname">Possui Moto</label></td>
+						<td>
+							<select id="cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="submit" value="Salvar"></td>
+					</tr>
+				</table>
+			</form>
 		</div>
-		
 	</div>
 </body>
 </html>

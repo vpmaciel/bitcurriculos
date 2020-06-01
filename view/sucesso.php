@@ -1,33 +1,24 @@
-<?php
-defined('BASEPATH') || exit('No direct script access allowed');
-
-$arquivo = rand(1, 2);
-?>
 <!DOCTYPE html>
 <html>
 <head>
-    <?php
-    $this->load->view(Constante::CABECALHO_VIEW);
-    ?> 
+<?php require_once 'cabecalho.php';?>
 </head>
 <body>
-	<div class="row">
-        <?php $this->load->view(Constante::MENU_VIEW); ?>
-    
-	<div class="col-lg-12">
-		<h1>Mensagem</h1>
+
+<?php require_once 'menu.php';?>
+
+	<div class="main">
 		<div align="center">
-			<div class="alert alert-warning text-center mensagem" role="alert">
-                <?= $mensagem; ?>
-            </div>
+		<label class="titulo">BitCurriculos</label><br>
+        &copy; Copyright 2020<br><br>
+        <label>Empregos para profissionais de TI</label><br><br>
+			<p align="justify">O BitCurriculos é um sistema para Internet em Recursos Humanos, com foco em recrutamento on-line. Atualmente administramos a mais bem organizada base de currículos do país,
+				oferecendo às empresas o mais completo sistema de recrutamento on-line. Perseverança, dinamismo e vontade de inovar são características de nossa equipe, numa empresa sólida, com grandes desafios
+				pela frente e foco em metas e resultados.</p><br>
+			<p align="justify">Faça parte de nosso time, contribuindo com seu talento profissional. Cadastre seu currículo para estar disponível para diversas empresas. Um bom curriculum, bem apresentável e
+				redigido, pode não garantir um emprego mas é, sem sombra de dúvidas, um passo importantíssimo para alcançá-lo. Cadastre sua empresa para buscar profissionais. Os profissionais de recursos humanos
+				não podem deixar de compreender a complexidade psicossocial das pessoas, ainda que o seu papel principal continue a ser o de criar valor e gerar resultados.</p>
 		</div>
-		<div align="center">
-			<a href="javascript:window.history.go(<?= $voltar; ?>);">Voltar</a>
-		</div>
-		<div align="center">
-			<?php $this->load->view(Constante::ANUNCIO_VIEW); ?>
-		</div>
-	</div>
-	</div>
+	</div> 
 </body>
 </html>
