@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-<?php require_once 'cabecalho.php';?>
-</head>
-<body>
-
-<?php require_once 'menu.php';?>
-
-	<div class="main">
-		<div align="center">
-		<label class="titulo">Fale Conosco</label><br>
-        &copy; Copyright 2020<br><br>
-        <label>Empregos para profissionais de TI</label><br><br>
-			CeBusca<br> Soluções inteligentes<br> Somos desenvolvedores de
-				ideias, projetos e sistemas<br> &copy; Copyright 2017<br> Contato:
-				Vicente Paulo Maciel<br> Telefone: (31) 9-8596-2524<br> E-mail:
-				suporte@cebusca.com.br<br>
-		</div>
-	</div> 
-</body>
-</html>
+<div class="right">
+<a href="#">BitCurriculos</a><br>
+<a href="#">Soluções inteligentes</a><br>
+<a href="#">Procure sua vaga</a><br>
+<a href="#">Cadastre seu currículo</a><br>
+<a href="#">Cadastre uma vaga</a><br>
+<a href="#">Encontre seu profissional</a><br>
+<a href="#">Contato: Vicente Maciel</a><br>
+<a href="#">Fone: 31-9-8596-2524</a><br>
+<a href="#">suporte@cebusca.com.br</a><br>
+</div>

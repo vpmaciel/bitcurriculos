@@ -13,6 +13,5 @@
   <a href="publicarvaga.php">Publicar Vaga</a><br>
   <a href="loginpessoa.php">Login Pessoas</a><br>
   <a href="loginempresa.php">Login Empresas</a><br>
-  <a href="faleconosco.php">Fale Conosco</a><br>
   <a href="sair.php">Sair</a>
   </div>

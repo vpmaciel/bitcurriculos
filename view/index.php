@@ -10,7 +10,7 @@
 
 	<div class="main">
 		<div align="center">
-        <label>Empregos para profissionais de TI</label><br><br>
+        <h1 class="titulo">Empregos para profissionais de TI</h1>
 			<p align="justify">O BitCurriculos é um sistema para Internet em Recursos Humanos, com foco em recrutamento on-line. Atualmente administramos a mais bem organizada base de currículos do país,
 				oferecendo às empresas o mais completo sistema de recrutamento on-line. Perseverança, dinamismo e vontade de inovar são características de nossa equipe, numa empresa sólida, com grandes desafios
 				pela frente e foco em metas e resultados.</p><br>
@@ -19,6 +19,7 @@
 				não podem deixar de compreender a complexidade psicossocial das pessoas, ainda que o seu papel principal continue a ser o de criar valor e gerar resultados.</p>
 		</div>
 	</div> 
+	<?php require_once 'faleconosco.php';?>
 </div> 
 <?php require_once 'rodape.php';?>
 </body>
