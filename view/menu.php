@@ -1,17 +1,34 @@
-<div class="menu">
-  <a href="index.php">Home</a><br>
-  <a href="pessoa.php">Dados Pessoais</a><br>
-  <a href="objetivoprofissional.php">Objetivo Profissional</a><br>
-  <a href="curso.php">Cursos</a><br>
-  <a href="certificado.php">Certificados</a><br>
-  <a href="experienciaprofissional.php">Experiência Profissional</a><br>
-  <a href="idioma.php">Idiomas</a><br>
-  <a href="habilidade.php">Habilidades</a><br>
-  <a href="vagas.php">Vagas</a><br>
-  <a href="curriculo.php">Exibir Currículo</a><br>
-  <a href="candidatovagalista.php">Selecionar Candidatos</a><br>
-  <a href="publicarvaga.php">Publicar Vaga</a><br>
-  <a href="loginpessoa.php">Login Pessoas</a><br>
-  <a href="loginempresa.php">Login Empresas</a><br>
-  <a href="sair.php">Sair</a>
-  </div>
+<div id='cssmenu'>
+<ul>
+   <li><a href="index.php">Home</a></li>
+   <li class='active'><a href='#'>Sistema</a>
+      <ul>
+         <li><a href='#'>Login</a>
+            <ul>
+               <li><a href='login.php'>Entrar</a></li>
+               <li><a href='#'>Sair</a></li>
+            </ul>
+         </li>
+         <li><a href='#'>Candidato</a>
+            <ul>
+               <li><a href="pessoa.php">Dados Pessoais</a></li>
+               <li><a href="curso.php">Cursos</a></li>
+               <li><a href="certificado.php">Certificados</a></li>               
+               <li><a href="experienciaprofissional.php">Experiência Profissional</a></li>
+               <li><a href="objetivoprofissional.php">Objetivo Profissional</a></li>
+               <li><a href="idioma.php">Idiomas</a></li>
+               <li><a href="habilidade.php">Habilidades</a></li>
+               <li><a href="vagas.php">Vagas</a></li>
+               <li><a href="curriculo.php">Exibir Currículo</a></li>
+            </ul>
+         </li>
+         <li><a href='#'>Empresa</a>
+            <ul>
+               <li><a href="candidatovagalista.php">Selecionar Candidatos</a></li>
+               <li><a href="publicarvaga.php">Publicar Vaga</a></li>               
+            </ul>
+         </li>
+      </ul>
+   <li><a href='#'>Sobre</a></li>
+   <li><a href='#'>Contato</a></li>
+</div>

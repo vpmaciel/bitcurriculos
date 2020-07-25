@@ -405,21 +405,24 @@ class PretensaoSalarial
 
     public static $valor_array = array(
         1 => 'A COMBINAR',
-        2 => 'ATÉ R$ 1.000,00',
-        3 => 'DE R$ 1.000,00 ATÉ R$ 2.000,00',
-        4 => 'DE R$ 2.000,00 ATÉ R$ 3.000,00',
-        5 => 'DE R$ 3.000,00 ATÉ R$ 4.000,00',
-        6 => 'DE R$ 4.000,00 ATÉ R$ 5.000,00',
-        7 => 'DE R$ 5.000,00 ATÉ R$ 6.000,00',
-        8 => 'DE R$ 6.000,00 ATÉ R$ 7.000,00',
-        9 => 'DE R$ 7.000,00 ATÉ R$ 8.000,00',
-        10 => 'DE R$ 8.000,00 ATÉ R$ 9.000,00',
-        11 => 'DE R$ 9.000,00 ATÉ R$ 10.000,00',
-        12 => 'DE R$ 10.000,00 ATÉ R$ 15.000,00',
-        13 => 'DE R$ 15.000,00 ATÉ R$ 20.000,00',
-        14 => 'DE R$ 20.000,00 ATÉ R$ 25.000,00',
-        15 => 'DE R$ 25.000,00 ATÉ R$ 50.000,00',
-        16 => 'ACIMA DE R$ 50.000,00'
+        2 => 'ACIMA DE R$ 1.000,00',
+        3 => 'ACIMA DE R$ 2.000,00',
+        4 => 'ACIMA DE R$ 3.000,00',
+        5 => 'ACIMA DE R$ 4.000,00',
+        6 => 'ACIMA DE R$ 5.000,00',
+        7 => 'ACIMA DE R$ 6.000,00',
+        8 => 'ACIMA DE R$ 7.000,00',
+        9 => 'ACIMA DE R$ 8.000,00',
+        10 => 'ACIMA DE R$ 9.000,00',
+        11 => 'ACIMA DE R$ 10.000,00',
+        12 => 'ACIMA DE R$ 15.000,00',
+        13 => 'ACIMA DE R$ 20.000,00',
+        14 => 'ACIMA DE R$ 25.000,00',
+        15 => 'ACIMA DE R$ 30.000,00',
+        16 => 'ACIMA DE R$ 35.000,00',
+        17 => 'ACIMA DE R$ 40.000,00',
+        18 => 'ACIMA DE R$ 45.000,00',
+        19 => 'ACIMA DE R$ 50.000,00'
     );
 }
 
@@ -467,6 +470,23 @@ class Html
         return $valor;
     }
 }
+
+class Table
+{
+    
+    public static function lineBegin()
+    {
+        return "<tr><td>";
+    }
+    public static function lineEnd()
+    {
+        return "</td></tr>";
+    }
+}
+
+$lbt = Table::lineBegin();
+
+$let = Table::lineEnd();
 
 $cnh_array = Cnh::$valor_array;
 
