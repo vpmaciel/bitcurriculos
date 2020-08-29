@@ -11,4 +11,5 @@
 <link rel="icon" type="image/ico" href="../img/favicon.ico">
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script src="../lib/script.js"></script>
+<script src="../lib/funcoes.js"></script>
 <title>BitCurrículo</title>

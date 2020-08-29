@@ -1,7 +1,7 @@
 <?php
 $pessoa = array(
     'usuario' => '',
-    'nome' => 'vicente paulo maciel',
+    'nome' => '',
     'data_nascimento' => '',
     'celular_numero' => '',
     'sexo' => '',
@@ -14,7 +14,7 @@ $pessoa = array(
     'estado' => '',
     'cidade' => '',
     'cnh' => '',
-    'ultimo_salario' => '',
+    'ultimo_salario_mensal' => '',
     'empregado_atualmente' => '',
     'procurando_emprego_atualmente' => '',
     'disponivel_viagens' => '',
@@ -24,15 +24,3 @@ $pessoa = array(
     'possui_carro' => '',
     'possui_moto' => ''
 );
-$condicao = array(
-    'usuario' => '1',
-    'nome' => 'vicente paulo maciel',
-);
-foreach($pessoa as $chave => $valor){
-         echo "{$chave}: {$valor}\n";
- }
- echo "<br><hr><br>";
-require_once '../model/sql.php';
-SQL::inserir($pessoa,'pessoa');
-echo "<br><hr><br>";
-SQL::atualizar($pessoa,'pessoa',$condicao);

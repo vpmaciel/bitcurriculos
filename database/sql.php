@@ -5,7 +5,7 @@ class SQL {
 
     public function __construct() 
     {
-        $dsn = "mysql:host=localhost;dbname=bitcurriculos";
+        $dsn = "mysql:host=localhost;dbname=db_curriculo";
         $usuario = "root";
         $senha = "";
         $this->pdo = new PDO($dsn, $usuario, $senha);        
