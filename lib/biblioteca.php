@@ -5334,8 +5334,7 @@ class Escolaridade
     public static $VALOR = array(
             1 => 'SUPERIOR COMPLETO',            
             2 => 'SEGUNDO GRAU COMPLETO',            
-            3 => 'PRIMEIRO GRAU COMPLETO',
-            4 => 'PRIMEIRO GRAU INCOMPLETO'
+            3 => 'PRIMEIRO GRAU COMPLETO'            
         );
 }
 
@@ -5417,17 +5416,6 @@ class NivelConhecimento
         );
 }
 
-class NivelHierarquico
-{
-
-    public static $VALOR = array(
-            1 => 'ESTRATÉGICO OU INSTITUCIONAL',
-            2 => 'TÁTICO OU INTERMEDIÁRIO',
-            3 => 'GESTORES E SUPERVISORES',
-            4 => 'OPERACIONAL'
-        );
-}
-
 class Pais
 {
 
@@ -5440,22 +5428,21 @@ class Pais
 class PretensaoSalarial
 {
 
-    public static $VALOR = array(
-        1 => 'A COMBINAR',
-        2 => 'ACIMA DE R$ 1.000,00',
-        3 => 'ACIMA DE R$ 2.000,00',
-        4 => 'ACIMA DE R$ 3.000,00',
-        5 => 'ACIMA DE R$ 4.000,00',
-        6 => 'ACIMA DE R$ 5.000,00',
-        7 => 'ACIMA DE R$ 6.000,00',
-        8 => 'ACIMA DE R$ 7.000,00',
-        9 => 'ACIMA DE R$ 8.000,00',
-        10 => 'ACIMA DE R$ 9.000,00',
-        11 => 'ACIMA DE R$ 10.000,00',
-        12 => 'ACIMA DE R$ 20.000,00',
-        13 => 'ACIMA DE R$ 30.000,00',
-        14 => 'ACIMA DE R$ 40.000,00',
-        15 => 'ACIMA DE R$ 50.000,00',
+    public static $VALOR = array(        
+        1 => 'MÍNIMO DE R$ 1.000,00',
+        2 => 'MÍNIMO DE R$ 2.000,00',
+        3 => 'MÍNIMO DE R$ 3.000,00',
+        4 => 'MÍNIMO DE R$ 4.000,00',
+        5 => 'MÍNIMO DE R$ 5.000,00',
+        6 => 'MÍNIMO DE R$ 6.000,00',
+        7 => 'MÍNIMO DE R$ 7.000,00',
+        8 => 'MÍNIMO DE R$ 8.000,00',
+        9 => 'MÍNIMO DE R$ 9.000,00',
+        10 => 'MÍNIMO DE R$ 10.000,00',
+        11 => 'MÍNIMO DE R$ 20.000,00',
+        12 => 'MÍNIMO DE R$ 30.000,00',
+        13 => 'MÍNIMO DE R$ 40.000,00',
+        14 => 'MÍNIMO DE R$ 50.000,00',
     );
 }
 
@@ -5512,9 +5499,7 @@ $escolaridade_lista = Escolaridade::$VALOR;
 
 $contrato_lista = Contrato::$VALOR;
 
-$ultimo_salario_lista = PretensaoSalarial::$VALOR;
-
-$nivel_hierarquico_lista = NivelHierarquico::$VALOR;
+$salario_lista = PretensaoSalarial::$VALOR;
 
 $estado_lista = Estado::$VALOR;
 
@@ -5561,6 +5546,8 @@ $H1_ = '</h1>';
 $FORM_ = '</form>';
 
 $TABLE = '<table class="tabela" align="center">';
+
+$TABLE_ = '</table>';
 
 $LABEL = '<label>';
 

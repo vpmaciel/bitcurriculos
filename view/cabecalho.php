@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="../css/estilo.css">
 <link rel="icon" type="image/ico" href="../img/favicon.ico">
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <script src="../lib/script.js"></script>
 <script src="../lib/funcoes.js"></script>
 <title>BitCurrículo</title>
