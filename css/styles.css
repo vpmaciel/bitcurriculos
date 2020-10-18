@@ -28,7 +28,8 @@
 }
 #cssmenu {
   font-family: "Lucida Console", Courier, monospace;
-  background: #4ca3dd;
+  background: #2F4F4F;
+  border: 1px ridge #000;
 }
 #cssmenu > ul > li {
   float: left;
@@ -48,38 +49,38 @@
   float: right;
 }
 #cssmenu > ul > li > a {
-  padding: 17px;
+  padding: 10px;
   font-size: 14px;
   letter-spacing: 1px;
   text-decoration: none;
-  color: #dddddd;
+  color: #000;
   font-weight: 700;
   text-transform: uppercase;
 }
 #cssmenu > ul > li:hover > a {
-  color: #ffffff;
+  color: #000;
 }
 #cssmenu > ul > li.has-sub > a {
   padding-right: 30px;
 }
 #cssmenu > ul > li.has-sub > a:after {
   position: absolute;
-  top: 22px;
+  top: 15px;
   right: 11px;
   width: 8px;
   height: 2px;
   display: block;
-  background: #dddddd;
+  background: #000;
   content: '';
 }
 #cssmenu > ul > li.has-sub > a:before {
   position: absolute;
-  top: 19px;
+  top: 12px;
   right: 14px;
   display: block;
   width: 2px;
   height: 8px;
-  background: #dddddd;
+  background: #000;
   content: '';
   -webkit-transition: all .25s ease;
   -moz-transition: all .25s ease;
@@ -130,9 +131,9 @@
   width: 250px;
   font-size: 14px;
   text-decoration: none;
-  color: #dddddd;
+  color: #000;
   font-weight: 400;
-  background: #4cafff;
+  background: #2F4F4F;
 }
 #cssmenu ul ul li:last-child > a,
 #cssmenu ul ul li.last-item > a {
@@ -140,7 +141,7 @@
 }
 #cssmenu ul ul li:hover > a,
 #cssmenu ul ul li a:hover {
-  color: #ffffff;
+  color: #000;
 }
 #cssmenu ul ul li.has-sub > a:after {
   position: absolute;
@@ -149,7 +150,7 @@
   width: 8px;
   height: 2px;
   display: block;
-  background: #dddddd;
+  background: #000;
   content: '';
 }
 #cssmenu.align-right ul ul li.has-sub > a:after {
@@ -163,7 +164,7 @@
   display: block;
   width: 2px;
   height: 8px;
-  background: #dddddd;
+  background: #000;
   content: '';
   -webkit-transition: all .25s ease;
   -moz-transition: all .25s ease;

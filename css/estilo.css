@@ -1,25 +1,28 @@
 * {
-	border-radius: 0px;
-	font-family: Arial, Helvetica, sans-serif;
+	border-radius: 0px;	
+	font-weight: thin;
 }
 .main{	
+	font-family: 'Oswald';
 	padding-left: 20px;
 	padding-right: 20px;
-	padding-bottom: 20px;
+	padding-bottom: 20px;	
 }
-body{	
+body{		
+	font-family: 'Oswald';
 	padding-left: 0px;
 	padding-right: 0px;	
-	color: #FFFFFF;
+	font-weight: thin;
+	color: #2F4F4F;
 	margin: 0 auto;	
-	background-color: #4ca3dd;	
+	background-color: #fff;	
 	font-size: 1em;
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
-	color: #FFFFFF;
-	font-size: 1.2em;
-	font-weight: 100;
+	color: #2F4F4F;
+	font-size: 1.2em;	
+	font-weight: normal;
 }
 .minusculo {
 	text-transform: lowercase;
@@ -28,7 +31,8 @@ input {
 	text-transform: uppercase;
 	border: 1px solid #2F4F4F;
 	border-radius: 0px;	
-	font-size: 1em;		
+	font-size: 1em;	
+	font-weight: 100;	
 	
 }
 input:focus{
@@ -62,8 +66,12 @@ select:focus{
     box-shadow: none;
 }
 label {
-	color: #FFFFFF;	
+	color: #2F4F4F;	
 	padding-right: 5px;
+	font-weight: 100;
+}
+select, input, textarea {
+	color:#000;
 }
 p {
 	text-align: justify;
