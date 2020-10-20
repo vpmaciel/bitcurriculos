@@ -5530,6 +5530,15 @@ class Situacao
     );
 }
 
+class Usuario
+{
+    public static $VALOR = array(
+        0 => 'TODOS',
+        1 =>  'EMPRESA',
+        2 =>  'CAN'
+    );
+}
+
 class Table
 {   
     public static function lineBegin()

@@ -42,7 +42,7 @@ echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
-$SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
+$SUBMIT = '<input type="submit" value="Enviar" onclick=\'return confirmar();\'>';
 echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;
