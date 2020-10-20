@@ -29,21 +29,24 @@ $CURSO = '<input type="text" name="instituicao" required size="70" minlength="10
 echo $TR . $TD . $CURSO . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'ANO DE INÍCIO' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['data_nascimento'] = isset($_POST['data_nascimento'])?$_POST['data_nascimento']:'';
-$DATA_NASCIMENTO = '<input type="text" name="data_nascimento" size="70" required onkeypress="$(this).mask(\'00-00-0000\');" minlength="10" maxlength="10" value="' . $pessoa['data_nascimento'] .'">';
+$pessoa['ano_inicio'] = isset($_POST['ano_inicio'])?$_POST['ano_inicio']:'';
+$DATA_NASCIMENTO = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
 echo $TR . $TD . $DATA_NASCIMENTO . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'ANO DE CONCLUSÃO' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['celular_numero'] = isset($_POST['celular_numero'])?$_POST['celular_numero']:'';
-$CELULAR = '<input type="text" name="celular_numero" size="70" required onkeypress="$(this).mask(\'(00)0-0000-0000\');" minlength="15" maxlength="15" value="' . $pessoa['celular_numero'] .'">';
+$pessoa['ano_conclusao'] = isset($_POST['ano_conclusao'])?$_POST['ano_conclusao']:'';
+$CELULAR = '<input type="text" name="ano_conclusao" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_conclusao'] .'">';
 echo $TR . $TD . $CELULAR . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'SITUAÇÃO' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
-$SELECT = '<select name="sexo">';
+$SELECT = '<select name="situacao">';
 echo $SELECT;
-foreach ($sexo_lista as $indice => $sexo) {	
-	echo ($sexo == $pessoa['sexo'])	? "<option value=$indice selected>$sexo</option>" : "<option value=$indice>$sexo</option>";
+foreach ($situacao_lista as $indice => $situacao) {	
+	if ($indice == 0) {
+		continue;
+	}
+	echo ($situacao == $pessoa['situacao'])	? "<option value=$indice selected>$situacao</option>" : "<option value=$indice>$situacao</option>";
 }
 echo $SELECT_;
 
@@ -51,7 +54,7 @@ echo $TR . $TD . $LABEL . 'NÍVEL' . $LABEL_ . $TD_ . $TR_;
 echo $TR . $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
-foreach ($situacao_lista as $indice => $escolaridade) {	
+foreach ($escolaridade_lista as $indice => $escolaridade) {	
 	if ($indice == 0) {
 		continue;
 	}

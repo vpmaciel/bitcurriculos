@@ -88,7 +88,6 @@ $curso_model = array(
 'ano_inicio' => '',
 'ano_conclusao' => '',
 'situacao' => '',
-'modalidade' => '',
 'nivel' => ''
 );
 
