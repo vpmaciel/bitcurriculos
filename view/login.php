@@ -10,11 +10,11 @@ echo $HEAD_;
 echo $BODY;
 require_once 'menu.php';
 echo $DIV_MAIN;
-echo $H1 . 'LOGIN' . $H1_;
+echo $H1 . 'LOGIN / CADASTRO' . $H1_;
 
-$FORM_LOGIN = '<form action="../controller/login.php" method="post">';
+$FORM = '<form action="../controller/login.php" method="post">';
 
-echo $FORM_LOGIN;
+echo $FORM;
 
 echo $TABLE;
 
@@ -28,12 +28,22 @@ $usuario['senha'] = isset($_POST['senha']) ? $_POST['senha']:'';
 $SENHA = '<input type="password" name="senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['senha'] .'">';
 echo $TR . $TD . $SENHA . $TD_ . $TR_;
 
+echo $TR . $TD . $LABEL . 'PRETENSÃO SALARIAL' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD;
+$SELECT = '<select name="situacao">';
+echo $SELECT;
+foreach ($situacao_lista as $indice => $situacao) {	
+	if ($indice == 0) {
+		continue;
+	}
+	echo ($situacao == $pessoa['situacao'])	? "<option value=$indice selected>$situacao</option>" : "<option value=$indice>$situacao</option>";
+}
+echo $SELECT_ . $TD_ . $TR_;
+
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
 $SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
 echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
-
-echo $TR . $TD . $NOME . $TD_ . $TR_;
 
 echo $TABLE_;
 

@@ -30,7 +30,7 @@ echo $SELECT;
 foreach ($sexo_lista as $indice => $sexo) {	
 	echo ($sexo == $pessoa['sexo'])	? "<option value=$indice selected>$sexo</option>" : "<option value=$indice>$sexo</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'CONTRATO' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -42,7 +42,7 @@ foreach ($escolaridade_lista as $indice => $escolaridade) {
 	}
 	echo ($escolaridade == $pessoa['escolaridade'])	? "<option value=$indice selected>$escolaridade</option>" : "<option value=$indice>$escolaridade</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 

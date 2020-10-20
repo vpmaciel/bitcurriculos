@@ -40,7 +40,7 @@ echo $SELECT;
 foreach ($sexo_lista as $indice => $sexo) {	
 	echo ($sexo == $pessoa['sexo'])	? "<option value=$indice selected>$sexo</option>" : "<option value=$indice>$sexo</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'ESCOLARIDADE' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -52,7 +52,7 @@ foreach ($escolaridade_lista as $indice => $escolaridade) {
 	}
 	echo ($escolaridade == $pessoa['escolaridade'])	? "<option value=$indice selected>$escolaridade</option>" : "<option value=$indice>$escolaridade</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'ESTADO CIVIL' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -64,7 +64,7 @@ foreach ($estado_civil_lista as $indice => $estado_civil) {
 	}
 	echo ($estado_civil == $pessoa['estado_civil'])	? "<option value=$indice selected>$estado_civil</option>" : "<option value=$indice>$estado_civil</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'NACIONALIDADE' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -76,7 +76,7 @@ foreach ($nacionalidade_lista as $indice => $nacionalidade) {
 	}
 	echo ($nacionalidade == $pessoa['nacionalidade'])	? "<option value=$indice selected>$nacionalidade</option>" : "<option value=$indice>$nacionalidade</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'POSSUI FILHOS' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -88,7 +88,7 @@ foreach ($resposta_lista as $indice => $possui_filhos) {
 	}
 	echo ($possui_filhos == $pessoa['possui_filhos'])	? "<option value=$indice selected>$possui_filhos</option>" : "<option value=$indice>$possui_filhos</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'POSSUI DEFICIÊNCIA' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -100,7 +100,7 @@ foreach ($resposta_lista as $indice => $possui_deficiencia) {
 	}
 	echo ($possui_deficiencia == $pessoa['possui_deficiencia'])	? "<option value=$indice selected>$possui_deficiencia</option>" : "<option value=$indice>$possui_deficiencia</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'PAÍS' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -112,7 +112,7 @@ foreach ($pais_lista as $indice => $pais) {
 	}
 	echo ($pais == $pessoa['pais'])	? "<option value=$indice selected>$pais</option>" : "<option value=$indice>$pais</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'ESTADO' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -124,7 +124,7 @@ foreach ($estado_lista as $indice => $estado) {
 	}
 	echo ($estado == $pessoa['estado'])	? "<option value=$indice selected>$estado</option>" : "<option value=$indice>$estado</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'CIDADE' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -136,7 +136,7 @@ foreach ($cidade_lista as $indice => $cidade) {
 	}
 	echo ($cidade == $pessoa['cidade'])	? "<option value=$indice selected>$cidade</option>" : "<option value=$indice>$cidade</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'CNH' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -148,7 +148,7 @@ foreach ($cnh_lista as $indice => $cnh) {
 	}
 	echo ($cnh == $pessoa['cnh'])	? "<option value=$indice selected>$cnh</option>" : "<option value=$indice>$cnh</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'ÚLTIMO SALÁRIO MENSAL (R$)' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -160,7 +160,7 @@ foreach ($ultimo_salario_lista as $indice => $ultimo_salario_mensal) {
 	}
 	echo ($ultimo_salario_mensal == $pessoa['ultimo_salario_mensal'])	? "<option value=$indice selected>$ultimo_salario_mensal</option>" : "<option value=$indice>$ultimo_salario_mensal</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'EMPREGADO ATUALMENTE' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -172,7 +172,7 @@ foreach ($resposta_lista as $indice => $empregado_atualmente) {
 	}
 	echo ($empregado_atualmente == $pessoa['empregado_atualmente'])	? "<option value=$indice selected>$empregado_atualmente</option>" : "<option value=$indice>$empregado_atualmente</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'PROCURANDO NOVO EMPREGO ATUALMENTE' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -184,7 +184,7 @@ foreach ($resposta_lista as $indice => $procurando_novo_emprego_atualmente) {
 	}
 	echo ($procurando_novo_emprego_atualmente == $pessoa['procurando_novo_emprego_atualmente'])	? "<option value=$indice selected>$procurando_novo_emprego_atualmente</option>" : "<option value=$indice>$procurando_novo_emprego_atualmente</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'DISPONÍVEL PARA VIAGEM' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -196,7 +196,7 @@ foreach ($resposta_lista as $indice => $disponivel_para_viagem) {
 	}
 	echo ($disponivel_para_viagem == $pessoa['disponivel_para_viagem'])	? "<option value=$indice selected>$disponivel_para_viagem</option>" : "<option value=$indice>$disponivel_para_viagem</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'PODE TRABALHAR EM OUTRAS CIDADES' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -208,7 +208,7 @@ foreach ($resposta_lista as $indice => $disponivel_para_trabalhar_outras_cidades
 	}
 	echo ($disponivel_para_trabalhar_outras_cidades == $pessoa['disponivel_para_trabalhar_outras_cidades'])	? "<option value=$indice selected>$disponivel_para_trabalhar_outras_cidades</option>" : "<option value=$indice>$disponivel_para_trabalhar_outras_cidades</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'PODE TRABALHAR EM OUTROS PAÍSES' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -220,7 +220,7 @@ foreach ($resposta_lista as $indice => $disponivel_para_trabalhar_outros_paises)
 	}
 	echo ($disponivel_para_trabalhar_outros_paises == $pessoa['disponivel_para_trabalhar_outros_paises'])	? "<option value=$indice selected>$disponivel_para_trabalhar_outros_paises</option>" : "<option value=$indice>$disponivel_para_trabalhar_outros_paises</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'PODE TRABALHAR HOME OFFICE' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -232,7 +232,7 @@ foreach ($resposta_lista as $indice => $disponivel_para_trabalhar_home_office) {
 	}
 	echo ($disponivel_para_trabalhar_home_office == $pessoa['disponivel_para_trabalhar_home_office'])	? "<option value=$indice selected>$disponivel_para_trabalhar_home_office</option>" : "<option value=$indice>$disponivel_para_trabalhar_home_office</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'POSSUI CARRO' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -244,7 +244,7 @@ foreach ($resposta_lista as $indice => $possui_carro) {
 	}
 	echo ($possui_carro == $pessoa['possui_carro'])	? "<option value=$indice selected>$possui_carro</option>" : "<option value=$indice>$possui_carro</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'POSSUI MOTO' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
@@ -256,7 +256,7 @@ foreach ($resposta_lista as $indice => $possui_moto) {
 	}
 	echo ($possui_moto == $pessoa['possui_moto'])	? "<option value=$indice selected>$possui_moto</option>" : "<option value=$indice>$possui_moto</option>";
 }
-echo $SELECT_;
+echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 

@@ -1,6 +1,6 @@
 <?php
 $pessoa_model = array(
-    'usuario_id_int' => '',
+    'usuario_id_pessoa_int' => '',
     'nome_char' => '',
     'data_nascimento_date' => '',
     'celular_numero_char' => '',
@@ -27,7 +27,7 @@ $pessoa_model = array(
 
 $publicacao_vaga_model = array(
 'id_int' => '',
-'usuario_id_int' => '',
+'usuario_id_empresa_int' => '',
 'data_publicacao_date' => '',
 'cargo_char' => '',
 'razao_social_char' => '',
@@ -42,37 +42,38 @@ $publicacao_vaga_model = array(
 );
 
 $candidato_vaga_model = array(
-'publicacao_vaga' => '',
-'usuario' => '',
-'empresa' => ''
+'publicacao_vaga_id_int' => '',
+'usuario_id_pessoa_int' => '',
+'empresa_usuario_id_int' => ''
 );
 
 $objetivo_profissional_model = array(
-'id' => '',
-'usuario_id_int' => '',
-'cargo' => '',
-'pretensao_salarial' => '',
-'contrato' => ''
+'id_int' => '',
+'usuario_id_pessoa_int' => '',
+'cargo_char' => '',
+'pretensao_salarial_int' => '',
+'contrato_int' => ''
 );
 
 $idioma_model  = array(
-'id' => '',
-'usuario' => '',
-'idioma' => '',
-'nivel_conhecimento' => ''
+'id_int' => '',
+'usuario_id_pessoa_int' => '',
+'idioma_int' => '',
+'nivel_conhecimento_int' => ''
 );
 
 $habilidade_model = array(
-'id' => '',
-'usuario' => '',
-'conhecimento' => '',
-'nivel_conhecimento' => ''
+'id_int' => '',
+'usuario_id_pessoa_int' => '',
+'conhecimento_char' => '',
+'nivel_conhecimento_int' => ''
 );
 
 $experiencia_profissional_model = array(
-'id' => '',
-'empresa' => '',
-'cargo' => '',
+'id_int' => '',
+'usuario_id_pessoa_int' => '',    
+'empresa_char' => '',
+'cargo_char' => '',
 'data_admissao' => '',
 'data_saida' => '',
 'funcoes' => ''
