@@ -5374,7 +5374,8 @@ class Escolaridade
     public static $VALOR = array(
             0 => 'TODOS',
             1 =>  'SUPERIOR | TECNÓLOGO',            
-            2 =>  'SEGUNDO GRAU | TÉCNICO',
+            2 =>  'TÉCNICO',
+            3 =>  'SEGUNDO GRAU',
         );
 }
 
@@ -5561,6 +5562,8 @@ $nacionalidade_lista = Nacionalidade::$VALOR;
 $pais_lista = Pais::$VALOR;
 
 $resposta_lista = Resposta::$VALOR;
+
+$situacao_lista = Situacao::$VALOR;
 
 $DOCTYPE = '<!DOCTYPE html>';
 

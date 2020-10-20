@@ -10,7 +10,7 @@ echo $HEAD_;
 echo $BODY;
 require_once 'menu.php';
 echo $DIV_MAIN;
-echo $H1 . 'DADOS PESSOAIS' . $H1_;
+echo $H1 . 'LOGIN' . $H1_;
 
 $FORM_LOGIN = '<form action="../controller/login.php" method="post">';
 
