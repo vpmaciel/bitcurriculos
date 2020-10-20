@@ -19,8 +19,8 @@ echo $FORM;
 echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'EMPRESA' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
-$EMPRESA = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
+$pessoa['empresa'] = isset($_POST['empresa'])?$_POST['empresa']:'';
+$EMPRESA = '<input type="text" name="empresa" required size="70" minlength="10" maxlength="50" value="' . $pessoa['empresa'] .'">';
 echo $TR . $TD . $EMPRESA . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'CARGO' . $LABEL_ . $TD_ . $TR_; 
@@ -40,7 +40,7 @@ echo $TR . $TD . $DATA_SAIDA . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'FUNÇÕES' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['ano_conclusao'] = isset($_POST['ano_conclusao'])?$_POST['ano_conclusao']:'';
-$DATA_SAIDA = '<textarea id="w3review" name="w3review" rows="4" cols="50">' . $pessoa['ano_conclusao'] .'</textarea>';
+$DATA_SAIDA = '<textarea id="w3review" name="w3review" rows="10" cols="82" maxlength="500">' . $pessoa['ano_conclusao'] .'</textarea>';
 echo $TR . $TD . $DATA_SAIDA . $TD_ . $TR_; 
 
 

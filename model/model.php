@@ -76,7 +76,6 @@ $experiencia_profissional_model = array(
 'cargo' => '',
 'data_admissao' => '',
 'data_saida' => '',
-'nivel_hierarquico' => '',
 'funcoes' => ''
 );
 

@@ -46,6 +46,13 @@ textarea {
 	border: 1px solid #2F4F4F;	
 	border-radius: 0px;	
 }
+textarea:focus{
+	text-transform: uppercase;
+    border-radius: 0px;
+    outline: none;
+    border: 1px solid #2F4F4F;
+    box-shadow: none;
+}
 input[type="submit"] {
 	border: 1px solid #2F4F4F;	
 	border-radius: 0px;
