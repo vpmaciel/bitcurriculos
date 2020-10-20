@@ -25,12 +25,12 @@ echo $TR . $TD . $NOME . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'DATA DE NASCIMENTO' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['data_nascimento'] = isset($_POST['data_nascimento'])?$_POST['data_nascimento']:'';
-$DATA_NASCIMENTO = '<input type="text" name="data_nascimento" required onkeypress="$(this).mask(\'00-00-0000\');" minlength="10" maxlength="10" value="' . $pessoa['data_nascimento'] .'">';
+$DATA_NASCIMENTO = '<input type="text" name="data_nascimento" size="70" required onkeypress="$(this).mask(\'00-00-0000\');" minlength="10" maxlength="10" value="' . $pessoa['data_nascimento'] .'">';
 echo $TR . $TD . $DATA_NASCIMENTO . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'CELULAR' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['celular_numero'] = isset($_POST['celular_numero'])?$_POST['celular_numero']:'';
-$CELULAR = '<input type="text" name="celular_numero" required onkeypress="$(this).mask(\'(00)0-0000-0000\');" minlength="15" maxlength="15" value="' . $pessoa['celular_numero'] .'">';
+$CELULAR = '<input type="text" name="celular_numero" size="70" required onkeypress="$(this).mask(\'(00)0-0000-0000\');" minlength="15" maxlength="15" value="' . $pessoa['celular_numero'] .'">';
 echo $TR . $TD . $CELULAR . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'SEXO' . $LABEL_ . $TD_ . $TR_; 
@@ -259,9 +259,9 @@ foreach ($resposta_lista as $indice => $possui_moto) {
 echo $SELECT_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
-$NOME = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
-echo $TR . $TD . $NOME . $TD_ . $TR_;
+
+$SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
+echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;
 
