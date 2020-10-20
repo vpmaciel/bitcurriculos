@@ -1,6 +1,6 @@
 <?php
 $pessoa_model = array(
-    'usuario_int' => '',
+    'usuario_id_int' => '',
     'nome_char' => '',
     'data_nascimento_date' => '',
     'celular_numero_char' => '',
@@ -27,7 +27,7 @@ $pessoa_model = array(
 
 $publicacao_vaga_model = array(
 'id_int' => '',
-'usuario_int' => '',
+'usuario_id_int' => '',
 'data_publicacao_date' => '',
 'cargo_char' => '',
 'razao_social_char' => '',
@@ -49,10 +49,9 @@ $candidato_vaga_model = array(
 
 $objetivo_profissional_model = array(
 'id' => '',
+'usuario_id_int' => '',
 'cargo' => '',
 'pretensao_salarial' => '',
-'nivel_hierarquico' => '',
-'area_interesse' => '',
 'contrato' => ''
 );
 

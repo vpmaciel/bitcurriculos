@@ -12,9 +12,9 @@ require_once 'menu.php';
 echo $DIV_MAIN;
 echo $H1 . 'DADOS PESSOAIS' . $H1_;
 
-$FORM_PESSOA = '<form action="../controller/pessoa.php" method="post">';
+$FORM = '<form action="../controller/pessoa.php" method="post">';
 
-echo $FORM_PESSOA;
+echo $FORM;
 
 echo $TABLE;
 
