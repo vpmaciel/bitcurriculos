@@ -1,32 +1,60 @@
 <?php
+session_start();
 require_once '../lib/biblioteca.php';
-?>
+require_once '../model/model.php';
+echo $DOCTYPE;
+echo $HTML;
+echo $HEAD;
+require_once 'cabecalho.php';
+echo $HEAD_;
+echo $BODY;
+require_once 'menu.php';
+echo $DIV_MAIN;
+echo $H1 . 'EXPERIÊNCIA PROFISSIONAL' . $H1_;
 
-<!DOCTYPE html>
-<html>
-<head>
-<?php require_once 'cabecalho.php';?>
-</head>
-<body>
-<?php require_once 'menu.php';?>
-<div class="main">
-	<h1>Experiência Profissional</h1>		
-	<form action="../controller/dadospessoais.php">
-		<table class="tabela">
-			<tr><td><label for="nome">Empresa</label></td></tr>
-			<tr><td><input type="text" name="nome" maxlength="50" value="<?=isset($_POST['nome'])?$_POST['nome']:''?>" ></td></tr>
-			<tr><td><label for="data_nascimento">Cargo</label></td></tr>
-			<tr><td><input type="text" name="data_nascimento" maxlength="50" value="Doe"></td></tr>
-			<tr><td><label for="data_nascimento">Data de Admissão</label></td></tr>
-			<tr><td><input type="text" name="data_nascimento" maxlength="50" value="Doe"></td></tr>
-			<tr><td><label for="data_nascimento">Data de Saída</label></td></tr>
-			<tr><td><input type="text" name="data_nascimento" maxlength="50" value="Doe"></td></tr>								
-			<tr><td><label for="data_nascimento">Funções</label></td></tr>
-			<tr><td><input type="text" name="data_nascimento" maxlength="50" value="Doe"></td></tr>
-			<tr><td>&nbsp;</td></tr>
-			<tr><td><input type="submit" value="Salvar"></td></tr>
-		</table>
-	</form>
-</div> 
-</body>
-</html>
+$FORM = '<form action="../controller/experienciaprofissional.php" method="post">';
+
+echo $FORM;
+
+echo $TABLE;
+
+echo $TR . $TD . $LABEL . 'EMPRESA' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
+$EMPRESA = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
+echo $TR . $TD . $EMPRESA . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'CARGO' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['instituicao'] = isset($_POST['instituicao'])?$_POST['instituicao']:'';
+$CARGO = '<input type="text" name="instituicao" required size="70" minlength="10" maxlength="50" value="' . $pessoa['instituicao'] .'">';
+echo $TR . $TD . $CARGO . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'DATA DE ADMISSÃO' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['ano_inicio'] = isset($_POST['ano_inicio'])?$_POST['ano_inicio']:'';
+$DATA_ADMISSAO = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
+echo $TR . $TD . $DATA_ADMISSAO . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'DATA DE SAÍDA' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['ano_conclusao'] = isset($_POST['ano_conclusao'])?$_POST['ano_conclusao']:'';
+$DATA_SAIDA = '<input type="text" name="ano_conclusao" size="70" onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_conclusao'] .'">';
+echo $TR . $TD . $DATA_SAIDA . $TD_ . $TR_; 
+
+echo $TR . $TD . $LABEL . 'FUNÇÕES' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['ano_conclusao'] = isset($_POST['ano_conclusao'])?$_POST['ano_conclusao']:'';
+$DATA_SAIDA = '<textarea id="w3review" name="w3review" rows="4" cols="50">' . $pessoa['ano_conclusao'] .'</textarea>';
+echo $TR . $TD . $DATA_SAIDA . $TD_ . $TR_; 
+
+
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
+
+$SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
+echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
+
+echo $TABLE_;
+
+echo $FORM_;
+
+echo $DIV_;
+
+echo $BODY_;
+
+echo $HTML_;

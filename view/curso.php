@@ -18,15 +18,15 @@ echo $FORM_PESSOA;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'CURSO' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD . $LABEL . 'CURSO (NOME DO CURSO)' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
 $CURSO = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
 echo $TR . $TD . $CURSO . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'INSTITUIÇÃO' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['instituicao'] = isset($_POST['instituicao'])?$_POST['instituicao']:'';
-$CURSO = '<input type="text" name="instituicao" required size="70" minlength="10" maxlength="50" value="' . $pessoa['instituicao'] .'">';
-echo $TR . $TD . $CURSO . $TD_ . $TR_;
+$INSTITUICAO = '<input type="text" name="instituicao" required size="70" minlength="10" maxlength="50" value="' . $pessoa['instituicao'] .'">';
+echo $TR . $TD . $INSTITUICAO . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'ANO DE INÍCIO' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['ano_inicio'] = isset($_POST['ano_inicio'])?$_POST['ano_inicio']:'';

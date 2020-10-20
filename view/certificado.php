@@ -10,7 +10,7 @@ echo $HEAD_;
 echo $BODY;
 require_once 'menu.php';
 echo $DIV_MAIN;
-echo $H1 . 'CERTIFICADO' . $H1_;
+echo $H1 . 'CERTIFICAÇÃO' . $H1_;
 
 $FORM_PESSOA = '<form action="../controller/certificado.php" method="post">';
 
@@ -18,19 +18,19 @@ echo $FORM_PESSOA;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'CURSO' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD . $LABEL . 'CURSO (NOME DA CERTIFICAÇÃO)' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
 $CURSO = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
 echo $TR . $TD . $CURSO . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'INSTITUIÇÃO' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['instituicao'] = isset($_POST['instituicao'])?$_POST['instituicao']:'';
-$CURSO = '<input type="text" name="instituicao" required size="70" minlength="10" maxlength="50" value="' . $pessoa['instituicao'] .'">';
-echo $TR . $TD . $CURSO . $TD_ . $TR_;
+$INSTITUICAO = '<input type="text" name="instituicao" required size="70" minlength="10" maxlength="50" value="' . $pessoa['instituicao'] .'">';
+echo $TR . $TD . $INSTITUICAO . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'ANO DE INÍCIO' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD . $LABEL . 'CARGA HORÁRIA (HORAS)' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['ano_inicio'] = isset($_POST['ano_inicio'])?$_POST['ano_inicio']:'';
-$DATA_NASCIMENTO = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
+$DATA_NASCIMENTO = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="1" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
 echo $TR . $TD . $DATA_NASCIMENTO . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'ANO DE CONCLUSÃO' . $LABEL_ . $TD_ . $TR_; 
