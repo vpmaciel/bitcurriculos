@@ -3,8 +3,9 @@
    <li><a href="index.php">Home</a></li>
    <li class='active'><a href='#'>Sistema</a>
       <ul>
-         <li><a href='#'>Login</a>
+         <li><a href='#'>Login | Cadastro</a>
             <ul>
+               <li><a href='login.php'>Recuperar Senha</a></li>
                <li><a href='login.php'>Entrar</a></li>
                <li><a href='#'>Sair</a></li>
             </ul>

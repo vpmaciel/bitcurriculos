@@ -5534,8 +5534,9 @@ class Usuario
 {
     public static $VALOR = array(
         0 => 'TODOS',
-        1 =>  'EMPRESA',
-        2 =>  'CAN'
+        1 =>  'CANDIDATO (CADASTRAR CURRÍCULO)',
+        2 =>  'EMPRESA (BUSCAR TALENTOS E DIVULGAR VAGAS DE TRABALHO)'
+        
     );
 }
 
@@ -5580,6 +5581,8 @@ $pais_lista = Pais::$VALOR;
 $resposta_lista = Resposta::$VALOR;
 
 $situacao_lista = Situacao::$VALOR;
+
+$usuario_lista = Usuario::$VALOR;
 
 $DOCTYPE = '<!DOCTYPE html>';
 

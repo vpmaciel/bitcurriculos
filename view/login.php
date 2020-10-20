@@ -10,7 +10,7 @@ echo $HEAD_;
 echo $BODY;
 require_once 'menu.php';
 echo $DIV_MAIN;
-echo $H1 . 'LOGIN / CADASTRO' . $H1_;
+echo $H1 . 'LOGIN | CADASTRO' . $H1_;
 
 $FORM = '<form action="../controller/login.php" method="post">';
 
@@ -28,15 +28,15 @@ $usuario['senha'] = isset($_POST['senha']) ? $_POST['senha']:'';
 $SENHA = '<input type="password" name="senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['senha'] .'">';
 echo $TR . $TD . $SENHA . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'PRETENSÃO SALARIAL' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD . $LABEL . 'TIPO DE USUÁRIO' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
-$SELECT = '<select name="situacao">';
+$SELECT = '<select name="tipo_usuario">';
 echo $SELECT;
-foreach ($situacao_lista as $indice => $situacao) {	
+foreach ($usuario_lista as $indice => $tipo_usuario) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($situacao == $pessoa['situacao'])	? "<option value=$indice selected>$situacao</option>" : "<option value=$indice>$situacao</option>";
+	echo ($tipo_usuario == $usuario['tipo_usuario']) ? "<option value=$indice selected>$tipo_usuario</option>" : "<option value=$indice>$tipo_usuario</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
