@@ -1,5 +1,5 @@
 <?php
-$pessoa = array(
+$pessoa_model = array(
     'usuario_int' => '',
     'nome_char' => '',
     'data_nascimento_date' => '',
@@ -25,7 +25,7 @@ $pessoa = array(
     'possui_moto_bit' => ''
 );
 
-$publicacao_vaga = array(
+$publicacao_vaga_model = array(
 'id_int' => '',
 'usuario_int' => '',
 'data_publicacao_date' => '',
@@ -41,13 +41,13 @@ $publicacao_vaga = array(
 'cidade_int' => ''
 );
 
-$candidato_vaga = array(
+$candidato_vaga_model = array(
 'publicacao_vaga' => '',
 'usuario' => '',
 'empresa' => ''
 );
 
-$objetivo_profissional = array(
+$objetivo_profissional_model = array(
 'id' => '',
 'cargo' => '',
 'pretensao_salarial' => '',
@@ -56,21 +56,21 @@ $objetivo_profissional = array(
 'contrato' => ''
 );
 
-$idioma  = array(
+$idioma_model  = array(
 'id' => '',
 'usuario' => '',
 'idioma' => '',
 'nivel_conhecimento' => ''
 );
 
-$habilidade = array(
+$habilidade_model = array(
 'id' => '',
 'usuario' => '',
 'conhecimento' => '',
 'nivel_conhecimento' => ''
 );
 
-$experiencia_profissional = array(
+$experiencia_profissional_model = array(
 'id' => '',
 'empresa' => '',
 'cargo' => '',
@@ -80,7 +80,7 @@ $experiencia_profissional = array(
 'funcoes' => ''
 );
 
-$curso = array(
+$curso_model = array(
 'id' => '',
 'usuario' => '',
 'instituicao' => '',
@@ -92,7 +92,7 @@ $curso = array(
 'nivel' => ''
 );
 
-$certificado = array(
+$certificado_model = array(
 'id' => '',
 'usuario' => '',
 'instituicao' => '',
@@ -101,7 +101,7 @@ $certificado = array(
 'ano_conclusao' => ''
 );
 
-$usuario = array(
+$usuario_model = array(
 'id' => '',
 'email' => '',
 'senha' => ''

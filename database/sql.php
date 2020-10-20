@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') || exit('No direct script access allowed');
 class SQL {
 
     private $pdo;
@@ -53,7 +54,7 @@ class SQL {
     public static function atualizar($dados, $tabela, $condicao){
         $campos = '';
         $valores = '';
-        $onde = '';
+        $condicao = '';
         $tamanho = count ($dados);
         $contador = 1;
         if($tamanho == 0)
@@ -80,18 +81,18 @@ class SQL {
             foreach($condicao as $chave => $valor){
                 
                $valor = "'$valor'";
-                $onde .= $chave . "=". $valor;               
+                $condicao .= $chave . "=". $valor;               
 
                 if($contador < $tamanho) {
-                    $onde .= ',';
+                    $condicao .= ',';
                 }
                 $contador++;
             }
 
-            echo("UPDATE $tabela SET $campos WHERE ($onde)");
+            echo("UPDATE $tabela SET $campos WHERE ($condicao)");
             return;
             $this->pdo->beginTransaction();
-            $stm = $this->pdo->exec("UPDATE $tabela SET $campos WHERE ($onde);");            
+            $stm = $this->pdo->exec("UPDATE $tabela SET $campos WHERE ($condicao);");            
         
             $this->pdo->commit();
         
