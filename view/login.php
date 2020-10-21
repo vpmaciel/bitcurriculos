@@ -20,7 +20,7 @@ echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'E-MAIL' . $LABEL_ . $TD_ . $TR_; 
 $usuario['email'] = isset($_POST['email']) ? $_POST['email']:'';
-$EMAIL = '<input type="text" name="email" required size="70" minlength="10" maxlength="100" value="' . $usuario['email'] .'">';
+$EMAIL = '<input type="email" name="email" required size="70" minlength="5" maxlength="100" value="' . $usuario['email'] .'">';
 echo $TR . $TD . $EMAIL . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'SENHA' . $LABEL_ . $TD_ . $TR_; 
@@ -45,9 +45,16 @@ echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 $SUBMIT = '<input type="submit" value="Enviar" onclick=\'return confirmar();\'>';
 echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
+
+$LINK = '<a href="pessoa.php">Recuperar Senha</a>';
+echo $TR . $TD . $LINK . $TD_ . $TR_;
+
 echo $TABLE_;
 
 echo $FORM_;
+
+
 
 echo $DIV_;
 

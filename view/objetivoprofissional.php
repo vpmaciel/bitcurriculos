@@ -25,22 +25,22 @@ echo $TR . $TD . $CARGO . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'PRETENSÃO SALARIAL' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
-$SELECT = '<select name="sexo">';
+$SELECT = '<select name="$pretensao_salario">';
 echo $SELECT;
-foreach ($sexo_lista as $indice => $sexo) {	
-	echo ($sexo == $pessoa['sexo'])	? "<option value=$indice selected>$sexo</option>" : "<option value=$indice>$sexo</option>";
+foreach ($pretensao_salario_lista as $indice => $pretensao_salario) {	
+	echo ($pretensao_salario == $pessoa['$pretensao_salario'])	? "<option value=$indice selected>$pretensao_salario</option>" : "<option value=$indice>$pretensao_salario</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'CONTRATO' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
-$SELECT = '<select name="escolaridade">';
+$SELECT = '<select name="contrato">';
 echo $SELECT;
-foreach ($escolaridade_lista as $indice => $escolaridade) {	
+foreach ($contrato_lista as $indice => $contrato) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($escolaridade == $pessoa['escolaridade'])	? "<option value=$indice selected>$escolaridade</option>" : "<option value=$indice>$escolaridade</option>";
+	echo ($contrato == $pessoa['contrato'])	? "<option value=$indice selected>$contrato</option>" : "<option value=$indice>$contrato</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 

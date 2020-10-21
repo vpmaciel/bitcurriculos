@@ -23,6 +23,17 @@ $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
 $NOME = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
 echo $TR . $TD . $NOME . $TD_ . $TR_;
 
+echo $TR . $TD . $LABEL . 'REPOSITÓRIO DE CÓDIGOS (GITHUB OU OUTRO)' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
+$NOME = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
+echo $TR . $TD . $NOME . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'LINKEDIN' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
+$NOME = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
+echo $TR . $TD . $NOME . $TD_ . $TR_;
+
+
 echo $TR . $TD . $LABEL . 'DATA DE NASCIMENTO' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['data_nascimento'] = isset($_POST['data_nascimento'])?$_POST['data_nascimento']:'';
 $DATA_NASCIMENTO = '<input type="text" name="data_nascimento" size="70" required onkeypress="$(this).mask(\'00-00-0000\');" minlength="10" maxlength="10" value="' . $pessoa['data_nascimento'] .'">';
