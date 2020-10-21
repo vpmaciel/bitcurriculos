@@ -5452,6 +5452,16 @@ class NivelConhecimento
         );
 }
 
+class NivelConhecimentoIdioma
+{
+    public static $VALOR = array(
+            0 => 'TODOS',
+            1 =>  'BÁSICO',
+            2 =>  'INTERMEDIÁRIO',
+            3 =>  'AVANÇADO',
+            4 =>  'FLUENTE',
+        );
+}
 class Pais
 {
     public static $VALOR = array(
@@ -5604,6 +5614,12 @@ $resposta_lista = Resposta::$VALOR;
 $situacao_lista = Situacao::$VALOR;
 
 $usuario_lista = Usuario::$VALOR;
+
+$nivel_conhecimento_lista = NivelConhecimento::$VALOR;
+
+$nivel_conhecimento_idioma_lista = NivelConhecimentoIdioma::$VALOR;
+
+$idioma_lista = Idioma::$VALOR;
 
 $DOCTYPE = '<!DOCTYPE html>';
 
