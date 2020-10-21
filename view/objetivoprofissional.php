@@ -28,6 +28,9 @@ echo $TR . $TD;
 $SELECT = '<select name="$pretensao_salario">';
 echo $SELECT;
 foreach ($pretensao_salario_lista as $indice => $pretensao_salario) {	
+	if ($indice == 0) {
+		continue;
+	}
 	echo ($pretensao_salario == $pessoa['$pretensao_salario'])	? "<option value=$indice selected>$pretensao_salario</option>" : "<option value=$indice>$pretensao_salario</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
