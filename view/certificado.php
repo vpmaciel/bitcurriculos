@@ -1,5 +1,6 @@
 <?php
 session_start();
+defined('BASEPATH') || exit('No direct script access allowed');
 require_once '../lib/biblioteca.php';
 require_once '../model/model.php';
 echo $DOCTYPE;

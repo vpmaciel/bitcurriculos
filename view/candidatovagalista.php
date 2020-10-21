@@ -1,4 +1,6 @@
 <?php
+session_start();
+defined('BASEPATH') || exit('No direct script access allowed');
 require_once '../lib/biblioteca.php';
 ?>
 
@@ -8,7 +10,6 @@ require_once '../lib/biblioteca.php';
 <?php require_once 'cabecalho.php';?>
 </head>
 <body>
-<?php require_once 'titulo.php';?>
 <div style="overflow:auto">
 <?php require_once 'menu.php';?>
 <div class="main">		

@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') || exit('No direct script access allowed');
 
 require_once 'funcoes.php';
 require_once '../database/sql.php';
