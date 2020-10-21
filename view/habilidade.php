@@ -1,46 +1,51 @@
 <?php
+session_start();
 require_once '../lib/biblioteca.php';
-?>
+require_once '../model/model.php';
+echo $DOCTYPE;
+echo $HTML;
+echo $HEAD;
+require_once 'cabecalho.php';
+echo $HEAD_;
+echo $BODY;
+require_once 'menu.php';
+echo $DIV_MAIN;
+echo $H1 . 'HABILIDADE' . $H1_;
 
-<!DOCTYPE html>
-<html>
-<head>
-<?php require_once 'cabecalho.php';?>
-</head>
-<body>
-<?php require_once 'menu.php';?>
-	<h1 class="titulo">Habilidade</h1>		
-	<form action="../controller/dadospessoais.php">
-		<table class="tabela">
-			<tr><td><label for="lname">Habilidade</label></td></tr>
-			<tr>
-			<td>
-				<select id="cars">
-					<?php
-					foreach ($sexo_array as $indice => $sexo) {
-						$indice = Html::configurar($indice);
-						echo "<option value=$indice>$sexo</option>";
-					}
-					?>
-				</select>
-			</td>
-			</tr>
-			<tr><td><label for="data_nascimento">Nível de Conhecimento</label></td></tr>
-			<tr>
-			<td>
-				<select id="cars">
-					<?php
-					foreach ($sexo_array as $indice => $sexo) {
-						$indice = Html::configurar($indice);
-						echo "<option value=$indice>$sexo</option>";
-					}
-					?>
-				</select>
-			</td>
-			</tr>
-			<tr><td>&nbsp;</td></tr>
-			<tr><td><input type="submit" value="Salvar"></td></tr>
-		</table>
-	</form>
-</body>
-</html>
+$FORM_PESSOA = '<form action="../controller/habilidade.php" method="post">';
+
+echo $FORM_PESSOA;
+
+echo $TABLE;
+
+echo $TR . $TD . $LABEL . 'HABILIDADE (LINGUAGEM DE PROGRAMAÇÃO / FRAMEWORK / BIBLIOTECA / TECNOLOGIA)' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
+$HABILIDADE = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
+echo $TR . $TD . $HABILIDADE . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'NÍVEL' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD;
+$SELECT = '<select name="escolaridade">';
+echo $SELECT;
+foreach ($escolaridade_lista as $indice => $escolaridade) {	
+	if ($indice == 0) {
+		continue;
+	}
+	echo ($escolaridade == $pessoa['escolaridade'])	? "<option value=$indice selected>$escolaridade</option>" : "<option value=$indice>$escolaridade</option>";
+}
+echo $SELECT_ . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
+
+$SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
+echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
+
+echo $TABLE_;
+
+echo $FORM_;
+
+echo $DIV_;
+
+echo $BODY_;
+
+echo $HTML_;
