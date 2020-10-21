@@ -25,13 +25,13 @@ echo $TR . $TD . $HABILIDADE . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'NÍVEL' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
-$SELECT = '<select name="escolaridade">';
+$SELECT = '<select name="nivel_conhecimento">';
 echo $SELECT;
-foreach ($escolaridade_lista as $indice => $escolaridade) {	
+foreach ($nivel_conhecimento_lista as $indice => $nivel_conhecimento) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($escolaridade == $pessoa['escolaridade'])	? "<option value=$indice selected>$escolaridade</option>" : "<option value=$indice>$escolaridade</option>";
+	echo ($nivel_conhecimento == $pessoa['nivel_conhecimento'])	? "<option value=$indice selected>$nivel_conhecimento</option>" : "<option value=$indice>$nivel_conhecimento</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
