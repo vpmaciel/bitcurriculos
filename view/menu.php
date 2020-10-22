@@ -2,13 +2,10 @@
 <ul>
    <li><a href="index.php">Home</a></li>
    <li class='active'><a href='#'>Sistema</a>
-      <ul>
-         <li><a href='#'>Login | Cadastro</a>
-            <ul>               
-               <li><a href='login.php'>Entrar</a></li>
-               <li><a href='#'>Sair</a></li>
-            </ul>
-         </li>
+      <ul>         
+         <li><a href='usuario.php'>Cadastro de Usuário</a></li>         
+         <li><a href='login.php'>Login</a></li>
+         <li><a href='#'>Logout</a></li>
          <li><a href='#'>Candidato</a>
             <ul>
                <li><a href="pessoa.php">Dados Pessoais</a></li>
