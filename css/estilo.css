@@ -1,26 +1,26 @@
 * {
 	border-radius: 0px;	
-	font-weight: thin;
+	font-weight: normal;
 }
 .main{	
 	font-family: 'Oswald';
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-bottom: 20px;	
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-bottom: 5%;	
 }
 body{		
 	font-family: 'Oswald';
 	padding-left: 0px;
 	padding-right: 0px;	
 	font-weight: thin;
-	color: #2F4F4F;
+	color: #262626;
 	margin: 0 auto;	
 	background-color: #fff;	
-	font-size: 1em;
+	font-size: 1.2em;
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
-	color: #2F4F4F;
+	color: #262626;
 	font-size: 1.2em;	
 	font-weight: normal;
 }
@@ -73,7 +73,7 @@ select:focus{
     box-shadow: none;
 }
 label {
-	color: #2F4F4F;	
+	color: #262626;	
 	padding-right: 5px;
 	font-weight: 100;
 }
