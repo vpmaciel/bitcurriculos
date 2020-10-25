@@ -27,31 +27,13 @@ h1, h2, h3, h4, h5, h6 {
 .minusculo {
 	text-transform: lowercase;
 }
-input {
-	text-transform: uppercase;
-	border: 1px solid #2F4F4F;
-	border-radius: 0px;	
-	font-size: 1em;	
-	font-weight: 100;	
-	
-}
-input:focus{
+
+input:focus, textarea:focus{
     border-radius: 0px;
     outline: none;
     border: 1px solid #2F4F4F;
     box-shadow: none;
-}
-textarea {
 	text-transform: uppercase;
-	border: 1px solid #2F4F4F;	
-	border-radius: 0px;	
-}
-textarea:focus{
-	text-transform: uppercase;
-    border-radius: 0px;
-    outline: none;
-    border: 1px solid #2F4F4F;
-    box-shadow: none;
 }
 input[type="submit"] {
 	border: 1px solid #2F4F4F;	
@@ -60,13 +42,7 @@ input[type="submit"] {
 	text-align: center;
 	line-height: 20px;
 }
-select {
-	text-transform: uppercase;
-	border-radius: 0px;
-	border: 1px solid #2F4F4F;
-	font-size: 1em;
-}
-select:focus{
+textarea:focus{
     border-radius: 0px;
     outline: none;
     border: 1px solid #2F4F4F;
@@ -74,12 +50,18 @@ select:focus{
 }
 label {
 	color: #000000;	
-	padding-right: 5px;
-	font-weight: 100;
+	font-weight: initial;
 }
 select, input, textarea {
 	color:#000;
+	font-size: 12px;	
+	text-transform: uppercase;
+	border: 1px solid #2F4F4F;
+	border-radius: 0px;	
+	font-size: 12px;
+	font-weight: initial;		
 }
+
 p {
 	text-align: justify;
 	text-indent: 2em;
