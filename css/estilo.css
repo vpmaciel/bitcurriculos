@@ -1,5 +1,6 @@
 * {
-	font-family: Arial, Helvetica, sans-serif; 
+	font-family: "Georgia", "Palatino", "serif";
+	font-family: "Courier New", "Monaco", "monospace"; 
 	font-weight: normal;
 	border-radius: 0px;
 	margin: 0px;
@@ -8,45 +9,45 @@
 table, td, th {
 	padding: 2px;	
 }
-table {
+table {	
 	border-collapse: collapse;
 	border-spacing: 2px;
 	table-layout: fixed;
 }
 
 body {	
-	color: #fff;
+	color: #000000;
 	margin: 0 !important;
     padding: 0 !important;
-	background: #fff;
-	font-size: 18px;
+	background-color: #fff;
+	font-size: 18px;	
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
-	color: white;	
+	color: #000000;	
 	font-size: 18px;		
 }
 select:focus, input:focus, textarea:focus {
     border-radius: 0px;
     outline: none;
-    border: 1px solid #2F4F4F;
+    border: 1px solid #000000;
     box-shadow: none;
 	text-transform: uppercase;
 }
 input[type="submit"] {
-	border: 1px solid #2F4F4F;	
+	border: 1px solid #000000;	
 	text-transform: none;	
 	text-align: center;	
 }
 label {
-	color: #fff;		
+	color: #000000;		
 	font-size: 18px;
 }
 select, input, textarea {
 	color:#000;
 	font-size: 18px;	
 	text-transform: uppercase;
-	border: 1px solid #2F4F4F;	
+	border: 1px solid #000000;	
 	font-size: 12px;	
 }
 
@@ -59,21 +60,20 @@ div {
 	padding: 0px;
 }
 a, a:hover {
-	color: white;
+	color: #000000;
 	text-decoration: none;
 	font-size: 18px;	
 	text-align: left;	
 }
 .menu {	
 	padding: 5px;
-	color: white;		
-	text-align: left;
-	border: 1px solid red;	
+	color: #000000;		
+	text-align: left;	
 	float: left;
 	min-width: 20%;	
 }
 .main {
 	min-width: 70%;
-	float: left;	
-	border: 1px solid blue;
+	float: left;
+	padding: 5px;		
 }
