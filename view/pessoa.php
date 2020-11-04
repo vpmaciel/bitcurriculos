@@ -30,12 +30,12 @@ $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
 $NOME = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
 echo $TR . $TD . $NOME . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'REPOSITÓRIO DE CÓDIGOS (GITHUB OU OUTRO)' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD . $LABEL . 'URL DE REPOSITÓRIO DE CÓDIGOS' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
 $NOME = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
 echo $TR . $TD . $NOME . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'LINKEDIN' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD . $LABEL . 'URL DO LINKEDIN' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
 $NOME = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
 echo $TR . $TD . $NOME . $TD_ . $TR_;

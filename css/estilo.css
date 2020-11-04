@@ -1,5 +1,9 @@
 * {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif; 
+	font-weight: normal;
+	border-radius: 0px;
+	margin: 0px;
+	padding: 0px;
 }
 table, td, th {
 	padding: 2px;	
@@ -10,17 +14,17 @@ table {
 	table-layout: fixed;
 }
 
-body {			
-	padding:5px;	
+body {	
 	color: #fff;
-	margin: 0 auto;	
-	background: #2F4F4F;
-	font-size: 12px;
+	margin: 0 !important;
+    padding: 0 !important;
+	background: #fff;
+	font-size: 18px;
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
 	color: white;	
-	font-size: 22px;		
+	font-size: 18px;		
 }
 select:focus, input:focus, textarea:focus {
     border-radius: 0px;
@@ -31,21 +35,18 @@ select:focus, input:focus, textarea:focus {
 }
 input[type="submit"] {
 	border: 1px solid #2F4F4F;	
-	border-radius: 0px;
 	text-transform: none;	
 	text-align: center;	
 }
 label {
 	color: #fff;		
-	font-size: 22px;
-	font-weight: bolder;	
+	font-size: 18px;
 }
 select, input, textarea {
 	color:#000;
-	font-size: 12px;	
+	font-size: 18px;	
 	text-transform: uppercase;
-	border: 1px solid #2F4F4F;
-	border-radius: 0px;	
+	border: 1px solid #2F4F4F;	
 	font-size: 12px;	
 }
 
@@ -59,24 +60,20 @@ div {
 }
 a, a:hover {
 	color: white;
-	text-decoration: underline;
-	font-size: 22px;	
-	text-align: left;
-	margin-right: 10px;
-	float: left;
+	text-decoration: none;
+	font-size: 18px;	
+	text-align: left;	
 }
-.menu {
-	font-family: 'Oswald';
-	color: white;
-	text-decoration: underline;
-	font-size: 22px;	
+.menu {	
+	padding: 5px;
+	color: white;		
 	text-align: left;
-	border: 1px solid red;
-	margin-right: 10px;
+	border: 1px solid red;	
 	float: left;
+	min-width: 20%;	
 }
-  .main {
-	float: left;
-	margin-right: 5px;
+.main {
+	min-width: 70%;
+	float: left;	
 	border: 1px solid blue;
-  }
+}
