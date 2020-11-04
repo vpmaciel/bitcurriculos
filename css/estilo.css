@@ -4,13 +4,23 @@
 .menu, a, a:hover {
 	color: white;
 	text-decoration: none;
-	font-size: 12px;
+	font-size: 22px;
 	padding: 5px;
 }
+table, td, th {
+	border: 1px solid black;
+	padding: 2px;	
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 2px;
+	table-layout: fixed;
+	width: 1000px;
+}
+
 body {		
 	font-family: 'Oswald';
-	padding-left: 0px;
-	padding-right: 0px;		
+	padding:5px;	
 	color: #000000;
 	margin: 0 auto;	
 	background: #2F4F4F;
@@ -56,11 +66,4 @@ p {
 
 div {
 	padding: 0px;
-}
-td {
-	padding: 2px;	
-}
-table { 
-    border-spacing: 2px;
-	border-collapse: separate;
 }

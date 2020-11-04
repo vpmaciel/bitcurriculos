@@ -1,19 +1,28 @@
-<div id='menu'>
-   <a href="index.php">Home</a> <label>|</label>
-   <a href='usuario.php'>Registrar</a> <label>|</label>         
-   <a href='login.php'>Entrar</a> <label>|</label>
-   <a href='#'>Sair</a> <label>|</label>
-   <a href="pessoa.php">Dados Pessoais</a> <label>|</label>
-   <a href="curso.php">Cursos</a> <label>|</label>
-   <a href="certificado.php">Certificados</a> <label>|</label>               
-   <a href="experienciaprofissional.php">Experiência Profissional</a> <label>|</label>
-   <a href="objetivoprofissional.php">Objetivo Profissional</a> <label>|</label>
-   <a href="idioma.php">Idiomas</a> <label>|</label>
-   <a href="habilidade.php">Habilidades</a> <label>|</label>
-   <a href="vagas.php">Vagas</a> <label>|</label>
-   <a href="curriculo.php">Exibir Currículo</a> <label>|</label>
-   <a href="candidatovagalista.php">Selecionar Candidatos</a> <label>|</label>
-   <a href="publicarvaga.php">Publicar Vaga</a> <label>|</label>                       
-   <a href='#'>Sobre</a> <label>|</label>
-   <a href='#'>Contato</a>
+<div id='menu' align="center">
+<table align="center">
+   <tr>
+   <td><a href="index.php">Home</a></td>
+   <td><a href='usuario.php'>Registrar</a></td>
+   <td><a href='login.php'>Entrar</a></td>
+   <td><a href='#'>Sair</a></td>
+   </tr>
+   <tr>
+   <td><a href="pessoa.php">Dados Pessoais</a></td>
+   <td><a href="curso.php">Cursos</a></td>
+   <td><a href="certificado.php">Certificados</a></td>
+   <td><a href="experienciaprofissional.php">Experiência Profissional</a></td>
+   </tr>
+   <tr>
+   <td><a href="objetivoprofissional.php">Objetivo Profissional</a></td>
+   <td><a href="idioma.php">Idiomas</a></td>
+   <td><a href="habilidade.php">Habilidades</a></td>
+   <td><a href="vagas.php">Vagas</a></td>
+   </tr>
+   <tr>
+   <td><a href="curriculo.php">Exibir Currículo</a></td>
+   <td><a href="candidatovagalista.php">Selecionar Candidatos</a></td>
+   <td><a href="publicarvaga.php">Publicar Vaga</a></td>    
+   <td><a href='#'>Contato</a></td>
+   </tr>
+</table>   
 </div>
