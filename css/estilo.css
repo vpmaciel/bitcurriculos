@@ -1,28 +1,13 @@
 * {	
+	font-family: "Lato", sans-serif;
 	border-radius: 0px;
 	margin: 0px;
 	padding: 0px;
 }
-table, td, th {
-	padding: 2px;	
-}
-table {	
-	border-collapse: collapse;
-	border-spacing: 2px;
-	table-layout: fixed;
-}
-
-body {	
-	color: #000000;
-	margin: 0 !important;
-    padding: 0 !important;
-	background-color: #fff;
-	font-size: 18px;	
-}
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
 	color: #000000;	
-	font-size: 18px;		
+	font-size: 12px;		
 }
 select:focus, input:focus, textarea:focus {
     border-radius: 0px;
@@ -38,7 +23,7 @@ input[type="submit"] {
 }
 label {
 	color: #000000;		
-	font-size: 18px;
+	font-size: 12px;
 }
 select, input, textarea {
 	color:#000;
@@ -56,19 +41,51 @@ p {
 div {
 	padding: 0px;
 }
-a, a:hover {
+
+table, td, th {
+	padding: 0px;	
+}
+body {
+	font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+height: 100%;
+width: 400px;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: #111;
+overflow-x: hidden;
+padding-top: 20px;
+}
+
+
 	color: #000000;
 	text-decoration: none;
-	font-size: 18px;	
+	font-size: 12px;	
 	text-align: left;	
+
+.sidenav a, a:hover {
+padding: 6px 8px 6px 16px;
+text-decoration: none;
+font-size: 25px;
+color: #818181;
+display: block;
 }
-.menu {	
-	padding: 5px;
-	color: #000000;		
-	text-align: left;	
-	min-width: 20%;	
+
+.sidenav a:hover {
+color: #f1f1f1;
 }
+
 .main {
-	min-width: 70%;
-	padding: 5px;		
+margin-left: 400px; /* Same as the width of the sidenav */
+font-size: 28px; /* Increased text to enable scrolling */
+padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
 }

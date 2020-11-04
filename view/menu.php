@@ -1,11 +1,4 @@
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Biblioteca</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Dados</li>
-  </ol>
-</nav>
-<div class="menu">
+<div class="sidenav">
    <a href="index.php">Home</a><br>
    <a href='usuario.php'>Registrar</a><br>
    <a href='login.php'>Entrar</a><br>
@@ -23,8 +16,3 @@
    <a href="publicarvaga.php">Publicar Vaga</a><br>    
    <a href='#'>Contato</a>
 </div>
-
-
-<?php 
-   require_once 'rodape.php';
-?>
