@@ -1,4 +1,5 @@
-<div class="menu">
+<div class="row">
+<div class="column menu">
 <ul>
    <li><a href="index.php">Home</a></li>
    <li class='active'><a href='#'>Sistema</a>

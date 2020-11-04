@@ -11,6 +11,5 @@
 <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-<script src="../lib/script.js"></script>
 <script src="../lib/funcoes.js"></script>
 <title>BitCurrículo</title>

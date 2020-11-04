@@ -2,18 +2,28 @@
 	box-sizing: border-box;
 	font-family: 'Oswald';
 }
-  
- .row {
-	display: flex;
- }
-  
- .menu {
+@media screen and (max-width: 600px) {
+	.column {
+	  width: 100%;
+	}
+}  
+.menu {
 	width: 25%;
 	background-color: coral;
 }
 .main {
 	width: 75%;	
 	background-color: cornflowerblue;
+}
+.column {
+	float: left;
+	padding: 0px;	
+  }
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
 }
 body{		
 	font-family: 'Oswald';
