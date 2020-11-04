@@ -14,12 +14,12 @@ body{
 	color: #000000;
 	margin: 0 auto;	
 	background-color: #fff;	
-	font-size: 1em;
+	font-size: 12px;
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
 	color: #000000;
-	font-size: 1em;	
+	font-size: 12px;	
 }
 select:focus, input:focus, textarea:focus{
     border-radius: 0px;
@@ -36,8 +36,9 @@ input[type="submit"] {
 	line-height: 12px;	
 }
 label {
-	color: #000000;		
-	font-size: 1em;
+	color: #fff;		
+	font-size: 12px;
+	font-weight: bolder;	
 }
 select, input, textarea {
 	color:#000;
@@ -57,16 +58,12 @@ div {
 	padding: 0px;
 }
 td {
-	padding: 2px;
+	padding: 2px;	
 }
 table { 
+	
+	border:1px solid;
     border-spacing: 2px;
-    border-collapse: separate;
-}
-table td {
-    text-align: left;
-}
-
-table td:first-child {
-	text-align: right;
+	border-collapse: separate;
+	background-color:#2F4F4F;
 }
