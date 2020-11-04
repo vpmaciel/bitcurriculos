@@ -1,6 +1,6 @@
 * {
 	border-radius: 0px;	
-	font-weight: initial;
+	font-weight: lighter;
 }
 .main{	
 	font-family: 'Oswald';
@@ -10,12 +10,11 @@
 body{		
 	font-family: 'Oswald';
 	padding-left: 0px;
-	padding-right: 0px;	
-	font-weight: thin;
+	padding-right: 0px;		
 	color: #000000;
 	margin: 0 auto;	
 	background-color: #fff;	
-	font-size: 1.2em;
+	font-size: 1em;
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
@@ -37,8 +36,7 @@ input[type="submit"] {
 	line-height: 12px;	
 }
 label {
-	color: #000000;	
-	font-weight: initial;
+	color: #000000;		
 	font-size: 1em;
 }
 select, input, textarea {
@@ -47,8 +45,7 @@ select, input, textarea {
 	text-transform: uppercase;
 	border: 1px solid #2F4F4F;
 	border-radius: 0px;	
-	font-size: 12px;
-	font-weight: initial;		
+	font-size: 12px;	
 }
 
 p {
@@ -58,4 +55,11 @@ p {
 
 div {
 	padding: 0px;
+}
+td    {
+	padding: 2px;
+}
+table { 
+    border-spacing: 2px;
+    border-collapse: separate;
 }

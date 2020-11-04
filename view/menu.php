@@ -3,7 +3,7 @@
    <li><a href="index.php">Home</a></li>
    <li class='active'><a href='#'>Sistema</a>
       <ul>         
-         <li><a href='usuario.php'>Novo Usuário</a></li>         
+         <li><a href='usuario.php'>Criar Conta</a></li>         
          <li><a href='login.php'>Entrar</a></li>
          <li><a href='#'>Sair</a></li>
       </ul>
