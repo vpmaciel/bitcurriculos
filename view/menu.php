@@ -1,30 +1,19 @@
-<div class="row">
-<div class="column menu">
-<ul>
-   <li><a href="index.php">Home</a></li>
-   <li class='active'><a href='#'>Sistema</a>
-      <ul>         
-         <li><a href='usuario.php'>Criar Conta</a></li>         
-         <li><a href='login.php'>Entrar</a></li>
-         <li><a href='#'>Sair</a></li>
-      </ul>
-      <li class='active'><a href='#'>Candidato</a>
-      <ul>                  
-         <li><a href="pessoa.php">Dados Pessoais</a></li>
-         <li><a href="curso.php">Cursos</a></li>
-         <li><a href="certificado.php">Certificados</a></li>               
-         <li><a href="experienciaprofissional.php">Experiência Profissional</a></li>
-         <li><a href="objetivoprofissional.php">Objetivo Profissional</a></li>
-         <li><a href="idioma.php">Idiomas</a></li>
-         <li><a href="habilidade.php">Habilidades</a></li>
-         <li><a href="vagas.php">Vagas</a></li>
-         <li><a href="curriculo.php">Exibir Currículo</a></li>
-      </ul>
-      <li class='active'><a href='#'>Empresa</a>
-      <ul>         
-         <li><a href="candidatovagalista.php">Selecionar Candidatos</a></li>
-         <li><a href="publicarvaga.php">Publicar Vaga</a></li>                       
-      </ul>
-   <li><a href='#'>Sobre</a></li>
-   <li><a href='#'>Contato</a></li>
+<div id='menu'>
+   <a href="index.php">Home</a> <label>|</label>
+   <a href='usuario.php'>Registrar</a> <label>|</label>         
+   <a href='login.php'>Entrar</a> <label>|</label>
+   <a href='#'>Sair</a> <label>|</label>
+   <a href="pessoa.php">Dados Pessoais</a> <label>|</label>
+   <a href="curso.php">Cursos</a> <label>|</label>
+   <a href="certificado.php">Certificados</a> <label>|</label>               
+   <a href="experienciaprofissional.php">Experiência Profissional</a> <label>|</label>
+   <a href="objetivoprofissional.php">Objetivo Profissional</a> <label>|</label>
+   <a href="idioma.php">Idiomas</a> <label>|</label>
+   <a href="habilidade.php">Habilidades</a> <label>|</label>
+   <a href="vagas.php">Vagas</a> <label>|</label>
+   <a href="curriculo.php">Exibir Currículo</a> <label>|</label>
+   <a href="candidatovagalista.php">Selecionar Candidatos</a> <label>|</label>
+   <a href="publicarvaga.php">Publicar Vaga</a> <label>|</label>                       
+   <a href='#'>Sobre</a> <label>|</label>
+   <a href='#'>Contato</a>
 </div>

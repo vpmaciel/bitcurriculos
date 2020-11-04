@@ -1,31 +1,13 @@
 * {
-	box-sizing: border-box;
 	font-family: 'Oswald';
 }
-@media screen and (max-width: 600px) {
-	.column {
-	  width: 100%;
-	}
-}  
-.menu {
-	width: 25%;
-	background-color: coral;
+.menu, a, a:hover {
+	color: white;
+	text-decoration: none;
+	font-size: 12px;
+	padding: 5px;
 }
-.main {
-	width: 75%;	
-	background-color: cornflowerblue;
-}
-.column {
-	float: left;
-	padding: 0px;	
-  }
-/* Clear floats after the columns */
-.row:after {
-	content: "";
-	display: table;
-	clear: both;
-}
-body{		
+body {		
 	font-family: 'Oswald';
 	padding-left: 0px;
 	padding-right: 0px;		
@@ -39,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: #000000;
 	font-size: 12px;	
 }
-select:focus, input:focus, textarea:focus{
+select:focus, input:focus, textarea:focus {
     border-radius: 0px;
     outline: none;
     border: 1px solid #2F4F4F;

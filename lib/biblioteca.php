@@ -5648,9 +5648,7 @@ $BODY_ = '</body>';
 
 $DIV_ = '</div>';
 
-$DIV_MAIN = '<div class="column main">';
-
-$DIV_ROW = '<div class="row">';
+$DIV_MAIN = '<div class="main">';
 
 $TD = '<td>';
 

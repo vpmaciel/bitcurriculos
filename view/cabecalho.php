@@ -1,7 +1,7 @@
 <meta charset='utf-8'>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Language" content="pt-br">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Vicente Paulo Maciel">
 <meta name="description" content="Site de recrutamento on-line, divulgar vagas de emprego e cadastro de currículos">
 <meta name="keywords" content="emprego,vaga,trabalho,currículo,rh,curriculum vitae,bitcurriculos">

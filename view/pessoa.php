@@ -13,7 +13,7 @@ echo $HEAD;
 require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
-echo $DIV_ROW;
+
 
 require_once 'menu.php';
 echo $DIV_MAIN;
@@ -284,8 +284,6 @@ echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
 echo $TABLE_;
 
 echo $FORM_;
-
-echo $DIV_;
 
 echo $DIV_;
 
