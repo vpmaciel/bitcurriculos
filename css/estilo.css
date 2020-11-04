@@ -56,10 +56,17 @@ p {
 div {
 	padding: 0px;
 }
-td    {
+td {
 	padding: 2px;
 }
 table { 
     border-spacing: 2px;
     border-collapse: separate;
+}
+table td {
+    text-align: left;
+}
+
+table td:first-child {
+	text-align: right;
 }
