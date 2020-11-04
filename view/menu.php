@@ -16,3 +16,7 @@
    <a href="publicarvaga.php">Publicar Vaga</a><br>    
    <a href='#'>Contato</a>
 </div>
+
+<?php 
+   require_once 'rodape.php';
+?>
