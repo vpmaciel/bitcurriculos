@@ -1,4 +1,4 @@
-<div id='cssmenu'>
+<div class="menu">
 <ul>
    <li><a href="index.php">Home</a></li>
    <li class='active'><a href='#'>Sistema</a>

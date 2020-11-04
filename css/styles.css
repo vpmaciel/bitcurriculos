@@ -29,8 +29,8 @@
 #cssmenu {
   font-family: 'Oswald';
   font-weight: bolder;
-  background: #2F4F4F;
-  border: 1px solid #262626;
+  background: #fff;
+  border: 1px ridge #fff;
 }
 #cssmenu > ul > li {
   float: left;
@@ -134,7 +134,7 @@
   text-decoration: none;
   color: #000;
   font-weight: 400;
-  background: #2F4F4F;
+  background: #fff;
 }
 #cssmenu ul ul li:last-child > a,
 #cssmenu ul ul li.last-item > a {

@@ -6,7 +6,6 @@
 <meta name="description" content="Site de recrutamento on-line, divulgar vagas de emprego e cadastro de currículos">
 <meta name="keywords" content="emprego,vaga,trabalho,currículo,rh,curriculum vitae,bitcurriculos">
 <meta name="robots" content="no-cache">
-<link rel="stylesheet" href="../css/styles.css">
 <link rel="stylesheet" href="../css/estilo.css">
 <link rel="icon" type="image/ico" href="../img/favicon.ico">
 <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
