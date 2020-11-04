@@ -56,6 +56,9 @@ echo $TR . $TD;
 $SELECT = '<select name="sexo">';
 echo $SELECT;
 foreach ($sexo_lista as $indice => $sexo) {	
+	if ($indice == 0) {
+		continue;
+	}
 	echo ($sexo == $pessoa['sexo'])	? "<option value=$indice selected>$sexo</option>" : "<option value=$indice>$sexo</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
