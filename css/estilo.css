@@ -1,5 +1,5 @@
 * {
-	font-family: 'Oswald';
+	font-family: Arial, Helvetica, sans-serif;
 }
 table, td, th {
 	padding: 2px;	
@@ -65,13 +65,12 @@ a, a:hover {
 	margin-right: 10px;
 	float: left;
 }
-.menu, a, a:hover {
+.menu {
+	font-family: 'Oswald';
 	color: white;
 	text-decoration: underline;
 	font-size: 22px;	
 	text-align: left;
-	width: 400px;
-	height: 1000px;
 	border: 1px solid red;
 	margin-right: 10px;
 	float: left;
@@ -79,5 +78,5 @@ a, a:hover {
   .main {
 	float: left;
 	margin-right: 5px;
-	border: 1px solid red;
+	border: 1px solid blue;
   }
