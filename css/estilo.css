@@ -8,7 +8,7 @@ a, a:hover {
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
 	color: #000000;	
-	font-size: 12px;		
+	font-size: 18px;		
 }
 select:focus, input:focus, textarea:focus {
     border-radius: 0px;
@@ -24,7 +24,7 @@ input[type="submit"] {
 }
 label {
 	color: #000000;		
-	font-size: 12px;
+	font-size: 14px;
 }
 select, input, textarea {
 	color:#000;
@@ -46,6 +46,11 @@ body, html {
 	font-family: "Lato", sans-serif;
 	background-color:darkslategray;
 	color: #000;
+	font-size: 18px;
+}
+
+body, html {
+	background-color:darkslategray;
 }
 
 .left {
@@ -55,8 +60,9 @@ body, html {
   
 .right {
 	float: right;
-	background-color: darkslategray;	
+	background-color: #FFF;	
 	padding: 20px;
+	min-block-size: 1440vmin;
 }
   
 div {

@@ -11,10 +11,9 @@ echo $BODY;
 require_once 'menu.php';
 
 echo $DIV_MAIN;
-echo $H1 . 'DADOS PESSOAIS' . $H1_;
+echo $H1 . 'BitCurriculos' . $H1_;
 
-$MSG = '<h1>Empregos para profissionais de TI</h1>
-	<p align="justify">O BitCurriculos é um sistema para Internet em Recursos Humanos, com foco em recrutamento on-line. Atualmente administramos a mais bem organizada base de currículos do país, 
+$MSG = '<p align="justify">O BitCurriculos é um sistema para Internet em Recursos Humanos, com foco em recrutamento on-line. Atualmente administramos a mais bem organizada base de currículos do país, 
 	oferecendo às empresas o mais completo sistema de recrutamento on-line. Perseverança, dinamismo e vontade de inovar são características de nossa equipe, numa empresa sólida, com grandes desafios 
 	pela frente e foco em metas e resultados.</p><br>
 	<p align="justify">Faça parte de nosso time, contribuindo com seu talento profissional. Cadastre seu currículo para estar disponível para diversas empresas. Um bom curriculum, bem apresentável e 
