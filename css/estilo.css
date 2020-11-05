@@ -83,3 +83,15 @@ padding: 0px 10px;
 .sidenav {padding-top: 15px;}
 .sidenav a {font-size: 18px;}
 }
+
+.left {
+	float: left;
+}
+  
+.right {
+	float: right;
+}
+  
+div {
+	padding: 20px;
+}

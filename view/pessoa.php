@@ -14,8 +14,8 @@ require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
 
-
 require_once 'menu.php';
+
 echo $DIV_MAIN;
 echo $H1 . 'DADOS PESSOAIS' . $H1_;
 

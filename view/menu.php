@@ -1,4 +1,4 @@
-<div class="sidenav">
+<div class="col-xs-7 left">
    <a href="index.php">Home</a><br>
    <a href='usuario.php'>Registrar</a><br>
    <a href='login.php'>Entrar</a><br>
@@ -16,3 +16,6 @@
    <a href="publicarvaga.php">Publicar Vaga</a><br>    
    <a href='#'>Contato</a>
 </div>
+<?php
+   require_once 'rodape.php';
+?>
