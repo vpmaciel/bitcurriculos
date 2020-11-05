@@ -1,4 +1,4 @@
-<div class="col-xs-7 left">
+<div class="col-xl-3 left">
    <a href="index.php">Home</a><br>
    <a href='usuario.php'>Registrar</a><br>
    <a href='login.php'>Entrar</a><br>

@@ -5648,7 +5648,7 @@ $BODY_ = '</body>';
 
 $DIV_ = '</div>';
 
-$DIV_MAIN = '<div class="col-xs-5 right">';
+$DIV_MAIN = '<div class="col-xl-9 right">';
 
 $TD = '<td>';
 

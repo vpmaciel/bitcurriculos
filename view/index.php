@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php require_once 'menu.php';?>
-<div class="main">
+<div>
 	<h1 class="titulo">Empregos para profissionais de TI</h1>
 	<p align="justify">O BitCurriculos é um sistema para Internet em Recursos Humanos, com foco em recrutamento on-line. Atualmente administramos a mais bem organizada base de currículos do país, 
 	oferecendo às empresas o mais completo sistema de recrutamento on-line. Perseverança, dinamismo e vontade de inovar são características de nossa equipe, numa empresa sólida, com grandes desafios 
