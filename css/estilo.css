@@ -1,8 +1,9 @@
 * {	
 	font-family: "Lato", sans-serif;
 	border-radius: 0px;
-	margin: 0px;
-	padding: 0px;
+}
+a, a:hover {
+	color: #fff;	
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
@@ -38,38 +39,24 @@ p {
 	text-indent: 2em;
 }
 
-div {
-	padding: 0px;
-}
-
 table, td, th {
 	padding: 0px;	
 }
-body {
+body, html {
 	font-family: "Lato", sans-serif;
-}
-
-.sidenav {
-height: 100%;
-width: 300px;
-position: fixed;
-z-index: 1;
-top: 0;
-left: 0;
-background-color: #111;
-overflow-x: hidden;
-padding-top: 10px;
+	background-color:darkslategray;
+	color: #000;
 }
 
 .left {
 	float: left;
-	background-color: white;
+	background-color:darkslategray;
 }
   
 .right {
 	float: right;
-	background-color: cornflowerblue;
-	height: 1000px;
+	background-color: darkslategray;	
+	padding: 20px;
 }
   
 div {

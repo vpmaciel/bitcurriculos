@@ -6,10 +6,10 @@
 <meta name="description" content="Site de recrutamento on-line, divulgar vagas de emprego e cadastro de currículos">
 <meta name="keywords" content="emprego,vaga,trabalho,currículo,rh,curriculum vitae,bitcurriculos">
 <meta name="robots" content="no-cache">
-<link rel="stylesheet" href="../css/estilo.css">
 <link rel="icon" type="image/ico" href="../img/favicon.ico">
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/estilo.css">
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <script src="../lib/funcoes.js"></script>
