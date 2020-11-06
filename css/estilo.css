@@ -5,7 +5,7 @@ a, a:hover {
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
 	color: #FFF;	
-	font-size: 18px;		
+	font-size: 16px;		
 }
 select, input, textarea, select:focus, input:focus, textarea:focus, input[type="submit"] {
     border-radius: 0px;
@@ -17,7 +17,8 @@ select, input, textarea, select:focus, input:focus, textarea:focus, input[type="
 }
 label {
 	color: #FFF;		
-	font-size: 14px;
+	font-size: 12px;
+	font-weight: lighter;
 }
 p {
 	text-align: justify;
@@ -26,12 +27,17 @@ p {
 table, td, th {
 	padding: 0px;	
 }
+td:nth-child(1) { 
+	text-align: right; 
+	padding-right: 5px;
+}
 body {
 	font-family: "Lato", sans-serif;
 	background-color:darkslategray;
 	color: #FFF;
 	font-size: 18px;
-	margin: 0 auto;
+	margin: 0;
+	padding: 0;
 }
 * {		
 	border-radius: 0px;
@@ -39,17 +45,23 @@ body {
 }
 .coluna {
 	float: left;
-	padding: 10px;
+	padding: 0px;
 } 
 .esquerda {
-	width: 25%;
+	width: 15%;
 	text-align: right;
+	padding-top: 5px;
 } 
 .direita {
-	width: 75%;	
+	width: 85%;		
+	padding-right: 20px;
+	padding-left: 20px;
 }
 .linha:after {
 	content: "";
 	display: table;
 	clear: both;
+}
+div {
+	padding: 0px;
 }
