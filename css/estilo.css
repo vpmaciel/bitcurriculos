@@ -48,12 +48,12 @@ body {
 	padding: 0px;
 } 
 .esquerda {
-	width: 15%;
+	width: 250px;
 	text-align: right;
 	padding-top: 5px;
 } 
 .direita {
-	width: 85%;		
+	width: 1000px;		
 	padding-right: 20px;
 	padding-left: 20px;
 }

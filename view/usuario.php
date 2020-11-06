@@ -28,8 +28,8 @@ $usuario['senha'] = isset($_POST['senha']) ? $_POST['senha']:'';
 $SENHA = '<input type="password" name="senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['senha'] .'">';
 echo $TD . $SENHA . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'TIPO DE USUÁRIO' . $LABEL_ . $TD_ . $TR_; 
-echo $TR . $TD;
+echo $TR . $TD . $LABEL . 'TIPO DE USUÁRIO' . $LABEL_ . $TD_; 
+echo $TD;
 $SELECT = '<select name="tipo_usuario">';
 echo $SELECT;
 foreach ($usuario_lista as $indice => $tipo_usuario) {	
@@ -40,10 +40,10 @@ foreach ($usuario_lista as $indice => $tipo_usuario) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
 
 $SUBMIT = '<input type="submit" value="Enviar" onclick=\'return confirmar();\'>';
-echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
+echo $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
