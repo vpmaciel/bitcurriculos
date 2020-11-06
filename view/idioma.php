@@ -18,8 +18,8 @@ echo $FORM_PESSOA;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'IDIOMA' . $LABEL_ . $TD_ . $TR_; 
-echo $TR . $TD;
+echo $TR . $TD . $LABEL . 'IDIOMA' . $LABEL_ . $TD_; 
+echo $TD;
 $SELECT = '<select name="idioma">';
 echo $SELECT;
 foreach ($idioma_lista as $indice => $idioma) {	
@@ -30,8 +30,8 @@ foreach ($idioma_lista as $indice => $idioma) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'NÍVEL DE CONHECIMENTO' . $LABEL_ . $TD_ . $TR_; 
-echo $TR . $TD;
+echo $TR . $TD . $LABEL . 'NÍVEL DE CONHECIMENTO' . $LABEL_ . $TD_; 
+echo $TD;
 $SELECT = '<select name="nivel_conhecimento_idioma">';
 echo $SELECT;
 foreach ($nivel_conhecimento_idioma_lista as $indice => $nivel_conhecimento_idioma) {	
@@ -42,10 +42,10 @@ foreach ($nivel_conhecimento_idioma_lista as $indice => $nivel_conhecimento_idio
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
 
 $SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
-echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
+echo $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;
 

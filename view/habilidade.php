@@ -18,13 +18,13 @@ echo $FORM_PESSOA;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'HABILIDADE (LINGUAGEM DE PROGRAMAÇÃO / FRAMEWORK / BIBLIOTECA / TECNOLOGIA)' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD . $LABEL . 'HABILIDADE' . $LABEL_ . $TD_; 
 $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
-$HABILIDADE = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
-echo $TR . $TD . $HABILIDADE . $TD_ . $TR_;
+$HABILIDADE = '<input type="text" name="nome" required size="70" placeholder="C++" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
+echo $TD . $HABILIDADE . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'NÍVEL' . $LABEL_ . $TD_ . $TR_; 
-echo $TR . $TD;
+echo $TR . $TD . $LABEL . 'NÍVEL' . $LABEL_ . $TD_; 
+echo $TD;
 $SELECT = '<select name="nivel_conhecimento">';
 echo $SELECT;
 foreach ($nivel_conhecimento_lista as $indice => $nivel_conhecimento) {	
@@ -35,10 +35,10 @@ foreach ($nivel_conhecimento_lista as $indice => $nivel_conhecimento) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
 
 $SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
-echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
+echo $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;
 
