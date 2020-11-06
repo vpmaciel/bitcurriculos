@@ -58,16 +58,18 @@ body {
 	height: 300px; /* Should be removed. Only for demonstration */
   }
   
-  .left {
+  .esquerda {
 	width: 25%;
+	
+	text-align: right;
   }
   
-  .right {
-	width: 75%;
+  .direita {
+	width: 75%;	
   }
   
   /* Clear floats after the columns */
-  .row:after {
+  .linha:after {
 	content: "";
 	display: table;
 	clear: both;
