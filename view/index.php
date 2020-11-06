@@ -14,7 +14,7 @@ echo $DIV_MAIN;
 echo $H1 . 'BitCurriculos' . $H1_;
 
 $MSG = '<p align="justify">O BitCurriculos é um sistema para Internet em Recursos Humanos, com foco em recrutamento on-line. Atualmente administramos a mais bem organizada base de currículos do país, 
-	oferecendo às empresas o mais completo sistema de recrutamento on-line. Cadastre seu currículo para estar disponível para diversas empresas.Cadastre sua empresa para buscar profissionais. Os profissionais de recursos humanos.</p>';
+	oferecendo às empresas o mais completo sistema de recrutamento on-line. Cadastre seu currículo para estar disponível para diversas empresas. Cadastre sua empresa para buscar profissionais.</p>';
 
 echo $MSG;
 

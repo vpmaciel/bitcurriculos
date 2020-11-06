@@ -40,7 +40,7 @@ echo $TR . $TD . $DATA_SAIDA . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'FUNÇÕES' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['ano_conclusao'] = isset($_POST['ano_conclusao'])?$_POST['ano_conclusao']:'';
-$DATA_SAIDA = '<textarea id="w3review" name="w3review" rows="10" cols="70" maxlength="500">' . $pessoa['ano_conclusao'] .'</textarea>';
+$DATA_SAIDA = '<textarea id="w3review" name="w3review" rows="10" cols="60" maxlength="500">' . $pessoa['ano_conclusao'] .'</textarea>';
 echo $TR . $TD . $DATA_SAIDA . $TD_ . $TR_; 
 
 

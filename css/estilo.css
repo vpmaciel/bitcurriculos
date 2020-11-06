@@ -1,10 +1,10 @@
 a, a:hover {
-	color: #fff;	
+	color: #FFF;	
 	text-decoration: none;
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
-	color: #000000;	
+	color: #FFF;	
 	font-size: 18px;		
 }
 select, input, textarea, select:focus, input:focus, textarea:focus, input[type="submit"] {
@@ -16,7 +16,7 @@ select, input, textarea, select:focus, input:focus, textarea:focus, input[type="
 	font-size: 12px;
 }
 label {
-	color: #000000;		
+	color: #FFF;		
 	font-size: 14px;
 }
 p {
@@ -37,23 +37,17 @@ body {
 	border-radius: 0px;
 	box-sizing: border-box;
 }
-  
-/* Create two unequal columns that floats next to each other */
 .coluna {
 	float: left;
 	padding: 10px;
-}
-  
+} 
 .esquerda {
 	width: 25%;
 	text-align: right;
-}
-  
+} 
 .direita {
 	width: 75%;	
 }
-  
-/* Clear floats after the columns */
 .linha:after {
 	content: "";
 	display: table;
