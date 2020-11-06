@@ -58,6 +58,8 @@ echo $FORM_;
 
 echo $DIV_;
 
+echo $DIV_;
+
 echo $BODY_;
 
 echo $HTML_;

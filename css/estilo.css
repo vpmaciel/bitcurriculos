@@ -1,40 +1,28 @@
 a, a:hover {
 	color: #fff;	
+	text-decoration: none;
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
 	color: #000000;	
 	font-size: 18px;		
 }
-select:focus, input:focus, textarea:focus {
+select, input, textarea, select:focus, input:focus, textarea:focus, input[type="submit"] {
     border-radius: 0px;
     outline: none;
     border: 1px solid #000000;
     box-shadow: none;
 	text-transform: uppercase;
-}
-input[type="submit"] {
-	border: 1px solid #000000;	
-	text-transform: none;	
-	text-align: center;	
+	font-size: 12px;
 }
 label {
 	color: #000000;		
 	font-size: 14px;
 }
-select, input, textarea {
-	color:#000;
-	font-size: 18px;	
-	text-transform: uppercase;
-	border: 1px solid #000000;	
-	font-size: 12px;	
-}
-
 p {
 	text-align: justify;
 	text-indent: 2em;
 }
-
 table, td, th {
 	padding: 0px;	
 }
@@ -45,32 +33,29 @@ body {
 	font-size: 18px;
 	margin: 0 auto;
 }
-* {	
-	font-family: "Lato", sans-serif;
+* {		
 	border-radius: 0px;
 	box-sizing: border-box;
-  }
+}
   
-  /* Create two unequal columns that floats next to each other */
-  .coluna {
+/* Create two unequal columns that floats next to each other */
+.coluna {
 	float: left;
 	padding: 10px;
-	height: 300px; /* Should be removed. Only for demonstration */
-  }
+}
   
-  .esquerda {
+.esquerda {
 	width: 25%;
-	
 	text-align: right;
-  }
+}
   
-  .direita {
+.direita {
 	width: 75%;	
-  }
+}
   
-  /* Clear floats after the columns */
-  .linha:after {
+/* Clear floats after the columns */
+.linha:after {
 	content: "";
 	display: table;
 	clear: both;
-  }
+}
