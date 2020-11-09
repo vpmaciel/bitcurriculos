@@ -33,6 +33,9 @@ $usuario['repetir_senha'] = isset($_POST['repetir_senha']) ? $_POST['repetir_sen
 $SENHA = '<input type="password" id="repetir_senha" name="repetir_senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['repetir_senha'] .'">';
 echo $TD . $SENHA . $TD_ . $TR_;
 
+$SCRIPT = '<script>document.getElementById("repetir_senha").addEventListener("blur", validarSenha);</script>';
+echo $SCRIPT;
+
 echo $TR . $TD . $LABEL . 'TIPO DE USUÁRIO' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="tipo_usuario">';
