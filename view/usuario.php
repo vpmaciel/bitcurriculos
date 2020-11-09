@@ -12,7 +12,7 @@ require_once 'menu.php';
 echo $DIV_MAIN;
 echo $H1 . 'CADASTRO' . $H1_;
 
-$FORM = '<form action="../controller/login.php" name="formulario" method="post">';
+$FORM = '<form action="../controller/usuario.php" name="formulario" method="post">';
 
 echo $FORM;
 
@@ -25,12 +25,12 @@ echo $TD . $EMAIL . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'SENHA' . $LABEL_ . $TD_; 
 $usuario['senha'] = isset($_POST['senha']) ? $_POST['senha']:'';
-$SENHA = '<input type="password" name="senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['senha'] .'">';
+$SENHA = '<input type="password" id="senha" name="senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['senha'] .'">';
 echo $TD . $SENHA . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'REPETIR SENHA' . $LABEL_ . $TD_; 
 $usuario['repetir_senha'] = isset($_POST['repetir_senha']) ? $_POST['repetir_senha']:'';
-$SENHA = '<input type="password" name="repetir_senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['repetir_senha'] .'">';
+$SENHA = '<input type="password" id="repetir_senha" name="repetir_senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['repetir_senha'] .'">';
 echo $TD . $SENHA . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'TIPO DE USUÁRIO' . $LABEL_ . $TD_; 
@@ -47,7 +47,7 @@ echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
 
-$SUBMIT = '<input type="submit" value="Enviar" onclick="confirmar();validarSenha(this);">';
+$SUBMIT = '<input type="submit" value="Enviar" onclick="validarSenha();">';
 echo $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
