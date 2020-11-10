@@ -1,10 +1,10 @@
 a, a:hover {
-	color: #000;	
+	color: #FFF;	
 	text-decoration: none;
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
-	color: #000;	
+	color: #FFF;	
 	font-size: 16px;		
 }
 select, input, textarea, select:focus, input:focus, textarea:focus, input[type="submit"] {
@@ -16,7 +16,7 @@ select, input, textarea, select:focus, input:focus, textarea:focus, input[type="
 	font-size: 12px;
 }
 label {
-	color: #000;		
+	color: #FFF;		
 	font-size: 12px;
 	font-weight: lighter;
 }
@@ -33,8 +33,8 @@ td:nth-child(1) {
 }
 body {
 	font-family: "Lato", sans-serif;
-	background-color: #f3f3f3;
-	color: #000;
+	background-color: #343A40;
+	color: #FFF;
 	font-size: 18px;
 	margin: 0;
 	padding: 0;
