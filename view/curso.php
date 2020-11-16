@@ -18,27 +18,27 @@ echo $FORM;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'NOME DO CURSO' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Nome do curso' . $LABEL_ . $TD_; 
 $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
 $CURSO = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
 echo $TD . $CURSO . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'INSTITUIÇÃO' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Instituição' . $LABEL_ . $TD_; 
 $pessoa['instituicao'] = isset($_POST['instituicao'])?$_POST['instituicao']:'';
 $INSTITUICAO = '<input type="text" name="instituicao" required size="70" minlength="10" maxlength="50" value="' . $pessoa['instituicao'] .'">';
 echo $TD . $INSTITUICAO . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'ANO DE INÍCIO' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Ano de início' . $LABEL_ . $TD_; 
 $pessoa['ano_inicio'] = isset($_POST['ano_inicio'])?$_POST['ano_inicio']:'';
 $DATA_NASCIMENTO = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
 echo $TD . $DATA_NASCIMENTO . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'ANO DE CONCLUSÃO' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Ano de conclusão' . $LABEL_ . $TD_; 
 $pessoa['ano_conclusao'] = isset($_POST['ano_conclusao'])?$_POST['ano_conclusao']:'';
 $CELULAR = '<input type="text" name="ano_conclusao" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_conclusao'] .'">';
 echo $TD . $CELULAR . $TD_ . $TR_; 
 
-echo $TR . $TD . $LABEL . 'SITUAÇÃO' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Situação' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="situacao">';
 echo $SELECT;
@@ -50,7 +50,7 @@ foreach ($situacao_lista as $indice => $situacao) {
 }
 echo $SELECT_ . $TD_;
 
-echo $TR . $TD . $LABEL . 'NÍVEL' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Nível' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;

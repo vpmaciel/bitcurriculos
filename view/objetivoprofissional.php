@@ -18,12 +18,12 @@ echo $FORM;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'CARGO' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_; 
 $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
 $CARGO = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
 echo $TD . $CARGO . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'PRETENSÃO SALARIAL' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Pretensão salarial' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="$pretensao_salario">';
 echo $SELECT;
@@ -35,7 +35,7 @@ foreach ($pretensao_salario_lista as $indice => $pretensao_salario) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'CONTRATO' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Contrato' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="contrato">';
 echo $SELECT;

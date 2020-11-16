@@ -18,12 +18,12 @@ echo $FORM_PESSOA;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'HABILIDADE' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Habilidade' . $LABEL_ . $TD_; 
 $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
 $HABILIDADE = '<input type="text" name="nome" required size="70" placeholder="PHP" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
 echo $TD . $HABILIDADE . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'NÍVEL' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Nível' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="nivel_conhecimento">';
 echo $SELECT;

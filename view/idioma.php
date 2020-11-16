@@ -18,7 +18,7 @@ echo $FORM_PESSOA;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'IDIOMA' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Idioma' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="idioma">';
 echo $SELECT;
@@ -30,7 +30,7 @@ foreach ($idioma_lista as $indice => $idioma) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'NÍVEL DE CONHECIMENTO' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Nível de conhecimento' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="nivel_conhecimento_idioma">';
 echo $SELECT;

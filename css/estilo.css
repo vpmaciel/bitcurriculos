@@ -2,9 +2,13 @@
 	font-family: Fonte;
 	src: url(../fonte/Arsenal-Regular.ttf);
 }
-a, a:hover {
+a {
 	color: #FFF;	
 	text-decoration: none;	
+}
+a:hover {
+	color: #FFF;	
+	text-decoration: underline;	
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
@@ -15,10 +19,15 @@ h1, h2, h3, h4, h5, h6 {
 select, input, textarea, select:focus, input:focus, textarea:focus, input[type="submit"] {
     border-radius: 0px;
     outline: none;
-    border: 1px solid #000000;
     box-shadow: none;
+    border: 1px solid brown;
 	text-transform: uppercase;
 	font-size: 12px;
+	padding: 0px;
+}
+input[type="submit"] {
+	 padding: 1px;
+	 font-weight: bold;
 }
 label {
 	color: #FFF;			
@@ -40,8 +49,8 @@ body {
 	background-color: #2f4f4f;
 	color: #FFF;
 	font-size: 18px;
-	margin: 5px;
-	padding: 0px;
+	margin: auto;
+	padding: 0;
 }
 .coluna {
 	float: left;
@@ -50,7 +59,7 @@ body {
 .esquerda {
 	width: 250px;
 	text-align: right;
-	padding-top: 5px;
+	padding-top: 0px;
 } 
 .direita {
 	padding-top: 5px;
@@ -70,6 +79,5 @@ div {
 * {
 	font-weight: normal;
 	border-radius: 0px;
-	box-sizing: border-box;
-	padding: 5px;
+	box-sizing: border-box;	
 }
