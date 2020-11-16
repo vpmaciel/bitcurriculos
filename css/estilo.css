@@ -1,6 +1,6 @@
 @font-face {
-	font-family: Arsenal;
-	src: url(../fonte/Arsenal-Bold.ttf), url(../fonte/Arsenal-BoldItalic.ttf), url(../fonte/Arsenal-Italic.ttf), url(../fonte/Arsenal-Regular.ttf);
+	font-family: Fonte;
+	src: url(../fonte/Arsenal-Regular.ttf);
 }
 a, a:hover {
 	color: #FFF;	
@@ -9,8 +9,8 @@ a, a:hover {
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
 	color: #FFF;
-	font-size: 18px;
-	font-weight: initial;
+	font-size: 18px;	
+	padding: 0px;
 }
 select, input, textarea, select:focus, input:focus, textarea:focus, input[type="submit"] {
     border-radius: 0px;
@@ -36,16 +36,12 @@ td:nth-child(1) {
 	padding-right: 5px;
 }
 body {
-	font-family: 'Arsenal', sans-serif;
+	font-family: Fonte, sans-serif;
 	background-color: #2f4f4f;
 	color: #FFF;
 	font-size: 18px;
-	margin: 0;
-	padding: 0;
-}
-* {		
-	border-radius: 0px;
-	box-sizing: border-box;
+	margin: 5px;
+	padding: 0px;
 }
 .coluna {
 	float: left;
@@ -57,7 +53,9 @@ body {
 	padding-top: 5px;
 } 
 .direita {
-	width: 1000px;		
+	padding-top: 5px;
+	width: 1000px;	
+	padding-top: 0px;	
 	padding-right: 20px;
 	padding-left: 20px;
 }
@@ -68,4 +66,10 @@ body {
 }
 div {
 	padding: 0px;
+}
+* {
+	font-weight: normal;
+	border-radius: 0px;
+	box-sizing: border-box;
+	padding: 5px;
 }

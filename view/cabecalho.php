@@ -8,7 +8,6 @@
 <meta name="robots" content="no-cache">
 <link rel="icon" type="image/ico" href="../img/favicon.ico">
 <link rel="stylesheet" href="../css/estilo.css">
-<link href='https://fonts.googleapis.com/css?family=Arsenal' rel='stylesheet'>
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <script src="../lib/funcoes.js"></script>

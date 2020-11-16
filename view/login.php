@@ -18,12 +18,12 @@ echo $FORM;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'E-MAIL' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'E-Mail' . $LABEL_ . $TD_; 
 $usuario['email'] = isset($_POST['email']) ? $_POST['email']:'';
 $EMAIL = '<input type="email" name="email" required size="70" minlength="5" maxlength="100" value="' . $usuario['email'] .'">';
 echo $TD . $EMAIL . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'SENHA' . $LABEL_; 
+echo $TR . $TD . $LABEL . 'Senha' . $LABEL_; 
 $usuario['senha'] = isset($_POST['senha']) ? $_POST['senha']:'';
 $SENHA = '<input type="password" name="senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['senha'] .'">';
 echo $TD . $SENHA . $TD_ . $TR_;

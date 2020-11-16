@@ -25,33 +25,33 @@ echo $FORM;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'NOME' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Nome' . $LABEL_ . $TD_; 
 $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
 $NOME = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
 echo $TD . $NOME . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'URL DE REPOSITÓRIO DE CÓDIGOS' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'URL de Repositório de Códigos' . $LABEL_ . $TD_; 
 $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
 $NOME = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
 echo $TD . $NOME . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'URL DO LINKEDIN' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'URL do Linkedin' . $LABEL_ . $TD_; 
 $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
 $NOME = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
 echo $TD . $NOME . $TD_ . $TR_;
 
 
-echo $TR . $TD . $LABEL . 'DATA DE NASCIMENTO' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Data de Nascimento' . $LABEL_ . $TD_; 
 $pessoa['data_nascimento'] = isset($_POST['data_nascimento'])?$_POST['data_nascimento']:'';
 $DATA_NASCIMENTO = '<input type="text" name="data_nascimento" size="70" required onkeypress="$(this).mask(\'00-00-0000\');" minlength="10" maxlength="10" value="' . $pessoa['data_nascimento'] .'">';
 echo $TD . $DATA_NASCIMENTO . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'CELULAR' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Celular' . $LABEL_ . $TD_; 
 $pessoa['celular_numero'] = isset($_POST['celular_numero'])?$_POST['celular_numero']:'';
 $CELULAR = '<input type="text" name="celular_numero" size="70" required onkeypress="$(this).mask(\'(00)0-0000-0000\');" minlength="15" maxlength="15" value="' . $pessoa['celular_numero'] .'">';
 echo $TD . $CELULAR . $TD_ . $TR_; 
 
-echo $TR . $TD . $LABEL . 'SEXO' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Sexo' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="sexo">';
 echo $SELECT;
@@ -63,7 +63,7 @@ foreach ($sexo_lista as $indice => $sexo) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'ESCOLARIDADE' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Escolaridade' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -75,7 +75,7 @@ foreach ($escolaridade_lista as $indice => $escolaridade) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'ESTADO CIVIL' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Estado Civil' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -87,7 +87,7 @@ foreach ($estado_civil_lista as $indice => $estado_civil) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'NACIONALIDADE' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Nacionalidade' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -99,7 +99,7 @@ foreach ($nacionalidade_lista as $indice => $nacionalidade) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'POSSUI FILHOS' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Possui Filhos' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -111,7 +111,7 @@ foreach ($resposta_lista as $indice => $possui_filhos) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'POSSUI DEFICIÊNCIA' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Possui Deficiência' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -123,7 +123,7 @@ foreach ($resposta_lista as $indice => $possui_deficiencia) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'PAÍS' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'País' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -135,7 +135,7 @@ foreach ($pais_lista as $indice => $pais) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'ESTADO' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -147,7 +147,7 @@ foreach ($estado_lista as $indice => $estado) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'CIDADE' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Cidade' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -171,7 +171,7 @@ foreach ($cnh_lista as $indice => $cnh) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'ÚLTIMO SALÁRIO MENSAL (R$)' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Último Salário Mensal (R$)' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -183,7 +183,7 @@ foreach ($ultimo_salario_lista as $indice => $ultimo_salario_mensal) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'EMPREGADO ATUALMENTE' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Está Empregado Atualmente' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -195,7 +195,7 @@ foreach ($resposta_lista as $indice => $empregado_atualmente) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'PROCURANDO NOVO EMPREGO ATUALMENTE' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Está Porcurando Emprego Atualmente' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -207,7 +207,7 @@ foreach ($resposta_lista as $indice => $procurando_novo_emprego_atualmente) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'DISPONÍVEL PARA VIAGEM' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Está Disponível Para Viagem' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -219,7 +219,7 @@ foreach ($resposta_lista as $indice => $disponivel_para_viagem) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'PODE TRABALHAR EM OUTRAS CIDADES' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Pode Trabalhar em Outras Cidades' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -231,7 +231,7 @@ foreach ($resposta_lista as $indice => $disponivel_para_trabalhar_outras_cidades
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'PODE TRABALHAR EM OUTROS PAÍSES' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Pode Trabalhar em Outros Países' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -243,7 +243,7 @@ foreach ($resposta_lista as $indice => $disponivel_para_trabalhar_outros_paises)
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'PODE TRABALHAR HOME OFFICE' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Pode Trabalhar Home Office' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -255,7 +255,7 @@ foreach ($resposta_lista as $indice => $disponivel_para_trabalhar_home_office) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'POSSUI CARRO' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Possui Carro' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
@@ -267,7 +267,7 @@ foreach ($resposta_lista as $indice => $possui_carro) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'POSSUI MOTO' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Possui Moto' . $LABEL_ . $TD_; 
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;

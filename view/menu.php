@@ -6,7 +6,7 @@
    <a href='#'>Sair</a><br>
    <a href="pessoa.php">Dados Pessoais</a><br>
    <a href="curso.php">Cursos</a><br>
-   <a href="certificado.php">Certificados</a><br>
+   <a href="certificacao.php">Certificação</a><br>
    <a href="experienciaprofissional.php">Experiência Profissional</a><br>
    <a href="objetivoprofissional.php">Objetivo Profissional</a><br>
    <a href="idioma.php">Idiomas</a><br>
