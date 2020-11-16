@@ -1,3 +1,7 @@
+@font-face {
+	font-family: Arsenal;
+	src: url(../fonte/Arsenal-Bold.ttf), url(../fonte/Arsenal-BoldItalic.ttf), url(../fonte/Arsenal-Italic.ttf), url(../fonte/Arsenal-Regular.ttf);
+}
 a, a:hover {
 	color: #FFF;	
 	text-decoration: none;	
@@ -32,7 +36,7 @@ td:nth-child(1) {
 	padding-right: 5px;
 }
 body {
-	font-family: 'Arsenal';
+	font-family: 'Arsenal', sans-serif;
 	background-color: #2f4f4f;
 	color: #FFF;
 	font-size: 18px;
