@@ -27,7 +27,7 @@ select, input, textarea, select:focus, input:focus, textarea:focus, input[type="
 }
 input[type="submit"] {
 	 padding: 1px;
-	 font-weight: bold;
+	 font-weight: bold;	 
 }
 label {
 	color: #000;			
