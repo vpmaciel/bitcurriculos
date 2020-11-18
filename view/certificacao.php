@@ -28,6 +28,11 @@ $pessoa['instituicao'] = isset($_POST['instituicao'])?$_POST['instituicao']:'';
 $INSTITUICAO = '<input type="text" name="instituicao" required size="70" minlength="10" maxlength="50" value="' . $pessoa['instituicao'] .'">';
 echo $TD . $INSTITUICAO . $TD_ . $TR_;
 
+echo $TR . $TD . $LABEL . 'Ano de obtenção' . $LABEL_ . $TD_; 
+$pessoa['ano_obtencao'] = isset($_POST['ano_obtencao'])?$_POST['ano_obtencao']:'';
+$DATA_NASCIMENTO = '<input type="text" name="ano_obtencao" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_obtencao'] .'">';
+echo $TD . $DATA_NASCIMENTO . $TD_ . $TR_;
+
 echo $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
 
 $SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';

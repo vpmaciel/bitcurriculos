@@ -279,6 +279,18 @@ foreach ($resposta_lista as $indice => $possui_moto) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
+echo $TR . $TD . $LABEL . 'Foi dispensado do serviço militar' . $LABEL_ . $TD_; 
+echo $TD;
+$SELECT = '<select name="dispensado_servico_militar">';
+echo $SELECT;
+foreach ($resposta_lista as $indice => $dispensado_servico_militar) {	
+	if ($indice == 0) {
+		continue;
+	}
+	echo ($dispensado_servico_militar == $pessoa['dispensado_servico_militar'])	? "<option value=$indice selected>$dispensado_servico_militar</option>" : "<option value=$indice>$dispensado_servico_militar</option>";
+}
+echo $SELECT_ . $TD_ . $TR_;
+
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
 
 $SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
