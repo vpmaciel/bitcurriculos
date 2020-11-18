@@ -15,5 +15,5 @@
    <a href="vagas.php">Vagas</a><br>
    <a href="curriculo.php">Exibir Currículo</a><br>-<br>
    <a href="candidatovagalista.php">Selecionar Candidatos</a><br>
-   <a href="publicarvaga.php">Publicar Vaga</a><br>   
+   <a href="publicarvaga.php">Publicar Vaga</a><br>
 </div>
