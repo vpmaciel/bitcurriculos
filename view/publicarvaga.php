@@ -30,17 +30,17 @@ echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Requisitos' . $LABEL_ . $TD_; 
 $pessoa['funcoes'] = isset($_POST['funcoes'])?$_POST['funcoes']:'';
-$TEXTAREA = '<textarea id="w3review" name="w3review" rows="10" cols="60" maxlength="500">' . $pessoa['funcoes'] .'</textarea>';
+$TEXTAREA = '<textarea id="w3review" name="w3review" rows="2" cols="50" maxlength="500">' . $pessoa['funcoes'] .'</textarea>';
 echo $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Funções' . $LABEL_ . $TD_; 
 $pessoa['funcoes'] = isset($_POST['funcoes'])?$_POST['funcoes']:'';
-$TEXTAREA = '<textarea id="w3review" name="w3review" rows="10" cols="60" maxlength="500">' . $pessoa['funcoes'] .'</textarea>';
+$TEXTAREA = '<textarea id="w3review" name="w3review" rows="2" cols="50" maxlength="500">' . $pessoa['funcoes'] .'</textarea>';
 echo $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Benefícios' . $LABEL_ . $TD_; 
 $pessoa['beneficios'] = isset($_POST['beneficios'])?$_POST['beneficios']:'';
-$TEXTAREA = '<textarea id="w3review" name="w3review" rows="10" cols="60" maxlength="500">' . $pessoa['beneficios'] .'</textarea>';
+$TEXTAREA = '<textarea id="w3review" name="w3review" rows="2" cols="50" maxlength="500">' . $pessoa['beneficios'] .'</textarea>';
 echo $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Data de publicacao' . $LABEL_ . $TD_; 
@@ -53,29 +53,19 @@ $pessoa['ano_inicio'] = isset($_POST['ano_inicio'])?$_POST['ano_inicio']:'';
 $INPUT = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Salário mensal (R$)' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Contrato' . $LABEL_ . $TD_; 
 echo $TD;
-$SELECT = '<select name="escolaridade">';
+$SELECT = '<select name="contrato">';
 echo $SELECT;
-foreach ($ultimo_salario_lista as $indice => $ultimo_salario_mensal) {	
-	if ($indice == 0) {
-		continue;
-	}
-	echo ($ultimo_salario_mensal == $pessoa['ultimo_salario_mensal'])	? "<option value=$indice selected>$ultimo_salario_mensal</option>" : "<option value=$indice>$ultimo_salario_mensal</option>";
+foreach ($contrato_lista as $indice => $contrato_mensal) {	
+	echo ($contrato_mensal == $pessoa['contrato_mensal'])	? "<option value=$indice selected>$contrato_mensal</option>" : "<option value=$indice>$contrato_mensal</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Salário mensal (R$)' . $LABEL_ . $TD_; 
-echo $TD;
-$SELECT = '<select name="escolaridade">';
-echo $SELECT;
-foreach ($ultimo_salario_lista as $indice => $ultimo_salario_mensal) {	
-	if ($indice == 0) {
-		continue;
-	}
-	echo ($ultimo_salario_mensal == $pessoa['ultimo_salario_mensal'])	? "<option value=$indice selected>$ultimo_salario_mensal</option>" : "<option value=$indice>$ultimo_salario_mensal</option>";
-}
-echo $SELECT_ . $TD_ . $TR_;
+$pessoa['cargo'] = isset($_POST['cargo'])?$_POST['cargo']:'';
+$INPUT = '<input type="text" name="cargo" required size="70" minlength="10" maxlength="50" value="' . $pessoa['cargo'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_; 
 echo $TD;
