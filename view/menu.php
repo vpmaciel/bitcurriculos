@@ -1,7 +1,6 @@
 <div class="linha">
 <div class="coluna esquerda">
    <a href="index.php">Home</a><br>
-   <a href='#'>Contato</a><br>
    <a href='usuario.php'>Registrar</a><br>
    <a href='login.php'>Entrar</a><br>
    <a href='#'>Sair</a><br>-<br>
