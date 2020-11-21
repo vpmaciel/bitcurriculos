@@ -10,7 +10,7 @@ echo $HEAD_;
 echo $BODY;
 require_once 'menu.php';
 echo $DIV_MAIN;
-echo $H1 . 'CURSO' . $H1_;
+echo $H1 . 'INPUT' . $H1_;
 
 $FORM = '<form action="../controller/curso.php" method="post">';
 
@@ -20,23 +20,23 @@ echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'Nome do curso' . $LABEL_ . $TD_; 
 $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
-$CURSO = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
-echo $TD . $CURSO . $TD_ . $TR_;
+$INPUT = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Instituição' . $LABEL_ . $TD_; 
 $pessoa['instituicao'] = isset($_POST['instituicao'])?$_POST['instituicao']:'';
-$INSTITUICAO = '<input type="text" name="instituicao" required size="70" minlength="10" maxlength="50" value="' . $pessoa['instituicao'] .'">';
-echo $TD . $INSTITUICAO . $TD_ . $TR_;
+$INPUT = '<input type="text" name="instituicao" required size="70" minlength="10" maxlength="50" value="' . $pessoa['instituicao'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Ano de início' . $LABEL_ . $TD_; 
 $pessoa['ano_inicio'] = isset($_POST['ano_inicio'])?$_POST['ano_inicio']:'';
-$DATA_NASCIMENTO = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
-echo $TD . $DATA_NASCIMENTO . $TD_ . $TR_;
+$INPUT = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Ano de conclusão' . $LABEL_ . $TD_; 
 $pessoa['ano_conclusao'] = isset($_POST['ano_conclusao'])?$_POST['ano_conclusao']:'';
-$CELULAR = '<input type="text" name="ano_conclusao" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_conclusao'] .'">';
-echo $TD . $CELULAR . $TD_ . $TR_; 
+$INPUT = '<input type="text" name="ano_conclusao" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_conclusao'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Situação' . $LABEL_ . $TD_; 
 echo $TD;

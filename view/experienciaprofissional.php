@@ -20,28 +20,28 @@ echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'Empresa' . $LABEL_ . $TD_; 
 $pessoa['empresa'] = isset($_POST['empresa'])?$_POST['empresa']:'';
-$EMPRESA = '<input type="text" name="empresa" required size="70" minlength="10" maxlength="50" value="' . $pessoa['empresa'] .'">';
-echo $TD . $EMPRESA . $TD_ . $TR_;
+$INPUT = '<input type="text" name="empresa" required size="70" minlength="10" maxlength="50" value="' . $pessoa['empresa'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_; 
 $pessoa['instituicao'] = isset($_POST['instituicao'])?$_POST['instituicao']:'';
-$CARGO = '<input type="text" name="instituicao" required size="70" minlength="10" maxlength="50" value="' . $pessoa['instituicao'] .'">';
-echo $TD . $CARGO . $TD_ . $TR_;
+$INPUT = '<input type="text" name="instituicao" required size="70" minlength="10" maxlength="50" value="' . $pessoa['instituicao'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Data de admissão' . $LABEL_ . $TD_; 
 $pessoa['ano_inicio'] = isset($_POST['ano_inicio'])?$_POST['ano_inicio']:'';
-$DATA_ADMISSAO = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
-echo $TD . $DATA_ADMISSAO . $TD_ . $TR_;
+$INPUT = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Data de saída' . $LABEL_ . $TD_; 
 $pessoa['ano_conclusao'] = isset($_POST['ano_conclusao'])?$_POST['ano_conclusao']:'';
-$DATA_SAIDA = '<input type="text" name="ano_conclusao" size="70" onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_conclusao'] .'">';
-echo $TD . $DATA_SAIDA . $TD_ . $TR_; 
+$INPUT = '<input type="text" name="ano_conclusao" size="70" onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_conclusao'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Funções' . $LABEL_ . $TD_; 
 $pessoa['ano_conclusao'] = isset($_POST['ano_conclusao'])?$_POST['ano_conclusao']:'';
-$DATA_SAIDA = '<textarea id="w3review" name="w3review" rows="10" cols="60" maxlength="500">' . $pessoa['ano_conclusao'] .'</textarea>';
-echo $TD . $DATA_SAIDA . $TD_ . $TR_; 
+$TEXTAREA = '<textarea id="w3review" name="w3review" rows="10" cols="60" maxlength="500">' . $pessoa['ano_conclusao'] .'</textarea>';
+echo $TD . $TEXTAREA . $TD_ . $TR_; 
 
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 

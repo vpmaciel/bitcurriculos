@@ -1,288 +1,119 @@
 <?php
+session_start();
 require_once '../lib/biblioteca.php';
-?>
+require_once '../model/model.php';
+echo $DOCTYPE;
+echo $HTML;
+echo $HEAD;
+require_once 'cabecalho.php';
+echo $HEAD_;
+echo $BODY;
+require_once 'menu.php';
+echo $DIV_MAIN;
+echo $H1 . 'PUBLICAR VAGA' . $H1_;
 
-<!DOCTYPE html>
-<html>
-<head>
-<?php require_once 'cabecalho.php';?>
-</head>
-<body>
-<?php require_once 'titulo.php';?>
-<div style="overflow:auto">
-<?php require_once 'menu.php';?>
-<div class="main">		
-	<div align="left">
-		<h1 class="titulo">Publicar Vaga</h1>		
-		<form action="../controller/dadospessoais.php">
-			<table class="tabela">
-				<tr>
-					<td><label for="nome">Nome</label></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="nome" maxlength="50" value="<?=isset($_POST['nome'])?$_POST['nome']:''?>" ></td>
-				</tr>
-				<tr>
-					<td><label for="data_nascimento">Data de Nascimento</label></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="data_nascimento" maxlength="50" value="Doe"></td>
-				<tr>
-				</tr>
-					<td><label for="lname">Sexo</label></td>
-					<tr>
-				<tr>
-					<td>
-						<select id="cars">
-						<?php
-						foreach ($sexo_array as $indice => $sexo) {
-							$indice = Html::configurar($indice);
-							echo "<option value=$indice>$sexo</option>";
-						}
-						?>
-						</select>
-					</td>
-				</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Escolaridade</label></td>
-				</tr>
-				<tr>
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Estado Civil</label></td>
-				</tr>
-				<tr>	
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Nacionalidade</label></td>
-				</tr>
-				<tr>	
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>					
-				<tr>
-					<td><label for="lname">Celular</label></td>
-				</tr>
-				<tr>						
-					<td><input type="text" name="lname" maxlength="50" value="Doe"></td>
-				</tr>					
-				<tr>
-					<td><label for="lname">Possui Filhos</label></td>
-				</tr>
-				<tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Possui Deficiência</label></td>
-				</tr>
-				<tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">País</label></td>
-				</tr>
-				<tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Estado</label></td>
-				</tr>
-				<tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				<tr>
-				</tr>
-					<td><label for="lname">Cidade</label></td>
-				<tr>
-				</tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				<tr>
-				</tr>
-					<td><label for="lname">CNH</label></td>
-				<tr>
-				</tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				<tr>
-				</tr>
-					<td><label for="lname">Último Salário Mensal (R$)</label></td>
-				<tr>
-				</tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				<tr>
-				</tr>
-					<td><label for="lname">Empregado Atualmente</label></td>
-				<tr>
-				</tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Disponível Para Viagens</label></td>
-				</tr>
-				<tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Disponível Para Trabalhar Em Outras Cidades</label></td>
-				<tr>
-				</tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				<tr>
-				</tr>
-					<td><label for="lname">Disponível Para Trabalhar No Exterior</label></td>
-				<tr>
-				</tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Disponível Para Trabalhar Home Office</label></td>
-				</tr>
-				<tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Possui Carro</label></td>
-				</tr>
-				<tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Possui Moto</label></td>
-				</tr>
-				<tr>
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-				<td>&nbsp;</td>
-				</tr>
-				<tr>
-				<td><input type="submit" value="Salvar"></td>						
-				</tr>
-			</table>
-		</form>
-	</div>
-</div> 
-<?php require_once 'faleconosco.php';?>
-</div> 
-<?php require_once 'rodape.php';?>
-</body>
-</html>
+$FORM = '<form action="../controller/curso.php" method="post">';
+
+echo $FORM;
+
+echo $TABLE;
+
+echo $TR . $TD . $LABEL . 'Empresa' . $LABEL_ . $TD_; 
+$pessoa['empresa'] = isset($_POST['empresa'])?$_POST['empresa']:'';
+$INPUT = '<input type="text" name="empresa" required size="70" minlength="10" maxlength="50" value="' . $pessoa['empresa'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_; 
+$pessoa['cargo'] = isset($_POST['cargo'])?$_POST['cargo']:'';
+$INPUT = '<input type="text" name="cargo" required size="70" minlength="10" maxlength="50" value="' . $pessoa['cargo'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'Requisitos' . $LABEL_ . $TD_; 
+$pessoa['funcoes'] = isset($_POST['funcoes'])?$_POST['funcoes']:'';
+$TEXTAREA = '<textarea id="w3review" name="w3review" rows="10" cols="60" maxlength="500">' . $pessoa['funcoes'] .'</textarea>';
+echo $TD . $TEXTAREA . $TD_ . $TR_; 
+
+echo $TR . $TD . $LABEL . 'Funções' . $LABEL_ . $TD_; 
+$pessoa['funcoes'] = isset($_POST['funcoes'])?$_POST['funcoes']:'';
+$TEXTAREA = '<textarea id="w3review" name="w3review" rows="10" cols="60" maxlength="500">' . $pessoa['funcoes'] .'</textarea>';
+echo $TD . $TEXTAREA . $TD_ . $TR_; 
+
+echo $TR . $TD . $LABEL . 'Benefícios' . $LABEL_ . $TD_; 
+$pessoa['beneficios'] = isset($_POST['beneficios'])?$_POST['beneficios']:'';
+$TEXTAREA = '<textarea id="w3review" name="w3review" rows="10" cols="60" maxlength="500">' . $pessoa['beneficios'] .'</textarea>';
+echo $TD . $TEXTAREA . $TD_ . $TR_; 
+
+echo $TR . $TD . $LABEL . 'Data de publicacao' . $LABEL_ . $TD_; 
+$pessoa['ano_conclusao'] = isset($_POST['ano_conclusao'])?$_POST['ano_conclusao']:'';
+$INPUT = '<input type="text" name="ano_conclusao" size="70" onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_conclusao'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_; 
+
+echo $TR . $TD . $LABEL . 'Vagas' . $LABEL_ . $TD_; 
+$pessoa['ano_inicio'] = isset($_POST['ano_inicio'])?$_POST['ano_inicio']:'';
+$INPUT = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'Salário mensal (R$)' . $LABEL_ . $TD_; 
+echo $TD;
+$SELECT = '<select name="escolaridade">';
+echo $SELECT;
+foreach ($ultimo_salario_lista as $indice => $ultimo_salario_mensal) {	
+	if ($indice == 0) {
+		continue;
+	}
+	echo ($ultimo_salario_mensal == $pessoa['ultimo_salario_mensal'])	? "<option value=$indice selected>$ultimo_salario_mensal</option>" : "<option value=$indice>$ultimo_salario_mensal</option>";
+}
+echo $SELECT_ . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'Salário mensal (R$)' . $LABEL_ . $TD_; 
+echo $TD;
+$SELECT = '<select name="escolaridade">';
+echo $SELECT;
+foreach ($ultimo_salario_lista as $indice => $ultimo_salario_mensal) {	
+	if ($indice == 0) {
+		continue;
+	}
+	echo ($ultimo_salario_mensal == $pessoa['ultimo_salario_mensal'])	? "<option value=$indice selected>$ultimo_salario_mensal</option>" : "<option value=$indice>$ultimo_salario_mensal</option>";
+}
+echo $SELECT_ . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_; 
+echo $TD;
+$SELECT = '<select name="escolaridade">';
+echo $SELECT;
+foreach ($estado_lista as $indice => $estado) {	
+	if ($indice == 0) {
+		continue;
+	}
+	echo ($estado == $pessoa['estado'])	? "<option value=$indice selected>$estado</option>" : "<option value=$indice>$estado</option>";
+}
+echo $SELECT_ . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'Cidade' . $LABEL_ . $TD_; 
+echo $TD;
+$SELECT = '<select name="escolaridade">';
+echo $SELECT;
+foreach ($cidade_lista as $indice => $cidade) {	
+	if ($indice == 0) {
+		continue;
+	}
+	echo ($cidade == $pessoa['cidade'])	? "<option value=$indice selected>$cidade</option>" : "<option value=$indice>$cidade</option>";
+}
+echo $SELECT_ . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
+
+$SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
+echo $TD . $SUBMIT . $TD_ . $TR_;
+
+echo $TABLE_;
+
+echo $FORM_;
+
+echo $DIV_;
+
+echo $DIV_;
+
+echo $BODY_;
+
+echo $HTML_;

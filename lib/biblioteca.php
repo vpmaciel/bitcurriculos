@@ -5580,21 +5580,6 @@ class Erro
             4 => 'FLUENTE',
         );
 }
-class Table
-{   
-    public static function lineBegin()
-    {
-        return "<tr><td>";
-    }
-    public static function lineEnd()
-    {
-        return "</td></tr>";
-    }
-}
-
-$lbt = Table::lineBegin();
-
-$let = Table::lineEnd();
 
 $cnh_lista = Cnh::$VALOR;
 
