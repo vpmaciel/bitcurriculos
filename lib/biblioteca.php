@@ -5565,8 +5565,8 @@ class Usuario
 {
     public static $VALOR = array(
         0 => 'TODOS',
-        1 => 'CANDIDATO (CADASTRAR CURRÍCULO)',
-        2 => 'EMPRESA (BUSCAR TALENTOS E DIVULGAR VAGAS DE TRABALHO)'
+        1 => 'CANDIDATO',
+        2 => 'EMPRESA'
         
     );
 }
