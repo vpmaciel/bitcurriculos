@@ -10,7 +10,7 @@ echo $HEAD_;
 echo $BODY;
 require_once 'menu.php';
 echo $DIV_MAIN;
-echo $H1 . 'INPUT' . $H1_;
+echo $H1 . 'CURSO' . $H1_;
 
 $FORM = '<form action="../controller/curso.php" method="post">';
 
