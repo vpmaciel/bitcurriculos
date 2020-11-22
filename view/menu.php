@@ -3,7 +3,7 @@
       <a href="index.php">Home</a><br>
       <a href='usuario.php'>Registrar</a><br>
       <a href='login.php'>Entrar</a><br>
-      <a href='#'>Sair</a><br>-<br>
+      <a href='sair.php'>Sair</a><br>-<br>
       <a href="pessoa.php">Dados Pessoais</a><br>
       <a href="curso.php">Cursos</a><br>
       <a href="certificacao.php">Certificação</a><br>
@@ -16,8 +16,8 @@
       <a href="curriculo.php">Testes de Personalidade</a><br>-<br>
       <a href="publicarvaga.php">Publicar Vaga de Emprego</a><br>-<br>
       <a href="servico.php">Serviços</a><br>
-      <a href='#'></a>Provas<br>
-      <a href="#.php">Apostilas</a><br>
-      <a href="#">Livros</a><br>
-      <a href="#">Treinamentos</a><br>
+      <a href='prova.php'></a>Provas<br>
+      <a href="apostila.php">Apostilas</a><br>
+      <a href="livro.php">Livros</a><br>
+      <a href="treinamento.php">Treinamentos</a><br>
    </div>
