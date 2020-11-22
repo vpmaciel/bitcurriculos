@@ -18,43 +18,43 @@ echo $FORM;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'Empresa' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Empresa' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['empresa'] = isset($_POST['empresa'])?$_POST['empresa']:'';
 $INPUT = '<input type="text" name="empresa" required size="70" minlength="10" maxlength="50" value="' . $pessoa['empresa'] .'">';
-echo $TD . $INPUT . $TD_ . $TR_;
+echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['cargo'] = isset($_POST['cargo'])?$_POST['cargo']:'';
 $INPUT = '<input type="text" name="cargo" required size="70" minlength="10" maxlength="50" value="' . $pessoa['cargo'] .'">';
-echo $TD . $INPUT . $TD_ . $TR_;
+echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Requisitos' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Requisitos' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['funcoes'] = isset($_POST['funcoes'])?$_POST['funcoes']:'';
 $TEXTAREA = '<textarea id="w3review" name="w3review" rows="2" cols="50" maxlength="500">' . $pessoa['funcoes'] .'</textarea>';
-echo $TD . $TEXTAREA . $TD_ . $TR_; 
+echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
-echo $TR . $TD . $LABEL . 'Funções' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Funções' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['funcoes'] = isset($_POST['funcoes'])?$_POST['funcoes']:'';
 $TEXTAREA = '<textarea id="w3review" name="w3review" rows="2" cols="50" maxlength="500">' . $pessoa['funcoes'] .'</textarea>';
-echo $TD . $TEXTAREA . $TD_ . $TR_; 
+echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
-echo $TR . $TD . $LABEL . 'Benefícios' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Benefícios' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['beneficios'] = isset($_POST['beneficios'])?$_POST['beneficios']:'';
 $TEXTAREA = '<textarea id="w3review" name="w3review" rows="2" cols="50" maxlength="500">' . $pessoa['beneficios'] .'</textarea>';
-echo $TD . $TEXTAREA . $TD_ . $TR_; 
+echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
-echo $TR . $TD . $LABEL . 'Data de publicacao' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Data de publicacao' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['ano_conclusao'] = isset($_POST['ano_conclusao'])?$_POST['ano_conclusao']:'';
 $INPUT = '<input type="text" name="ano_conclusao" size="70" onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_conclusao'] .'">';
-echo $TD . $INPUT . $TD_ . $TR_; 
+echo $TR. $TD . $INPUT . $TD_ . $TR_; 
 
-echo $TR . $TD . $LABEL . 'Vagas' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Vagas' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['ano_inicio'] = isset($_POST['ano_inicio'])?$_POST['ano_inicio']:'';
 $INPUT = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
-echo $TD . $INPUT . $TD_ . $TR_;
+echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Contrato' . $LABEL_ . $TD_; 
-echo $TD;
+echo $TR . $TD . $LABEL . 'Contrato' . $LABEL_ . $TD_ . $TR_;	 
+echo $TR. $TD;
 $SELECT = '<select name="contrato">';
 echo $SELECT;
 foreach ($contrato_lista as $indice => $contrato_mensal) {	
@@ -62,13 +62,13 @@ foreach ($contrato_lista as $indice => $contrato_mensal) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Salário mensal (R$)' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Salário mensal (R$)' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['cargo'] = isset($_POST['cargo'])?$_POST['cargo']:'';
 $INPUT = '<input type="text" name="cargo" required size="70" minlength="10" maxlength="50" value="' . $pessoa['cargo'] .'">';
-echo $TD . $INPUT . $TD_ . $TR_;
+echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_; 
-echo $TD;
+echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_ . $TR_; 
+echo $TR. $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
 foreach ($estado_lista as $indice => $estado) {	
@@ -79,8 +79,8 @@ foreach ($estado_lista as $indice => $estado) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Cidade' . $LABEL_ . $TD_; 
-echo $TD;
+echo $TR . $TD . $LABEL . 'Cidade' . $LABEL_ . $TD_ . $TR_; 
+echo $TR. $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
 foreach ($cidade_lista as $indice => $cidade) {	
@@ -91,10 +91,10 @@ foreach ($cidade_lista as $indice => $cidade) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
 $SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
-echo $TD . $SUBMIT . $TD_ . $TR_;
+echo $TR. $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;
 
