@@ -18,7 +18,13 @@ $MSG = '<p align="justify">O Bit Curriculos é um sistema para internet em recur
 	
 echo $MSG;
 
-$ch = curl_init("https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='" . date("m-d-Y") . "'&format=json");
+$data = explode("-",date('Y-m-d'));
+list($ano,$dia,$mes) = $data;
+$data = new DateTime("$ano-$mes-$dia");
+$data->modify("-1 day");
+$data->format("m-d-Y");
+
+$ch = curl_init("https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='" . $data . "'&format=json");
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
@@ -39,10 +45,9 @@ if(curl_error($ch)) {
 	');
 	$dataHoraCotacao = new DateTime($valores["dataHoraCotacao"]);
 	echo "<br>Dólar data e hora da cotação: ". $dataHoraCotacao->format('d-m-Y H:i:s.u');
-	$dolar = Quotation::dolar();
-  echo "Cotação do Dólar:\n";
-  echo "Valor: R$" . number_format($dolar['quotation'], 2, ',', '.') . "\n";
-  echo "Variação: {$dolar['variation']}";
+	
+	echo "<br>".date('m-d-Y', strtotime('-1 day', strtotime("'". $data ."'")));
+	
 }
 curl_close($ch);
 
