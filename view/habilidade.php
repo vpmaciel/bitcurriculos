@@ -18,24 +18,24 @@ echo $FORM_PESSOA;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'Habilidade' . $LABEL_ . $TD_; 
-$pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
-$HABILIDADE = '<input type="text" name="nome" required size="70" placeholder="PHP" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
-echo $TD . $HABILIDADE . $TD_ . $TR_;
+echo $TR . $TD . $LABEL . 'Habilidade' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['char_habilidade'] = isset($_POST['char_habilidade'])?$_POST['char_habilidade']:'';
+$INPUT = '<input type="text" name="char_habilidade" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_habilidade'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Nível' . $LABEL_ . $TD_; 
-echo $TD;
-$SELECT = '<select name="nivel_conhecimento">';
+echo $TR . $TD . $LABEL . 'Nível' . $LABEL_ . $TD_ . $TR_; 
+echo $TR. $TD;
+$SELECT = '<select name="int_nivel_conhecimento">';
 echo $SELECT;
-foreach ($nivel_conhecimento_lista as $indice => $nivel_conhecimento) {	
+foreach ($nivel_conhecimento_lista as $indice => $int_nivel_conhecimento) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($nivel_conhecimento == $pessoa['nivel_conhecimento'])	? "<option value=$indice selected>$nivel_conhecimento</option>" : "<option value=$indice>$nivel_conhecimento</option>";
+	echo ($int_nivel_conhecimento == $pessoa['int_nivel_conhecimento'])	? "<option value=$indice selected>$int_nivel_conhecimento</option>" : "<option value=$indice>$int_nivel_conhecimento</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
 $SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
 echo $TD . $SUBMIT . $TD_ . $TR_;

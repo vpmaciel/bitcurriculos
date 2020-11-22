@@ -39,10 +39,10 @@ $INPUT = '<input type="text" name="year_ano_conclusao" size="70" required onkeyp
 echo $TD . $INPUT . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Situação' . $LABEL_ . $TD_ . $TR_; 
-echo $TR. $TD
+echo $TR. $TD;
 $SELECT = '<select name="int_situacao">';
 echo $SELECT;
-foreach ($int_situacao_lista as $indice => $int_situacao) {	
+foreach ($situacao_lista as $indice => $int_situacao) {	
 	if ($indice == 0) {
 		continue;
 	}
@@ -51,10 +51,10 @@ foreach ($int_situacao_lista as $indice => $int_situacao) {
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Nível' . $LABEL_ . $TD_ . $TR_; 
-echo $TR. $TD
+echo $TR. $TD;
 $SELECT = '<select name="int_nivel">';
 echo $SELECT;
-foreach ($int_nivel_lista as $indice => $int_nivel) {	
+foreach ($escolaridade_lista as $indice => $int_nivel) {	
 	if ($indice == 0) {
 		continue;
 	}
