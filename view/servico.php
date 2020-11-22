@@ -27,7 +27,7 @@ echo $TR . $TD . $LABEL . 'Tipo de empresa' . $LABEL_ . $TD_;
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
-foreach ($cidade_lista as $indice => $cidade) {	
+foreach ($tipo_empresa_lista as $indice => $cidade) {	
 	if ($indice == 0) {
 		continue;
 	}
@@ -39,7 +39,7 @@ echo $TR . $TD . $LABEL . 'Segmento' . $LABEL_ . $TD_;
 echo $TD;
 $SELECT = '<select name="escolaridade">';
 echo $SELECT;
-foreach ($cidade_lista as $indice => $cidade) {	
+foreach ($segmento_empresa_lista as $indice => $cidade) {	
 	if ($indice == 0) {
 		continue;
 	}
@@ -54,15 +54,15 @@ echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Serviço prestado' . $LABEL_ . $TD_; 
 $pessoa['funcoes'] = isset($_POST['funcoes'])?$_POST['funcoes']:'';
-$TEXTAREA = '<textarea id="w3review" name="w3review" rows="2" cols="50" maxlength="500">' . $pessoa['funcoes'] .'</textarea>';
+$TEXTAREA = '<textarea id="w3review" name="w3review" rows="2" cols="50" maxlength="200">' . $pessoa['funcoes'] .'</textarea>';
 echo $TD . $TEXTAREA . $TD_ . $TR_; 
 
-echo $TR . $TD . $LABEL . 'Vagas' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Total de funcionários' . $LABEL_ . $TD_; 
 $pessoa['ano_inicio'] = isset($_POST['ano_inicio'])?$_POST['ano_inicio']:'';
 $INPUT = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Telefone' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Celular' . $LABEL_ . $TD_; 
 $pessoa['cargo'] = isset($_POST['cargo'])?$_POST['cargo']:'';
 $INPUT = '<input type="text" name="cargo" required size="70" minlength="10" maxlength="50" value="' . $pessoa['cargo'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
