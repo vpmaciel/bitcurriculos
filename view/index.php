@@ -17,14 +17,19 @@ $MSG = '<p align="justify">O Bit Curriculos é um sistema para internet em recur
 	oferecendo às empresas o mais completo sistema de recrutamento on-line. Cadastre seu currículo para estar disponível para diversas empresas. Cadastre sua empresa para buscar profissionais.</p>';
 	
 echo $MSG;
+$data = date('Y-m-d');
+$data = $data->modify("-1 day");
 
-$data = explode("-",date('Y-m-d'));
-list($ano,$dia,$mes) = $data;
-$data = new DateTime("$ano-$mes-$dia");
-$data->modify("-1 day");
-$data->format("m-d-Y");
+$data = explode("-",$data);
+list($ano,$mes,$dia) = $data;
+$data = $ano . '-'. $mes . '-' . --$dia;
+$data_str = $ano . '-'. $mes . '-' . $dia;
+$data = new DateTime($data);
 
-$ch = curl_init("https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='" . $data . "'&format=json");
+
+
+
+$ch = curl_init("https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='" . "10-21-2020" . "'&format=json");
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
@@ -46,8 +51,6 @@ if(curl_error($ch)) {
 	$dataHoraCotacao = new DateTime($valores["dataHoraCotacao"]);
 	echo "<br>Dólar data e hora da cotação: ". $dataHoraCotacao->format('d-m-Y H:i:s.u');
 	
-	echo "<br>".date('m-d-Y', strtotime('-1 day', strtotime("'". $data ."'")));
-	
 }
 curl_close($ch);
 
@@ -58,4 +61,3 @@ echo $DIV_;
 echo $BODY_;
 	
 echo $HTML_;
-?>
