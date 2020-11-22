@@ -1,5 +1,39 @@
 <?php
 
+class BolsaValores {
+    
+    public function __construct(){
+    $url_base = "http://www.theoziran.org/webservice/bovespa/";
+    $indice = "petr4";
+    $url_xml = $url_base . $indice;
+    $xml_string = file_get_contents($url_xml);
+    $simple_xml = simplexml_load_string($xml_string);
+    
+    print $simple_xml->asXML();
+    
+    //O ativo consultado
+    $simple_xml->ativo;
+    //A cotação do dia
+    $simple_xml->dia;
+    //A cotação da semana
+    $simple_xml->semana;
+    //A cotação dos últimos sete dias
+    $simple_xml->setedias;
+    //A cotação do mês
+    $simple_xml->mes;
+    //A cotação dos últimos trinta dias
+    $simple_xml->trintadias;
+    //A cotação do ano
+    $simple_xml->ano;
+    //A contação dos últimos 365 dias
+    $simple_xml->ano-relativo;
+    //Data em que os dados foram capturados
+    $simple_xml->data;
+
+        
+    }
+}
+
 class Cidade
 {
 

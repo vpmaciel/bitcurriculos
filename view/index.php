@@ -17,19 +17,14 @@ $MSG = '<p align="justify">O Bit Curriculos é um sistema para internet em recur
 	oferecendo às empresas o mais completo sistema de recrutamento on-line. Cadastre seu currículo para estar disponível para diversas empresas. Cadastre sua empresa para buscar profissionais.</p>';
 	
 echo $MSG;
-$data = date('Y-m-d');
-$data = $data->modify("-1 day");
+
+$data = date('Y-m-d', strtotime('-2 days'));
 
 $data = explode("-",$data);
 list($ano,$mes,$dia) = $data;
-$data = $ano . '-'. $mes . '-' . --$dia;
-$data_str = $ano . '-'. $mes . '-' . $dia;
-$data = new DateTime($data);
+$data_str = $mes . '-'. $dia . '-' . $ano;
 
-
-
-
-$ch = curl_init("https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='" . "10-21-2020" . "'&format=json");
+$ch = curl_init("https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='" . "$data_str" . "'&format=json");
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
@@ -53,7 +48,7 @@ if(curl_error($ch)) {
 	
 }
 curl_close($ch);
-
+$b = new BolsaValores();
 echo $DIV_;
 
 echo $DIV_;
