@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Nov-2020 às 01:17
+-- Tempo de geração: 22-Nov-2020 às 22:37
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.11
 
@@ -78,7 +78,7 @@ CREATE TABLE `tb_habilidade` (
   `int_id` int(11) NOT NULL,
   `int_usuario_id` int(11) NOT NULL,
   `char_habilidade` varchar(50) NOT NULL,
-  `char_nivel` tinyint(4) NOT NULL
+  `int_nivel_conhecimento` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -125,8 +125,8 @@ CREATE TABLE `tb_pessoa` (
   `int_escolaridade` tinyint(4) NOT NULL,
   `int_estado_civil` tinyint(4) NOT NULL,
   `int_nacionalidade` tinyint(4) NOT NULL,
-  `int_possui_filhos` tinyint(4) NOT NULL,
-  `int_possui_deficiencia` tinyint(4) NOT NULL,
+  `bit_possui_filhos` tinyint(4) NOT NULL,
+  `bit_possui_deficiencia` tinyint(4) NOT NULL,
   `int_pais` tinyint(4) NOT NULL,
   `int_estado` tinyint(4) NOT NULL,
   `int_cidade` smallint(6) NOT NULL,
@@ -175,7 +175,6 @@ CREATE TABLE `tb_usuario` (
   `int_id` int(11) NOT NULL,
   `char_email` varchar(100) NOT NULL,
   `char_senha` char(8) NOT NULL,
-  `bit_tipo` tinyint(4) NOT NULL,
   `date_ultimo_login` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

@@ -79,3 +79,14 @@ div {
 	border-radius: 0px;
 	box-sizing: border-box;	
 }
+@media only screen and (max-width: 600px) {
+	.esquerda {
+		width: 100%;
+	} 	
+	.direita {		
+		width: 100%;	
+	}
+	.esquerda {		
+		text-align: center;		
+	} 
+  }
