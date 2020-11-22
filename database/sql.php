@@ -29,7 +29,7 @@ class SQL {
                 $valor = "'$valor'";
                 
                 $campos .= $chave;
-                $valores .= $valor;
+                $valores .= removerAcentos($valor);
 
                 if($contador < $tamanho) {
                     $campos .= ',';
@@ -53,8 +53,6 @@ class SQL {
 
     public static function atualizar($dados, $tabela, $condicao){
         $campos = '';
-        $valores = '';
-        $condicao = '';
         $tamanho = count ($dados);
         $contador = 1;
         if($tamanho == 0)
@@ -80,7 +78,57 @@ class SQL {
             $tamanho = count ($condicao);
             foreach($condicao as $chave => $valor){
                 
+               $valor = "'$removerAcentos($valor)'";
+                $condicao .= $chave . "=". $valor;               
+
+                if($contador < $tamanho) {
+                    $condicao .= ',';
+                }
+                $contador++;
+            }
+
+            echo("UPDATE $tabela SET $campos WHERE ($condicao)");
+            return;
+            $this->pdo->beginTransaction();
+            $stm = $this->pdo->exec("UPDATE $tabela SET $campos WHERE ($condicao);");            
+        
+            $this->pdo->commit();
+        
+        } catch(Exception $e) {
+        
+            $this->pdo->rollback();
+            throw $e;
+        }
+    }
+
+    public static function excluir($tabela, $condicao){
+        $campos = '';
+        $tamanho = count ($condicao);
+        $contador = 1;
+        if($tamanho == 0 || $condicao[0] < 0 || !is_int($condicao[0])))
+        {
+            return FALSE;
+        }   
+
+        try {
+
+            foreach($dados as $chave => $valor){
+               
                $valor = "'$valor'";
+               
+                $campos .= $chave . "=". $valor;               
+
+                if($contador < $tamanho) {
+                    $campos .= ',';
+                }                
+                $contador++;
+            }
+
+            $contador = 1;
+            $tamanho = count ($condicao);
+            foreach($condicao as $chave => $valor){
+                
+               $valor = "'$removerAcentos($valor)'";
                 $condicao .= $chave . "=". $valor;               
 
                 if($contador < $tamanho) {
