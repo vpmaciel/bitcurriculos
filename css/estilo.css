@@ -61,8 +61,7 @@ body {
 } 
 .direita {
 	padding-top: 5px;
-	width: 85%;	
-	background-color: khaki;
+	width: 85%;
 	padding-top: 0px;	
 	padding-right: 20px;
 	padding-left: 20px;
@@ -80,7 +79,7 @@ div {
 	border-radius: 0px;
 	box-sizing: border-box;	
 }
-@media only screen and (max-width: 1270px) {
+@media only screen and (max-width: 1259px) {
 	.esquerda {
 		width: 100%;
 	} 	
