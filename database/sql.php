@@ -13,12 +13,16 @@ class SQL {
     }
 
     public static function inserir($dados, $tabela){
+        
+        if(!is_array($dados) && !is_string($tabela)) {
+            header('Location: erro.php');
+        }
+        
         $campos = '';
         $valores = '';
         $tamanho = count ($dados);
         $contador = 1;
-        if($tamanho == 0)
-        {
+        if($tamanho == 0) {
             return FALSE;
         }   
 
@@ -52,6 +56,9 @@ class SQL {
     }
 
     public static function atualizar($dados, $tabela, $condicao){
+        if(!is_array($dados) && !is_array($condicao) && !is_string($tabela)) {
+            header('Location: erro.php');
+        }
         $campos = '';
         $tamanho = count ($dados);
         $contador = 1;
@@ -102,11 +109,16 @@ class SQL {
     }
 
     public static function excluir($tabela, $condicao){
+        if(!is_array($condicao) && !is_string($tabela)) {
+            header('Location: erro.php');
+        }
         $campos = '';
         $tamanho = count ($condicao);
         $contador = 1;
-        if($tamanho == 0 || $condicao[0] < 0 || !is_int($condicao[0])))
-        {
+        if($tamanho == 0 || !isset($condicao)) {
+            return FALSE;
+        }   
+        if($tamanho == 1 || !is_int($condicao[0])) {
             return FALSE;
         }   
 
