@@ -5573,11 +5573,13 @@ class Usuario
 class Erro
 {
     public static $VALOR = array(
-            0 => 'Erro Geral',
-            1 => 'Sessão não iniciada ! Faça Login !',
-            2 => 'INTERMEDIÁRIO',
-            3 => 'AVANÇADO',
-            4 => 'FLUENTE',
+            0 => '',
+            1 => 'Sessão não iniciada ! Faça login !',
+            2 => 'Operação não realizada !',
+            3 => 'Banco de dados não conectado !',
+            4 => 'Página não encontrada !',
+            5 => 'Erro geral !',
+            6 => 'Você não ter permissão para acessar esta página !'
         );
 }
 
