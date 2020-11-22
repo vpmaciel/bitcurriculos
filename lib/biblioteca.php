@@ -6,7 +6,7 @@ function removerAcentos($string) {
 
 class Dolar {
     public function __construct() {
-        $data = date('Y-m-d', strtotime('-2 days'));
+        $data = date('Y-m-d', strtotime('-3 days'));
 
         $data = explode("-",$data);
         list($ano,$mes,$dia) = $data;
