@@ -18,7 +18,7 @@ $MSG = '<p align="justify">O Bit Curriculos é um sistema para internet em recur
 	
 echo $MSG;
 
-$ch = curl_init("https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='08-14-2020'&format=json");
+$ch = curl_init("https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='" . date("m-d-Y") . "'&format=json");
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
@@ -37,7 +37,12 @@ if(curl_error($ch)) {
 	echo "<br>Dólar cotação de venda: R$". number_format($valores["cotacaoVenda"], 2, ',', '');
 	echo ('
 	');
-	echo "<br>Dólar data e hora da cotação: ".$valores["dataHoraCotacao"]. date_format($valores["dataHoraCotacao"], 'd/m/Y H:i:s');;
+	$dataHoraCotacao = new DateTime($valores["dataHoraCotacao"]);
+	echo "<br>Dólar data e hora da cotação: ". $dataHoraCotacao->format('d-m-Y H:i:s.u');
+	$dolar = Quotation::dolar();
+  echo "Cotação do Dólar:\n";
+  echo "Valor: R$" . number_format($dolar['quotation'], 2, ',', '.') . "\n";
+  echo "Variação: {$dolar['variation']}";
 }
 curl_close($ch);
 

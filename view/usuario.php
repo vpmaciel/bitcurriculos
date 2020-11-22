@@ -41,18 +41,6 @@ echo $TR . $TD . $INPUT . $TD_ . $TR_;
 $SCRIPT = '<script>document.getElementById("repetir_senha").addEventListener("blur", validarSenha);</script>';
 echo $SCRIPT;
 
-echo $TR . $TD . $LABEL . 'Tipo de usuário' . $LABEL_ . $TD_ . $TR_; 
-echo $TR . $TD;
-$SELECT = '<select name="tipo_usuario">';
-echo $SELECT;
-foreach ($usuario_lista as $indice => $tipo_usuario) {	
-	if ($indice == 0) {
-		continue;
-	}
-	echo ($tipo_usuario == $usuario['tipo_usuario']) ? "<option value=$indice selected>$tipo_usuario</option>" : "<option value=$indice>$tipo_usuario</option>";
-}
-echo $SELECT_ . $TD_ . $TR_;
-
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
 $SUBMIT = '<input type="submit" value="Enviar" onclick="validarSenha();">';
