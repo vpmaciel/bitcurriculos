@@ -16,18 +16,20 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 18px;	
 	padding: 0px;
 }
-select, input, textarea, select:focus, input:focus, textarea:focus, input[type="submit"] {
+select, input, textarea, select:focus, input:focus, textarea:focus {
     border-radius: 0px;
     outline: none;
     box-shadow: none;
     border: 1px solid #000;
 	text-transform: uppercase;
-	font-size: 12px;
-	padding: 0px;
+	font-size: 12px;	
+	padding: 2px;
+	width: 100%;
 }
 input[type="submit"] {
-	 padding: 1px;
+	 padding: 2px;
 	 font-weight: bold;	 
+	 width: auto;
 }
 label {
 	color: #000;			
