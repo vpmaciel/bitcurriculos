@@ -18,28 +18,28 @@ echo $FORM;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'E-mail' . $LABEL_ . $TD_; 
-$usuario['email'] = isset($_POST['email']) ? $_POST['email']:'';
-$EMAIL = '<input type="email" name="email" required size="70" minlength="5" maxlength="100" value="' . $usuario['email'] .'">';
-echo $TD . $EMAIL . $TD_ . $TR_;
+echo $TR . $TD . $LABEL . 'E-mail' . $LABEL_ . $TD_ . $TR_; 
+$usuario['char_email'] = isset($_POST['char_email']) ? $_POST['char_email']:'';
+$INPUT = '<input type="email" name="char_email" required size="70" minlength="5" maxlength="100" value="' . $usuario['char_email'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Senha' . $LABEL_; 
-$usuario['senha'] = isset($_POST['senha']) ? $_POST['senha']:'';
-$SENHA = '<input type="password" name="senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['senha'] .'">';
-echo $TD . $SENHA . $TD_ . $TR_;
+$usuario['char_senha'] = isset($_POST['char_senha']) ? $_POST['char_senha']:'';
+$INPUT = '<input type="password" name="char_senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['char_senha'] .'">';
+echo $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
 $SUBMIT = '<input type="submit" value="Enviar" onclick=\'return confirmar();\'>';
 echo $TD . $SUBMIT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
-$LINK = '<a href="pessoa.php">Esqueci usuário ou senha</a>';
+$LINK = '<a href="recupera_senha.php">Esqueci usuário ou char_senha</a>';
 echo $TD . $LINK . $TD_ . $TR_;
 
 echo $TABLE_;

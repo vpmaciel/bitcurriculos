@@ -18,34 +18,34 @@ echo $FORM_PESSOA;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'Idioma' . $LABEL_ . $TD_; 
-echo $TD;
-$SELECT = '<select name="idioma">';
+echo $TR . $TD . $LABEL . 'Idioma' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD;
+$SELECT = '<select name="int_idioma">';
 echo $SELECT;
-foreach ($idioma_lista as $indice => $idioma) {	
+foreach ($idioma_lista as $indice => $int_idioma) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($idioma == $pessoa['idioma'])	? "<option value=$indice selected>$idioma</option>" : "<option value=$indice>$idioma</option>";
+	echo ($int_idioma == $pessoa['int_idioma'])	? "<option value=$indice selected>$int_idioma</option>" : "<option value=$indice>$int_idioma</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Nível de conhecimento' . $LABEL_ . $TD_; 
-echo $TD;
-$SELECT = '<select name="nivel_conhecimento_idioma">';
+echo $TR . $TD . $LABEL . 'Nível de conhecimento' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD;
+$SELECT = '<select name="int_nivel_conhecimento">';
 echo $SELECT;
-foreach ($nivel_conhecimento_idioma_lista as $indice => $nivel_conhecimento_idioma) {	
+foreach ($nivel_conhecimento_lista as $indice => $int_nivel_conhecimento) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($nivel_conhecimento_idioma == $pessoa['nivel_conhecimento_idioma'])	? "<option value=$indice selected>$nivel_conhecimento_idioma</option>" : "<option value=$indice>$nivel_conhecimento_idioma</option>";
+	echo ($int_nivel_conhecimento == $pessoa['int_nivel_conhecimento'])	? "<option value=$indice selected>$int_nivel_conhecimento</option>" : "<option value=$indice>$int_nivel_conhecimento</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
 $SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
-echo $TD . $SUBMIT . $TD_ . $TR_;
+echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;
 
