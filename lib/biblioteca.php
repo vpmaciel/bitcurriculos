@@ -1,36 +1,36 @@
 <?php
 
-class BolsaValores {
-    
-    public function __construct(){
-    $url_base = "http://www.theoziran.org/webservice/bovespa/";
-    $indice = "petr4";
-    $url_xml = $url_base . $indice;
-    $xml_string = file_get_contents($url_xml);
-    $simple_xml = simplexml_load_string($xml_string);
-    
-    print $simple_xml->asXML();
-    
-    //O ativo consultado
-    $simple_xml->ativo;
-    //A cotação do dia
-    $simple_xml->dia;
-    //A cotação da semana
-    $simple_xml->semana;
-    //A cotação dos últimos sete dias
-    $simple_xml->setedias;
-    //A cotação do mês
-    $simple_xml->mes;
-    //A cotação dos últimos trinta dias
-    $simple_xml->trintadias;
-    //A cotação do ano
-    $simple_xml->ano;
-    //A contação dos últimos 365 dias
-    $simple_xml->ano-relativo;
-    //Data em que os dados foram capturados
-    $simple_xml->data;
+class Dolar {
+    public function __construct() {
+        $data = date('Y-m-d', strtotime('-2 days'));
 
+        $data = explode("-",$data);
+        list($ano,$mes,$dia) = $data;
+        $data_str = $mes . '-'. $dia . '-' . $ano;
+        $ch = curl_init("https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='" . "$data_str" . "'&format=json");
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $res_curl = curl_exec($ch);
+        if(curl_error($ch)) {
+            echo curl_error($ch);
+        } else {
+            $resultado = json_decode($res_curl, true);
+            $valores = $resultado["value"][0];
+            //Agora será possível recuperar a informação da cotação do dólar:	
         
+            echo "Dólar compra: R$ " . number_format($valores["cotacaoCompra"], 2, ',', '');
+            echo ('
+            ');
+            echo ". Dólar venda: R$". number_format($valores["cotacaoVenda"], 2, ',', '');
+            echo ('
+            ');
+            $dataHoraCotacao = new DateTime($valores["dataHoraCotacao"]);
+            echo ". Data e hora da cotação: ". $dataHoraCotacao->format('d-m-Y H:i:s.u');
+            
+        }
+        curl_close($ch);        
     }
 }
 
