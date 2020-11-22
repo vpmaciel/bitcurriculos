@@ -13,5 +13,6 @@
    <a href="habilidade.php">Habilidades</a><br>
    <a href="vagas.php">Pesquisar Vagas</a><br>
    <a href="curriculo.php">Exibir Currículo</a><br>-<br>
-   <a href="publicarvaga.php">Publicar Vaga</a><br>
+   <a href="publicarvaga.php">Publicar Vaga</a><br>-<br>
+   <a href="vagas.php">Serviços</a><br>
 </div>
