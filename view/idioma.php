@@ -34,7 +34,7 @@ echo $TR . $TD . $LABEL . 'Nível de conhecimento' . $LABEL_ . $TD_ . $TR_;
 echo $TR . $TD;
 $SELECT = '<select name="int_nivel_conhecimento">';
 echo $SELECT;
-foreach ($nivel_conhecimento_lista as $indice => $int_nivel_conhecimento) {	
+foreach ($nivel_conhecimento_idioma_lista as $indice => $int_nivel_conhecimento) {	
 	if ($indice == 0) {
 		continue;
 	}
