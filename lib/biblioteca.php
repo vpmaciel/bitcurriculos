@@ -5581,6 +5581,17 @@ class Erro
         );
 }
 
+class Segmento
+{
+    public static $VALOR = array(
+            0 => 'Erro Geral',
+            1 => 'Sessão não iniciada ! Faça Login !',
+            2 => 'INTERMEDIÁRIO',
+            3 => 'AVANÇADO',
+            4 => 'FLUENTE',
+        );
+}
+
 $cnh_lista = Cnh::$VALOR;
 
 $sexo_lista = Sexo::$VALOR;
