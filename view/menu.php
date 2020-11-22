@@ -12,11 +12,12 @@
       <a href="idioma.php">Idiomas</a><br>
       <a href="habilidade.php">Habilidades</a><br>
       <a href="vagas.php">Pesquisar Vagas</a><br>
-      <a href="curriculo.php">Exibir Currículo</a><br>-<br>
+      <a href="curriculo.php">Exibir Currículo</a><br>
+      <a href="curriculo.php">Testes de Personalidade</a><br>-<br>
       <a href="publicarvaga.php">Publicar Vaga de Emprego</a><br>-<br>
-      <a href="servico.php">Serviços</a><br>-<br>
-      <a href='#'></a>Provas<br>-<br>
-      <a href="#.php">Apostilas</a><br>-<br>
-      <a href="#">Livros</a><br>-<br>
+      <a href="servico.php">Serviços</a><br>
+      <a href='#'></a>Provas<br>
+      <a href="#.php">Apostilas</a><br>
+      <a href="#">Livros</a><br>
       <a href="#">Treinamentos</a><br>
    </div>

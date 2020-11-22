@@ -27,11 +27,11 @@ class Dolar {
             echo "Dólar compra: R$ " . number_format($valores["cotacaoCompra"], 2, ',', '');
             echo ('
             ');
-            echo ". Dólar venda: R$". number_format($valores["cotacaoVenda"], 2, ',', '');
+            echo ". Dolar venda: R$". number_format($valores["cotacaoVenda"], 2, ',', '');
             echo ('
             ');
             $dataHoraCotacao = new DateTime($valores["dataHoraCotacao"]);
-            echo ". Data e hora da cotação: ". $dataHoraCotacao->format('d-m-Y H:i:s.u');
+            echo ". Data e hora da cotação: ". $dataHoraCotacao->format('d-m-Y H:i');
             
         }
         curl_close($ch);        

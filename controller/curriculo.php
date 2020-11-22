@@ -1,2 +1,6 @@
 <?php
-defined('BASEPATH') || exit('No direct script access allowed');
+session_start();
+if (!isset($_SESSION["user_id"]))
+{
+	//header("location: erro.php?erro=1");
+}

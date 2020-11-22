@@ -14,8 +14,11 @@ echo $DIV_MAIN;
 echo $H1 . 'Bit Curriculos' . $H1_;
 
 $MSG = '<p align="justify">O Bit Curriculos é um sistema para internet em recursos humanos, com foco em recrutamento on-line. Atualmente administramos a mais bem organizada base de currículos do país, 
-	oferecendo às empresas o mais completo sistema de recrutamento on-line. Cadastre seu currículo para estar disponível para diversas empresas. Cadastre sua empresa para buscar profissionais.</p>';
-	
+	oferecendo às empresas o mais completo sistema de recrutamento on-line. Cadastre seu currículo para estar disponível para diversas empresas. Cadastre sua empresa para buscar profissionais.</p>';	
+echo $MSG;
+
+$MSG = '<p align="justify">O nosso site oferece serviços para profissionais e empresas serem localizados em todo o Brasil para divulgar, prestar serviços ou vender seus produtos,
+			oferece várias provas de concursos para você fazer treinamento e testar seus conhecimentos. Temos diversas apostilas para download, livros e treinamentos para você se preparar melhor.</p>';	
 echo $MSG;
 
 $cotacao_dolar = new Dolar();
