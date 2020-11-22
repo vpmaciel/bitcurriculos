@@ -6105,7 +6105,7 @@ $H1_ = '</h1>';
 
 $FORM_ = '</form>';
 
-$TABLE = '<table class="tabela" align="center">';
+$TABLE = '<table align="center">';
 
 $TABLE_ = '</table>';
 

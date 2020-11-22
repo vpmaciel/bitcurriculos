@@ -1,288 +1,51 @@
 <?php
+session_start();
 require_once '../lib/biblioteca.php';
-?>
+require_once '../model/model.php';
+echo $DOCTYPE;
+echo $HTML;
+echo $HEAD;
+require_once 'cabecalho.php';
+echo $HEAD_;
+echo $BODY;
+require_once 'menu.php';
+echo $DIV_MAIN;
+echo $H1 . 'CERTIFICAÇÃO' . $H1_;
 
-<!DOCTYPE html>
-<html>
-<head>
-<?php require_once 'cabecalho.php';?>
-</head>
-<body>
-<?php require_once 'titulo.php';?>
-<div style="overflow:auto">
-<?php require_once 'menu.php';?>
-<div class="main">		
-	<div align="left">
-		<h1 class="titulo">Currículo</h1>		
-		<form action="../controller/dadospessoais.php">
-			<table class="tabela">
-				<tr>
-					<td><label for="nome">Nome</label></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="nome" maxlength="50" value="<?=isset($_POST['nome'])?$_POST['nome']:''?>" ></td>
-				</tr>
-				<tr>
-					<td><label for="data_nascimento">Data de Nascimento</label></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="data_nascimento" maxlength="50" value="Doe"></td>
-				<tr>
-				</tr>
-					<td><label for="lname">Sexo</label></td>
-					<tr>
-				<tr>
-					<td>
-						<select id="cars">
-						<?php
-						foreach ($sexo_array as $indice => $sexo) {
-							$indice = Html::configurar($indice);
-							echo "<option value=$indice>$sexo</option>";
-						}
-						?>
-						</select>
-					</td>
-				</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Escolaridade</label></td>
-				</tr>
-				<tr>
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Estado Civil</label></td>
-				</tr>
-				<tr>	
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Nacionalidade</label></td>
-				</tr>
-				<tr>	
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>					
-				<tr>
-					<td><label for="lname">Celular</label></td>
-				</tr>
-				<tr>						
-					<td><input type="text" name="lname" maxlength="50" value="Doe"></td>
-				</tr>					
-				<tr>
-					<td><label for="lname">Possui Filhos</label></td>
-				</tr>
-				<tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Possui Deficiência</label></td>
-				</tr>
-				<tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">País</label></td>
-				</tr>
-				<tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Estado</label></td>
-				</tr>
-				<tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				<tr>
-				</tr>
-					<td><label for="lname">Cidade</label></td>
-				<tr>
-				</tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				<tr>
-				</tr>
-					<td><label for="lname">CNH</label></td>
-				<tr>
-				</tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				<tr>
-				</tr>
-					<td><label for="lname">Último Salário Mensal (R$)</label></td>
-				<tr>
-				</tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				<tr>
-				</tr>
-					<td><label for="lname">Empregado Atualmente</label></td>
-				<tr>
-				</tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Disponível Para Viagens</label></td>
-				</tr>
-				<tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Disponível Para Trabalhar Em Outras Cidades</label></td>
-				<tr>
-				</tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				<tr>
-				</tr>
-					<td><label for="lname">Disponível Para Trabalhar No Exterior</label></td>
-				<tr>
-				</tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Disponível Para Trabalhar Home Office</label></td>
-				</tr>
-				<tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Possui Carro</label></td>
-				</tr>
-				<tr>						
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="lname">Possui Moto</label></td>
-				</tr>
-				<tr>
-					<td>
-						<select id="cars">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-				<td>&nbsp;</td>
-				</tr>
-				<tr>
-				<td><input type="submit" value="Salvar"></td>						
-				</tr>
-			</table>
-		</form>
-	</div>
-</div> 
-<?php require_once 'faleconosco.php';?>
-</div> 
-<?php require_once 'rodape.php';?>
-</body>
-</html>
+$FORM_PESSOA = '<form action="../controller/certificado.php" method="post">';
+
+echo $FORM_PESSOA;
+
+echo $TABLE;
+
+echo $TR . $TD . $LABEL . 'Certificação' . $LABEL_ . $TD_ . $TR_; 
+$certificacao['char_certificacao'] = isset($_POST['char_certificacao'])?$_POST['char_certificacao']:'';
+$INPUT = '<input type="text" name="char_certificacao" required size="70" minlength="10" maxlength="50" value="' . $certificacao['char_certificacao'] .'">';
+echo $TR. $TD . $INPUT . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'Instituição' . $LABEL_ . $TD_ . $TR_;
+$certificacao['char_instituicao'] = isset($_POST['char_instituicao'])?$_POST['char_instituicao']:'';
+$INPUT = '<input type="text" name="char_instituicao" required size="70" minlength="10" maxlength="50" value="' . $certificacao['char_instituicao'] .'">';
+echo $TR. $TD . $INPUT . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'Ano de obtenção' . $LABEL_ . $TD_ . $TR_; 
+$certificacao['year_ano_obtencao'] = isset($_POST['year_ano_obtencao'])?$_POST['year_ano_obtencao']:'';
+$INPUT = '<input type="text" name="year_ano_obtencao" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $certificacao['year_ano_obtencao'] .'">';
+echo $TR. $TD . $INPUT . $TD_ . $TR_;
+
+echo $TR. $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
+
+$SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
+echo $TR. $TD . $SUBMIT . $TD_ . $TR_;
+
+echo $TABLE_;
+
+echo $FORM_;
+
+echo $DIV_;
+
+echo $DIV_;
+
+echo $BODY_;
+
+echo $HTML_;

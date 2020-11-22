@@ -18,51 +18,51 @@ echo $FORM;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'Nome do curso' . $LABEL_ . $TD_; 
-$pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
-$INPUT = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
+echo $TR . $TD . $LABEL . 'Nome do curso' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['char_nome'] = isset($_POST['char_nome'])?$_POST['char_nome']:'';
+$INPUT = '<input type="text" name="char_nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_nome'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Instituição' . $LABEL_ . $TD_; 
-$pessoa['instituicao'] = isset($_POST['instituicao'])?$_POST['instituicao']:'';
-$INPUT = '<input type="text" name="instituicao" required size="70" minlength="10" maxlength="50" value="' . $pessoa['instituicao'] .'">';
+echo $TR . $TD . $LABEL . 'Instituição' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['char_instituicao'] = isset($_POST['char_instituicao'])?$_POST['char_instituicao']:'';
+$INPUT = '<input type="text" name="char_instituicao" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_instituicao'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Ano de início' . $LABEL_ . $TD_; 
-$pessoa['ano_inicio'] = isset($_POST['ano_inicio'])?$_POST['ano_inicio']:'';
-$INPUT = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
+echo $TR . $TD . $LABEL . 'Ano de início' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['year_ano_inicio'] = isset($_POST['year_ano_inicio'])?$_POST['year_ano_inicio']:'';
+$INPUT = '<input type="text" name="year_ano_inicio" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['year_ano_inicio'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Ano de conclusão' . $LABEL_ . $TD_; 
-$pessoa['ano_conclusao'] = isset($_POST['ano_conclusao'])?$_POST['ano_conclusao']:'';
-$INPUT = '<input type="text" name="ano_conclusao" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_conclusao'] .'">';
+echo $TR . $TD . $LABEL . 'Ano de conclusão' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['year_ano_conclusao'] = isset($_POST['year_ano_conclusao'])?$_POST['year_ano_conclusao']:'';
+$INPUT = '<input type="text" name="year_ano_conclusao" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['year_ano_conclusao'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_; 
 
-echo $TR . $TD . $LABEL . 'Situação' . $LABEL_ . $TD_; 
-echo $TD;
-$SELECT = '<select name="situacao">';
+echo $TR . $TD . $LABEL . 'Situação' . $LABEL_ . $TD_ . $TR_; 
+echo $TR. $TD
+$SELECT = '<select name="int_situacao">';
 echo $SELECT;
-foreach ($situacao_lista as $indice => $situacao) {	
+foreach ($int_situacao_lista as $indice => $int_situacao) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($situacao == $pessoa['situacao'])	? "<option value=$indice selected>$situacao</option>" : "<option value=$indice>$situacao</option>";
+	echo ($int_situacao == $pessoa['int_situacao'])	? "<option value=$indice selected>$int_situacao</option>" : "<option value=$indice>$int_situacao</option>";
 }
-echo $SELECT_ . $TD_;
+echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Nível' . $LABEL_ . $TD_; 
-echo $TD;
-$SELECT = '<select name="escolaridade">';
+echo $TR . $TD . $LABEL . 'Nível' . $LABEL_ . $TD_ . $TR_; 
+echo $TR. $TD
+$SELECT = '<select name="int_nivel">';
 echo $SELECT;
-foreach ($escolaridade_lista as $indice => $escolaridade) {	
+foreach ($int_nivel_lista as $indice => $int_nivel) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($escolaridade == $pessoa['escolaridade'])	? "<option value=$indice selected>$escolaridade</option>" : "<option value=$indice>$escolaridade</option>";
+	echo ($int_nivel == $pessoa['int_nivel'])	? "<option value=$indice selected>$int_nivel</option>" : "<option value=$indice>$int_nivel</option>";
 }
-echo $SELECT_ . $TD_;
+echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
 $SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
 echo $TD . $SUBMIT . $TD_ . $TR_;

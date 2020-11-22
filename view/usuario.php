@@ -18,31 +18,31 @@ echo $FORM;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'E-mail' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'E-mail' . $LABEL_ . $TD_ . $TR_; 
 $usuario['email'] = isset($_POST['email']) ? $_POST['email']:'';
 $INPUT = '<input type="email" name="email" required size="70" minlength="5" maxlength="100" value="' . $usuario['email'] .'">';
-echo $TD . $INPUT . $TD_ . $TR_;
+echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Repetir e-mail' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Repetir e-mail' . $LABEL_ . $TD_ . $TR_; 
 $usuario['repetir_email'] = isset($_POST['repetir_email']) ? $_POST['repetir_email']:'';
 $INPUT = '<input type="repetir_email" name="repetir_email" required size="70" minlength="5" maxlength="100" value="' . $usuario['repetir_email'] .'">';
-echo $TD . $INPUT . $TD_ . $TR_;
+echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Senha' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Senha' . $LABEL_ . $TD_ . $TR_; 
 $usuario['senha'] = isset($_POST['senha']) ? $_POST['senha']:'';
 $INPUT = '<input type="password" id="senha" name="senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['senha'] .'">';
-echo $TD . $INPUT . $TD_ . $TR_;
+echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Repetir senha' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . 'Repetir senha' . $LABEL_ . $TD_ . $TR_; 
 $usuario['repetir_senha'] = isset($_POST['repetir_senha']) ? $_POST['repetir_senha']:'';
 $INPUT = '<input type="password" id="repetir_senha" name="repetir_senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['repetir_senha'] .'">';
-echo $TD . $INPUT . $TD_ . $TR_;
+echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 $SCRIPT = '<script>document.getElementById("repetir_senha").addEventListener("blur", validarSenha);</script>';
 echo $SCRIPT;
 
-echo $TR . $TD . $LABEL . 'Tipo de usuário' . $LABEL_ . $TD_; 
-echo $TD;
+echo $TR . $TD . $LABEL . 'Tipo de usuário' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD;
 $SELECT = '<select name="tipo_usuario">';
 echo $SELECT;
 foreach ($usuario_lista as $indice => $tipo_usuario) {	
@@ -53,10 +53,10 @@ foreach ($usuario_lista as $indice => $tipo_usuario) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_; 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
 $SUBMIT = '<input type="submit" value="Enviar" onclick="validarSenha();">';
-echo $TD . $SUBMIT . $TD_ . $TR_;
+echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 

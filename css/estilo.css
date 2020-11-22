@@ -40,10 +40,6 @@ p {
 table, td, th {
 	padding: 0px;	
 }
-td:nth-child(1) { 
-	text-align: right; 
-	padding-right: 5px;
-}
 body {
 	font-family: Fonte, sans-serif;
 	background-color: #FFFFFF;
