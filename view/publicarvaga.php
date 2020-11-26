@@ -20,12 +20,12 @@ echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'Empresa' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['empresa'] = isset($_POST['empresa'])?$_POST['empresa']:'';
-$INPUT = '<input type="text" name="empresa" required size="70" minlength="10" maxlength="50" value="' . $pessoa['empresa'] .'">';
+$INPUT = '<input type="text" name="empresa" required size="70" minlength="1" maxlength="50" value="' . $pessoa['empresa'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['char_cargo'] = isset($_POST['char_cargo'])?$_POST['char_cargo']:'';
-$INPUT = '<input type="text" name="char_cargo" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_cargo'] .'">';
+$INPUT = '<input type="text" name="char_cargo" required size="70" minlength="1" maxlength="50" value="' . $pessoa['char_cargo'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Requisitos' . $LABEL_ . $TD_ . $TR_; 
@@ -50,7 +50,7 @@ echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Vagas' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['int_vagas'] = isset($_POST['int_vagas'])?$_POST['int_vagas']:'';
-$INPUT = '<input type="number" name="int_vagas" size="70" minlength="1" maxlength="30000" value="' . $pessoa['int_vagas'] .'">';
+$INPUT = '<input type="number" name="int_vagas" required size="70" minlength="1" maxlength="40" min="1" max="1000000" value="' . $pessoa['int_vagas'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Contrato' . $LABEL_ . $TD_ . $TR_;	 
