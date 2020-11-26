@@ -20,22 +20,22 @@ echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'Nome do curso' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['char_nome'] = isset($_POST['char_nome'])?$_POST['char_nome']:'';
-$INPUT = '<input type="text" name="char_nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_nome'] .'">';
+$INPUT = '<input type="text" name="char_nome" required size="70" minlength="1" maxlength="50" value="' . $pessoa['char_nome'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Instituição' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['char_instituicao'] = isset($_POST['char_instituicao'])?$_POST['char_instituicao']:'';
-$INPUT = '<input type="text" name="char_instituicao" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_instituicao'] .'">';
+$INPUT = '<input type="text" name="char_instituicao" required size="70" minlength="1" maxlength="50" value="' . $pessoa['char_instituicao'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Ano de início' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['year_ano_inicio'] = isset($_POST['year_ano_inicio'])?$_POST['year_ano_inicio']:'';
-$INPUT = '<input type="text" name="year_ano_inicio" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['year_ano_inicio'] .'">';
+$INPUT = '<input type="number" name="year_ano_inicio" required size="70" min="1950" max="3000" value="' . $pessoa['year_ano_inicio'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Ano de conclusão' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['year_ano_conclusao'] = isset($_POST['year_ano_conclusao'])?$_POST['year_ano_conclusao']:'';
-$INPUT = '<input type="text" name="year_ano_conclusao" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['year_ano_conclusao'] .'">';
+$INPUT = '<input type="number" name="year_ano_conclusao" required size="70" min="1950" max="3000" value="' . $pessoa['year_ano_conclusao'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Situação' . $LABEL_ . $TD_ . $TR_; 

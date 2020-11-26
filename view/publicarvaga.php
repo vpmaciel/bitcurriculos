@@ -24,70 +24,70 @@ $INPUT = '<input type="text" name="empresa" required size="70" minlength="10" ma
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['cargo'] = isset($_POST['cargo'])?$_POST['cargo']:'';
-$INPUT = '<input type="text" name="cargo" required size="70" minlength="10" maxlength="50" value="' . $pessoa['cargo'] .'">';
+$pessoa['char_cargo'] = isset($_POST['char_cargo'])?$_POST['char_cargo']:'';
+$INPUT = '<input type="text" name="char_cargo" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_cargo'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Requisitos' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['funcoes'] = isset($_POST['funcoes'])?$_POST['funcoes']:'';
-$TEXTAREA = '<textarea id="w3review" name="w3review" rows="2" cols="50" maxlength="500">' . $pessoa['funcoes'] .'</textarea>';
+$pessoa['char_requisitos'] = isset($_POST['char_requisitos'])?$_POST['char_requisitos']:'';
+$TEXTAREA = '<textarea id="char_requisitos" name="char_requisitos" rows="2" cols="50" maxlength="500">' . $pessoa['char_requisitos'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Funções' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['funcoes'] = isset($_POST['funcoes'])?$_POST['funcoes']:'';
-$TEXTAREA = '<textarea id="w3review" name="w3review" rows="2" cols="50" maxlength="500">' . $pessoa['funcoes'] .'</textarea>';
+$pessoa['char_funcoes'] = isset($_POST['char_funcoes'])?$_POST['char_funcoes']:'';
+$TEXTAREA = '<textarea id="char_funcoes" name="char_funcoes" rows="2" cols="50" maxlength="500">' . $pessoa['char_funcoes'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Benefícios' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['beneficios'] = isset($_POST['beneficios'])?$_POST['beneficios']:'';
-$TEXTAREA = '<textarea id="w3review" name="w3review" rows="2" cols="50" maxlength="500">' . $pessoa['beneficios'] .'</textarea>';
+$pessoa['char_beneficios'] = isset($_POST['char_beneficios'])?$_POST['char_beneficios']:'';
+$TEXTAREA = '<textarea id="char_beneficios" name="char_beneficios" rows="2" cols="50" maxlength="500">' . $pessoa['char_beneficios'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Data de publicacao' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['ano_conclusao'] = isset($_POST['ano_conclusao'])?$_POST['ano_conclusao']:'';
-$INPUT = '<input type="text" name="ano_conclusao" size="70" onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_conclusao'] .'">';
+$pessoa['date_data_publicacao'] = isset($_POST['date_data_publicacao'])?$_POST['date_data_publicacao']:'';
+$INPUT = '<input type="text" name="date_data_publicacao" size="70" onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['date_data_publicacao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Vagas' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['ano_inicio'] = isset($_POST['ano_inicio'])?$_POST['ano_inicio']:'';
-$INPUT = '<input type="text" name="ano_inicio" size="70" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $pessoa['ano_inicio'] .'">';
+$pessoa['int_vagas'] = isset($_POST['int_vagas'])?$_POST['int_vagas']:'';
+$INPUT = '<input type="number" name="int_vagas" size="70" minlength="1" maxlength="30000" value="' . $pessoa['int_vagas'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Contrato' . $LABEL_ . $TD_ . $TR_;	 
 echo $TR. $TD;
 $SELECT = '<select name="contrato">';
 echo $SELECT;
-foreach ($contrato_lista as $indice => $contrato_mensal) {	
-	echo ($contrato_mensal == $pessoa['contrato_mensal'])	? "<option value=$indice selected>$contrato_mensal</option>" : "<option value=$indice>$contrato_mensal</option>";
+foreach ($contrato_lista as $indice => $int_contrato) {	
+	echo ($int_contrato == $pessoa['int_contrato'])	? "<option value=$indice selected>$int_contrato</option>" : "<option value=$indice>$int_contrato</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Salário mensal (R$)' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['cargo'] = isset($_POST['cargo'])?$_POST['cargo']:'';
-$INPUT = '<input type="text" name="cargo" required size="70" minlength="10" maxlength="50" value="' . $pessoa['cargo'] .'">';
+$pessoa['char_cargo'] = isset($_POST['char_cargo'])?$_POST['char_cargo']:'';
+$INPUT = '<input type="text" name="char_cargo" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_cargo'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="escolaridade">';
+$SELECT = '<select name="int_estado">';
 echo $SELECT;
-foreach ($estado_lista as $indice => $estado) {	
+foreach ($estado_lista as $indice => $int_estado) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($estado == $pessoa['estado'])	? "<option value=$indice selected>$estado</option>" : "<option value=$indice>$estado</option>";
+	echo ($int_estado == $pessoa['int_estado'])	? "<option value=$indice selected>$int_estado</option>" : "<option value=$indice>$int_estado</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Cidade' . $LABEL_ . $TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="escolaridade">';
+$SELECT = '<select name="int_int_cidade">';
 echo $SELECT;
-foreach ($cidade_lista as $indice => $cidade) {	
+foreach ($cidade_lista as $indice => $int_cidade) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($cidade == $pessoa['cidade'])	? "<option value=$indice selected>$cidade</option>" : "<option value=$indice>$cidade</option>";
+	echo ($int_cidade == $pessoa['int_cidade'])	? "<option value=$indice selected>$int_cidade</option>" : "<option value=$indice>$int_cidade</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 

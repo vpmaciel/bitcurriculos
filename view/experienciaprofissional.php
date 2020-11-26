@@ -20,17 +20,17 @@ echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'Empresa' . $LABEL_ . $TD_ . $TR_;
 $pessoa['char_empresa'] = isset($_POST['char_empresa'])?$_POST['char_empresa']:'';
-$INPUT = '<input type="text" name="char_empresa" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_empresa'] .'">';
+$INPUT = '<input type="text" name="char_empresa" required size="70" minlength="1" maxlength="50" value="' . $pessoa['char_empresa'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_;
 $pessoa['char_cargo'] = isset($_POST['char_cargo'])?$_POST['char_cargo']:'';
-$INPUT = '<input type="text" name="char_cargo" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_cargo'] .'">';
+$INPUT = '<input type="text" name="char_cargo" required size="70" minlength="1" maxlength="50" value="' . $pessoa['char_cargo'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Data de admissão' . $LABEL_ . $TD_ . $TR_;
 $pessoa['date_data_admissao'] = isset($_POST['date_data_admissao'])?$_POST['date_data_admissao']:'';
-$INPUT = '<input type="text" name="date_data_admissao" size="70" required onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['date_data_admissao'] .'">';
+$INPUT = '<input type="text" name="date_data_admissao" required size="70" required onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['date_data_admissao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Data de saída' . $LABEL_ . $TD_ . $TR_;
