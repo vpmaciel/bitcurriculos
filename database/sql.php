@@ -98,16 +98,16 @@ function atualizar($dados, $tabela, $condicao) : bool {
     }
 }
 
-function selecionar(array $dados, string $tabela, array $condicao) : array {
-    echo '<br>'. gettype($dados);
+function selecionar($tabela, $array_condicao) : array {
+    
     echo '<br>'. gettype($tabela);
-    echo '<br>'. gettype($condicao);
-    return array();
-    if(!is_array($dados) || !is_array($condicao) || !is_string($tabela)) {
-        header('Location: ..\view\erro.php?erro=TDI');
+    echo '<br>'. gettype($array_condicao);
+    
+    if(empty($array_condicao) || empty($tabela)) {
+        throw new Exception('Parametros vazios');
     }
-    $campos = '';
-    $tamanho = count ($dados);
+    $char_condicao = '';
+    $tamanho = count ($condicao);
     $contador = 1;
     if($tamanho == 0)
     {
@@ -115,27 +115,11 @@ function selecionar(array $dados, string $tabela, array $condicao) : array {
     }   
 
     try {
-
-        foreach($dados as $chave => $valor) {
-            $contador++;
-            if (empty($valor)) {
-                continue;
-            }
-            $valor = "'$valor'";
-            
-            $campos .= $chave . "=". $valor;               
-
-            if($contador < $tamanho) {
-                $campos .= ',';
-            }                
-            
-        }
-
         $contador = 1;
-        $tamanho = count ($condicao);
-        foreach($condicao as $chave => $valor) {
+        $tamanho = count ($array_condicao);
+        foreach($array_condicao as $chave => $valor) {
             
-            $valor = "'$removerAcentos($valor)'";
+            $valor = removerAcentos($valor);
             $condicao .= $chave . "=". $valor;               
 
             if($contador < $tamanho) {

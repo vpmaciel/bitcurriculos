@@ -14,11 +14,12 @@ function autenticar($campo, $tamanho) {
     
 }
 $usuario_model = usuario_model();
-//$usuario_model['usu_char_email'] = $_POST['usu_char_email'];
-//$usuario_model['usu_char_senha'] = $_POST['usu_char_senha'];
+$usuario_model['usu_char_email'] = $_POST['usu_char_email'];
+$usuario_model['usu_char_senha'] = $_POST['usu_char_senha'];
 echo "<br>" .count($usuario_model);
 
+$condicao = ['usu_char_email' => $usuario_model['usu_char_email']];
 
-$resultado = selecionar($usuario_model, 'tb_usuario', usuario_model());
+$resultado = selecionar('tb_usuario', $condicao);
 if( count($resultado) == 0)
 echo "zero";
