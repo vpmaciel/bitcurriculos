@@ -138,7 +138,7 @@ function selecionar($tabela, $array_condicao) : array {
         $consulta = $stmt->execute();
         $array_modelos = array();
         
-        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) !== FALSE) {
         
             $array_modelo = array();
 
