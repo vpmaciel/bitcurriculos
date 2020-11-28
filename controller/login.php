@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION["usuario_id"])) {
+if (!isset($_SESSION["usu_int_id"])) {
 	//header("location: erro.php?erro=1");
 }
 
