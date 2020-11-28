@@ -49,7 +49,7 @@ echo $TR . $TD . $LABEL . 'Sexo' . $LABEL_ .$TD . $TR;
 echo $TR. $TD;
 $SELECT = '<select name="bit_sexo">';
 echo $SELECT;
-foreach ($sexo_lista as $indice => $bit_sexo) {	
+foreach ($array_sexo as $indice => $bit_sexo) {	
 	if ($indice == 0) {
 		continue;
 	}
@@ -157,7 +157,7 @@ echo $TR . $TD . $LABEL . 'CNH' . $LABEL_ .$TD . $TR;
 echo $TR. $TD;
 $SELECT = '<select name="int_cnh">';
 echo $SELECT;
-foreach ($cnh_lista as $indice => $int_cnh) {	
+foreach ($array_lista as $indice => $int_cnh) {	
 	if ($indice == 0) {
 		continue;
 	}

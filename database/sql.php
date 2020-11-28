@@ -28,7 +28,7 @@ class SQL {
 
         try {
 
-            foreach($dados as $chave => $valor){
+            foreach($dados as $chave => $valor) {
                 
                 $valor = "'$valor'";
                 
@@ -54,7 +54,7 @@ class SQL {
         }
     }
 
-    public static function atualizar($dados, $tabela, $condicao){
+    public static function atualizar($dados, $tabela, $condicao) {
         if(!is_array($dados) && !is_array($condicao) && !is_string($tabela)) {
             header('Location: ..\view\erro.php?e=TDI');
         }
@@ -68,7 +68,7 @@ class SQL {
 
         try {
 
-            foreach($dados as $chave => $valor){
+            foreach($dados as $chave => $valor) {
                
                $valor = "'$valor'";
                
@@ -82,7 +82,7 @@ class SQL {
 
             $contador = 1;
             $tamanho = count ($condicao);
-            foreach($condicao as $chave => $valor){
+            foreach($condicao as $chave => $valor) {
                 
                $valor = "'$removerAcentos($valor)'";
                 $condicao .= $chave . "=". $valor;               
@@ -105,7 +105,7 @@ class SQL {
         }
     }
 
-    public static function selecionar($dados, $tabela, $condicao) : array{
+    public static function selecionar($dados, $tabela, $condicao) : array {
         if(!is_array($dados) && !is_array($condicao) && !is_string($tabela)) {
             header('Location: ..\view\erro.php?e=TDI');
         }
@@ -119,7 +119,7 @@ class SQL {
 
         try {
 
-            foreach($dados as $chave => $valor){
+            foreach($dados as $chave => $valor) {
                
                $valor = "'$valor'";
                
@@ -133,7 +133,7 @@ class SQL {
 
             $contador = 1;
             $tamanho = count ($condicao);
-            foreach($condicao as $chave => $valor){
+            foreach($condicao as $chave => $valor) {
                 
                $valor = "'$removerAcentos($valor)'";
                 $condicao .= $chave . "=". $valor;               
@@ -144,15 +144,36 @@ class SQL {
                 $contador++;
             }
 
-            $this->pdo->beginTransaction();
-            $stm = $this->pdo->exec("SELECT * FROM $tabela WHERE ($condicao);");            
+            $stmt = $this->$pdo->prepare("SELECT * FROM $tabela;");
+            if ($tamanho > 0) {
+                $stmt = $this->$pdo->prepare("SELECT * FROM $tabela WHERE ($condicao);");
+            }
+            
+            $consulta = $stmt->execute();
+
+            while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                $modelo_lista = array();
+                $contador = 1;
+                foreach($dados as $chave => $valor) {
+               
+                    $valor = "'$valor'";
+                    
+                     $campos .= $chave . "=". $valor;               
+     
+                     if($contador < $tamanho) {
+                         $campos .= ',';
+                     }                
+                     $contador++;
+                     $modelo_lista["$chave"] = $linha["$chave"]
+                 }
+     
+
+                echo "Nome: {$linha['nome']} - E-mail: {$linha['email']}<br />";
+            }          
         
-            $this->pdo->commit();
-        
-        } catch(Exception $e) {
-        
-            $this->pdo->rollback();
-            throw $e;
+        } catch(Exception $e) {           
+            
+            return array();
         }
     }
     public static function excluir($tabela, $condicao) : bool {
@@ -167,24 +188,11 @@ class SQL {
         }   
         
         try {
-
-            foreach($dados as $chave => $valor){
-               
-               $valor = "'$valor'";
-               
-                $campos .= $chave . "=". $valor;               
-
-                if($contador < $tamanho) {
-                    $campos .= ',';
-                }                
-                $contador++;
-            }
-
             $contador = 1;
             $tamanho = count ($condicao);
-            foreach($condicao as $chave => $valor){
+            foreach($condicao as $chave => $valor) {
                 
-               $valor = "'$removerAcentos($valor)'";
+                $valor = "'$removerAcentos($valor)'";
                 $condicao .= $chave . "=". $valor;               
 
                 if($contador < $tamanho) {
@@ -197,6 +205,8 @@ class SQL {
             $stm = $this->pdo->exec("UPDATE $tabela SET $campos WHERE ($condicao);");            
         
             $this->pdo->commit();
+
+            return TRUE;
         
         } catch(Exception $e) {
         

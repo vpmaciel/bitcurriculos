@@ -6072,9 +6072,9 @@ class TipoEmpresa
         );
 }
 
-$cnh_lista = Cnh::$VALOR;
+$array_lista = Cnh::$VALOR;
 
-$sexo_lista = Sexo::$VALOR;
+$array_sexo = Sexo::$VALOR;
 
 $escolaridade_lista = Escolaridade::$VALOR;
 
