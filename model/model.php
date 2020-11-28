@@ -100,7 +100,8 @@ $certificado_model = array(
 );
 
 $usuario_model = array(
-'id' => '',
-'email' => '',
-'senha' => ''
+'usu_int_id' => '',
+'usu_char_email' => '',
+'usu_char_senha' => '',
+'usu_date_ultimo_login' => new date("date('Y-m-d')")
 );
