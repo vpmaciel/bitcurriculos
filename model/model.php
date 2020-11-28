@@ -103,5 +103,5 @@ $usuario_model = array(
 'usu_int_id' => '',
 'usu_char_email' => '',
 'usu_char_senha' => '',
-'usu_date_ultimo_login' => new date("date('Y-m-d')")
+'usu_date_ultimo_login' => date('Y-m-d')
 );

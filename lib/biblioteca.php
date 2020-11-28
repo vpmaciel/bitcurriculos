@@ -5611,14 +5611,14 @@ class Usuario
 }
 class Erro
 {
-    public static $VALOR = array(
-            0 => '',
-            1 => 'Sessão não iniciada ! Faça login !',
-            2 => 'Operação não realizada !',
-            3 => 'Banco de dados não conectado !',
-            4 => 'Página não encontrada !',
-            5 => 'Erro geral !',
-            6 => 'Você não ter permissão para acessar esta página !'
+    public static $VALOR = array(            
+            'SNI' => 'Sessão não iniciada ! Faça login !',
+            'OPN' => 'Operação não realizada !',
+            'BDNC' => 'Banco de dados não conectado !',
+            'PNE' => 'Página não encontrada !',
+            'EG' => 'Erro geral !',
+            'EP' => 'Você não ter permissão para acessar esta página !',
+            'TDI' => 'Tipos de dados imcompativeis !'
         );
 }
 

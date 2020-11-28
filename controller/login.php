@@ -12,5 +12,7 @@ require_once '../model/model.php';
 function autenticar($campo, $tamanho) {
     
 }
-$usuario
+$usuario_model['usu_char_email'] = $_POST['usu_char_email'];
+$usuario_model['usu_char_senha'] = $_POST['usu_char_senha'];
+
 
