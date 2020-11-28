@@ -150,26 +150,20 @@ class SQL {
             }
             
             $consulta = $stmt->execute();
+            $array_modelos = array();
 
+            
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-                $modelo_lista = array();
-                $contador = 1;
-                foreach($dados as $chave => $valor) {
-               
-                    $valor = "'$valor'";
-                    
-                     $campos .= $chave . "=". $valor;               
-     
-                     if($contador < $tamanho) {
-                         $campos .= ',';
-                     }                
-                     $contador++;
-                     $modelo_lista["$chave"] = $linha["$chave"]
-                 }
-     
+            
+                $array_modelo = array();
 
-                echo "Nome: {$linha['nome']} - E-mail: {$linha['email']}<br />";
+                foreach($dados as $chave => $valor) {
+                     $array_modelo["'$chave'"] = $linha["'$chave'"];                     
+                }
+
+                 array_push($array_modelos, $array_modelo);                
             }          
+            return $array_modelos;
         
         } catch(Exception $e) {           
             

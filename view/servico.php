@@ -27,7 +27,7 @@ echo $TR . $TD . $LABEL . 'Tipo de empresa' . $LABEL_ . $TD_ . $TR_;
 echo $TR . $TD;
 $SELECT = '<select name="int_tipo_empresa">';
 echo $SELECT;
-foreach ($tipo_empresa_lista as $indice => $int_tipo_empresa) {	
+foreach ($array_tipo_empresa as $indice => $int_tipo_empresa) {	
 	if ($indice == 0) {
 		continue;
 	}
@@ -40,7 +40,7 @@ echo $TR . $TD;
 $SELECT = '<select name="int_segmento_empresa">';
 
 echo $SELECT;
-foreach ($segmento_empresa_lista as $indice => $int_segmento_empresa) {	
+foreach ($array_segmento_empresa as $indice => $int_segmento_empresa) {	
 	if ($indice == 0) {
 		continue;
 	}
@@ -73,7 +73,7 @@ echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_ . $TR_;
 echo $TR . $TD;
 $SELECT = '<select name="int_estado">';
 echo $SELECT;
-foreach ($estado_lista as $indice => $int_estado) {	
+foreach ($array_estado as $indice => $int_estado) {	
 	if ($indice == 0) {
 		continue;
 	}
@@ -85,7 +85,7 @@ echo $TR . $TD . $LABEL . 'Cidade' . $LABEL_ . $TD_ . $TR_;
 echo $TR . $TD;
 $SELECT = '<select name="int_cidade">';
 echo $SELECT;
-foreach ($cidade_lista as $indice => $int_cidade) {	
+foreach ($array_cidade as $indice => $int_cidade) {	
 	if ($indice == 0) {
 		continue;
 	}

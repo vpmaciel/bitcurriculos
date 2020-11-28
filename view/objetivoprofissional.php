@@ -27,7 +27,7 @@ echo $TR . $TD . $LABEL . 'Pretensão salarial' . $LABEL_ . $TD_ . $TR_;
 echo $TR. $TD;
 $SELECT = '<select name="$pretensao_salario">';
 echo $SELECT;
-foreach ($pretensao_salario_lista as $indice => $pretensao_salario) {	
+foreach ($array_pretensao_salarial as $indice => $pretensao_salario) {	
 	if ($indice == 0) {
 		continue;
 	}
@@ -39,7 +39,7 @@ echo $TR . $TD . $LABEL . 'Contrato' . $LABEL_ . $TD_ . $TR_;
 echo $TR. $TD;
 $SELECT = '<select name="contrato">';
 echo $SELECT;
-foreach ($contrato_lista as $indice => $contrato) {	
+foreach ($array_contrato as $indice => $contrato) {	
 	if ($indice == 0) {
 		continue;
 	}

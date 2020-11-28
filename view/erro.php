@@ -14,7 +14,7 @@ echo $H1 . 'ERRO' . $H1_;
 
 echo $TABLE;
 
-echo $TR . $TD . '<p style="color: red">' . $erro_lista[$_GET['erro']]. '</p>'  . $TD_ . $TR_;
+echo $TR . $TD . '<p style="color: red">' . $array_erro[$_GET['erro']]. '</p>'  . $TD_ . $TR_;
 
 echo $TABLE_;
 

@@ -57,7 +57,7 @@ echo $TR . $TD . $LABEL . 'Contrato' . $LABEL_ . $TD_ . $TR_;
 echo $TR. $TD;
 $SELECT = '<select name="contrato">';
 echo $SELECT;
-foreach ($contrato_lista as $indice => $int_contrato) {	
+foreach ($array_contrato as $indice => $int_contrato) {	
 	echo ($int_contrato == $pessoa['int_contrato'])	? "<option value=$indice selected>$int_contrato</option>" : "<option value=$indice>$int_contrato</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -71,7 +71,7 @@ echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_ . $TR_;
 echo $TR. $TD;
 $SELECT = '<select name="int_estado">';
 echo $SELECT;
-foreach ($estado_lista as $indice => $int_estado) {	
+foreach ($array_estado as $indice => $int_estado) {	
 	if ($indice == 0) {
 		continue;
 	}
@@ -83,7 +83,7 @@ echo $TR . $TD . $LABEL . 'Cidade' . $LABEL_ . $TD_ . $TR_;
 echo $TR. $TD;
 $SELECT = '<select name="int_int_cidade">';
 echo $SELECT;
-foreach ($cidade_lista as $indice => $int_cidade) {	
+foreach ($array_cidade as $indice => $int_cidade) {	
 	if ($indice == 0) {
 		continue;
 	}

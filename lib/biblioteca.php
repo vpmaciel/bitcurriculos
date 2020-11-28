@@ -6076,41 +6076,41 @@ $array_lista = Cnh::$VALOR;
 
 $array_sexo = Sexo::$VALOR;
 
-$escolaridade_lista = Escolaridade::$VALOR;
+$array_escolaridade = Escolaridade::$VALOR;
 
-$contrato_lista = Contrato::$VALOR;
+$array_contrato = Contrato::$VALOR;
 
-$pretensao_salario_lista = PretensaoSalarial::$VALOR;
+$array_pretensao_salarial = PretensaoSalarial::$VALOR;
 
-$ultimo_salario_lista = UltimoSalario::$VALOR;
+$array_ultimo_salario = UltimoSalario::$VALOR;
 
-$estado_lista = Estado::$VALOR;
+$array_estado = Estado::$VALOR;
 
-$erro_lista = Erro::$VALOR;
+$array_erro = Erro::$VALOR;
 
-$cidade_lista = Cidade::$VALOR;
+$array_cidade = Cidade::$VALOR;
 
-$estado_civil_lista = EstadoCivil::$VALOR;
+$array_estado_civil = EstadoCivil::$VALOR;
 
-$nacionalidade_lista = Nacionalidade::$VALOR;
+$array_nacionalidade = Nacionalidade::$VALOR;
 
-$pais_lista = Pais::$VALOR;
+$array_pais = Pais::$VALOR;
 
-$resposta_lista = Resposta::$VALOR;
+$array_resposta = Resposta::$VALOR;
 
-$situacao_lista = Situacao::$VALOR;
+$array_situacao = Situacao::$VALOR;
 
-$usuario_lista = Usuario::$VALOR;
+$array_usuario = Usuario::$VALOR;
 
-$nivel_conhecimento_lista = NivelConhecimento::$VALOR;
+$array_nivel_conhecimento = NivelConhecimento::$VALOR;
 
-$nivel_conhecimento_idioma_lista = NivelConhecimentoIdioma::$VALOR;
+$array_nivel_conhecimento_idioma = NivelConhecimentoIdioma::$VALOR;
 
-$idioma_lista = Idioma::$VALOR;
+$array_idioma = Idioma::$VALOR;
 
-$segmento_empresa_lista = SegmentoEmpresarial::$VALOR;
+$array_segmento_empresa = SegmentoEmpresarial::$VALOR;
 
-$tipo_empresa_lista = TipoEmpresa::$VALOR;
+$array_tipo_empresa = TipoEmpresa::$VALOR;
 
 $DOCTYPE = '<!DOCTYPE html>';
 

@@ -42,7 +42,7 @@ echo $TR . $TD . $LABEL . 'Situação' . $LABEL_ . $TD_ . $TR_;
 echo $TR. $TD;
 $SELECT = '<select name="int_situacao">';
 echo $SELECT;
-foreach ($situacao_lista as $indice => $int_situacao) {	
+foreach ($array_situacao as $indice => $int_situacao) {	
 	if ($indice == 0) {
 		continue;
 	}
@@ -54,7 +54,7 @@ echo $TR . $TD . $LABEL . 'Nível' . $LABEL_ . $TD_ . $TR_;
 echo $TR. $TD;
 $SELECT = '<select name="int_nivel">';
 echo $SELECT;
-foreach ($escolaridade_lista as $indice => $int_nivel) {	
+foreach ($array_escolaridade as $indice => $int_nivel) {	
 	if ($indice == 0) {
 		continue;
 	}
