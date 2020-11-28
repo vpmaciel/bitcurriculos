@@ -54,7 +54,7 @@ class SQL {
         }
     }
 
-    public static function atualizar($dados, $tabela, $condicao) {
+    public static function atualizar($dados, $tabela, $condicao) : bool {
         if(!is_array($dados) && !is_array($condicao) && !is_string($tabela)) {
             header('Location: ..\view\erro.php?e=TDI');
         }

@@ -19,13 +19,13 @@ echo $FORM;
 echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'E-mail' . $LABEL_ . $TD_ . $TR_; 
-$usuario['email'] = isset($_POST['email']) ? $_POST['email']:'';
-$INPUT = '<input type="email" name="email" required size="70" minlength="5" maxlength="100" value="' . $usuario['email'] .'">';
+$usuario['usu_char_email'] = isset($_POST['usu_char_email']) ? $_POST['usu_char_email']:'';
+$INPUT = '<input type="usu_char_email" name="usu_char_email" required size="70" minlength="5" maxlength="100" value="' . $usuario['usu_char_email'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Repetir e-mail' . $LABEL_ . $TD_ . $TR_; 
-$usuario['repetir_email'] = isset($_POST['repetir_email']) ? $_POST['repetir_email']:'';
-$INPUT = '<input type="repetir_email" name="repetir_email" required size="70" minlength="5" maxlength="100" value="' . $usuario['repetir_email'] .'">';
+$usuario['usu_char_repetir_email'] = isset($_POST['usu_char_repetir_email']) ? $_POST['usu_char_repetir_email']:'';
+$INPUT = '<input type="usu_char_repetir_email" name="usu_char_repetir_email" required size="70" minlength="5" maxlength="100" value="' . $usuario['usu_char_repetir_email'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Senha' . $LABEL_ . $TD_ . $TR_; 
@@ -34,11 +34,11 @@ $INPUT = '<input type="password" id="senha" name="senha" size="70" required onke
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Repetir senha' . $LABEL_ . $TD_ . $TR_; 
-$usuario['repetir_senha'] = isset($_POST['repetir_senha']) ? $_POST['repetir_senha']:'';
-$INPUT = '<input type="password" id="repetir_senha" name="repetir_senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['repetir_senha'] .'">';
+$usuario['usu_char_repetir_senha'] = isset($_POST['usu_char_repetir_senha']) ? $_POST['usu_char_repetir_senha']:'';
+$INPUT = '<input type="password" id="usu_char_repetir_senha" name="usu_char_repetir_senha" size="70" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['usu_char_repetir_senha'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
-$SCRIPT = '<script>document.getElementById("repetir_senha").addEventListener("blur", validarSenha);</script>';
+$SCRIPT = '<script>document.getElementById("usu_char_repetir_senha").addEventListener("blur", validarSenha);</script>';
 echo $SCRIPT;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 

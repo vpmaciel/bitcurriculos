@@ -19,8 +19,8 @@ echo $FORM;
 echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'E-mail' . $LABEL_ . $TD_ . $TR_; 
-$usuario['char_email'] = isset($_POST['char_email']) ? $_POST['char_email']:'';
-$INPUT = '<input type="email" name="char_email" required size="70" minlength="5" maxlength="100" value="' . $usuario['char_email'] .'">';
+$usuario['usu_char_email'] = isset($_POST['usu_char_email']) ? $_POST['usu_char_email']:'';
+$INPUT = '<input type="email" name="usu_char_email" required size="70" minlength="5" maxlength="100" value="' . $usuario['usu_char_email'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
