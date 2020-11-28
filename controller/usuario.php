@@ -13,10 +13,12 @@ require_once '../database/sql.php';
 function autenticar($campo, $tamanho) {
     
 }
-$usuario_model = array();
-$usuario_model['usu_char_email'] = $_POST['usu_char_email'];
-$usuario_model['usu_char_senha'] = $_POST['usu_char_senha'];
+$usuario_model = usuario_model();
+//$usuario_model['usu_char_email'] = $_POST['usu_char_email'];
+//$usuario_model['usu_char_senha'] = $_POST['usu_char_senha'];
+echo "<br>" .count($usuario_model);
 
-$resultado = selecionar($usuario_model, 'tb_usuario', array());
+
+$resultado = selecionar($usuario_model, 'tb_usuario', usuario_model());
 if( count($resultado) == 0)
 echo "zero";

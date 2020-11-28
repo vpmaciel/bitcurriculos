@@ -117,7 +117,10 @@ function selecionar(array $dados, string $tabela, array $condicao) : array {
     try {
 
         foreach($dados as $chave => $valor) {
-            
+            $contador++;
+            if (empty($valor)) {
+                continue;
+            }
             $valor = "'$valor'";
             
             $campos .= $chave . "=". $valor;               
@@ -125,7 +128,7 @@ function selecionar(array $dados, string $tabela, array $condicao) : array {
             if($contador < $tamanho) {
                 $campos .= ',';
             }                
-            $contador++;
+            
         }
 
         $contador = 1;
