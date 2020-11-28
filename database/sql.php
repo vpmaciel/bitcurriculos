@@ -1,12 +1,11 @@
 <?php
-defined('BASEPATH') || exit('No direct script access allowed');
 class SQL {
 
     private $pdo;
 
     public function __construct() 
     {
-        $dsn = "mysql:host=localhost;dbname=db_curriculo";
+        $dsn = "mysql:host=localhost;dbname=db_bitcurriculo";
         $usuario = "root";
         $senha = "";
         $this->pdo = new PDO($dsn, $usuario, $senha);        
@@ -143,15 +142,15 @@ class SQL {
                 }
                 $contador++;
             }
-
-            $stmt = $this->$pdo->prepare("SELECT * FROM $tabela;");
+            echo "<br>" . "SELECT * FROM $tabela;";
+            $stmt = $pdo->prepare("SELECT * FROM $tabela;");
+            
             if ($tamanho > 0) {
-                $stmt = $this->$pdo->prepare("SELECT * FROM $tabela WHERE ($condicao);");
+                $stmt = $pdo->prepare("SELECT * FROM $tabela WHERE ($condicao);");
             }
             
             $consulta = $stmt->execute();
             $array_modelos = array();
-
             
             while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
             
@@ -209,3 +208,5 @@ class SQL {
         }
     }
 }
+
+$sql = new SQL();
