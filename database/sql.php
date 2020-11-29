@@ -14,7 +14,7 @@ try {
 function inserir($char_tabela, $array_model) : bool {
     
     if(!is_array($array_model) || !is_string($char_tabela)) {
-        header('Location: ..\view\erro.php?erro=TDI');
+        return FALSE;
     }
 
     global $pdo;
@@ -23,10 +23,6 @@ function inserir($char_tabela, $array_model) : bool {
     $tamanho = count ($array_model);
     $contador = 1;
     $retorno = FALSE;
-
-    if($tamanho == 0) {
-        return FALSE;
-    }   
 
     try {
 
@@ -113,8 +109,8 @@ function atualizar($char_tabela, $array_model, $condicao) : bool {
 function selecionar($char_tabela, $array_condicao) : array {
     global $pdo;
     
-    if(empty($array_condicao) || empty($char_tabela)) {
-        throw new Exception('Parametros vazios');
+    if(!is_array($array_condicao) || !is_char($char_tabela)) {
+        return FALSE;
     }
 
     $char_condicao = '';
@@ -132,16 +128,16 @@ function selecionar($char_tabela, $array_condicao) : array {
             }
             $contador++;
         }
-        echo "<br>" . "SELECT * FROM $char_tabela;";
+        
         $stmt = $pdo->prepare("SELECT * FROM $char_tabela;");
-        echo "<br>T:" . "$tamanho";
-        if ($tamanho > 0) {
+        
+        if (!empty($array_condicao)) {
             $stmt = $pdo->prepare("SELECT * FROM $char_tabela WHERE ($char_condicao);");
-            echo "<br>" . "SELECT * FROM $char_tabela WHERE ($char_condicao);";
+            
         }
 
         if (!$stmt->execute()) {
-            throw new Exception('Não executou stmt !');
+            return FALSE;
         }
                 
         $array_modelos = array();
@@ -200,5 +196,45 @@ function excluir($char_tabela, $condicao) : bool {
     
         $pdo->rollback();
         throw $e;
+    }
+}
+
+function procurar($char_tabela, $array_condicao) : bool {
+    global $pdo;
+    
+    if(!is_array($array_condicao) || !is_string($char_tabela)) {
+        return FALSE;
+    }
+
+    $char_condicao = '';
+    $tamanho_array_condicao = count ($array_condicao);
+           
+
+    try {
+        $contador = 1;
+        foreach($array_condicao as $chave => $valor) {
+            
+            $valor = removerAcentos($valor);
+            $char_condicao .= $chave . "=" . "'" . $valor . "'";               
+
+            if($contador < $tamanho_array_condicao) {
+                $char_condicao .= ',';
+            }
+            $contador++;
+        }
+        
+        $stmt = $pdo->prepare("SELECT * FROM $char_tabela WHERE ($char_condicao);");
+            
+        if (!$stmt->execute()) {
+            return FALSE;
+        }
+                
+        $array_modelos = array();
+        
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    } catch(Exception $e) {           
+        
+        return FALSE;
     }
 }
