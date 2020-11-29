@@ -16,9 +16,9 @@ echo $TABLE;
 
 echo $TR . $TD . '<p style="color: green">' . 'Logoff realizado com sucesso !'. '</p>'  . $TD_ . $TR_;
 
-echo $TABLE_;
+echo $TR . $TD . $LABEL; require_once 'rodape.php'; echo $LABEL_ . $TD_ . $TR_; 
 
-require_once 'rodape.php';
+echo $TABLE_;
 
 echo $DIV_;
 

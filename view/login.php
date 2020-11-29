@@ -38,13 +38,15 @@ echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 $LINK = '<a href="recupera_senha.php">Esqueci usuário ou senha</a>';
 echo $TD . $LINK . $TD_ . $TR_;
 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
+
+echo $TR . $TD . $LABEL; require_once 'rodape.php'; echo $LABEL_ . $TD_ . $TR_;
+
 echo $TABLE_;
 
 echo $FORM_;
 
 echo $DIV_;
-
-require_once 'rodape.php';
 
 echo $DIV_;
 
