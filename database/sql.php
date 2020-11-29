@@ -1,4 +1,5 @@
 <?php
+require_once '../lib/biblioteca.php';
 
 $dsn = "mysql:host=localhost;dbname=db_bitcurriculo";
 $usuario = "root";
@@ -30,7 +31,7 @@ function inserir($char_tabela, $array_model) : bool {
             
             $valor = "'$valor'";            
             $campos .= $chave;
-            $valores .= removerAcentos($valor);
+            $valores .= remover_acento($valor);
 
             if($contador < $tamanho) {
                 $campos .= ',';
@@ -85,7 +86,7 @@ function atualizar($char_tabela, $array_model, $condicao) : bool {
         $tamanho = count ($condicao);
         foreach($condicao as $chave => $valor) {
             
-            $valor = "'$removerAcentos($valor)'";
+            $valor = "'$remover_acento($valor)'";
             $condicao .= $chave . "=". $valor;               
 
             if($contador < $tamanho) {
@@ -120,7 +121,7 @@ function selecionar($char_tabela, $array_condicao) : array {
     try {
         foreach($array_condicao as $chave => $valor) {
             
-            $valor = removerAcentos($valor);
+            $valor = remover_acento($valor);
             $char_condicao .= $chave . "=" . "'" . $valor . "'";               
 
             if($contador < $tamanho) {
@@ -176,7 +177,7 @@ function excluir($char_tabela, $condicao) : bool {
         $tamanho = count ($condicao);
         foreach($condicao as $chave => $valor) {
             
-            $valor = "'$removerAcentos($valor)'";
+            $valor = "'$remover_acento($valor)'";
             $condicao .= $chave . "=". $valor;               
 
             if($contador < $tamanho) {
@@ -213,7 +214,7 @@ function procurar($char_tabela, $array_condicao) : bool {
         $contador = 1;
         foreach($array_condicao as $chave => $valor) {
             
-            $valor = removerAcentos($valor);
+            $valor = remover_acento($valor);
             $char_condicao .= $chave . "=" . "'" . $valor . "'";               
 
             if($contador < $tamanho_array_condicao) {

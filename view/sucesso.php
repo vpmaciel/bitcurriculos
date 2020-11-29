@@ -14,7 +14,7 @@ echo $H1 . 'SUCESSO' . $H1_;
 
 echo $TABLE;
 
-echo $TR . $TD . '<p style="color: green">' . 'Operação realizada com sucesso !'. '</p>'  . $TD_ . $TR_;
+echo $TR . $TD . '<p style="color: green; text-align: center;">' . 'Operação realizada com sucesso !'. '</p>'  . $TD_ . $TR_;
 
 echo $TR. $TD . $LABEL; require_once 'rodape.php'; echo $LABEL_ . $TD_ . $TR_; 
 
