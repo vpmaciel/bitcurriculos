@@ -106,23 +106,16 @@ function atualizar($dados, $tabela, $condicao) : bool {
 
 function selecionar($tabela, $array_condicao) : array {
     global $pdo;
-    echo '<br>'. gettype($tabela);
-    echo '<br>'. gettype($array_condicao);
     
     if(empty($array_condicao) || empty($tabela)) {
         throw new Exception('Parametros vazios');
     }
+
     $char_condicao = '';
-    $tamanho = count ($array_condicao);
-    $contador = 1;
-    if($tamanho == 0)
-    {
-        return FALSE;
-    }   
+    $tamanho_array_condicao = count ($array_condicao);
+    $contador = 1;       
 
     try {
-        $contador = 1;
-        $tamanho = count ($array_condicao);
         foreach($array_condicao as $chave => $valor) {
             
             $valor = removerAcentos($valor);
@@ -137,7 +130,7 @@ function selecionar($tabela, $array_condicao) : array {
         $stmt = $pdo->prepare("SELECT * FROM $tabela;");
         echo "<br>T:" . "$tamanho";
         if ($tamanho > 0) {
-            //$stmt = $pdo->prepare("SELECT * FROM $tabela WHERE ($char_condicao);");
+            $stmt = $pdo->prepare("SELECT * FROM $tabela WHERE ($char_condicao);");
             echo "<br>" . "SELECT * FROM $tabela WHERE ($char_condicao);";
         }
 
