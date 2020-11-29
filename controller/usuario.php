@@ -21,7 +21,7 @@ $condicao = ['usu_char_email' => $usuario_model['usu_char_email']];
 
 $resultado = inserir('tb_usuario', $usuario_model);
 
-if ($resultado->execute()) {
+if ($resultado) {
 	header("..\view\sucesso.php");
 } else {
 	header("..\view\erro.php:erro=OPN");
