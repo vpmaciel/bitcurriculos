@@ -3,7 +3,13 @@
 $dsn = "mysql:host=localhost;dbname=db_bitcurriculo";
 $usuario = "root";
 $senha = "";
-$pdo = new PDO($dsn, $usuario, $senha);        
+try {
+    $pdo = new PDO($dsn, $usuario, $senha);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $erro) {
+    echo "Erro na conexão:" . $erro->getMessage();
+}
+        
 
 function inserir($dados, $tabela) : bool {
     
@@ -131,14 +137,17 @@ function selecionar($tabela, $array_condicao) : array {
         $stmt = $pdo->prepare("SELECT * FROM $tabela;");
         echo "<br>T:" . "$tamanho";
         if ($tamanho > 0) {
-            $stmt = $pdo->prepare("SELECT * FROM $tabela WHERE ($char_condicao);");
+            //$stmt = $pdo->prepare("SELECT * FROM $tabela WHERE ($char_condicao);");
             echo "<br>" . "SELECT * FROM $tabela WHERE ($char_condicao);";
         }
-        
-        $consulta = $stmt->execute();
+
+        if ($stmt->execute()) {
+            echo "<br>" . "executou;";
+        }
+                
         $array_modelos = array();
         
-        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) !== FALSE) {
+        while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
         
             $array_modelo = array();
 
