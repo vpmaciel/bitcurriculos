@@ -25,7 +25,7 @@ echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Senha' . $LABEL_; 
 $usuario['usu_char_senha'] = isset($_POST['usu_char_senha']) ? $_POST['usu_char_senha']:'';
-$INPUT = '<input type="password" name="usu_char_senha" size="70" placeholder="00000000" required onkeypress="$(this).mask(\'00000000\');" minlength="8" maxlength="8" value="' . $usuario['usu_char_senha'] .'">';
+$INPUT = '<input type="password" name="usu_char_senha" size="70" placeholder="0000" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $usuario['usu_char_senha'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 

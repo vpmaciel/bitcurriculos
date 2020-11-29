@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_certificacao`
+-- Estrutura da tabela `certificacao`
 --
 
-CREATE TABLE `tb_certificacao` (
+CREATE TABLE `certificacao` (
   `cer_int_id` int(11) NOT NULL,
   `usu_int_id` int(11) NOT NULL,
   `cer_char_certificacao` varchar(50) NOT NULL,
@@ -38,10 +38,10 @@ CREATE TABLE `tb_certificacao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_curso`
+-- Estrutura da tabela `curso`
 --
 
-CREATE TABLE `tb_curso` (
+CREATE TABLE `curso` (
   `cur_int_id` int(11) NOT NULL,
   `usu_int_id` int(11) NOT NULL,
   `cur_char_nome` varchar(50) NOT NULL,
@@ -55,10 +55,10 @@ CREATE TABLE `tb_curso` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_experiencia_profissional`
+-- Estrutura da tabela `experiencia_profissional`
 --
 
-CREATE TABLE `tb_experiencia_profissional` (
+CREATE TABLE `experiencia_profissional` (
   `exp_prof_int_id` int(11) NOT NULL,
   `usu_int_id` int(11) NOT NULL,
   `exp_prof_char_empresa` varchar(50) NOT NULL,
@@ -71,10 +71,10 @@ CREATE TABLE `tb_experiencia_profissional` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_habilidade`
+-- Estrutura da tabela `habilidade`
 --
 
-CREATE TABLE `tb_habilidade` (
+CREATE TABLE `habilidade` (
   `hab_int_id` int(11) NOT NULL,
   `usu_int_id` int(11) NOT NULL,
   `hab_char_habilidade` varchar(50) NOT NULL,
@@ -84,10 +84,10 @@ CREATE TABLE `tb_habilidade` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_idioma`
+-- Estrutura da tabela `idioma`
 --
 
-CREATE TABLE `tb_idioma` (
+CREATE TABLE `idioma` (
   `idi_int_id` int(11) NOT NULL,
   `usu_int_id` int(11) NOT NULL,
   `idi_int_idioma` tinyint(4) NOT NULL,
@@ -97,10 +97,10 @@ CREATE TABLE `tb_idioma` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_objetivo_profissional`
+-- Estrutura da tabela `objetivo_profissional`
 --
 
-CREATE TABLE `tb_objetivo_profissional` (
+CREATE TABLE `objetivo_profissional` (
   `obj_pro_int_id` int(11) NOT NULL,
   `usu_id` int(11) NOT NULL,
   `obj_pro_int_char_cargo` varchar(50) NOT NULL,
@@ -111,10 +111,10 @@ CREATE TABLE `tb_objetivo_profissional` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_pessoa`
+-- Estrutura da tabela `pessoa`
 --
 
-CREATE TABLE `tb_pessoa` (
+CREATE TABLE `pessoa` (
   `usu_int_id` int(11) NOT NULL,
   `pes_char_nome` varchar(50) NOT NULL,
   `pes_char_url_repositorio_codigos` varchar(500) NOT NULL,
@@ -146,10 +146,10 @@ CREATE TABLE `tb_pessoa` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_publica_vaga`
+-- Estrutura da tabela `publica_vaga`
 --
 
-CREATE TABLE `tb_publica_vaga` (
+CREATE TABLE `publica_vaga` (
   `pub_vag_int_id` int(11) NOT NULL,
   `pub_vag_int_usuario_id` int(11) NOT NULL,
   `pub_vag_char_empresa` varchar(50) NOT NULL,
@@ -168,10 +168,10 @@ CREATE TABLE `tb_publica_vaga` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_usuario`
+-- Estrutura da tabela `usuario`
 --
 
-CREATE TABLE `tb_usuario` (
+CREATE TABLE `usuario` (
   `usu_int_id` int(11) NOT NULL,
   `usu_char_email` varchar(100) NOT NULL,
   `usu_char_senha` char(4) NOT NULL,
@@ -183,57 +183,57 @@ CREATE TABLE `tb_usuario` (
 --
 
 --
--- Índices para tabela `tb_certificacao`
+-- Índices para tabela `certificacao`
 --
-ALTER TABLE `tb_certificacao`
+ALTER TABLE `certificacao`
   ADD PRIMARY KEY (`cer_int_id`);
 
 --
--- Índices para tabela `tb_curso`
+-- Índices para tabela `curso`
 --
-ALTER TABLE `tb_curso`
+ALTER TABLE `curso`
   ADD PRIMARY KEY (`cur_int_id`);
 
 --
--- Índices para tabela `tb_experiencia_profissional`
+-- Índices para tabela `experiencia_profissional`
 --
-ALTER TABLE `tb_experiencia_profissional`
+ALTER TABLE `experiencia_profissional`
   ADD PRIMARY KEY (`exp_prof_int_id`);
 
 --
--- Índices para tabela `tb_habilidade`
+-- Índices para tabela `habilidade`
 --
-ALTER TABLE `tb_habilidade`
+ALTER TABLE `habilidade`
   ADD PRIMARY KEY (`hab_int_id`);
 
 --
--- Índices para tabela `tb_idioma`
+-- Índices para tabela `idioma`
 --
-ALTER TABLE `tb_idioma`
+ALTER TABLE `idioma`
   ADD PRIMARY KEY (`idi_int_id`);
 
 --
--- Índices para tabela `tb_objetivo_profissional`
+-- Índices para tabela `objetivo_profissional`
 --
-ALTER TABLE `tb_objetivo_profissional`
+ALTER TABLE `objetivo_profissional`
   ADD PRIMARY KEY (`obj_pro_int_id`);
 
 --
--- Índices para tabela `tb_pessoa`
+-- Índices para tabela `pessoa`
 --
-ALTER TABLE `tb_pessoa`
+ALTER TABLE `pessoa`
   ADD PRIMARY KEY (`usu_int_id`);
 
 --
--- Índices para tabela `tb_publica_vaga`
+-- Índices para tabela `publica_vaga`
 --
-ALTER TABLE `tb_publica_vaga`
+ALTER TABLE `publica_vaga`
   ADD PRIMARY KEY (`pub_vag_int_id`);
 
 --
--- Índices para tabela `tb_usuario`
+-- Índices para tabela `usuario`
 --
-ALTER TABLE `tb_usuario`
+ALTER TABLE `usuario`
   ADD PRIMARY KEY (`usu_int_id`),
   ADD UNIQUE KEY `idx_usuario_char_email` (`usu_char_email`);
 
@@ -242,51 +242,51 @@ ALTER TABLE `tb_usuario`
 --
 
 --
--- AUTO_INCREMENT de tabela `tb_certificacao`
+-- AUTO_INCREMENT de tabela `certificacao`
 --
-ALTER TABLE `tb_certificacao`
+ALTER TABLE `certificacao`
   MODIFY `cer_int_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tb_curso`
+-- AUTO_INCREMENT de tabela `curso`
 --
-ALTER TABLE `tb_curso`
+ALTER TABLE `curso`
   MODIFY `cur_int_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tb_experiencia_profissional`
+-- AUTO_INCREMENT de tabela `experiencia_profissional`
 --
-ALTER TABLE `tb_experiencia_profissional`
+ALTER TABLE `experiencia_profissional`
   MODIFY `exp_prof_int_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tb_habilidade`
+-- AUTO_INCREMENT de tabela `habilidade`
 --
-ALTER TABLE `tb_habilidade`
+ALTER TABLE `habilidade`
   MODIFY `hab_int_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tb_idioma`
+-- AUTO_INCREMENT de tabela `idioma`
 --
-ALTER TABLE `tb_idioma`
+ALTER TABLE `idioma`
   MODIFY `idi_int_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tb_objetivo_profissional`
+-- AUTO_INCREMENT de tabela `objetivo_profissional`
 --
-ALTER TABLE `tb_objetivo_profissional`
+ALTER TABLE `objetivo_profissional`
   MODIFY `obj_pro_int_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tb_publica_vaga`
+-- AUTO_INCREMENT de tabela `publica_vaga`
 --
-ALTER TABLE `tb_publica_vaga`
+ALTER TABLE `publica_vaga`
   MODIFY `pub_vag_int_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tb_usuario`
+-- AUTO_INCREMENT de tabela `usuario`
 --
-ALTER TABLE `tb_usuario`
+ALTER TABLE `usuario`
   MODIFY `usu_int_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

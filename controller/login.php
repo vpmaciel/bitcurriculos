@@ -1,19 +1,33 @@
 <?php
 session_start();
 
-if (!isset($_SESSION["usu_int_id"])) {
-	//header("location: erro.php?erro=1");
-}
-
 require_once '../lib/biblioteca.php';
 require_once '../model/model.php';
-unset ($_SESSION['login']);
+require_once '../database/sql.php';
 
+$usuario_model = usuario_model();
+$usuario_model['usu_char_email'] = $_POST['usu_char_email'];
+$usuario_model['usu_char_senha'] = $_POST['usu_char_senha'];
 
-function autenticar($campo, $tamanho) {
-    
+$condicao = ['usu_char_email' => $usuario_model['usu_char_email']];
+$resultado = procurar('usuario', $condicao);
+if ($resultado == TRUE) {
+	header('location: ..\view\erro.php?e=OPN&msg="E-mail já cadastrado"');
+} else {
+	$resultado = inserir('usuario', $usuario_model);
+
+	if ($resultado == TRUE) {
+
+		$condicao = 'usu_char_email =' . "'" .$_POST['usu_char_email'] . "'" . " AND " . 
+		            'usu_char_senha =' . "'" .$_POST['usu_char_senha'] . "'";
+		$resultado = criar_sessao('usuario', $condicao);		
+		
+		if ($resultado == TRUE) {			
+			header('location:..\view\sucesso.php');
+		} else {
+			exit();
+			header('location:..\view\erro.php?e=OPN');
+		}	
+	} 
 }
-echo $usuario_model['usu_char_email'] = $_POST['usu_char_email'];
-echo $usuario_model['usu_char_senha'] = $_POST['usu_char_senha'];
-
 
