@@ -9,7 +9,7 @@ $usuario_model = usuario_model();
 $usuario_model['usu_char_email'] = $_POST['usu_char_email'];
 $usuario_model['usu_char_senha'] = $_POST['usu_char_senha'];
 
-$condicao = ['usu_char_email' => $usuario_model['usu_char_email']];
+$condicao['usu_char_email'] = $usuario_model['usu_char_email'];
 $resultado = procurar('usuario', $condicao);
 if ($resultado == TRUE) {
 	header('location: ..\view\erro.php?e=OPN&msg="E-mail já cadastrado"');
@@ -28,7 +28,6 @@ if ($resultado == TRUE) {
 			}			
 			header('location:..\view\sucesso.php');
 		} else {
-			exit();
 			header('location:..\view\erro.php?e=OPN');
 		}	
 	} 

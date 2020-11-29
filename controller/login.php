@@ -11,6 +11,7 @@ $usuario_model['usu_char_senha'] = $_POST['usu_char_senha'];
 
 $condicao = ['usu_char_email' => $usuario_model['usu_char_email']];
 $resultado = procurar('usuario', $condicao);
+
 if ($resultado == FALSE) {
 	header('location: ..\view\erro.php?e=OPN&msg="E-mail ou senha incorretos !"');
 } else {	
@@ -27,7 +28,6 @@ if ($resultado == FALSE) {
 			}
 			header('location:..\view\sucesso.php');
 		} else {
-			exit();
 			header('location:..\view\erro.php?e=OPN');
 		}	
 	} 
