@@ -236,24 +236,24 @@ function procurar($char_tabela, $array_condicao) : bool {
     }
 }
 
-function criar_sessao($char_tabela, $char_campo, $char_condicao) : bool {
+function criar_sessao($char_tabela, $char_condicao) : bool {
     global $pdo;
     
-    if(empty($char_condicao) || empty($char_tabela) || empty($char_campo)) {
+    if(empty($char_condicao) || empty($char_tabela)) {
         return FALSE;
     }
 
     try {
         $char_condicao = removerAcentos($char_condicao);
         
-        $stmt = $pdo->prepare("SELECT $char_campo FROM $char_tabela WHERE ($char_condicao);");
+        $stmt = $pdo->prepare("SELECT * FROM $char_tabela WHERE ($char_condicao);");
         
         if (!$stmt->execute()) {
             return FALSE;
         }
         
         while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $_SESSION[$char_campo] = $linha["'$char_campo'"];
+            $_SESSION['usu_int_id'] = $linha["usu_int_id"];
             return TRUE;
         }          
         
