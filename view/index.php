@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once '../lib/biblioteca.php';
 
 echo $DOCTYPE;
@@ -22,7 +24,7 @@ $MSG = '<p align="justify">O nosso site oferece serviços para profissionais e e
 echo $MSG;
 
 $cotacao_dolar = new Dolar();
-
+echo '<br>' . $_SESSION['usu_int_id'];
 echo $DIV_;
 
 echo $DIV_;

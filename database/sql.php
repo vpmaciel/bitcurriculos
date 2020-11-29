@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 $dsn = "mysql:host=localhost;dbname=db_bitcurriculo";
 $usuario = "root";
@@ -237,11 +236,11 @@ function procurar($char_tabela, $array_condicao) : bool {
     }
 }
 
-function criar_sessao($char_tabela, $char_condicao) : bool {
+function criar_sessao($char_tabela, $char_condicao) : int {
     global $pdo;
     
     if(empty($char_condicao) || empty($char_tabela)) {
-        return FALSE;
+        return 0;
     }
 
     try {
@@ -249,19 +248,19 @@ function criar_sessao($char_tabela, $char_condicao) : bool {
         $stmt = $pdo->prepare("SELECT * FROM $char_tabela WHERE ($char_condicao);");
         
         if (!$stmt->execute()) {
-            return FALSE;
+            return 0;
         }
         
         while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $_SESSION['usu_int_id'] = $linha["usu_int_id"];
-            return TRUE;
+            return $linha["usu_int_id"];
         }          
         
     
     } catch(Exception $e) {           
         
-        return FALSE;
+        return 0;
     }
+    return 0;
 }
 
 

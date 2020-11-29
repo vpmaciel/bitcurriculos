@@ -3,7 +3,7 @@
       <a href="index.php">Home</a><br>
       <a href='usuario.php'>Registrar</a><br>
       <a href='login.php'>Entrar</a><br>
-      <a href='sair.php'>Sair</a><br>-<br>
+      <a href='..\controller\logoff.php'>Sair</a><br>-<br>
       <a href="pessoa.php">Dados Pessoais</a><br>
       <a href="curso.php">Cursos</a><br>
       <a href="certificacao.php">Certificação</a><br>

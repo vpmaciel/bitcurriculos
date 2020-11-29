@@ -22,7 +22,10 @@ if ($resultado == TRUE) {
 		            'usu_char_senha =' . "'" .$_POST['usu_char_senha'] . "'";
 		$resultado = criar_sessao('usuario', $condicao);		
 		
-		if ($resultado == TRUE) {			
+		if ($resultado > 0) {
+			if (!isset($_SESSION['usu_int_id'])) {
+				$_SESSION['usu_int_id'] = $resultado;
+			}			
 			header('location:..\view\sucesso.php');
 		} else {
 			exit();

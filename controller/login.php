@@ -11,10 +11,9 @@ $usuario_model['usu_char_senha'] = $_POST['usu_char_senha'];
 
 $condicao = ['usu_char_email' => $usuario_model['usu_char_email']];
 $resultado = procurar('usuario', $condicao);
-if ($resultado == TRUE) {
-	header('location: ..\view\erro.php?e=OPN&msg="E-mail já cadastrado"');
-} else {
-	$resultado = inserir('usuario', $usuario_model);
+if ($resultado == FALSE) {
+	header('location: ..\view\erro.php?e=OPN&msg="E-mail ou senha incorretos !"');
+} else {	
 
 	if ($resultado == TRUE) {
 
@@ -22,7 +21,10 @@ if ($resultado == TRUE) {
 		            'usu_char_senha =' . "'" .$_POST['usu_char_senha'] . "'";
 		$resultado = criar_sessao('usuario', $condicao);		
 		
-		if ($resultado == TRUE) {			
+		if ($resultado > 0) {			
+			if (!isset($_SESSION['usu_int_id'])) {
+				$_SESSION['usu_int_id'] = $resultado;
+			}
 			header('location:..\view\sucesso.php');
 		} else {
 			exit();
@@ -30,4 +32,3 @@ if ($resultado == TRUE) {
 		}	
 	} 
 }
-
