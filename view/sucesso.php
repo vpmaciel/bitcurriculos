@@ -18,6 +18,8 @@ echo $TR . $TD . '<p style="color: green">' . 'Operação realizada com sucesso 
 
 echo $TABLE_;
 
+require_once 'rodape.php';
+
 echo $DIV_;
 
 echo $BODY_;

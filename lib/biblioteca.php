@@ -24,7 +24,7 @@ class Dolar {
             $valores = $resultado["value"][0];
             //Agora será possível recuperar a informação da cotação do dólar:	
         
-            echo "Dólar compra: R$ " . number_format($valores["cotacaoCompra"], 2, ',', '');
+            echo "<p align=\"justify\">Dólar compra: R$ " . number_format($valores["cotacaoCompra"], 2, ',', '');
             echo ('
             ');
             echo ". Dolar venda: R$". number_format($valores["cotacaoVenda"], 2, ',', '');
@@ -32,7 +32,7 @@ class Dolar {
             ');
             $dataHoraCotacao = new DateTime($valores["dataHoraCotacao"]);
             echo ". Data e hora da cotação: ". $dataHoraCotacao->format('d-m-Y H:i');
-            
+            echo "</p>";
         }
         curl_close($ch);        
     }

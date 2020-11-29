@@ -296,8 +296,9 @@ echo $FORM_;
 
 echo $DIV_;
 
-echo $DIV_;
+require_once 'rodape.php';
 
+echo $DIV_;
 
 echo $BODY_;
 

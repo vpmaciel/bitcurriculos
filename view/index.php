@@ -25,6 +25,8 @@ echo $MSG;
 
 $cotacao_dolar = new Dolar();
 
+require_once 'rodape.php';
+
 echo $DIV_;
 
 echo $DIV_;

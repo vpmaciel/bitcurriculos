@@ -22,6 +22,8 @@ if (isset($_GET['msg'])) {
 
 echo $TABLE_;
 
+require_once 'rodape.php';
+
 echo $DIV_;
 
 echo $BODY_;
