@@ -11,12 +11,13 @@ try {
 }
         
 
-function inserir($dados, $tabela) : bool {
+function inserir($tabela, $dados) : bool {
     
     if(!is_array($dados) && !is_string($tabela)) {
-        header('Location: ..\view\erro.php?e=TDI');
+        header('Location: ..\view\erro.php?erro=TDI');
     }
-    
+
+    global $pdo;
     $campos = '';
     $valores = '';
     $tamanho = count ($dados);
@@ -29,8 +30,7 @@ function inserir($dados, $tabela) : bool {
 
         foreach($dados as $chave => $valor) {
             
-            $valor = "'$valor'";
-            
+            $valor = "'$valor'";            
             $campos .= $chave;
             $valores .= removerAcentos($valor);
 
@@ -42,8 +42,15 @@ function inserir($dados, $tabela) : bool {
         }
 
         $pdo->beginTransaction();
-        $stm = $pdo->exec("INSERT INTO $tabela ($campos) VALUES ($valores);");            
-    
+        $stmt = $pdo->exec("INSERT INTO $tabela ($campos) VALUES ($valores);");            
+        
+        if ($stmt->execute()) {
+            header("..\view\sucesso.php");
+        } else {
+            header("..\view\erro.php:erro=OPN");
+        }
+        
+        
         $pdo->commit();
     
     } catch(Exception $e) {
@@ -93,7 +100,7 @@ function atualizar($dados, $tabela, $condicao) : bool {
         }
 
         $pdo->beginTransaction();
-        $stm = $pdo->exec("UPDATE $tabela SET $campos WHERE ($condicao);");            
+        $stm = $pdo->prepare("UPDATE $tabela SET $campos WHERE ($condicao);");            
     
         $pdo->commit();
     
@@ -134,8 +141,8 @@ function selecionar($tabela, $array_condicao) : array {
             echo "<br>" . "SELECT * FROM $tabela WHERE ($char_condicao);";
         }
 
-        if ($stmt->execute()) {
-            echo "<br>" . "executou;";
+        if (!$stmt->execute()) {
+            throw new Exception('Não executou stmt !');
         }
                 
         $array_modelos = array();
@@ -148,7 +155,7 @@ function selecionar($tabela, $array_condicao) : array {
                     $array_modelo["'$chave'"] = $linha["'$chave'"];                     
             }
 
-                array_push($array_modelos, $array_modelo);                
+                array_push($array_modelos, $array_modelo);
         }          
         return $array_modelos;
     
