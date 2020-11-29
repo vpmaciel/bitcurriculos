@@ -57,7 +57,7 @@ function inserir($char_tabela, $array_model) : bool {
 
 function atualizar($char_tabela, $array_model, $condicao) : bool {
     if(!is_array($array_model) || !is_array($condicao) || !is_string($char_tabela)) {
-        header('Location: ..\view\erro.php?erro=TDI');
+        return FALSE;
     }
     $campos = '';
     $tamanho = count ($array_model);
@@ -162,7 +162,7 @@ function selecionar($char_tabela, $array_condicao) : array {
 
 function excluir($char_tabela, $condicao) : bool {
     if(!is_array($condicao) && !is_array($char_tabela)) {
-        header('Location: ..\view\erro.php?e=TDI');
+        return FALSE;
     }
     $campos = '';
     $tamanho = count ($condicao);
@@ -223,15 +223,13 @@ function procurar($char_tabela, $array_condicao) : bool {
             $contador++;
         }
         
-        $stmt = $pdo->prepare("SELECT * FROM $char_tabela WHERE ($char_condicao);");
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM $char_tabela WHERE ($char_condicao);");
             
         if (!$stmt->execute()) {
             return FALSE;
         }
-                
-        $array_modelos = array();
-        
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $retorno 
+        return ; 
     
     } catch(Exception $e) {           
         

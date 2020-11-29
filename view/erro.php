@@ -16,6 +16,10 @@ echo $TABLE;
 
 echo $TR . $TD . '<p style="color: red">' . $array_erro[$_GET['erro']]. '</p>'  . $TD_ . $TR_;
 
+if (isset($_GET['msg'])) {
+    echo $TR . $TD . '<p style="color: red">' . $_GET['msg']. '</p>'  . $TD_ . $TR_;
+}
+
 echo $TABLE_;
 
 echo $DIV_;
