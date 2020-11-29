@@ -11,24 +11,26 @@ try {
 }
         
 
-function inserir($tabela, $dados) : bool {
+function inserir($char_tabela, $array_model) : bool {
     
-    if(!is_array($dados) && !is_string($tabela)) {
+    if(!is_array($array_model) || !is_string($char_tabela)) {
         header('Location: ..\view\erro.php?erro=TDI');
     }
 
     global $pdo;
     $campos = '';
     $valores = '';
-    $tamanho = count ($dados);
+    $tamanho = count ($array_model);
     $contador = 1;
+    $retorno = FALSE;
+
     if($tamanho == 0) {
         return FALSE;
     }   
 
     try {
 
-        foreach($dados as $chave => $valor) {
+        foreach($array_model as $chave => $valor) {
             
             $valor = "'$valor'";            
             $campos .= $chave;
@@ -42,30 +44,27 @@ function inserir($tabela, $dados) : bool {
         }
 
         $pdo->beginTransaction();
-        $stmt = $pdo->exec("INSERT INTO $tabela ($campos) VALUES ($valores);");            
+        $stmt = $pdo->prepare("INSERT INTO $char_tabela ($campos) VALUES ($valores);");            
         
-        if ($stmt->execute()) {
-            header("..\view\sucesso.php");
-        } else {
-            header("..\view\erro.php:erro=OPN");
-        }
-        
+        $retorno = ($stmt->execute()) ? TRUE : FALSE;        
         
         $pdo->commit();
     
     } catch(Exception $e) {
     
         $pdo->rollback();
-        throw $e;
+        $retorno = FALSE;
     }
+
+    return $retorno;
 }
 
-function atualizar($dados, $tabela, $condicao) : bool {
-    if(!is_array($dados) && !is_array($condicao) && !is_string($tabela)) {
-        header('Location: ..\view\erro.php?e=TDI');
+function atualizar($char_tabela, $array_model, $condicao) : bool {
+    if(!is_array($array_model) || !is_array($condicao) || !is_string($char_tabela)) {
+        header('Location: ..\view\erro.php?erro=TDI');
     }
     $campos = '';
-    $tamanho = count ($dados);
+    $tamanho = count ($array_model);
     $contador = 1;
     if($tamanho == 0)
     {
@@ -74,7 +73,7 @@ function atualizar($dados, $tabela, $condicao) : bool {
 
     try {
 
-        foreach($dados as $chave => $valor) {
+        foreach($array_model as $chave => $valor) {
             
             $valor = "'$valor'";
             
@@ -100,7 +99,7 @@ function atualizar($dados, $tabela, $condicao) : bool {
         }
 
         $pdo->beginTransaction();
-        $stm = $pdo->prepare("UPDATE $tabela SET $campos WHERE ($condicao);");            
+        $stm = $pdo->prepare("UPDATE $char_tabela SET $campos WHERE ($condicao);");            
     
         $pdo->commit();
     
@@ -111,10 +110,10 @@ function atualizar($dados, $tabela, $condicao) : bool {
     }
 }
 
-function selecionar($tabela, $array_condicao) : array {
+function selecionar($char_tabela, $array_condicao) : array {
     global $pdo;
     
-    if(empty($array_condicao) || empty($tabela)) {
+    if(empty($array_condicao) || empty($char_tabela)) {
         throw new Exception('Parametros vazios');
     }
 
@@ -133,12 +132,12 @@ function selecionar($tabela, $array_condicao) : array {
             }
             $contador++;
         }
-        echo "<br>" . "SELECT * FROM $tabela;";
-        $stmt = $pdo->prepare("SELECT * FROM $tabela;");
+        echo "<br>" . "SELECT * FROM $char_tabela;";
+        $stmt = $pdo->prepare("SELECT * FROM $char_tabela;");
         echo "<br>T:" . "$tamanho";
         if ($tamanho > 0) {
-            $stmt = $pdo->prepare("SELECT * FROM $tabela WHERE ($char_condicao);");
-            echo "<br>" . "SELECT * FROM $tabela WHERE ($char_condicao);";
+            $stmt = $pdo->prepare("SELECT * FROM $char_tabela WHERE ($char_condicao);");
+            echo "<br>" . "SELECT * FROM $char_tabela WHERE ($char_condicao);";
         }
 
         if (!$stmt->execute()) {
@@ -151,7 +150,7 @@ function selecionar($tabela, $array_condicao) : array {
         
             $array_modelo = array();
 
-            foreach($dados as $chave => $valor) {
+            foreach($array_model as $chave => $valor) {
                     $array_modelo["'$chave'"] = $linha["'$chave'"];                     
             }
 
@@ -165,8 +164,8 @@ function selecionar($tabela, $array_condicao) : array {
     }
 }
 
-function excluir($tabela, $condicao) : bool {
-    if(!is_array($condicao) && !is_array($tabela)) {
+function excluir($char_tabela, $condicao) : bool {
+    if(!is_array($condicao) && !is_array($char_tabela)) {
         header('Location: ..\view\erro.php?e=TDI');
     }
     $campos = '';
@@ -191,7 +190,7 @@ function excluir($tabela, $condicao) : bool {
         }
 
         $pdo->beginTransaction();
-        $stm = $pdo->exec("UPDATE $tabela SET $campos WHERE ($condicao);");            
+        $stmt = $pdo->prepare("UPDATE $char_tabela SET $campos WHERE ($condicao);");            
     
         $pdo->commit();
 
