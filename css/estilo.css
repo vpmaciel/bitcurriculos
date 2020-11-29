@@ -37,7 +37,7 @@ label {
 }
 p {
 	text-align: justify;
-	text-indent: 2em;
+	text-indent: 0em;
 }
 table, td, th {
 	padding: 0px;	
