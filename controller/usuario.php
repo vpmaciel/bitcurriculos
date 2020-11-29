@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["usu_int_id"])) {
-	//header("location: erro.php?erro=1");
+	//header("location: erro.php?e=SNI");
 }
 
 require_once '../lib/biblioteca.php';
@@ -25,6 +25,7 @@ if ($resultado == TRUE) {
 	$resultado = inserir('tb_usuario', $usuario_model);
 
 	if ($resultado == TRUE) {
+				
 		header('Location: ..\view\sucesso.php');
 	} else {
 		header('Location: ..\view\erro.php?e=OPN');
