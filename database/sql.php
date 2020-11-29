@@ -86,7 +86,7 @@ function atualizar($char_tabela, $array_model, $condicao) : bool {
         $tamanho = count ($condicao);
         foreach($condicao as $chave => $valor) {
             
-            $valor = "'$remover_acento($valor)'";
+            
             $condicao .= $chave . "=". $valor;               
 
             if($contador < $tamanho) {
@@ -121,7 +121,7 @@ function selecionar($char_tabela, $array_condicao) : array {
     try {
         foreach($array_condicao as $chave => $valor) {
             
-            $valor = remover_acento($valor);
+            $valor = remover_acento($valor);$valor = "'$remover_acento($valor)'";
             $char_condicao .= $chave . "=" . "'" . $valor . "'";               
 
             if($contador < $tamanho) {
@@ -176,8 +176,7 @@ function excluir($char_tabela, $condicao) : bool {
         $contador = 1;
         $tamanho = count ($condicao);
         foreach($condicao as $chave => $valor) {
-            
-            $valor = "'$remover_acento($valor)'";
+
             $condicao .= $chave . "=". $valor;               
 
             if($contador < $tamanho) {
@@ -203,7 +202,7 @@ function excluir($char_tabela, $condicao) : bool {
 function procurar($char_tabela, $array_condicao) : bool {
     global $pdo;
     
-    if(!is_array($array_condicao) || !is_string($char_tabela)) {
+    if(!is_string($char_tabela) || !is_array($array_condicao)) {
         return FALSE;
     }
 
@@ -213,8 +212,8 @@ function procurar($char_tabela, $array_condicao) : bool {
     try {
         $contador = 1;
         foreach($array_condicao as $chave => $valor) {
-            
-            $valor = remover_acento($valor);
+            exit($valor);
+               
             $char_condicao .= $chave . "=" . "'" . $valor . "'";               
 
             if($contador < $tamanho_array_condicao) {
@@ -263,5 +262,3 @@ function criar_sessao($char_tabela, $char_condicao) : int {
     }
     return 0;
 }
-
-
