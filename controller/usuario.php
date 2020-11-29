@@ -20,12 +20,14 @@ $usuario_model['usu_char_senha'] = $_POST['usu_char_senha'];
 $condicao = ['usu_char_email' => $usuario_model['usu_char_email']];
 $resultado = procurar('tb_usuario', $condicao);
 if ($resultado == TRUE) {
-	header('Location:..\view\erro.php?erro="OPN"&msg="E-mail já cadastrado"');
-}
-$resultado = inserir('tb_usuario', $usuario_model);
-
-if ($resultado == TRUE) {
-	header('Location:..\view\sucesso.php');
+	header('Location: ..\view\erro.php?e=OPN&msg="E-mail já cadastrado"');
 } else {
-	header('Location:..\view\erro.php?erro="OPN"');
+	$resultado = inserir('tb_usuario', $usuario_model);
+
+	if ($resultado == TRUE) {
+		header('Location: ..\view\sucesso.php');
+	} else {
+		header('Location: ..\view\erro.php?e=OPN');
+	}	
 }
+

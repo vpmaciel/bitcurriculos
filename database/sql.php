@@ -207,8 +207,7 @@ function procurar($char_tabela, $array_condicao) : bool {
     }
 
     $char_condicao = '';
-    $tamanho_array_condicao = count ($array_condicao);
-           
+    $tamanho_array_condicao = count ($array_condicao);        
 
     try {
         $contador = 1;
@@ -228,8 +227,8 @@ function procurar($char_tabela, $array_condicao) : bool {
         if (!$stmt->execute()) {
             return FALSE;
         }
-        $retorno 
-        return ; 
+        
+        return ($stmt->fetchColumn() > 0) ? TRUE : FALSE; 
     
     } catch(Exception $e) {           
         
