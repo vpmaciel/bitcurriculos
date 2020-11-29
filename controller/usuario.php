@@ -18,7 +18,11 @@ if ($resultado == TRUE) {
 	$resultado = inserir('tb_usuario', $usuario_model);
 
 	if ($resultado == TRUE) {
+
+		$condicao = 'usu_char_email =' . "'" .$_POST['usu_char_email'] . "'" . " AND " . 
+		            'usu_char_senha =' . "'" .$_POST['usu_char_senha'] . "'";
 		$resultado = criar_sessao('tb_usuario', $condicao);		
+		
 		if ($resultado == TRUE) {			
 			header('location:..\view\sucesso.php');
 		} else {

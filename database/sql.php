@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $dsn = "mysql:host=localhost;dbname=db_bitcurriculo";
 $usuario = "root";
@@ -244,8 +245,7 @@ function criar_sessao($char_tabela, $char_condicao) : bool {
     }
 
     try {
-        $char_condicao = removerAcentos($char_condicao);
-        
+
         $stmt = $pdo->prepare("SELECT * FROM $char_tabela WHERE ($char_condicao);");
         
         if (!$stmt->execute()) {
