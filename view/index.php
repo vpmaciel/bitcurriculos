@@ -23,7 +23,7 @@ $MSG = '<p align="justify">O nosso site oferece serviços para profissionais e e
 			oferece várias provas de concursos para você fazer treinamento e testar seus conhecimentos. Temos diversas apostilas para download, livros e treinamentos para você se preparar melhor.</p>';	
 echo $MSG;
 
-$cotacao_dolar = new Dolar();
+retornar_cotacao_dolar();
 
 require_once 'rodape.php';
 
