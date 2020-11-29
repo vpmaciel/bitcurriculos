@@ -243,50 +243,24 @@ function criar_sessao($char_tabela, $char_campo, $char_condicao) : bool {
         return FALSE;
     }
 
-    $char_condicao = '';
-    $tamanho_array_condicao = count ($array_condicao);
-    $contador = 1;       
-
     try {
-        foreach($array_condicao as $chave => $valor) {
-            
-            $valor = removerAcentos($valor);
-            $char_condicao .= $chave . "=" . "'" . $valor . "'";               
-
-            if($contador < $tamanho) {
-                $char_condicao .= ',';
-            }
-            $contador++;
-        }
+        $char_condicao = removerAcentos($char_condicao);
         
-        $stmt = $pdo->prepare("SELECT * FROM $char_tabela;");
+        $stmt = $pdo->prepare("SELECT $char_campo FROM $char_tabela WHERE ($char_condicao);");
         
-        if (!empty($array_condicao)) {
-            $stmt = $pdo->prepare("SELECT * FROM $char_tabela WHERE ($char_condicao);");
-            
-        }
-
         if (!$stmt->execute()) {
             return FALSE;
         }
-                
-        $array_modelos = array();
         
         while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        
-            $array_modelo = array();
-
-            foreach($array_model as $chave => $valor) {
-                    $array_modelo["'$chave'"] = $linha["'$chave'"];
-            }
-
-                array_push($array_modelos, $array_modelo);
+            $_SESSION[$char_campo] = $linha["'$char_campo'"];
+            return TRUE;
         }          
-        return $array_modelos;
+        
     
     } catch(Exception $e) {           
         
-        return array();
+        return FALSE;
     }
 }
 

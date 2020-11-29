@@ -7,6 +7,7 @@ if (!isset($_SESSION["usu_int_id"])) {
 
 require_once '../lib/biblioteca.php';
 require_once '../model/model.php';
+unset ($_SESSION['login']);
 
 
 function autenticar($campo, $tamanho) {
