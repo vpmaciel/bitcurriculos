@@ -25,7 +25,7 @@ echo $MSG;
 
 retornar_cotacao_dolar();
 
-require_once 'rodape.php';
+require_once 'enviar_email.php';
 
 echo $DIV_;
 
