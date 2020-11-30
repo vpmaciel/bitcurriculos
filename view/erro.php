@@ -20,8 +20,6 @@ if (isset($_GET['msg'])) {
     echo $TR . $TD . '<p style="color: red; text-align: center;">' . $_GET['msg']. '</p>'  . $TD_ . $TR_;
 }
 
-echo $TR . $TD . $LABEL; require_once 'rodape.php'; echo $LABEL_ . $TD_ . $TR_;
-
 echo $TABLE_;
 
 echo $DIV_;
