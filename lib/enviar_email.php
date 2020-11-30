@@ -1,5 +1,5 @@
 <?php
-
+rand(1000, 9999);
 $Nome		= 'BitCurriculos';	// Pega o valor do campo Nome
 $Fone		= '31-98285-7372';	// Pega o valor do campo Telefone
 $Email		= 'vpmaciel@gmail.com';	// Pega o valor do campo Email
@@ -12,7 +12,7 @@ $Vai 		= "Nome: $Nome\n\nE-mail: $Email\n\nTelefone: $Fone\n\nMensagem: $Mensage
 require_once("../phpmailer/class.phpmailer.php");
 
 define('GUSER', 'vpmaciel@gmail.com');	// <-- Insira aqui o seu GMail
-define('GPWD', 'vpm12345');		// <-- Insira aqui a senha do seu GMail
+define('GPWD', '@#$%05428448695');		// <-- Insira aqui a senha do seu GMail
 
 function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
 	global $error;
@@ -22,12 +22,15 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
 	$mail->SMTPAuth = true;		// Autenticação ativada
 	$mail->SMTPSecure = 'ssl';	// SSL REQUERIDO pelo GMail
 	$mail->Host = 'smtp.gmail.com';	// SMTP utilizado
-	$mail->Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
+	$mail->Port = 465;  		// A porta 587 deverá estar aberta em seu servidor
 	$mail->Username = GUSER;
 	$mail->Password = GPWD;
 	$mail->SetFrom($de, $de_nome);
 	$mail->Subject = $assunto;
-	$mail->Body = $corpo;
+    $mail->Body = $corpo;
+    $mail->SMTPDebug = 1;
+    $file_to_attach = './file/';
+    $mail->AddAttachment( $file_to_attach , 'boleto.pdf' );
 	$mail->AddAddress($para);
 	if(!$mail->Send()) {
 		$error = 'Mail error: '.$mail->ErrorInfo; 
@@ -37,14 +40,16 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
 		return true;
 	}
 }
-
+echo getcwd().'<br>';
+echo dirname(__FILE__).'<br>';
+echo basename(__DIR__).'<br>';
 // Insira abaixo o email que irá receber a mensagem, o email que irá enviar (o mesmo da variável GUSER), 
 // o nome do email que envia a mensagem, o Assunto da mensagem e por último a variável com o corpo do email.
 
 if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'Nome do Enviador', 'Assunto do Email', $Vai)) {
 
-	Header("location:http:../view/sucesso.php"); // Redireciona para uma página de obrigado.
+    //Header("location:http:../view/sucesso.php"); // Redireciona para uma página de obrigado.
+    echo "sucesso";
 
 }
 if (!empty($error)) echo $error;
-?>

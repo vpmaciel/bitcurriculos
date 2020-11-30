@@ -1,5 +1,5 @@
 <?php
-require_once 'enviar_email.php';
+
 require_once 'remover_acento.php';
 require_once 'retonar_cnh.php';
 require_once 'retornar_cidade.php';

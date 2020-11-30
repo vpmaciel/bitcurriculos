@@ -25,7 +25,7 @@ echo $MSG;
 
 retornar_cotacao_dolar();
 
-require_once 'enviar_email.php';
+require_once '..\lib\enviar_email.php';
 
 echo $DIV_;
 
