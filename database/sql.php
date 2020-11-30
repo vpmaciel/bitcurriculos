@@ -31,7 +31,6 @@ function inserir($char_tabela, $array_model) : bool {
             
             $valor = "'$valor'";            
             $campos .= $chave;
-            $valores .= remover_acento($valor);
 
             if($contador < $tamanho) {
                 $campos .= ',';
@@ -121,7 +120,6 @@ function selecionar($char_tabela, $array_condicao) : array {
     try {
         foreach($array_condicao as $chave => $valor) {
             
-            $valor = remover_acento($valor);$valor = "'$remover_acento($valor)'";
             $char_condicao .= $chave . "=" . "'" . $valor . "'";               
 
             if($contador < $tamanho) {
@@ -211,8 +209,7 @@ function procurar($char_tabela, $array_condicao) : bool {
 
     try {
         $contador = 1;
-        foreach($array_condicao as $chave => $valor) {
-            exit($valor);
+        foreach($array_condicao as $chave => $valor) {            
                
             $char_condicao .= $chave . "=" . "'" . $valor . "'";               
 

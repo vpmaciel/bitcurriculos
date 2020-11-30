@@ -19,7 +19,7 @@ $usuario_model['usu_char_email'] = $_POST['usu_char_email'];
 $usuario_model['usu_char_senha'] = $_POST['usu_char_senha'];
 
 $condicao = ['usu_char_email' => $usuario_model['usu_char_email']];
-exit($usuario_model['usu_char_email']);
+
 $resultado = procurar('usuario', $condicao);
 
 if ($resultado == FALSE) {
