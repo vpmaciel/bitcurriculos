@@ -28,9 +28,8 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
 	$mail->SetFrom($de, $de_nome);
 	$mail->Subject = $assunto;
     $mail->Body = $corpo;
-    $mail->SMTPDebug = 1;
-    $file_to_attach = './file/';
-    $mail->AddAttachment( $file_to_attach , 'boleto.pdf' );
+    $mail->SMTPDebug = 1;    
+    $mail->AddAttachment($_SERVER['DOCUMENT_ROOT'].'/bitcurriculos/file/boleto.pdf', $name = 'test.pdf',  $encoding = 'base64', $type = 'application/pdf');
 	$mail->AddAddress($para);
 	if(!$mail->Send()) {
 		$error = 'Mail error: '.$mail->ErrorInfo; 
@@ -45,7 +44,7 @@ echo dirname(__FILE__).'<br>';
 echo basename(__DIR__).'<br>';
 // Insira abaixo o email que irá receber a mensagem, o email que irá enviar (o mesmo da variável GUSER), 
 // o nome do email que envia a mensagem, o Assunto da mensagem e por último a variável com o corpo do email.
-
+/*
 if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'Nome do Enviador', 'Assunto do Email', $Vai)) {
 
     //Header("location:http:../view/sucesso.php"); // Redireciona para uma página de obrigado.
@@ -53,3 +52,4 @@ if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'Nome do Enviador', 'A
 
 }
 if (!empty($error)) echo $error;
+*/

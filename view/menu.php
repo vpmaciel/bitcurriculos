@@ -1,7 +1,7 @@
 <div class="linha">
    <div class="coluna esquerda">
       <a href="index.php">Home</a><br>
-      <a href='usuario.php'>Registrar</a><br>
+      <a href='registro.php'>Registrar</a><br>
       <a href='login.php'>Entrar</a><br>
       <a href='..\controller\logoff.php'>Sair</a><br>-<br>
       <a href="pessoa.php">Dados Pessoais</a><br>

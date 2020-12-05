@@ -23,9 +23,9 @@ $MSG = '<p align="justify">O nosso site oferece serviços para profissionais e e
 			oferece várias provas de concursos para você fazer treinamento e testar seus conhecimentos. Temos diversas apostilas para download, livros e treinamentos para você se preparar melhor.</p>';	
 echo $MSG;
 
-retornar_cotacao_dolar();
+//retornar_cotacao_dolar();
 
-require_once '..\lib\enviar_email.php';
+//require_once '..\lib\enviar_email.php';
 
 echo $DIV_;
 

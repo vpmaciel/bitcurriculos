@@ -1,11 +1,11 @@
 <?php
 function retornar_cotacao_dolar() {
     
-    $data = date('Y-m-d', strtotime('-3 days'));
+    $data = date('Y-m-d', strtotime('-4 days'));
 
     $data = explode("-",$data);
     list($ano,$mes,$dia) = $data;
-    $data_str = $mes . '-'. $dia . '-' . $ano;
+    $data_str = $mes . '-'. $dia . '-' . $ano;    
     $ch = curl_init("https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='" . "$data_str" . "'&format=json");
     curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
