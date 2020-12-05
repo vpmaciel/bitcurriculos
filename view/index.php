@@ -27,6 +27,10 @@ echo $MSG;
 
 //require_once '..\lib\enviar_email.php';
 
+retornar_contador_visitas();
+
+?>
+
 echo $DIV_;
 
 echo $DIV_;

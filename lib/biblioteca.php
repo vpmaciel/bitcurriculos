@@ -1,6 +1,7 @@
 <?php
-require_once 'retornar_cnh.php';
 require_once 'retornar_cidade.php';
+require_once 'retornar_cnh.php';
+require_once 'retornar_cnh.php';
 require_once 'retornar_contrato.php';
 require_once 'retornar_cotacao_dolar.php';
 require_once 'retornar_erro.php';

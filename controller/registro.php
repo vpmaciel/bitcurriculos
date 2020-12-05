@@ -19,8 +19,8 @@ foreach($json as $registro) {
 }
 
 	
-if (!empty($resultado)) {
-	header('location: ..\view\erro.php?e=OPN&msg="E-mail já cadastrado"');
+if ($resultado != 0) {
+	header('location: ..\view\erro.php?e=OPN&msg="E-mail já cadastrado ou inválido !"');
 } else {
 	$resultado = inserir('usuario', $usuario_model);
 

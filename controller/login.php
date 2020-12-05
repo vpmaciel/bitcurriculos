@@ -20,9 +20,9 @@ $usuario_model['usu_char_senha'] = $_POST['usu_char_senha'];
 
 $condicao = ['usu_char_email' => $usuario_model['usu_char_email']];
 
-$resultado = procurar('usuario', $condicao);
+$resultado = numero_registros('usuario', $condicao);
 
-if ($resultado == FALSE) {
+if ($resultado != 0) {
 	header('location: ..\view\erro.php?e=OPN&msg="E-mail ou senha incorretos !"');
 } else {	
 
