@@ -16,7 +16,7 @@ require_once '..\lib\retornar_contador_visitas.php';
 echo $DIV_MAIN;
 echo $H1 . 'Bit Curriculos' . $H1_;
 
-$MSG = '<label align="center">'. retornar_contador_visitas() .'</label>';	
+$MSG = retornar_contador_visitas();	
 echo $MSG;
 
 $MSG = '<p align="justify">O Bit Curriculos é um sistema para internet em recursos humanos, com foco em recrutamento on-line. Atualmente administramos a mais bem organizada base de currículos do país, 

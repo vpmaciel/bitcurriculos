@@ -8,7 +8,7 @@ function retornar_contador_visitas() {
     $cf=fopen($arquivo,"w"); 
     fputs($cf,"$visitas"); 
     fclose($cf);
-    $MSG = "<marquee>Este site teve até hoje ". $visitas . " acessos.</p>". "</marquee>";
+    $MSG = "<p class=\"visitas\">Esta página teve ". $visitas . " acessos até o momento.</p>";
     
     return $MSG;
 }
