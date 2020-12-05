@@ -17,7 +17,7 @@ try {
 function inserir($char_tabela, $array_model) : bool {
     
     if(!is_array($array_model) || !is_string($char_tabela)) {
-        return FALSE;
+        throw new Exception('Tipos de parametros imcompatíveis !');
     }
 
     global $pdo;
@@ -59,6 +59,7 @@ function inserir($char_tabela, $array_model) : bool {
 
 function atualizar($char_tabela, $array_model, $condicao) : bool {
     if(!is_array($array_model) || !is_array($condicao) || !is_string($char_tabela)) {
+        throw new Exception('Tipos de parametros imcompatíveis !');
         return FALSE;
     }
     $campos = '';
@@ -112,6 +113,7 @@ function selecionar($char_tabela, $array_condicao) {
     global $pdo;
     
     if(!is_array($array_condicao) || !is_string($char_tabela)) {
+        throw new Exception('Tipos de parametros imcompatíveis !');
         return FALSE;
     }
 
@@ -139,10 +141,9 @@ function selecionar($char_tabela, $array_condicao) {
         }
 
         if (!$stmt->execute()) {
+            throw new Exception('Não executou !');
             return FALSE;
         }
-                
-        $array_modelos = array();
         
         $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);      
         
@@ -152,7 +153,6 @@ function selecionar($char_tabela, $array_condicao) {
     
     } catch(PDOException $e) {           
         throw new PDOException($e);
-        return array();
     }
 }
 

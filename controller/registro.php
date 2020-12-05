@@ -21,9 +21,12 @@ $usuario_model['usu_char_senha'] = rand(1000, 9999);
 $condicao['usu_char_email'] = $usuario_model['usu_char_email'];
 $resultado = selecionar('usuario', $condicao);
 $json = json_decode($resultado);
+//var_dump($json);
+
  
 // Loop para percorrer o Objeto
 foreach($json as $registro):
+	echo $registro->usu_int_id;
     echo 'Id: ' . $registro->usu_int_id . ' - usuario: ' . $registro->usu_char_email . ' - Telefone: ' . $registro->usu_char_senha . '<br>';
 endforeach;
 /*
