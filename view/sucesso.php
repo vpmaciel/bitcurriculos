@@ -16,6 +16,10 @@ echo $TABLE;
 
 echo $TR . $TD . '<p style="color: green; text-align: center;">' . 'Operação realizada com sucesso !'. '</p>'  . $TD_ . $TR_;
 
+if (isset($_GET['msg'])) {
+    echo $TR . $TD . '<p style="color: green; text-align: center;">' . $_GET['msg']. '</p>'  . $TD_ . $TR_;
+}
+
 echo $TABLE_;
 
 echo $DIV_;
