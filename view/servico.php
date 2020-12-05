@@ -65,6 +65,10 @@ $pessoa['ser_char_email'] = isset($_POST['ser_char_email'])?$_POST['ser_char_ema
 $INPUT = '<input type="text" name="ser_char_email" required size="70" minlength="10" maxlength="50" value="' . $pessoa['ser_char_email'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
+echo $TR . $TD . $LABEL . 'Site' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['ser_char_site'] = isset($_POST['ser_char_site'])?$_POST['ser_char_site']:'';
+$INPUT = '<input type="text" name="ser_char_site" required size="70" minlength="10" maxlength="50" value="' . $pessoa['ser_char_site'] .'">';
+echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
