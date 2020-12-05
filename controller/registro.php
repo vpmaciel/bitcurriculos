@@ -20,7 +20,14 @@ $usuario_model['usu_char_senha'] = rand(1000, 9999);
 
 $condicao['usu_char_email'] = $usuario_model['usu_char_email'];
 $resultado = selecionar('usuario', $condicao);
-if ($resultado == TRUE) {
+$json = json_decode($resultado);
+ 
+// Loop para percorrer o Objeto
+foreach($json as $registro):
+    echo 'Id: ' . $registro->usu_int_id . ' - usuario: ' . $registro->usu_char_email . ' - Telefone: ' . $registro->usu_char_senha . '<br>';
+endforeach;
+/*
+if (!empty($resultado)) {
 	header('location: ..\view\erro.php?e=OPN&msg="E-mail já cadastrado"');
 } else {
 	$resultado = inserir('usuario', $usuario_model);
@@ -42,3 +49,4 @@ if ($resultado == TRUE) {
 	} 
 }
 
+*/

@@ -108,7 +108,7 @@ function atualizar($char_tabela, $array_model, $condicao) : bool {
     }
 }
 
-function selecionar($char_tabela, $array_condicao) : array {
+function selecionar($char_tabela, $array_condicao) {
     global $pdo;
     
     if(!is_array($array_condicao) || !is_string($char_tabela)) {
@@ -147,9 +147,8 @@ function selecionar($char_tabela, $array_condicao) : array {
         $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);      
         
         $json = json_encode($linhas);
-        $string = json_decode($json);
-        exit(print_r($string));
-        return $array_modelos;
+        
+        return $json;
     
     } catch(PDOException $e) {           
         throw new PDOException($e);
