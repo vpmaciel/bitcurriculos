@@ -197,11 +197,11 @@ function excluir($char_tabela, $condicao) : bool {
     }
 }
 
-function procurar($char_tabela, $array_condicao) : bool {
+function numero_registros($char_tabela, $array_condicao) : int {
     global $pdo;
     
     if(!is_string($char_tabela) || !is_array($array_condicao)) {
-        return FALSE;
+        return 0;
     }
 
     $char_condicao = '';
@@ -222,14 +222,14 @@ function procurar($char_tabela, $array_condicao) : bool {
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM $char_tabela WHERE ($char_condicao);");
             
         if (!$stmt->execute()) {
-            return FALSE;
+            return 0;
         }
         
         return ($stmt->fetchColumn() > 0) ? TRUE : FALSE; 
     
     } catch(PDOException $e) {           
         throw new PDOException($e);
-        return FALSE;
+        return 0;
     }
 }
 

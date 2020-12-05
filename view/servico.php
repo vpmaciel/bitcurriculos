@@ -25,76 +25,76 @@ echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Tipo de empresa' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
-$SELECT = '<select name="int_tipo_empresa">';
+$SELECT = '<select name="ser_int_tipo_empresa">';
 echo $SELECT;
-foreach ($array_tipo_empresa as $indice => $int_tipo_empresa) {	
+foreach ($array_tipo_empresa as $indice => $ser_int_tipo_empresa) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($int_tipo_empresa == $pessoa['int_tipo_empresa'])	? "<option value=$indice selected>$int_tipo_empresa</option>" : "<option value=$indice>$int_tipo_empresa</option>";
+	echo ($ser_int_tipo_empresa == $pessoa['ser_int_tipo_empresa'])	? "<option value=$indice selected>$ser_int_tipo_empresa</option>" : "<option value=$indice>$ser_int_tipo_empresa</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Segmento' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
-$SELECT = '<select name="int_segmento_empresa">';
+$SELECT = '<select name="ser_int_segmento_empresa">';
 
 echo $SELECT;
-foreach ($array_segmento_empresa as $indice => $int_segmento_empresa) {	
+foreach ($array_segmento_empresa as $indice => $ser_int_segmento_empresa) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($int_segmento_empresa == $pessoa['int_segmento_empresa']) ? "<option value=$indice selected>$int_segmento_empresa</option>" : "<option value=$indice>$int_segmento_empresa</option>";
+	echo ($ser_int_segmento_empresa == $pessoa['ser_int_segmento_empresa']) ? "<option value=$indice selected>$ser_int_segmento_empresa</option>" : "<option value=$indice>$ser_int_segmento_empresa</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['char_cargo'] = isset($_POST['char_cargo'])?$_POST['char_cargo']:'';
-$INPUT = '<input type="text" name="char_cargo" required size="70" minlength="1" maxlength="50" value="' . $pessoa['char_cargo'] .'">';
+$pessoa['ser_char_cargo'] = isset($_POST['ser_char_cargo'])?$_POST['ser_char_cargo']:'';
+$INPUT = '<input type="text" name="ser_char_cargo" required size="70" minlength="1" maxlength="50" value="' . $pessoa['ser_char_cargo'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Serviço prestado' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['char_servico_prestado'] = isset($_POST['char_servico_prestado'])?$_POST['char_servico_prestado']:'';
-$TEXTAREA = '<textarea id="char_servico_prestado" name="char_servico_prestado" rows="2" cols="50" maxlength="200">' . $pessoa['char_servico_prestado'] .'</textarea>';
+$pessoa['ser_char_servico_prestado'] = isset($_POST['ser_char_servico_prestado'])?$_POST['ser_char_servico_prestado']:'';
+$TEXTAREA = '<textarea id="ser_char_servico_prestado" name="ser_char_servico_prestado" rows="2" cols="50" maxlength="200">' . $pessoa['ser_char_servico_prestado'] .'</textarea>';
 echo $TR . $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Total de funcionários' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['int_total_funcionarios'] = isset($_POST['int_total_funcionarios'])?$_POST['int_total_funcionarios']:'';
-$INPUT = '<input type="number" name="int_total_funcionarios" size="70" required min="1" max="1000000" value="' . $pessoa['int_total_funcionarios'] .'">';
+$pessoa['ser_int_total_funcionarios'] = isset($_POST['ser_int_total_funcionarios'])?$_POST['ser_int_total_funcionarios']:'';
+$INPUT = '<input type="number" name="ser_int_total_funcionarios" size="70" required min="1" max="1000000" value="' . $pessoa['ser_int_total_funcionarios'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Celular' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['char_celular'] = isset($_POST['char_celular'])?$_POST['char_celular']:'';
-$INPUT = '<input type="text" name="char_celular" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_celular'] .'">';
+$pessoa['ser_char_celular'] = isset($_POST['ser_char_celular'])?$_POST['ser_char_celular']:'';
+$INPUT = '<input type="text" name="ser_char_celular" required size="70" minlength="10" maxlength="50" value="' . $pessoa['ser_char_celular'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'E' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['char_celular'] = isset($_POST['char_celular'])?$_POST['char_celular']:'';
-$INPUT = '<input type="text" name="char_celular" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_celular'] .'">';
+echo $TR . $TD . $LABEL . 'E-mail' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['ser_char_email'] = isset($_POST['ser_char_email'])?$_POST['ser_char_email']:'';
+$INPUT = '<input type="text" name="ser_char_email" required size="70" minlength="10" maxlength="50" value="' . $pessoa['ser_char_email'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 
 echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
-$SELECT = '<select name="int_estado">';
+$SELECT = '<select name="ser_int_estado">';
 echo $SELECT;
-foreach ($array_estado as $indice => $int_estado) {	
+foreach ($array_estado as $indice => $ser_int_estado) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($int_estado == $pessoa['int_estado'])	? "<option value=$indice selected>$int_estado</option>" : "<option value=$indice>$int_estado</option>";
+	echo ($ser_int_estado == $pessoa['ser_int_estado'])	? "<option value=$indice selected>$ser_int_estado</option>" : "<option value=$indice>$ser_int_estado</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Cidade' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
-$SELECT = '<select name="int_cidade">';
+$SELECT = '<select name="ser_int_cidade">';
 echo $SELECT;
-foreach ($array_cidade as $indice => $int_cidade) {	
+foreach ($array_cidade as $indice => $ser_int_cidade) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($int_cidade == $pessoa['int_cidade'])	? "<option value=$indice selected>$int_cidade</option>" : "<option value=$indice>$int_cidade</option>";
+	echo ($ser_int_cidade == $pessoa['ser_int_cidade'])	? "<option value=$indice selected>$ser_int_cidade</option>" : "<option value=$indice>$ser_int_cidade</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
