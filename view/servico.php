@@ -18,7 +18,7 @@ echo $FORM;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'Empresa | Prestador de serviço' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD . $LABEL . 'Empresa ( Prestador de serviço )' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['empresa'] = isset($_POST['empresa'])?$_POST['empresa']:'';
 $INPUT = '<input type="text" name="empresa" required size="70" minlength="1" maxlength="50" value="' . $pessoa['empresa'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
@@ -35,18 +35,10 @@ foreach ($array_tipo_empresa as $indice => $ser_int_tipo_empresa) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Segmento' . $LABEL_ . $TD_ . $TR_; 
-echo $TR . $TD;
-$SELECT = '<select name="ser_int_segmento_empresa">';
-
-echo $SELECT;
-foreach ($array_segmento_empresa as $indice => $ser_int_segmento_empresa) {	
-	if ($indice == 0) {
-		continue;
-	}
-	echo ($ser_int_segmento_empresa == $pessoa['ser_int_segmento_empresa']) ? "<option value=$indice selected>$ser_int_segmento_empresa</option>" : "<option value=$indice>$ser_int_segmento_empresa</option>";
-}
-echo $SELECT_ . $TD_ . $TR_;
+echo $TR . $TD . $LABEL . 'Segmento empresarial' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['ser_char_segmento_empresarial'] = isset($_POST['ser_char_segmento_empresarial'])?$_POST['ser_char_segmento_empresarial']:'';
+$INPUT = '<input type="text" name="ser_char_segmento_empresarial" required size="70" minlength="1" maxlength="50" value="' . $pessoa['ser_char_segmento_empresarial'] .'">';
+echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['ser_char_cargo'] = isset($_POST['ser_char_cargo'])?$_POST['ser_char_cargo']:'';
