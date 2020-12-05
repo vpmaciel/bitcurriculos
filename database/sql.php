@@ -7,8 +7,9 @@ $senha = "";
 try {
     $pdo = new PDO($dsn, $usuario, $senha);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $erro) {
-    echo "Erro na conexão:" . $erro->getMessage();
+} catch (PDOException $e) {
+    throw new PDOException($e);
+    echo "Erro na conexão:" . $->getMessage();
 }
         
 
@@ -46,8 +47,8 @@ function inserir($char_tabela, $array_model) : bool {
         
         $pdo->commit();
     
-    } catch(Exception $e) {
-    
+    } catch(PDOException $e) {
+        throw new PDOException($e);
         $pdo->rollback();
         $retorno = FALSE;
     }
@@ -99,8 +100,8 @@ function atualizar($char_tabela, $array_model, $condicao) : bool {
     
         $pdo->commit();
     
-    } catch(Exception $e) {
-    
+    } catch(PDOException $e) {
+        throw new PDOException($e);
         $pdo->rollback();
         throw $e;
     }
@@ -109,7 +110,7 @@ function atualizar($char_tabela, $array_model, $condicao) : bool {
 function selecionar($char_tabela, $array_condicao) : array {
     global $pdo;
     
-    if(!is_array($array_condicao) || !is_char($char_tabela)) {
+    if(!is_array($array_condicao) || !is_string($char_tabela)) {
         return FALSE;
     }
 
@@ -122,11 +123,12 @@ function selecionar($char_tabela, $array_condicao) : array {
             
             $char_condicao .= $chave . "=" . "'" . $valor . "'";               
 
-            if($contador < $tamanho) {
+            if($contador < $tamanho_array_condicao) {
                 $char_condicao .= ',';
             }
             $contador++;
         }
+        
         
         $stmt = $pdo->prepare("SELECT * FROM $char_tabela;");
         
@@ -144,17 +146,19 @@ function selecionar($char_tabela, $array_condicao) : array {
         while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
         
             $array_modelo = array();
-
+            $data[] = $row;
             foreach($array_model as $chave => $valor) {
                     $array_modelo["'$chave'"] = $linha["'$chave'"];                     
             }
 
                 array_push($array_modelos, $array_modelo);
-        }          
+        }      
+        $s = json_decode($data);
+        header("location:..\\view\\sucesso.php?msg=Sua senha é $s");
         return $array_modelos;
     
-    } catch(Exception $e) {           
-        
+    } catch(PDOException $e) {           
+        throw new PDOException($e);
         return array();
     }
 }
@@ -190,10 +194,10 @@ function excluir($char_tabela, $condicao) : bool {
 
         return TRUE;
     
-    } catch(Exception $e) {
+    } catch(PDOException $e) {
     
         $pdo->rollback();
-        throw $e;
+        throw new PDOException($e);
     }
 }
 
@@ -227,8 +231,8 @@ function procurar($char_tabela, $array_condicao) : bool {
         
         return ($stmt->fetchColumn() > 0) ? TRUE : FALSE; 
     
-    } catch(Exception $e) {           
-        
+    } catch(PDOException $e) {           
+        throw new PDOException($e);
         return FALSE;
     }
 }
@@ -253,8 +257,8 @@ function criar_sessao($char_tabela, $char_condicao) : int {
         }          
         
     
-    } catch(Exception $e) {           
-        
+    } catch(PDOException $e) {           
+        throw new PDOException($e);       
         return 0;
     }
     return 0;

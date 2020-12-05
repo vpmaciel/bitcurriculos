@@ -19,7 +19,7 @@ $usuario_model['usu_char_email'] = $_POST['usu_char_email'];
 $usuario_model['usu_char_senha'] = rand(1000, 9999);
 
 $condicao['usu_char_email'] = $usuario_model['usu_char_email'];
-$resultado = procurar('usuario', $condicao);
+$resultado = selecionar('usuario', $condicao);
 if ($resultado == TRUE) {
 	header('location: ..\view\erro.php?e=OPN&msg="E-mail já cadastrado"');
 } else {
@@ -35,7 +35,7 @@ if ($resultado == TRUE) {
 			if (!isset($_SESSION['usu_int_id'])) {
 				$_SESSION['usu_int_id'] = $resultado;
 			}			
-			header("location:..\view\sucesso.php?msg=Sua senha é $usu_char_senha");
+			header("location:..\\view\\sucesso.php?msg=Sua senha é $usu_char_senha");
 		} else {
 			header('location:..\view\erro.php?e=OPN');
 		}	
