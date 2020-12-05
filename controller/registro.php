@@ -25,10 +25,16 @@ $json = json_decode($resultado);
 
  
 // Loop para percorrer o Objeto
-foreach($json as $registro):
-	echo $registro->usu_int_id;
-    echo 'Id: ' . $registro->usu_int_id . ' - usuario: ' . $registro->usu_char_email . ' - Telefone: ' . $registro->usu_char_senha . '<br>';
-endforeach;
+ob_start();
+
+foreach($json as $registro) {
+	$VAR = 'Id: ' . $registro->usu_int_id . ' - usuario: ' . $registro->usu_char_email . ' - Telefone: ' . $registro->usu_char_senha . '<br>';
+	echo $VAR;	
+}
+	//echo $json->usu_int_id;
+	
+//header("location:..\\view\\sucesso.php?msg=Sua senha é $VAR");
+
 /*
 if (!empty($resultado)) {
 	header('location: ..\view\erro.php?e=OPN&msg="E-mail já cadastrado"');
@@ -53,3 +59,4 @@ if (!empty($resultado)) {
 }
 
 */
+?>
