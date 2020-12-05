@@ -1,12 +1,4 @@
 <?php
-/* define o limitador de cache para 'private' */
-session_cache_limiter('private');
-$cache_limiter = session_cache_limiter();
-
-/* define o prazo do cache em 30 minutos */
-session_cache_expire(30);
-$cache_expire = session_cache_expire();
-
 /* inicia a sessão */
 session_start();
 
@@ -23,14 +15,12 @@ $resultado = selecionar('usuario', $condicao);
 $json = json_decode($resultado);
 //var_dump($json);
 
- 
-// Loop para percorrer o Objeto
-ob_start();
 
+// Loop para percorrer o Objeto
 foreach($json as $registro) {
-	$VAR = 'Id: ' . $registro->usu_int_id . ' - usuario: ' . $registro->usu_char_email . ' - Telefone: ' . $registro->usu_char_senha . '<br>';
-	echo $VAR;	
+	echo 'Id: ' . $registro->usu_int_id . ' - usuario: ' . $registro->usu_char_email . ' - Telefone: ' . $registro->usu_char_senha . '<br>';
 }
+
 	//echo $json->usu_int_id;
 	
 //header("location:..\\view\\sucesso.php?msg=Sua senha é $VAR");

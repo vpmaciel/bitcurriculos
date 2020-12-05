@@ -114,6 +114,7 @@ function selecionar($char_tabela, $array_condicao) {
     
     if(!is_array($array_condicao) || !is_string($char_tabela)) {
         throw new Exception('Tipos de parametros imcompatíveis !');
+        exit("tipos imcompativeis");
         return FALSE;
     }
 
@@ -133,25 +134,27 @@ function selecionar($char_tabela, $array_condicao) {
         }
         
         
-        $stmt = $pdo->prepare("SELECT * FROM $char_tabela;");
+        $stmt = NULL;
         
         if (!empty($array_condicao)) {
             $stmt = $pdo->prepare("SELECT * FROM $char_tabela WHERE ($char_condicao);");
             
+        } else {
+            $stmt = $pdo->prepare("SELECT * FROM $char_tabela;");
         }
 
         if (!$stmt->execute()) {
             throw new Exception('Não executou !');
+            exit("nao executou");
             return FALSE;
         }
         
-        $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);      
+        $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
-        $json = json_encode($linhas);
-        
-        return $json;
+        return json_encode($linhas);;
     
-    } catch(PDOException $e) {           
+    } catch(PDOException $e) {   
+        exit("execao pdo");        
         throw new PDOException($e);
     }
 }
