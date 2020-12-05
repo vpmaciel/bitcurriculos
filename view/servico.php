@@ -19,8 +19,8 @@ echo $FORM;
 echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'Empresa ( Prestador de serviço )' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['empresa'] = isset($_POST['empresa'])?$_POST['empresa']:'';
-$INPUT = '<input type="text" name="empresa" required size="70" minlength="1" maxlength="50" value="' . $pessoa['empresa'] .'">';
+$pessoa['ser_char_empresa'] = isset($_POST['ser_char_empresa'])?$_POST['ser_char_empresa']:'';
+$INPUT = '<input type="text" name="ser_char_empresa" required size="70" minlength="1" maxlength="50" value="' . $pessoa['ser_char_empresa'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Tipo de empresa' . $LABEL_ . $TD_ . $TR_; 
