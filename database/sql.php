@@ -1,15 +1,16 @@
 <?php
 require_once '../lib/biblioteca.php';
 
-$dsn = "mysql:host=localhost;dbname=db_bitcurriculo";
+$dsn = "mysql:host=localhost;dbname=bitcurriculo";
 $usuario = "root";
 $senha = "";
+$pdo = NULL;
 try {
     $pdo = new PDO($dsn, $usuario, $senha);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     throw new PDOException($e);
-    echo "Erro na conexão:" . $->getMessage();
+    echo "Erro na conexão:" . $e->getMessage();
 }
         
 
@@ -143,18 +144,11 @@ function selecionar($char_tabela, $array_condicao) : array {
                 
         $array_modelos = array();
         
-        while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);      
         
-            $array_modelo = array();
-            $data[] = $row;
-            foreach($array_model as $chave => $valor) {
-                    $array_modelo["'$chave'"] = $linha["'$chave'"];                     
-            }
-
-                array_push($array_modelos, $array_modelo);
-        }      
-        $s = json_decode($data);
-        header("location:..\\view\\sucesso.php?msg=Sua senha é $s");
+        $json = json_encode($linhas);
+        $string = json_decode($json);
+        exit(print_r($string));
         return $array_modelos;
     
     } catch(PDOException $e) {           
