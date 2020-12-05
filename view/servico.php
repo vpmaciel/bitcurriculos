@@ -18,7 +18,7 @@ echo $FORM;
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'Empresa / Prestador de serviço' . $LABEL_ . $TD_ . $TR_; 
+echo $TR . $TD . $LABEL . 'Empresa | Prestador de serviço' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['empresa'] = isset($_POST['empresa'])?$_POST['empresa']:'';
 $INPUT = '<input type="text" name="empresa" required size="70" minlength="1" maxlength="50" value="' . $pessoa['empresa'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
@@ -64,6 +64,11 @@ $INPUT = '<input type="number" name="int_total_funcionarios" size="70" required 
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Celular' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['char_celular'] = isset($_POST['char_celular'])?$_POST['char_celular']:'';
+$INPUT = '<input type="text" name="char_celular" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_celular'] .'">';
+echo $TR . $TD . $INPUT . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'E' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['char_celular'] = isset($_POST['char_celular'])?$_POST['char_celular']:'';
 $INPUT = '<input type="text" name="char_celular" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_celular'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
