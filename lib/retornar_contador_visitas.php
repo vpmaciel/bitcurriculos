@@ -2,16 +2,14 @@
 function retornar_contador_visitas() {
     $arquivo = $_SERVER['DOCUMENT_ROOT'].'/bitcurriculos/file/contador_de_visitas.txt';
 
-    $handle = fopen($arquivo, 'r+');
-    $data = fread($handle, 512);
-    $contador = intval($data) + 1;
+    $linha = file($arquivo); 
+    $visitas = $linha[0]; 
+    $visitas += 1;
+    $cf=fopen($arquivo,"w"); 
+    fputs($cf,"$visitas"); 
+    fclose($cf);
+    $MSG = "<marquee>Este site teve até hoje ". $visitas . " acessos.</p>". "</marquee>";
     
-    $MSG = "<p align=\"justify\">Esta página teve ". $contador . " acessos.</p>";
-    
-    fwrite($handle, $contador);
-    
-    fclose($handle);
-
     return $MSG;
 }
 
