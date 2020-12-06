@@ -20,10 +20,10 @@ echo $TR . $TD . $LABEL . 'INGLÊS' . $LABEL_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 
-$LINK = "<a href=\"$caminho.boleto.pdf\" target=\"_blank\">Apostila 001</a>";
+$LINK = '<a href="apostilas/boleto.pdf" download >Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
@@ -32,10 +32,10 @@ echo $TR . $TD . $LABEL . 'ESPANHOL' . $LABEL_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
@@ -44,22 +44,22 @@ echo $TR . $TD . $LABEL . 'FRANCÊS' . $LABEL_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
@@ -68,13 +68,13 @@ echo $TR . $TD . $LABEL . 'LATIM' . $LABEL_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
@@ -84,13 +84,13 @@ echo $TR . $TD . $LABEL . 'ITALIANO' . $LABEL_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = '<a href="apostilas/boleto.pdf" download>Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
