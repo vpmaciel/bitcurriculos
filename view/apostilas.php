@@ -14,11 +14,13 @@ echo $H1 . 'APOSTILAS' . $H1_;
 
 echo $TABLE;
 
+$caminho = $_SERVER['DOCUMENT_ROOT'].'/bitnews/apostilas/';
+
 echo $TR . $TD . $LABEL . 'INGLÊS' . $LABEL_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 
-$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+$LINK = "<a href=\"$caminho.boleto.pdf\" target=\"_blank\">Apostila 001</a>";
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
 $LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';

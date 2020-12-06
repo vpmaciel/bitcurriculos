@@ -20,6 +20,4 @@
       <a href="livros.php">Livros</a><br>
       <a href="treinamentos.php">Treinamentos</a><br>
       <a href="testes.php">Testes</a><br>
-      <a href="noticias.php">Notícias</a><br>
-
    </div>
