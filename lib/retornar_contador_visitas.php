@@ -1,6 +1,6 @@
 <?php
 function retornar_contador_visitas() {
-    $arquivo = $_SERVER['DOCUMENT_ROOT'].'/bitcurriculos/file/contador_de_visitas.txt';
+    $arquivo = $_SERVER['DOCUMENT_ROOT'].'/bitnews/file/contador_de_visitas.txt';
 
     $linha = file($arquivo); 
     $visitas = $linha[0]; 

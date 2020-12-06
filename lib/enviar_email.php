@@ -29,7 +29,7 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
 	$mail->Subject = $assunto;
     $mail->Body = $corpo;
     $mail->SMTPDebug = 1;    
-    $mail->AddAttachment($_SERVER['DOCUMENT_ROOT'].'/bitcurriculos/file/boleto.pdf', $name = 'test.pdf',  $encoding = 'base64', $type = 'application/pdf');
+    $mail->AddAttachment($_SERVER['DOCUMENT_ROOT'].'/bitnews/file/boleto.pdf', $name = 'test.pdf',  $encoding = 'base64', $type = 'application/pdf');
 	$mail->AddAddress($para);
 	if(!$mail->Send()) {
 		$error = 'Mail error: '.$mail->ErrorInfo; 

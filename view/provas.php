@@ -14,7 +14,40 @@ echo $H1 . 'PROVAS' . $H1_;
 
 echo $TABLE;
 
-$LINK = '<a href="recupera_senha.php">Esqueci usuário ou senha</a>';
+echo $TR . $TD . $LABEL . 'LINGUAGEM C' . $LABEL_ . $TD_ . $TR_; 
+
+$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+echo $TR .$TD . $LINK . $TD_ . $TR_;
+
+$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+echo $TR .$TD . $LINK . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'LINGUAGEM C++' . $LABEL_ . $TD_ . $TR_; 
+
+$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+echo $TR .$TD . $LINK . $TD_ . $TR_;
+
+$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+echo $TR .$TD . $LINK . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'LINGUAGEM JAVA' . $LABEL_ . $TD_ . $TR_; 
+
+$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+echo $TR .$TD . $LINK . $TD_ . $TR_;
+
+$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+echo $TR .$TD . $LINK . $TD_ . $TR_;
+
+$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+echo $TR .$TD . $LINK . $TD_ . $TR_;
+
+$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+echo $TR .$TD . $LINK . $TD_ . $TR_;
+
+$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
+echo $TR .$TD . $LINK . $TD_ . $TR_;
+
+$LINK = '<a href="recupera_senha.php" target="_blank">Esqueci usuário ou senha</a>';
 echo $TR .$TD . $LINK . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
