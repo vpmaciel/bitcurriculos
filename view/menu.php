@@ -14,7 +14,7 @@
       <a href="vagas.php">Pesquisar Vagas</a><br>
       <a href="curriculo.php">Exibir Currículo</a><br>-<br>
       <a href="publicar_vaga.php">Publicar Vaga de Emprego</a><br>-<br>
-      <a href="servico.php">Serviços</a><br>
+      <a href="servico.php">Teste D.I.S.C.</a><br>
       <a href='provas.php'>Provas</a><br>
       <a href="apostilas.php">Apostilas</a><br>
       <a href="livros.php">Livros</a><br>
