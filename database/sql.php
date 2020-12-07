@@ -1,7 +1,7 @@
 <?php
 require_once '../lib/biblioteca.php';
 
-$dsn = "mysql:host=localhost;dbname=bitnews";
+$dsn = "mysql:host=localhost;dbname=bitcurriculos";
 $usuario = "root";
 $senha = "";
 $pdo = NULL;

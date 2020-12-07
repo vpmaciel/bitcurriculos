@@ -14,7 +14,7 @@ echo $H1 . 'APOSTILAS' . $H1_;
 
 echo $TABLE;
 
-$caminho = $_SERVER['DOCUMENT_ROOT'].'/bitnews/apostilas/';
+$caminho = $_SERVER['DOCUMENT_ROOT'].'/bitcurriculos/apostilas/';
 
 echo $TR . $TD . $LABEL . 'INGLÊS' . $LABEL_ . $TD_ . $TR_;
 
