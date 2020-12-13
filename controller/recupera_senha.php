@@ -8,8 +8,8 @@ require_once '../database/sql.php';
 
 $usuario_model['usu_char_email'] = $_POST['usu_char_email'];
 
-$resultado = numero_registros('usuario', $usuario_model['usu_char_email']);
-die(''.$resultado);
+$resultado = numero_registros('usuario', $usuario_model);
+
 if ($resultado == 0) {
 	header('location: ..\view\erro.php?e=OPN&msg="E-mail não cadastrado ou inválido !"');
 } else {

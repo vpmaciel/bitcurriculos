@@ -114,7 +114,6 @@ function selecionar($char_tabela, $array_condicao) {
     
     if(!is_array($array_condicao) || !is_string($char_tabela)) {
         throw new Exception('Tipos de parametros imcompatíveis !');
-        exit("tipos imcompativeis");
         return FALSE;
     }
 
@@ -144,8 +143,7 @@ function selecionar($char_tabela, $array_condicao) {
         }
 
         if (!$stmt->execute()) {
-            throw new Exception('Não executou !');
-            exit("nao executou");
+            throw new Exception('Não executou !');            
             return FALSE;
         }
         
@@ -153,14 +151,14 @@ function selecionar($char_tabela, $array_condicao) {
         
         return json_encode($linhas);;
     
-    } catch(PDOException $e) {   
-        exit("execao pdo");        
+    } catch(PDOException $e) {           
         throw new PDOException($e);
     }
 }
 
 function excluir($char_tabela, $array_condicao) : bool {
     if(!is_array($array_condicao) && !is_array($char_tabela)) {
+        throw new Exception('Tipos de parametros imcompatíveis !');        
         return FALSE;
     }
     $campos = '';
@@ -201,6 +199,7 @@ function numero_registros($char_tabela, $array_condicao) : int {
     global $pdo;
     
     if(!is_string($char_tabela) || !is_array($array_condicao)) {
+        throw new Exception('Tipos de parametros imcompatíveis !');        
         return 0;
     }
 
@@ -220,7 +219,6 @@ function numero_registros($char_tabela, $array_condicao) : int {
         }
         
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM $char_tabela WHERE ($char_condicao);");
-        die(''."SELECT COUNT(*) FROM $char_tabela WHERE ($char_condicao);");
         if (!$stmt->execute()) {
             return 0;
         }
