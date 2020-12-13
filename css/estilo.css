@@ -109,9 +109,9 @@ input[type="email"] ,input[type="url"] {
 } 
 .sucesso {
 	color: darkslategray; 
-	text-align: left;
+	text-align: center;
 }
 .erro {
-	color: darkslategray; 
-	text-align: left;
+	color: #FF0000; 
+	text-align: center;
 }

@@ -19,6 +19,4 @@ if ($resultado == 0) {
 	} else {		
 		header('location: ..\view\erro.php?e=OPN&msg="Usuário já está logado !');
 	}
-
-	header('location: ..\view\erro.php?e=OPN&msg="Não foi possível realizar login !"');
 }
