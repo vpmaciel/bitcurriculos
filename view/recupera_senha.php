@@ -12,7 +12,7 @@ require_once 'menu.php';
 echo $DIV_MAIN;
 echo $H1 . 'RECUPERAR SENHA' . $H1_;
 
-$FORM = '<form action="../controller/login.php" method="post">';
+$FORM = '<form action="../controller/recupera_senha.php" method="post">';
 
 echo $FORM;
 
