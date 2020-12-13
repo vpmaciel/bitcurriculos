@@ -12,7 +12,7 @@ a:hover {
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: left;		
-	color: #FFF;
+	color: #000;
 	font-size: 18px;	
 	padding: 0px;
 }
@@ -21,7 +21,7 @@ select, input, textarea, select:focus, input:focus, textarea:focus {
     outline: none;
     box-shadow: none;
     border: 1px solid #000;
-	text-transform: capitalize;
+	text-transform: uppercase;
 	font-size: 12px;	
 	padding: 2px;
 	width: 100%;
@@ -32,15 +32,21 @@ input[type="submit"] {
 	 width: auto;
 }
 label {
-	color: #FFF;			
+	color: #000;			
 	font-weight: lighter;	
+	text-transform: capitalize;
 }
 p {
 	text-align: justify;
 	text-indent: 0em;
 }
 table, td, th {
-	padding: 0px;	
+	padding: 0px;
+	min-height: auto;	
+}
+html{
+	min-height: auto;
+	border: 1px #000 solid;
 }
 body {
 	font-family: Fonte, sans-serif;
@@ -49,37 +55,42 @@ body {
 	font-size: 18px;
 	margin: auto;
 	padding: 0;
-	border: 1px #000 solid;
+	min-height: auto;
 }
 .coluna {
 	float: left;
 	padding: 0px;
+	min-height: auto;
 } 
 .esquerda {
 	width: 20%;
 	text-align: right;
 	padding: 10px;
 	background-color: lightcoral;
+	min-height: auto;
 } 
 .direita {
 	width: 80%;
 	padding: 10px;
-	background-color: lightcoral;
+	background-color: white;
+	min-height: auto;
 }
 .linha:after {
 	content: "";
 	display: table;
 	clear: both;
+	min-height: auto;
 }
 div {
 	padding: 0px;
+	min-height: auto;
 }
 * {
 	font-weight: normal;
 	border-radius: 0px;
 	box-sizing: border-box;	
 }
-input[type="email"] {
+input[type="email"] ,input[type="url"] {
 	text-transform: lowercase;
 }
 @media only screen and (max-width: 1259px) {

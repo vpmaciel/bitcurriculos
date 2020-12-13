@@ -31,12 +31,12 @@ echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'URL de repositório de códigos' . $LABEL_ .$TD . $TR; 
 $pessoa['char_url_repositorio_codigos'] = isset($_POST['char_url_repositorio_codigos'])?$_POST['char_url_repositorio_codigos']:'';
-$INPUT = '<input type="text" name="char_url_repositorio_codigos" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_url_repositorio_codigos'] .'">';
+$INPUT = '<input type="url" name="char_url_repositorio_codigos" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_url_repositorio_codigos'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'URL do linkedin' . $LABEL_ .$TD . $TR; 
 $pessoa['char_url_linkedin'] = isset($_POST['char_url_linkedin'])?$_POST['char_url_linkedin']:'';
-$INPUT = '<input type="text" name="char_url_linkedin" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_url_linkedin'] .'">';
+$INPUT = '<input type="url" name="char_url_linkedin" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_url_linkedin'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Data de nascimento' . $LABEL_ .$TD . $TR; 
@@ -161,7 +161,7 @@ echo $TR . $TD . $LABEL . 'CNH' . $LABEL_ .$TD . $TR;
 echo $TR. $TD;
 $SELECT = '<select name="int_cnh">';
 echo $SELECT;
-foreach ($array_lista as $indice => $int_cnh) {	
+foreach ($array_cnh as $indice => $int_cnh) {	
 	if ($indice == 0) {
 		continue;
 	}
