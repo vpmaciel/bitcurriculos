@@ -45,9 +45,9 @@ $pessoa['ser_char_segmento_empresarial'] = isset($_POST['ser_char_segmento_empre
 $INPUT = '<input type="text" name="ser_char_segmento_empresarial" required size="70" minlength="1" maxlength="50" value="' . $pessoa['ser_char_segmento_empresarial'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['ser_char_cargo'] = isset($_POST['ser_char_cargo'])?$_POST['ser_char_cargo']:'';
-$INPUT = '<input type="text" name="ser_char_cargo" required size="70" minlength="1" maxlength="50" value="' . $pessoa['ser_char_cargo'] .'">';
+echo $TR . $TD . $LABEL . 'Profissão' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['ser_char_profissao'] = isset($_POST['ser_char_profissao'])?$_POST['ser_char_profissao']:'';
+$INPUT = '<input type="text" name="ser_char_profissao" required size="70" minlength="1" maxlength="50" value="' . $pessoa['ser_char_profissao'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_ . $TR_; 

@@ -45,20 +45,15 @@ $pessoa['ser_char_segmento_empresarial'] = isset($_POST['ser_char_segmento_empre
 $INPUT = '<input type="text" name="ser_char_segmento_empresarial" required size="70" minlength="1" maxlength="50" value="' . $pessoa['ser_char_segmento_empresarial'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['ser_char_cargo'] = isset($_POST['ser_char_cargo'])?$_POST['ser_char_cargo']:'';
-$INPUT = '<input type="text" name="ser_char_cargo" required size="70" minlength="1" maxlength="50" value="' . $pessoa['ser_char_cargo'] .'">';
+echo $TR . $TD . $LABEL . 'Profissão' . $LABEL_ . $TD_ . $TR_; 
+$pessoa['ser_char_profissao'] = isset($_POST['ser_char_profissao'])?$_POST['ser_char_profissao']:'';
+$INPUT = '<input type="text" name="ser_char_profissao" required size="70" minlength="1" maxlength="50" value="' . $pessoa['ser_char_profissao'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Serviço prestado' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['ser_char_servico_prestado'] = isset($_POST['ser_char_servico_prestado'])?$_POST['ser_char_servico_prestado']:'';
 $TEXTAREA = '<textarea id="ser_char_servico_prestado" name="ser_char_servico_prestado" rows="2" cols="50" maxlength="200">' . $pessoa['ser_char_servico_prestado'] .'</textarea>';
 echo $TR . $TD . $TEXTAREA . $TD_ . $TR_; 
-
-echo $TR . $TD . $LABEL . 'Total de funcionários' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['ser_int_total_funcionarios'] = isset($_POST['ser_int_total_funcionarios'])?$_POST['ser_int_total_funcionarios']:'';
-$INPUT = '<input type="number" name="ser_int_total_funcionarios" size="70" required min="1" max="1000000" value="' . $pessoa['ser_int_total_funcionarios'] .'">';
-echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Celular' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['ser_char_celular'] = isset($_POST['ser_char_celular'])?$_POST['ser_char_celular']:'';

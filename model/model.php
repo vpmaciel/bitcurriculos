@@ -39,7 +39,7 @@ function pessoa_model() : array {
         'pub_vag_char_requisitos' => '',
         'pub_vag_char_funcoes' => '',
         'pub_vag_char_beneficios' => '',
-        'pub_vag_date_data_publicacao' => '',
+            'pub_vag_date_data_publicacao' => '',
         'pub_vag_pcd' => '',
         'pub_vag_int_vagas'=> '',
         'pub_vag_int_contrato' => '',
