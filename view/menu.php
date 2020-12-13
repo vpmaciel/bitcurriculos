@@ -1,9 +1,9 @@
 <div class="linha">
    <div class="coluna esquerda">
       <a href="index.php">Home</a><br>
-      <a href='registro.php'>Registrar</a><br>
-      <a href='login.php'>Entrar</a><br>
-      <a href='..\controller\logoff.php'>Sair</a><br>-<br>
+      <a href="registro.php">Registrar</a><br>
+      <a href="login.php">Entrar</a><br>
+      <a href="logoff.php">Sair</a><br>-<br>
       <a href="pessoa.php">Dados Pessoais</a><br>
       <a href="curso.php">Cursos</a><br>
       <a href="certificacao.php">Certificação</a><br>
@@ -14,5 +14,6 @@
       <a href="vagas.php">Pesquisar Vagas</a><br>
       <a href="curriculo.php">Exibir Currículo</a><br>-<br>
       <a href="publicar_vaga.php">Publicar Vaga de Emprego</a><br>-<br>
+      <a href="publicar_vaga.php">Prestador</a><br>-<br>
       <a href="servico.php">Teste D.I.S.C.</a><br>
    </div>

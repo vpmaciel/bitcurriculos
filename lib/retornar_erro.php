@@ -9,6 +9,7 @@ function retornar_erro() : array {
         'EP' => 'Você não ter permissão para acessar esta página !',
         'TDI' => 'Tipos de dados imcompativeis !',
         'EEE' => 'Erro de envio de e-mail !',
+        'UNL' => 'Usuário não está logado faça login !',
     );
 
     return $VALOR;

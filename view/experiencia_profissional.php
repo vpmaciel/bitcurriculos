@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+if(!isset($_SESSION['usu_int_id'])) {
+	header('location:..\view\erro.php?e=UNL');
+}
 require_once '../lib/biblioteca.php';
 require_once '../model/model.php';
 echo $DOCTYPE;
@@ -42,7 +46,6 @@ echo $TR . $TD . $LABEL . 'Funções' . $LABEL_ . $TD_ . $TR_;
 $pessoa['char_funcoes'] = isset($_POST['char_funcoes'])?$_POST['char_funcoes']:'';
 $TEXTAREA = '<textarea id="w3review" name="w3review" rows="2" cols="50" maxlength="500">' . $pessoa['char_funcoes'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
-
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 
