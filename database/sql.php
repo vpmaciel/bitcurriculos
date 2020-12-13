@@ -57,8 +57,8 @@ function inserir($char_tabela, $array_model) : bool {
     return $retorno;
 }
 
-function atualizar($char_tabela, $array_model, $condicao) : bool {
-    if(!is_array($array_model) || !is_array($condicao) || !is_string($char_tabela)) {
+function atualizar($char_tabela, $array_model, $array_condicao) : bool {
+    if(!is_array($array_model) || !is_array($array_condicao) || !is_string($char_tabela)) {
         throw new Exception('Tipos de parametros imcompatíveis !');
         return FALSE;
     }
@@ -85,20 +85,20 @@ function atualizar($char_tabela, $array_model, $condicao) : bool {
         }
 
         $contador = 1;
-        $tamanho = count ($condicao);
-        foreach($condicao as $chave => $valor) {
+        $tamanho = count ($array_condicao);
+        foreach($array_condicao as $chave => $valor) {
+            $valor = "'$valor'";
             
-            
-            $condicao .= $chave . "=". $valor;               
+            $array_condicao .= $chave . "=". $valor;               
 
             if($contador < $tamanho) {
-                $condicao .= ',';
+                $array_condicao .= ' AND ';
             }
             $contador++;
         }
 
         $pdo->beginTransaction();
-        $stm = $pdo->prepare("UPDATE $char_tabela SET $campos WHERE ($condicao);");            
+        $stm = $pdo->prepare("UPDATE $char_tabela SET $campos WHERE ($array_condicao);");            
     
         $pdo->commit();
     
@@ -159,32 +159,32 @@ function selecionar($char_tabela, $array_condicao) {
     }
 }
 
-function excluir($char_tabela, $condicao) : bool {
-    if(!is_array($condicao) && !is_array($char_tabela)) {
+function excluir($char_tabela, $array_condicao) : bool {
+    if(!is_array($array_condicao) && !is_array($char_tabela)) {
         return FALSE;
     }
     $campos = '';
-    $tamanho = count ($condicao);
+    $tamanho = count ($array_condicao);
     $contador = 1;
-    if($tamanho == 0 || !isset($condicao)) {
+    if($tamanho == 0 || !isset($array_condicao)) {
         return FALSE;
     }   
     
     try {
         $contador = 1;
-        $tamanho = count ($condicao);
-        foreach($condicao as $chave => $valor) {
+        $tamanho = count ($array_condicao);
+        foreach($array_condicao as $chave => $valor) {
 
-            $condicao .= $chave . "=". $valor;               
+            $array_condicao .= $chave . "=". $valor;               
 
             if($contador < $tamanho) {
-                $condicao .= ' AND ';
+                $array_condicao .= ' AND ';
             }
             $contador++;
         }
 
         $pdo->beginTransaction();
-        $stmt = $pdo->prepare("DELETE FROM $char_tabela WHERE ($condicao);");            
+        $stmt = $pdo->prepare("DELETE FROM $char_tabela WHERE ($array_condicao);");            
         
         $pdo->commit();
 
@@ -255,6 +255,7 @@ function criar_sessao($char_tabela, $array_condicao) : int {
         }
         
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM $char_tabela WHERE ($char_condicao);");
+        die("SELECT COUNT(*) FROM $char_tabela WHERE ($char_condicao);");
         if (!$stmt->execute()) {
             return 0;
         }

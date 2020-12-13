@@ -16,15 +16,14 @@ $resultado = numero_registros('usuario', $usuario_model);
 if ($resultado == 0) {
 	header('location: ..\view\erro.php?e=OPN&msg="E-mail ou senha incorretos !"');
 } else {	
-		$resultado = criar_sessao('usuario', $usuario_model);		
-		
-		if ($resultado > 0) {			
-			if (!isset($_SESSION['usu_int_id'])) {
-				$_SESSION['usu_int_id'] = $resultado;
-			}
-			header('location:..\view\sucesso.php?msg=Sessão criada com sucesso !');
-		} else {
-			header('location:..\view\erro.php?e=OPN');
-		}	
-	} 
+	$resultado = criar_sessao('usuario', $usuario_model);		
+	
+	if ($resultado > 0) {			
+		if (!isset($_SESSION['usu_int_id'])) {
+			$_SESSION['usu_int_id'] = $resultado;
+		}
+		header('location:..\view\sucesso.php?msg=Sessão criada com sucesso !');
+	} else {
+		header('location:..\view\erro.php?e=OPN');
+	}
 }
