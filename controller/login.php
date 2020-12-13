@@ -16,7 +16,9 @@ if ($resultado == 0) {
 	if (!isset($_SESSION['usu_int_id'])) {
 		$_SESSION['usu_int_id'] = $resultado;
 		header('location:..\view\sucesso.php?msg=Sessão criada com sucesso !');
-	} else {
-		header('location:..\view\erro.php?e=OPN');
+	} else {		
+		header('location: ..\view\erro.php?e=OPN&msg="Usuário já está logado !');
 	}
+
+	header('location: ..\view\erro.php?e=OPN&msg="Não foi possível realizar login !"');
 }

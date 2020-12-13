@@ -18,10 +18,10 @@ echo $H1 . 'SUCESSO' . $H1_;
 
 echo $TABLE;
 
-echo $TR . $TD . '<p style="color: #006400; text-align: center;">' . 'Operação realizada com sucesso !'. '</p>'  . $TD_ . $TR_;
+echo $TR . $TD . '<p style="color: #FFF; text-align: left;">' . 'Operação realizada com sucesso !'. '</p>'  . $TD_ . $TR_;
 
 if (isset($_GET['msg'])) {
-    echo $TR . $TD . '<p style="color: #006400; text-align: center;">' . $_GET['msg']. '</p>'  . $TD_ . $TR_;
+    echo $TR . $TD . '<p style="color: #FFF; text-align: left;">' . $_GET['msg']. '</p>'  . $TD_ . $TR_;
 }
 
 echo $TABLE_;

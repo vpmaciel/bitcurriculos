@@ -11,18 +11,17 @@ a:hover {
 	text-decoration: underline;	
 }
 h1, h2, h3, h4, h5, h6 {
-	text-align: center;		
-	color: #000;
+	text-align: left;		
+	color: #FFF;
 	font-size: 18px;	
 	padding: 0px;
-	text-decoration: underline;
 }
 select, input, textarea, select:focus, input:focus, textarea:focus {
     border-radius: 0px;
     outline: none;
     box-shadow: none;
     border: 1px solid #000;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	font-size: 12px;	
 	padding: 2px;
 	width: 100%;
@@ -33,7 +32,7 @@ input[type="submit"] {
 	 width: auto;
 }
 label {
-	color: #000;			
+	color: #FFF;			
 	font-weight: lighter;	
 }
 p {
@@ -50,19 +49,20 @@ body {
 	font-size: 18px;
 	margin: auto;
 	padding: 0;
+	border: 1px #000 solid;
 }
 .coluna {
 	float: left;
 	padding: 0px;
 } 
 .esquerda {
-	width: 30%;
+	width: 20%;
 	text-align: right;
 	padding: 10px;
 	background-color: lightcoral;
 } 
 .direita {
-	width: 70%;
+	width: 80%;
 	padding: 10px;
 	background-color: lightcoral;
 }
