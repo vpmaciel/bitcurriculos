@@ -1,50 +1,51 @@
 <?php
+function pessoa_model() : array {
     $pessoa_model = array(
-        'usuario_id_pessoa_int' => '',
-        'nome_char' => '',
-        'data_nascimento_date' => '',
-        'celular_numero_char' => '',
-        'sexo_int' => '',
-        'escolaridade_int' => '',
-        'estado_civil_int' => '',
-        'nacionalidade_int' => '',
-        'possui_filhos_int' => '',
-        'possui_deficiencia_int' => '',
-        'pais_int' => '',
-        'estado_int' => '',
-        'cidade_int' => '',
-        'cnh_int' => '',
-        'ultimo_salario_mensal_int' => '',
-        'empregado_atualmente_bit' => '',
-        'procurando_emprego_atualmente_bit' => '',
-        'disponivel_viagens_bit' => '',
-        'trabalha_outras_cidades_bit' => '',
-        'trabalha_exterior_bit' => '',
-        'trabalha_home_office_bit' => '',
-        'possui_carro_bit' => '',
-        'possui_moto_bit' => ''
+        'usu_int_id' => '',
+        'pes_char_nome' => '',
+        'pes_char_url_repositorio_codigos' => '',
+        'pes_char_url_linkedin' => '',
+        'pes_date_data_nascimento' => '',
+        'pes_char_celular_numero' => '',
+        'pes_bit_sexo' => '',
+        'pes_int_escolaridade' => '',
+        'pes_int_estado_civil' => '',
+        'pes_int_nacionalidade' => '',
+        'pes_bit_possui_filhos' => '',
+        'pes_bit_possui_deficiencia' => '',
+        'pes_int_pais' => '',
+        'pes_int_estado' => '',
+        'pes_int_cidade' => '',
+        'pes_int_cnh' => '',
+        'pes_int_ultimo_salario_mensal' => '',
+        'pes_bit_empregado_atualmente' => '',
+        'pes_bit_procurando_emprego_atualmente' => '',
+        'pes_bit_disponivel_viagens' => '',
+        'pes_bit_trabalha_outras_cidades' => '',
+        'pes_bit_trabalha_exterior' => '',
+        'pes_bit_trabalha_home_office' => '',
+        'pes_bit_possui_carro' => '',
+        'pes_bit_possui_moto' => '',
+        'pes_bit_dispensado_servico_militar' => '',
     );
+    return $pessoa_model;
+}
 
-    $publicacao_vaga_model = array(
-    'id_int' => '',
-    'usuario_id_empresa_int' => '',
-    'data_publicacao_date' => '',
-    'cargo_char' => '',
-    'razao_social_char' => '',
-    'data_publicacao_date' => '',
-    'vagas_int' => '',
-    'contrato_int' => '',
-    'salario_int' => '',
-    'funcoes_char' => '',
-    'beneficios_char' => '',
-    'estado_int' => '',
-    'cidade_int' => ''
-    );
-
-    $candidato_vaga_model = array(
-    'publicacao_vaga_id_int' => '',
-    'usuario_id_pessoa_int' => '',
-    'empresa_usuario_id_int' => ''
+    $publicaca_vaga_model = array(
+        'pub_vag_int_id' => '',
+        'usu_int_id' => '',
+        'pub_vag_char_empresa' => '',
+        'pub_vag_char_cargo' => '',
+        'pub_vag_char_requisitos' => '',
+        'pub_vag_char_funcoes' => '',
+        'pub_vag_char_beneficios' => '',
+        'pub_vag_date_data_publicacao' => '',
+        'pub_vag_pcd' => '',
+        'pub_vag_int_vagas'=> '',
+        'pub_vag_int_contrato' => '',
+        'pub_vag_dec_salario_mensal' => '',
+        'pub_vag_int_estado' => '',
+        'pub_vag_int_cidade' => '',        
     );
 
     $objetivo_profissional_model = array(
@@ -98,7 +99,7 @@
     'carga_horaria' => '',
     'ano_conclusao' => ''
     );
-function usuario_model() : array {
+    function usuario_model() : array {
 
     $usuario_model = array(
     'usu_int_id' => '',

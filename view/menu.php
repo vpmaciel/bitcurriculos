@@ -15,5 +15,5 @@
       <a href="curriculo.php">Exibir Currículo</a><br>-<br>
       <a href="publicar_vaga.php">Publicar Vaga de Emprego</a><br>-<br>
       <a href="servicos.php">Cadastrar Empresas e Serviços</a><br>
-      <a href="servicos.php">Pesquisar Empresas e Serviços</a><br>
+      <a href="servicos_pesquisa.php">Pesquisar Empresas e Serviços</a><br>
    </div>

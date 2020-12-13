@@ -14,7 +14,7 @@ if ($resultado == 0) {
 	header('location: ..\view\erro.php?e=OPN&msg="E-mail não cadastrado ou inválido !"');
 } else {
 	
-	$resultado = selecionar('usuario', $usuario_model['usu_char_email']);
+	$resultado = selecionar('usuario', $usuario_model);
 	
 	$json = json_decode($resultado);
 

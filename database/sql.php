@@ -223,7 +223,7 @@ function numero_registros($char_tabela, $array_condicao) : int {
             return 0;
         }
         
-        return ($stmt->fetchColumn() > 0) ? TRUE : FALSE; 
+        return $stmt->fetchColumn(); 
     
     } catch(PDOException $e) {           
         throw new PDOException($e);
