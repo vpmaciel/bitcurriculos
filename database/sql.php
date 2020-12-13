@@ -128,7 +128,7 @@ function selecionar($char_tabela, $array_condicao) {
             $char_condicao .= $chave . "=" . "'" . $valor . "'";               
 
             if($contador < $tamanho_array_condicao) {
-                $char_condicao .= ',';
+                $char_condicao .= ' AND ';
             }
             $contador++;
         }
@@ -178,14 +178,14 @@ function excluir($char_tabela, $condicao) : bool {
             $condicao .= $chave . "=". $valor;               
 
             if($contador < $tamanho) {
-                $condicao .= ',';
+                $condicao .= ' AND ';
             }
             $contador++;
         }
 
         $pdo->beginTransaction();
-        $stmt = $pdo->prepare("UPDATE $char_tabela SET $campos WHERE ($condicao);");            
-    
+        $stmt = $pdo->prepare("DELETE FROM $char_tabela WHERE ($condicao);");            
+        
         $pdo->commit();
 
         return TRUE;
@@ -214,13 +214,12 @@ function numero_registros($char_tabela, $array_condicao) : int {
             $char_condicao .= $chave . "=" . "'" . $valor . "'";               
 
             if($contador < $tamanho_array_condicao) {
-                $char_condicao .= ',';
+                $char_condicao .= ' AND ';
             }
             $contador++;
         }
         
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM $char_tabela WHERE ($char_condicao);");
-            
         if (!$stmt->execute()) {
             return 0;
         }
@@ -233,17 +232,29 @@ function numero_registros($char_tabela, $array_condicao) : int {
     }
 }
 
-function criar_sessao($char_tabela, $char_condicao) : int {
+function criar_sessao($char_tabela, $array_condicao) : int {
     global $pdo;
     
-    if(empty($char_condicao) || empty($char_tabela)) {
+    if(!is_string($char_tabela) || !is_array($array_condicao)) {
         return 0;
     }
 
-    try {
+    $char_condicao = '';
+    $tamanho_array_condicao = count ($array_condicao);        
 
-        $stmt = $pdo->prepare("SELECT * FROM $char_tabela WHERE ($char_condicao);");
+    try {
+        $contador = 1;
+        foreach($array_condicao as $chave => $valor) {            
+               
+            $char_condicao .= $chave . "=" . "'" . $valor . "'";               
+
+            if($contador < $tamanho_array_condicao) {
+                $char_condicao .= ' AND ';
+            }
+            $contador++;
+        }
         
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM $char_tabela WHERE ($char_condicao);");
         if (!$stmt->execute()) {
             return 0;
         }
@@ -251,11 +262,9 @@ function criar_sessao($char_tabela, $char_condicao) : int {
         while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
             return $linha["usu_int_id"];
         }          
-        
-    
+     
     } catch(PDOException $e) {           
-        throw new PDOException($e);       
+        throw new PDOException($e);
         return 0;
     }
-    return 0;
 }

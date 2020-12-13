@@ -38,9 +38,7 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
 		return true;
 	}
 }
-echo getcwd().'<br>';
-echo dirname(__FILE__).'<br>';
-echo basename(__DIR__).'<br>';
+
 // Insira abaixo o email que irá receber a mensagem, o email que irá enviar (o mesmo da variável GUSER), 
 // o nome do email que envia a mensagem, o Assunto da mensagem e por último a variável com o corpo do email.
 /*

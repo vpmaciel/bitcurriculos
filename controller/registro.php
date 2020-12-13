@@ -19,17 +19,12 @@ if ($resultado != 0) {
 	$resultado = inserir('usuario', $usuario_model);
 	
 	if ($resultado == TRUE) {
-
-		if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'Nome do Enviador', 'Assunto do Email', $Vai)) {
-
-			//Header("location:http:../view/sucesso.php"); // Redireciona para uma página de obrigado.
-			echo "sucesso";
-		
-		}
-		
+		if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'BitCurriculos', 'Sua Senha', $usuario_model['usu_int_senha'])) {
 			header("location:..\\view\\sucesso.php?msg=Sua senha é foi enviada para seu e-mail !");
+		}
 	} else {
-			if (!empty($error))
+		if (!empty($error)) {
 			header('location:..\view\erro.php?e=EEE');
+		}	
 	} 
 }
