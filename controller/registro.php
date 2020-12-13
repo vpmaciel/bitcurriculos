@@ -16,20 +16,20 @@ if ($resultado != 0) {
 	header('location: ..\view\erro.php?e=OPN&msg="E-mail já cadastrado ou inválido !"');
 } else {
 	
-	$resultado = inserir('usuario', global $usuario_model);
+	$resultado = inserir('usuario', $usuario_model);
 	
 	if ($resultado == TRUE) {
 
-		$condicao = 'usu_char_email =' . "'" .$_POST['usu_char_email'] . "'";
-		$resultado = criar_sessao('usuario', $condicao);		
+		if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'Nome do Enviador', 'Assunto do Email', $Vai)) {
+
+			//Header("location:http:../view/sucesso.php"); // Redireciona para uma página de obrigado.
+			echo "sucesso";
 		
-		if ($resultado > 0) {
-			if (!isset($_SESSION['usu_int_id'])) {
-				$_SESSION['usu_int_id'] = $resultado;
-			}			
+		}
+		
 			header("location:..\\view\\sucesso.php?msg=Sua senha é foi enviada para seu e-mail !");
-		} else {
-			header('location:..\view\erro.php?e=OPN');
-		}	
+	} else {
+			if (!empty($error))
+			header('location:..\view\erro.php?e=EEE');
 	} 
 }

@@ -31,7 +31,7 @@ function inserir($char_tabela, $array_model) : bool {
 
         foreach($array_model as $chave => $valor) {
             
-            $valor = "'$valor'";            
+            $valores .= "'". $valor . "'";            
             $campos .= $chave;
 
             if($contador < $tamanho) {
@@ -42,8 +42,8 @@ function inserir($char_tabela, $array_model) : bool {
         }
 
         $pdo->beginTransaction();
-        $stmt = $pdo->prepare("INSERT INTO $char_tabela ($campos) VALUES ($valores);");            
-        die("INSERT INTO $char_tabela ($campos) VALUES ($valores);");
+        $stmt = $pdo->prepare("INSERT INTO $char_tabela ($campos) VALUES ($valores);");
+        
         $retorno = ($stmt->execute()) ? TRUE : FALSE;        
         
         $pdo->commit();

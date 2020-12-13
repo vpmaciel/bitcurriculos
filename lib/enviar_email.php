@@ -1,5 +1,4 @@
 <?php
-rand(1000, 9999);
 $Nome		= 'BitCurriculos';	// Pega o valor do campo Nome
 $Fone		= '31-98285-7372';	// Pega o valor do campo Telefone
 $Email		= 'vpmaciel@gmail.com';	// Pega o valor do campo Email
