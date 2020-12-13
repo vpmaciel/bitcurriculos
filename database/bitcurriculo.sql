@@ -174,7 +174,7 @@ CREATE TABLE `publica_vaga` (
 CREATE TABLE `usuario` (
   `usu_int_id` int(11) NOT NULL,
   `usu_char_email` varchar(100) NOT NULL,
-  `usu_char_senha` char(4) NOT NULL,
+  `usu_int_senha` char(4) NOT NULL,
   `usu_date_ultimo_login` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

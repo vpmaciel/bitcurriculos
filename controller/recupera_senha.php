@@ -19,7 +19,7 @@ if ($resultado != 0) {
 	if ($resultado == TRUE) {
 
 		$condicao = 'usu_char_email =' . "'" .$_POST['usu_char_email'] . "'" . " AND " . 
-		            'usu_char_senha =' . "'" .$_POST['usu_char_senha'] . "'";
+		            'usu_int_senha =' . "'" .$_POST['usu_int_senha'] . "'";
 		$resultado = criar_sessao('usuario', $condicao);		
 		
 		if ($resultado > 0) {			

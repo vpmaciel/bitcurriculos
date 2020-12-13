@@ -24,8 +24,8 @@ $INPUT = '<input type="email" name="usu_char_email" required size="70" minlength
 echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Senha' . $LABEL_; 
-$usuario['usu_char_senha'] = isset($_POST['usu_char_senha']) ? $_POST['usu_char_senha']:'';
-$INPUT = '<input type="password" name="usu_char_senha" size="70" placeholder="0000" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $usuario['usu_char_senha'] .'">';
+$usuario['usu_int_senha'] = isset($_POST['usu_int_senha']) ? $_POST['usu_int_senha']:'';
+$INPUT = '<input type="password" name="usu_int_senha" size="70" placeholder="0000" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $usuario['usu_int_senha'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 

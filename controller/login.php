@@ -16,7 +16,7 @@ require_once '../database/sql.php';
 
 $usuario_model = usuario_model();
 $usuario_model['usu_char_email'] = $_POST['usu_char_email'];
-$usuario_model['usu_char_senha'] = $_POST['usu_char_senha'];
+$usuario_model['usu_int_senha'] = $_POST['usu_int_senha'];
 
 $condicao = ['usu_char_email' => $usuario_model['usu_char_email']];
 
@@ -29,7 +29,7 @@ if ($resultado != 0) {
 	if ($resultado == TRUE) {
 
 		$condicao = 'usu_char_email =' . "'" .$_POST['usu_char_email'] . "'" . " AND " . 
-		            'usu_char_senha =' . "'" .$_POST['usu_char_senha'] . "'";
+		            'usu_int_senha =' . "'" .$_POST['usu_int_senha'] . "'";
 		$resultado = criar_sessao('usuario', $condicao);		
 		
 		if ($resultado > 0) {			
