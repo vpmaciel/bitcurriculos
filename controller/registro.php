@@ -12,12 +12,6 @@ $usuario_model['usu_char_senha'] = rand(1000, 9999);
 
 $condicao['usu_char_email'] = $usuario_model['usu_char_email'];
 $resultado = numero_registros('usuario', $condicao);
-$json = json_decode($resultado);
-
-foreach($json as $registro) {
-	echo 'Id: ' . $registro->usu_int_id . ' - usuario: ' . $registro->usu_char_email . ' - Telefone: ' . $registro->usu_char_senha . '<br>';
-}
-
 	
 if ($resultado != 0) {
 	header('location: ..\view\erro.php?e=OPN&msg="E-mail já cadastrado ou inválido !"');

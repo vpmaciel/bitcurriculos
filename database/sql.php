@@ -43,7 +43,7 @@ function inserir($char_tabela, $array_model) : bool {
 
         $pdo->beginTransaction();
         $stmt = $pdo->prepare("INSERT INTO $char_tabela ($campos) VALUES ($valores);");            
-        
+        die("INSERT INTO $char_tabela ($campos) VALUES ($valores);");
         $retorno = ($stmt->execute()) ? TRUE : FALSE;        
         
         $pdo->commit();
