@@ -31,7 +31,7 @@ $H1_ = '</h1>';
 
 $FORM_ = '</form>';
 
-$TABLE = '<table align="center">';
+$TABLE = '<table align="left">';
 
 $TABLE_ = '</table>';
 

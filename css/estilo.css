@@ -15,6 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: #000;
 	font-size: 18px;	
 	padding: 0px;
+	text-decoration: underline;
 }
 select, input, textarea, select:focus, input:focus, textarea:focus {
     border-radius: 0px;
@@ -44,7 +45,7 @@ table, td, th {
 }
 body {
 	font-family: Fonte, sans-serif;
-	background-color: #FFFFFF;
+	background-color: lightcoral;
 	color: #000;
 	font-size: 18px;
 	margin: auto;
@@ -55,16 +56,15 @@ body {
 	padding: 0px;
 } 
 .esquerda {
-	width: 15%;
+	width: 30%;
 	text-align: right;
-	padding-top: 10px;
+	padding: 10px;
+	background-color: lightcoral;
 } 
 .direita {
-	padding-top: 5px;
-	width: 85%;
-	padding-top: 0px;	
-	padding-right: 20px;
-	padding-left: 20px;
+	width: 70%;
+	padding: 10px;
+	background-color: lightcoral;
 }
 .linha:after {
 	content: "";

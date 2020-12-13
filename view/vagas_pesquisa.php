@@ -1,13 +1,6 @@
 <?php
-require_once '../lib/biblioteca.php';
-?>
+session_start();
 
-<!DOCTYPE html>
-<html>
-<head>
-<?php require_once 'cabecalho.php';?>
-</head>
-<body>
-<?php require_once 'menu.php';?>
-</body>
-</html>
+if(!isset($_SESSION['usu_int_id'])) {
+	header('location:..\view\erro.php?e=UNL');
+}
