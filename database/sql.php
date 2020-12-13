@@ -220,6 +220,7 @@ function numero_registros($char_tabela, $array_condicao) : int {
         }
         
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM $char_tabela WHERE ($char_condicao);");
+        die(''."SELECT COUNT(*) FROM $char_tabela WHERE ($char_condicao);");
         if (!$stmt->execute()) {
             return 0;
         }
