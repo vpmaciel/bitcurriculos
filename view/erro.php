@@ -14,10 +14,10 @@ echo $H1 . 'ERRO' . $H1_;
 
 echo $TABLE;
 
-echo $TR . $TD . '<p style="color: #FFF; text-align: left;">' . $array_erro[$_GET['e']]. '</p>'  . $TD_ . $TR_;
+echo $TR . $TD . '<p class="erro">' . $array_erro[$_GET['e']]. '</p>'  . $TD_ . $TR_;
 
 if (isset($_GET['msg'])) {
-    echo $TR . $TD . '<p style="color: #FFF; text-align: left;">' . $_GET['msg']. '</p>'  . $TD_ . $TR_;
+    echo $TR . $TD . '<p class="erro">' . $_GET['msg']. '</p>'  . $TD_ . $TR_;
 }
 
 echo $TABLE_;
