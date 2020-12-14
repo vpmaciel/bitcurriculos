@@ -3,16 +3,16 @@
 	src: url(../fonte/Arsenal-Regular.ttf);
 }
 a {
-	color: #FFF;	
+	color: #000;	
 	text-decoration: none;	
 }
 a:hover {
-	color: #FFF;	
+	color: #000;	
 	text-decoration: underline;	
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
-	color: #FFF;
+	color: #000;
 	font-size: 18px;	
 	padding: 0px;
 }
@@ -20,7 +20,7 @@ select, input, textarea, select:focus, input:focus, textarea:focus {
     border-radius: 0px;
     outline: none;
     box-shadow: none;
-    border: 1px solid #000;
+    border: 1px solid#000;
 	text-transform: uppercase;
 	font-size: 12px;	
 	padding: 2px;
@@ -33,7 +33,7 @@ input[type="submit"] {
 	 width: auto;
 }
 label {
-	color: #FFF;			
+	color: #000;			
 	font-weight: lighter;	
 	text-transform: capitalize;
 }
@@ -57,7 +57,7 @@ html{
 }
 body {
 	font-family: Fonte, sans-serif;
-	color: #FFF;
+	color: #000;
 	font-size: 18px;
 	margin: auto 0;
 	padding: 0px;
@@ -70,9 +70,9 @@ body {
 } 
 .esquerda {	
 	width: 20%;	
-	text-align: right;
+	text-align: center;
 	padding: 10px;
-	background-color: coral;
+	background-color: lightcoral;
 	min-height: 100vh;		
 } 
 .direita {
