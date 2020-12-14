@@ -52,7 +52,7 @@ echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Serviço prestado' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['ser_char_servico_prestado'] = isset($_POST['ser_char_servico_prestado'])?$_POST['ser_char_servico_prestado']:'';
-$TEXTAREA = '<textarea id="ser_char_servico_prestado" name="ser_char_servico_prestado" rows="2" cols="50" maxlength="200">' . $pessoa['ser_char_servico_prestado'] .'</textarea>';
+$TEXTAREA = '<textarea id="ser_char_servico_prestado" name="ser_char_servico_prestado" rows="1" cols="50" maxlength="200">' . $pessoa['ser_char_servico_prestado'] .'</textarea>';
 echo $TR . $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Celular' . $LABEL_ . $TD_ . $TR_; 

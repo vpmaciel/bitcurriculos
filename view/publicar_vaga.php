@@ -34,17 +34,17 @@ echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Requisitos' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['char_requisitos'] = isset($_POST['char_requisitos'])?$_POST['char_requisitos']:'';
-$TEXTAREA = '<textarea id="char_requisitos" name="char_requisitos" rows="2" cols="50" maxlength="500">' . $pessoa['char_requisitos'] .'</textarea>';
+$TEXTAREA = '<textarea id="char_requisitos" name="char_requisitos" rows="1" cols="50" maxlength="500">' . $pessoa['char_requisitos'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Funções' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['char_funcoes'] = isset($_POST['char_funcoes'])?$_POST['char_funcoes']:'';
-$TEXTAREA = '<textarea id="char_funcoes" name="char_funcoes" rows="2" cols="50" maxlength="500">' . $pessoa['char_funcoes'] .'</textarea>';
+$TEXTAREA = '<textarea id="char_funcoes" name="char_funcoes" rows="1" cols="50" maxlength="500">' . $pessoa['char_funcoes'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Benefícios' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['char_beneficios'] = isset($_POST['char_beneficios'])?$_POST['char_beneficios']:'';
-$TEXTAREA = '<textarea id="char_beneficios" name="char_beneficios" rows="2" cols="50" maxlength="500">' . $pessoa['char_beneficios'] .'</textarea>';
+$TEXTAREA = '<textarea id="char_beneficios" name="char_beneficios" rows="1" cols="50" maxlength="500">' . $pessoa['char_beneficios'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Data de publicacao' . $LABEL_ . $TD_ . $TR_; 

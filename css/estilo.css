@@ -25,6 +25,7 @@ select, input, textarea, select:focus, input:focus, textarea:focus {
 	font-size: 12px;	
 	padding: 2px;
 	width: 100%;
+	resize: none;
 }
 input[type="submit"] {
 	 padding: 2px;
@@ -42,12 +43,12 @@ p {
 }
 table {	
 	table-layout: fixed;
-	width: 100%;
+	width: 65%;
   }
   
   th,
   td {	
-	width: 100%;
+	width: 60%;
 	overflow: hidden;
   }
 html{
@@ -58,8 +59,8 @@ body {
 	background-color: lightcoral;
 	color: #000;
 	font-size: 18px;
-	margin: auto;
-	padding: 0;
+	margin: auto 0;
+	padding: 0px;
 	min-height: 100%;
 }
 .coluna {
@@ -69,7 +70,8 @@ body {
 } 
 .esquerda {
 	width: 20%;
-	min-width: width 20vw;
+	min-width: width 20%;
+	max-width: width 20%;
 	text-align: right;
 	padding: 10px;
 	background-color: lightcoral;
@@ -77,19 +79,16 @@ body {
 } 
 .direita {
 	width: 80%;
+	min-width: width 80%;
+	max-width: width 80%;
 	padding: 10px;
 	background-color: white;
-	min-height: 100vh;
-	
+	min-height: 100vh;	
 }
 .linha:after {
 	content: "";
 	display: table;
 	clear: both;
-	min-height: 100%;
-}
-div {
-	padding: 0px;
 	min-height: 100%;
 }
 * {
