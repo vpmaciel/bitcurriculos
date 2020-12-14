@@ -1,4 +1,6 @@
 <?php
+require_once '..\phplot\phplot.php';
+require_once '..\lib\retornar_contador_visitas.php';
 require_once 'enviar_email.php';
 require_once 'retornar_cidade.php';
 require_once 'retornar_cnh.php';
