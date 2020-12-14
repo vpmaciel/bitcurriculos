@@ -68,13 +68,15 @@ body {
 	min-height: 100vh;
 } 
 .esquerda {	
-	width: 20%;
+	width: 20%;	
 	text-align: right;
 	padding: 10px;
 	background-color: lightcoral;
-	min-height: 100vh;
+	min-height: 100vh;		
+	float: left;
 } 
 .direita {
+	float: right;
 	width: 80%;
 	padding: 10px;
 	background-color: white;
@@ -90,6 +92,8 @@ body {
 	font-weight: normal;
 	border-radius: 0px;
 	box-sizing: border-box;	
+	padding: 0;
+	border: 0;
 }
 input[type="email"] ,input[type="url"] {
 	text-transform: lowercase;
@@ -118,5 +122,4 @@ input[type="email"] ,input[type="url"] {
 }
 div {    
 	display: inline-block;
-	min-height: 100%;
 }
