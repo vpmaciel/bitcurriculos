@@ -40,10 +40,16 @@ p {
 	text-align: justify;
 	text-indent: 0em;
 }
-table, td, th {
-	padding: 0px;
-	min-height: 100%;	
-}
+table {	
+	table-layout: fixed;
+	width: 100%;
+  }
+  
+  th,
+  td {	
+	width: 100%;
+	overflow: hidden;
+  }
 html{
 	min-height: 100%;
 }
@@ -63,17 +69,18 @@ body {
 } 
 .esquerda {
 	width: 20%;
+	min-width: width 20vw;
 	text-align: right;
 	padding: 10px;
 	background-color: lightcoral;
-	min-height: 100%;
+	min-height: 100vh;
 } 
 .direita {
 	width: 80%;
 	padding: 10px;
 	background-color: white;
-	min-height: 100%;
 	min-height: 100vh;
+	
 }
 .linha:after {
 	content: "";
@@ -115,9 +122,3 @@ input[type="email"] ,input[type="url"] {
 	color: #FF0000; 
 	text-align: center;
 }
-.center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
-  }

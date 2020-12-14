@@ -16,7 +16,7 @@ echo $DIV_MAIN;
 
 echo $H1 . 'Bit Curriculos' . $H1_;
 echo '<div class="center" align="center">';
-echo '<img src="publicar_vaga_lista.php" class="center" align="center">';
+echo '<img src="publicar_vaga_lista.php">';
 echo '</div>';
 
 $MSG = retornar_contador_visitas();	
