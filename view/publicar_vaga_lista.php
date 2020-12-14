@@ -26,5 +26,5 @@ $plot->SetDataValues($example_data);
 $plot->SetXTickLabelPos('none');
 $plot->SetXTickPos('none');
 //Draw it
-$s = $plot->DrawGraph();
+$plot->DrawGraph();
 
