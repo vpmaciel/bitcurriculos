@@ -14,28 +14,7 @@ require_once 'menu.php';
 
 echo $DIV_MAIN;
 
-
-//Define the object
-$plot = new PHPlot();
-
-//Define some data
-$example_data = array(
- array('a',3),
- array('b',5),
- array('c',7),
- array('d',8),
- array('e',2),
- array('f',6),
- array('g',7)
-);
-
-$plot->SetDataValues($example_data);
-//Turn off X axis ticks and labels because they get in the way:
-$plot->SetXTickLabelPos('none');
-$plot->SetXTickPos('none');
-//Draw it
-$s = $plot->DrawGraph();
-
+echo '<img src="publicar_vaga_lista.php" class="center">';
 
 echo $H1 . 'Bit Curriculos' . $H1_;
 
