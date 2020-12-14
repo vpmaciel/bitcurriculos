@@ -4,6 +4,9 @@ session_start();
 if(!isset($_SESSION['usu_int_id'])) {
 	header('location:..\view\erro.php?e=UNL');
 }
+
+require_once '../lib/biblioteca.php';
+
 define('FPDF_FONTPATH', '../fpdf/font/');
 require ('../fpdf/fpdf.php');
 $pdf = new FPDF("P", "pt", "A4");
@@ -236,18 +239,17 @@ while ($cadastro = array_shift($lista)) {
 
 if (isset($nome)) {
 */	
-$caminhoCompletoArquivo = '../file/file.php';
+$caminhoCompletoArquivo = '../file/curriculo.php';
 	/* executa a geração do seu PDF*/
 $pdf->Output('f', $caminhoCompletoArquivo);
 
 /* adiciona o arquivo físico ao e-mail */
-$mail->AddAttachment($caminhoCompletoArquivo);
-
-/* envia o e-mail */
-$enviado = $mail->Send();
+if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'BitCurriculos', 'Sua Senha','Candidato', 'curriculo.php')) {
+	header("location:..\\view\\sucesso.php?msg=Sua senha é foi enviada para seu e-mail !");
+}
 
 /* exclui o arquivo pdf do servidor */
-if (file_exists ($ArquivoCaminhoCompleto)) {
-   unlink($ArquivoCaminhoCompleto);
+if (file_exists ($caminhoCompletoArquivo)) {
+   unlink($caminhoCompletoArquivo);
 }
 //}

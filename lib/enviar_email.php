@@ -13,7 +13,7 @@ require_once("../phpmailer/class.phpmailer.php");
 define('GUSER', 'vpmaciel@gmail.com');	// <-- Insira aqui o seu GMail
 define('GPWD', '@#$%05428448695');		// <-- Insira aqui a senha do seu GMail
 
-function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
+function smtpmailer($para, $de, $de_nome, $assunto, $corpo, $arquivo) { 
 	global $error;
 	$mail = new PHPMailer();
 	$mail->IsSMTP();		// Ativar SMTP
@@ -27,8 +27,11 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
 	$mail->SetFrom($de, $de_nome);
 	$mail->Subject = $assunto;
     $mail->Body = $corpo;
-    $mail->SMTPDebug = 1;    
-    $mail->AddAttachment($_SERVER['DOCUMENT_ROOT'].'/bitcurriculos/file/boleto.pdf', $name = 'test.pdf',  $encoding = 'base64', $type = 'application/pdf');
+	$mail->SMTPDebug = 1;    
+	if (!empty($arquivo)) {
+		$mail->AddAttachment($_SERVER['DOCUMENT_ROOT'].'/bitcurriculos/file/'.$arquivo, $name = 'arquivo.pdf',  $encoding = 'base64', $type = 'application/pdf');
+	}
+
 	$mail->AddAddress($para);
 	if(!$mail->Send()) {
 		$error = 'Mail error: '.$mail->ErrorInfo; 

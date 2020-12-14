@@ -19,7 +19,7 @@ if ($resultado != 0) {
 	$resultado = inserir('usuario', $usuario_model);
 	
 	if ($resultado == TRUE) {
-		if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'BitCurriculos', 'Sua Senha', $usuario_model['usu_int_senha'])) {
+		if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'BitCurriculos', 'Sua Senha', $usuario_model['usu_int_senha'],'')) {
 			header("location:..\\view\\sucesso.php?msg=Sua senha é foi enviada para seu e-mail !");
 		}
 	} else {
