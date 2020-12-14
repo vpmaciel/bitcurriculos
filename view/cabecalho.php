@@ -3,6 +3,7 @@
 <meta http-equiv="Content-Language" content="pt-br">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Vicente Paulo Maciel">
+<meta http-equiv="Cache-Control" content="no-store">
 <meta name="description" content="Site de recrutamento on-line, divulgar vagas de emprego e cadastro de currículos">
 <meta name="keywords" content="emprego,vaga,trabalho,currículo,rh,curriculum vitae,bitcurriculos,apostilas,idiomas">
 <meta name="robots" content="no-cache">

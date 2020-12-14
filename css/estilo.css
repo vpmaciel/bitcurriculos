@@ -3,16 +3,16 @@
 	src: url(../fonte/Arsenal-Regular.ttf);
 }
 a {
-	color: #000;	
+	color: #FFF;	
 	text-decoration: none;	
 }
 a:hover {
-	color: #000;	
+	color: #FFF;	
 	text-decoration: underline;	
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
-	color: #000;
+	color: #FFF;
 	font-size: 18px;	
 	padding: 0px;
 }
@@ -33,7 +33,7 @@ input[type="submit"] {
 	 width: auto;
 }
 label {
-	color: #000;			
+	color: #FFF;			
 	font-weight: lighter;	
 	text-transform: capitalize;
 }
@@ -52,14 +52,17 @@ th, td {
 }
 html{
 	min-height: 100vh;
+	overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;
 }
 body {
 	font-family: Fonte, sans-serif;
-	color: #000;
+	color: #FFF;
 	font-size: 18px;
 	margin: auto 0;
 	padding: 0px;
 	min-height: 100vh;
+	background-color: lightcoral;
 }
 .coluna {
 	float: left;
@@ -68,16 +71,14 @@ body {
 .esquerda {	
 	width: 20%;	
 	text-align: right;
-	padding: 5px;
-	background-color: lightcoral;
+	padding: 10px;
+	background-color: coral;
 	min-height: 100vh;		
 } 
 .direita {
-	float: right;
 	width: 80%;
-	padding: 5px;
-	background-color: white;
-	min-height: 100vh;
+	padding: 10px;
+	background-color: lightcoral;
 }
 .linha:after {
 	content: "";
