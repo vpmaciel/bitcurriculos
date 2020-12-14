@@ -64,23 +64,22 @@ body {
 }
 .coluna {
 	float: left;
-	padding: 0px;
-	min-height: 100vh;
+	padding: 0px;	
 } 
 .esquerda {	
 	width: 20%;	
 	text-align: right;
-	padding: 10px;
+	padding: 5px;
 	background-color: lightcoral;
 	min-height: 100vh;		
-	float: left;
+	float: left;	
 } 
 .direita {
 	float: right;
 	width: 80%;
-	padding: 10px;
+	padding: 5px;
 	background-color: white;
-	min-height: 100vh;	
+	min-height: 100vh;
 }
 .linha:after {
 	content: "";
