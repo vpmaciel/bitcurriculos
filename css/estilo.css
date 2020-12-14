@@ -35,7 +35,6 @@ input[type="submit"] {
 label {
 	color: #000;			
 	font-weight: lighter;	
-	text-transform: capitalize;
 }
 p {
 	text-align: justify;
@@ -62,7 +61,7 @@ body {
 	margin: auto 0;
 	padding: 0px;
 	min-height: 100vh;
-	background-color: lightcoral;
+	background-color: #FFF;
 }
 .coluna {
 	float: left;
@@ -72,13 +71,13 @@ body {
 	width: 20%;	
 	text-align: center;
 	padding: 10px;
-	background-color: lightcoral;
+	background-color: #FFF;
 	min-height: 100vh;		
 } 
 .direita {
 	width: 80%;
 	padding: 10px;
-	background-color: lightcoral;
+	background-color: #FFF;
 }
 .linha:after {
 	content: "";
