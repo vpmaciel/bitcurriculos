@@ -43,14 +43,14 @@ p {
 table {	
 	table-layout: fixed;
 	width: 65%;
-	min-height: 100%;
+
 }
 th, td {	
 	width: 60%;
 	overflow: hidden;
 }
 html{
-	min-height: 100vh;
+	min-height: 100%;
 	overflow: -moz-scrollbars-vertical; 
     overflow-y: scroll;
 }
@@ -60,7 +60,7 @@ body {
 	font-size: 18px;
 	margin: auto 0;
 	padding: 0px;
-	min-height: 100vh;
+	min-height: 100%;	
 	background-color: #FFF;
 }
 .coluna {
@@ -71,13 +71,15 @@ body {
 	width: 20%;	
 	text-align: center;
 	padding: 10px;
-	background-color: #FFF;
-	min-height: 100vh;		
+	
+	min-height: 100%;
 } 
 .direita {
 	width: 80%;
 	padding: 10px;
 	background-color: #FFF;
+	background-color: lightcoral;
+	min-height: 100%;
 }
 .linha:after {
 	content: "";
