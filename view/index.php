@@ -14,9 +14,10 @@ require_once 'menu.php';
 
 echo $DIV_MAIN;
 
-echo '<img src="publicar_vaga_lista.php" class="center">';
-
 echo $H1 . 'Bit Curriculos' . $H1_;
+echo '<div class="center" align="center">';
+echo '<img src="publicar_vaga_lista.php" class="center" align="center">';
+echo '</div>';
 
 $MSG = retornar_contador_visitas();	
 echo $MSG;
