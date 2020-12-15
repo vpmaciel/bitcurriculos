@@ -39,6 +39,8 @@ label {
 p {
 	text-align: justify;
 	text-indent: 2em;
+	padding-left: 5%;	
+	padding-right: 5%;	
 }
 table {	
 	table-layout: fixed;
@@ -81,9 +83,7 @@ body {
 	background-color:#FFF;	
 } 
 .direita {
-	width: 80%;
-	padding-left: 10px;	
-	padding-right: 10px;	
+	width: 80%;	
 	background-color: #DCDCDC;
 	border-left: 1px solid #6d7874;
 	min-height: 100vh;
@@ -106,7 +106,6 @@ input[type="email"] ,input[type="url"] {
 		width: 100%;
 		border-top: 1px solid #6d7874;	
 		border-left: none;
-
 	}
 	.esquerda {		
 		text-align: center;		
