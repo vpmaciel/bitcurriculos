@@ -102,7 +102,10 @@ input[type="email"] ,input[type="url"] {
 		width: 100%;
 	} 	
 	.direita {		
-		width: 100%;	
+		width: 100%;
+		border-top: 1px solid #6d7874;	
+		border-left: none;
+
 	}
 	.esquerda {		
 		text-align: center;		
