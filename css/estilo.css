@@ -58,7 +58,8 @@ th, td {
 html{
 	min-height: 100%;
 	overflow: -moz-scrollbars-vertical; 
-	overflow-y: scroll;	
+	overflow-y: scroll;
+	
 }
 body {
 	font-family: Fonte, sans-serif;
@@ -83,7 +84,7 @@ body {
 	width: 80%;
 	padding-left: 10px;	
 	padding-right: 10px;	
-	background-color: lightcoral;
+	background-color: #DCDCDC;
 	min-height: 100vh;
 }
 .linha:after {
