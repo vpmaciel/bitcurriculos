@@ -20,7 +20,7 @@ select, input, textarea, select:focus, input:focus, textarea:focus {
     border-radius: 0px;
     outline: none;
     box-shadow: none;
-    border: 1px solid#000;
+    border: 1px solid#6d7874;
 	text-transform: uppercase;
 	font-size: 12px;	
 	padding: 2px;
@@ -78,13 +78,14 @@ body {
 	width: 20%;	
 	text-align: center;
 	padding: 0;
-	background-color: #FFF;
+	background-color:#FFF;	
 } 
 .direita {
 	width: 80%;
 	padding-left: 10px;	
 	padding-right: 10px;	
 	background-color: #DCDCDC;
+	border-left: 1px solid #6d7874;
 	min-height: 100vh;
 }
 .linha:after {
