@@ -70,29 +70,21 @@ body {
 .esquerda {	
 	width: 20%;	
 	text-align: center;
-	padding: 10px;
-	
-	min-height: 100%;
+	padding: 0;
+	background-color: #FFF;
 } 
 .direita {
 	width: 80%;
-	padding: 10px;
-	background-color: #FFF;
+	padding-left: 10px;	
+	padding-right: 10px;	
 	background-color: lightcoral;
-	min-height: 100%;
+	min-height: 100vh;
 }
 .linha:after {
 	content: "";
 	display: table;
 	clear: both;
 	min-height: 100%;
-}
-* {
-	font-weight: normal;
-	border-radius: 0px;
-	box-sizing: border-box;	
-	padding: 0;
-	border: 0;
 }
 input[type="email"] ,input[type="url"] {
 	text-transform: lowercase;
