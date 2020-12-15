@@ -16,13 +16,6 @@ echo $DIV_MAIN;
 
 echo $H1 . 'Bit Curriculos' . $H1_;
 
-echo $TABLE;
-
-echo $TR . $TD . '<img src="publicar_vaga_lista.php">' . $TD_ . $TR_; 
-echo $TR . $TD . '<img src="publicar_vaga_lista.php">' . $TD_ . $TR_; 
-
-echo $TABLE_;
-
 $MSG = retornar_contador_visitas();	
 echo $MSG;
 

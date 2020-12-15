@@ -58,7 +58,7 @@ th, td {
 html{
 	min-height: 100%;
 	overflow: -moz-scrollbars-vertical; 
-    overflow-y: scroll;
+	overflow-y: scroll;	
 }
 body {
 	font-family: Fonte, sans-serif;
