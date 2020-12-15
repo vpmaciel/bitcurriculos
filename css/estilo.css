@@ -43,11 +43,17 @@ p {
 table {	
 	table-layout: fixed;
 	width: 65%;
-
 }
 th, td {	
 	width: 60%;
 	overflow: hidden;
+}
+* {
+	font-weight: normal;
+	border-radius: 0px;
+	box-sizing: border-box;	
+	padding: 0;
+	border: 0;
 }
 html{
 	min-height: 100%;
