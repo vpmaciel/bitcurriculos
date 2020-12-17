@@ -61,7 +61,9 @@ html{
 	min-height: 100%;
 	overflow: -moz-scrollbars-vertical; 
 	overflow-y: scroll;
-	
+	width: 100%;
+    height:100%;
+	background-color:#6d7874;
 }
 body {
 	font-family: Fonte, sans-serif;
@@ -70,6 +72,8 @@ body {
 	margin: auto 0;
 	padding: 0px;
 	min-height: 100%;	
+	width: 100%;
+    height:100%;
 	background-color: #FFF;
 }
 .coluna {
@@ -78,14 +82,15 @@ body {
 } 
 .esquerda {	
 	width: 20%;	
+	min-height: 100vh;
 	text-align: center;
 	padding: 10px;
-	background-color:#FFF;
+	background-color:#6d7874;
 } 
 .direita {
 	width: 80%;	
 	background-color:#FFF;
-	border-left: 1px solid #6d7874;
+	border-left: 1px solid #000;
 	min-height: 100vh;
 	padding: 0px;
 }
@@ -104,7 +109,7 @@ input[type="email"] ,input[type="url"] {
 	} 	
 	.direita {		
 		width: 100%;
-		border-top: 1px solid #6d7874;	
+		border-top: 1px solid #000;	
 		border-left: none;
 	}
 	.esquerda {		
