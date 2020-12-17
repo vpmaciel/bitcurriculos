@@ -4,7 +4,6 @@ session_start();
 
 require_once '../lib/biblioteca.php';
 
-
 $usuario_model['usu_char_email'] = $_POST['usu_char_email'];
 
 $resultado = numero_registros('usuario', $usuario_model);

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../lib/biblioteca.php';
-require_once '../model/model.php';
+
 echo $DOCTYPE;
 echo $HTML;
 echo $HEAD;
