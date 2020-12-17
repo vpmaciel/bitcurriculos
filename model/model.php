@@ -39,7 +39,7 @@ function pessoa_model() : array {
         'pub_vag_char_requisitos' => '',
         'pub_vag_char_funcoes' => '',
         'pub_vag_char_beneficios' => '',
-            'pub_vag_date_data_publicacao' => '',
+        'pub_vag_date_data_publicacao' => '',
         'pub_vag_pcd' => '',
         'pub_vag_int_vagas'=> '',
         'pub_vag_int_contrato' => '',
@@ -47,57 +47,63 @@ function pessoa_model() : array {
         'pub_vag_int_estado' => '',
         'pub_vag_int_cidade' => '',        
     );
-
+    
     $objetivo_profissional_model = array(
-    'id_int' => '',
-    'usuario_id_pessoa_int' => '',
-    'cargo_char' => '',
-    'pretensao_salarial_int' => '',
-    'contrato_int' => ''
+        'obj_pro_int_id' => '',
+        'usu_int_id' => '',
+        'obj_pro_int_char_cargo' => '',
+        'obj_pro_int_pretensao_salarial' => '',
+        'obj_pro_int_contrato' => ''
     );
 
     $idioma_model  = array(
-    'id_int' => '',
-    'usuario_id_pessoa_int' => '',
-    'idioma_int' => '',
-    'nivel_conhecimento_int' => ''
+        'idi_int_id' => '',
+        'usu_int_id' => '',
+        'idi_int_idioma' => '',
+        'idi_int_nivel_conhecimento' => ''
     );
-
+    
     $habilidade_model = array(
-    'id_int' => '',
-    'usuario_id_pessoa_int' => '',
-    'conhecimento_char' => '',
-    'nivel_conhecimento_int' => ''
+        'hab_int_id' => '',
+        'usu_int_id' => '',
+        'hab_char_habilidade' => '',
+        'hab_int_nivel_conhecimento' => ''
     );
 
     $experiencia_profissional_model = array(
-    'id_int' => '',
-    'usuario_id_pessoa_int' => '',    
-    'empresa_char' => '',
-    'cargo_char' => '',
-    'data_admissao' => '',
-    'data_saida' => '',
-    'funcoes' => ''
+        'exp_prof_int_id' => '',
+        'usu_int_id' => '',    
+        'exp_prof_char_empresa' => '',
+        'exp_prof_char_cargo' => '',
+        'exp_prof_date_data_admissao' => '',
+        'exp_prof_date_data_saida' => '',
+        'exp_prof_char_funcoes' => ''
+    );
+        
+    $curso_model = array(
+        'cur_int_id' => '',
+        'usu_int_id' => '',
+        'cur_char_nome' => '',
+        'cur_char_instituicao' => '',
+        'cur_year_ano_inicio' => '',
+        'cur_year_ano_conclusao' => '',
+        'cur_int_situacao' => '',
+        'cur_int_nivel' => ''
     );
 
-    $curso_model = array(
-    'id' => '',
-    'usuario' => '',
-    'instituicao' => '',
-    'nome' => '',
-    'ano_inicio' => '',
-    'ano_conclusao' => '',
-    'situacao' => '',
-    'nivel' => ''
-    );
+    
+
+
+
+
 
     $certificado_model = array(
-    'id' => '',
-    'usuario' => '',
-    'instituicao' => '',
-    'curso' => '',
-    'carga_horaria' => '',
-    'ano_conclusao' => ''
+        'cer_int_id' => '',
+        'usu_int_id' => '',
+        'cer_char_certificacao' => '',
+        'cer_char_instituicao' => '',
+        'carga_horaria' => '',
+        'ano_conclusao' => ''
     );
     function usuario_model() : array {
 

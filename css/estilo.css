@@ -109,7 +109,7 @@ input[type="email"] ,input[type="url"] {
 	} 	
 	.direita {		
 		width: 100%;
-		border-top: 1px solid #000;	
+		border-top: 1px solid #6d7874;	
 		border-left: none;
 	}
 	.esquerda {		
