@@ -1,6 +1,6 @@
 @font-face {
 	font-family: Fonte;
-	src: url(../fonte/Arsenal-Regular.ttf);
+	src: url(../fonte/Arsenal/Arsenal-Regular.ttf);
 }
 a {
 	color: #000;	
@@ -79,12 +79,12 @@ body {
 .esquerda {	
 	width: 20%;	
 	text-align: center;
-	padding: 0px;
-	background-color:#FFF;	
+	padding: 10px;
+	background-color:#FFF;
 } 
 .direita {
 	width: 80%;	
-	background-color: #DCDCDC;
+	background-color:#FFF;
 	border-left: 1px solid #6d7874;
 	min-height: 100vh;
 	padding: 0px;
