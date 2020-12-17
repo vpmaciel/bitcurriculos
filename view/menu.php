@@ -15,6 +15,6 @@ echo '<a href="habilidade.php">Habilidades</a><br>';
 echo '<a href="vagas.php">Pesquisar Vagas</a><br>';
 echo '<a href="curriculo.php">Exibir Currículo</a><br>-<br>';
 echo '<a href="publicar_vaga.php">Publicar Vaga de Emprego</a><br>-<br>';
-echo '<a href="servicos.php">Cadastrar Serviços</a><br>';
-echo '<a href="servicos_pesquisa.php">Pesquisar Serviços</a><br>';
+echo '<a href="servicos.php">Cadastrar Serviços</a><br>-<br>';
+echo '<a href="servicos_pesquisa.php">Pesquisar Serviços</a>';
 echo '</div>';
