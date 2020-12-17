@@ -44,7 +44,7 @@ echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Funções' . $LABEL_ . $TD_ . $TR_;
 $pessoa['char_funcoes'] = isset($_POST['char_funcoes'])?$_POST['char_funcoes']:'';
-$TEXTAREA = '<input type="text" name="w3review" size="70" maxlength="500" maxlength="500">' . $pessoa['char_funcoes'] .'</textarea>';
+$TEXTAREA = '<textarea  name="char_funcoes" maxlength="500" rows="4" cols="50">' . $pessoa['char_funcoes'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
