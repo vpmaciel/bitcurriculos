@@ -31,6 +31,7 @@ function pessoa_model() : array {
     return $pessoa_model;
 }
 
+function publicaca_vaga_model() : array {
     $publicaca_vaga_model = array(
         'pub_vag_int_id' => '',
         'usu_int_id' => '',
@@ -47,7 +48,10 @@ function pessoa_model() : array {
         'pub_vag_int_estado' => '',
         'pub_vag_int_cidade' => '',        
     );
-    
+    return $publicaca_vaga_model;
+}
+
+function objetivo_profissional_model() : array {    
     $objetivo_profissional_model = array(
         'obj_pro_int_id' => '',
         'usu_int_id' => '',
@@ -55,21 +59,30 @@ function pessoa_model() : array {
         'obj_pro_int_pretensao_salarial' => '',
         'obj_pro_int_contrato' => ''
     );
+    return $objetivo_profissional_model;
+}
 
+function idioma_model() : array {
     $idioma_model  = array(
         'idi_int_id' => '',
         'usu_int_id' => '',
         'idi_int_idioma' => '',
         'idi_int_nivel_conhecimento' => ''
     );
-    
+    return $idioma_model;
+}
+
+function habilidade_model() : array {    
     $habilidade_model = array(
         'hab_int_id' => '',
         'usu_int_id' => '',
         'hab_char_habilidade' => '',
         'hab_int_nivel_conhecimento' => ''
     );
+    return $habilidade_model;
+}
 
+function experiencia_profissional_model() : array {
     $experiencia_profissional_model = array(
         'exp_prof_int_id' => '',
         'usu_int_id' => '',    
@@ -79,7 +92,10 @@ function pessoa_model() : array {
         'exp_prof_date_data_saida' => '',
         'exp_prof_char_funcoes' => ''
     );
-        
+    return $experiencia_profissional_model;
+}
+
+function curso_model() : array {        
     $curso_model = array(
         'cur_int_id' => '',
         'usu_int_id' => '',
@@ -90,29 +106,41 @@ function pessoa_model() : array {
         'cur_int_situacao' => '',
         'cur_int_nivel' => ''
     );
+    return $curso_model;
+}
 
-    
-
-
-
-
-
+function certificado_model() : array {
     $certificado_model = array(
         'cer_int_id' => '',
         'usu_int_id' => '',
         'cer_char_certificacao' => '',
         'cer_char_instituicao' => '',
-        'carga_horaria' => '',
-        'ano_conclusao' => ''
+        'cer_year_ano_obtencao' => ''
     );
-    function usuario_model() : array {
-
-    $usuario_model = array(
-    'usu_int_id' => '',
-    'usu_char_email' => '',
-    'usu_int_senha' => '' . rand(1000, 9999),
-    'usu_date_ultimo_login' => date('Y-m-d')
-    );
-
     return $usuario_model;
+}
+
+function usuario_model() : array {
+    $usuario_model = array(
+        'usu_int_id' => '',
+        'usu_char_email' => '',
+        'usu_int_senha' => '' . rand(1000, 9999),
+        'usu_date_ultimo_login' => date('Y-m-d')
+    );
+    return $usuario_model;
+}
+
+function servico_model() : array {        
+    $servico_model = array(
+        'ser_int_id' => '',
+        'usu_int_id' => '',
+        'ser_char_nome_prestador' => '',
+        'ser_char_cargo' => '',
+        'ser_char_servico_prestado' => '',
+        'ser_char_celular' => '',
+        'ser_char_email' => '',
+        'ser_int_estado' => '',
+        'ser_int_cidade' => ''
+    );
+    return $servico_model;
 }
