@@ -27,4 +27,3 @@ require_once 'retornar_ultimo_salario.php';
 
 
 
-

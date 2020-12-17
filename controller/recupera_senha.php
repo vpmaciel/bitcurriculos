@@ -3,8 +3,7 @@
 session_start();
 
 require_once '../lib/biblioteca.php';
-require_once '../model/model.php';
-require_once '../database/sql.php';
+
 
 $usuario_model['usu_char_email'] = $_POST['usu_char_email'];
 

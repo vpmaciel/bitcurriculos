@@ -5,7 +5,7 @@ if(!isset($_SESSION['usu_int_id'])) {
 	header('location:..\view\erro.php?e=UNL');
 }
 require_once '../lib/biblioteca.php';
-require_once '../model/model.php';
+
 echo $DOCTYPE;
 echo $HTML;
 echo $HEAD;
@@ -171,121 +171,121 @@ echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Último salário mensal (R$)' . $LABEL_ .$TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="int_ultimo_salario_mensal">';
+$SELECT = '<select name="pes_int_ultimo_salario_mensal">';
 echo $SELECT;
-foreach ($array_ultimo_salario as $indice => $int_ultimo_salario_mensal) {	
+foreach ($array_ultimo_salario as $indice => $pes_int_ultimo_salario_mensal) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($int_ultimo_salario_mensal == $pessoa['int_ultimo_salario_mensal'])	? "<option value=$indice selected>$int_ultimo_salario_mensal</option>" : "<option value=$indice>$int_ultimo_salario_mensal</option>";
+	echo ($pes_int_ultimo_salario_mensal == $pessoa['pes_int_ultimo_salario_mensal'])	? "<option value=$indice selected>$pes_int_ultimo_salario_mensal</option>" : "<option value=$indice>$pes_int_ultimo_salario_mensal</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Está empregado atualmente' . $LABEL_ .$TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="bit_empregado_atualmente">';
+$SELECT = '<select name="pes_bit_empregado_atualmente">';
 echo $SELECT;
-foreach ($array_resposta as $indice => $bit_empregado_atualmente) {	
+foreach ($array_resposta as $indice => $pes_bit_empregado_atualmente) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($bit_empregado_atualmente == $pessoa['bit_empregado_atualmente'])	? "<option value=$indice selected>$bit_empregado_atualmente</option>" : "<option value=$indice>$bit_empregado_atualmente</option>";
+	echo ($pes_bit_empregado_atualmente == $pessoa['pes_bit_empregado_atualmente'])	? "<option value=$indice selected>$pes_bit_empregado_atualmente</option>" : "<option value=$indice>$pes_bit_empregado_atualmente</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Está porcurando emprego atualmente' . $LABEL_ .$TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="bit_procurando_emprego_atualmente">';
+$SELECT = '<select name="pes_bit_procurando_emprego_atualmente">';
 echo $SELECT;
-foreach ($array_resposta as $indice => $bit_procurando_emprego_atualmente) {	
+foreach ($array_resposta as $indice => $pes_bit_procurando_emprego_atualmente) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($bit_procurando_emprego_atualmente == $pessoa['bit_procurando_emprego_atualmente'])	? "<option value=$indice selected>$bit_procurando_emprego_atualmente</option>" : "<option value=$indice>$bit_procurando_emprego_atualmente</option>";
+	echo ($pes_bit_procurando_emprego_atualmente == $pessoa['pes_bit_procurando_emprego_atualmente'])	? "<option value=$indice selected>$pes_bit_procurando_emprego_atualmente</option>" : "<option value=$indice>$pes_bit_procurando_emprego_atualmente</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Está disponível para viagem' . $LABEL_ .$TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="bit_disponivel_viagens">';
+$SELECT = '<select name="pes_bit_disponivel_viagens">';
 echo $SELECT;
-foreach ($array_resposta as $indice => $bit_disponivel_viagens) {	
+foreach ($array_resposta as $indice => $pes_bit_disponivel_viagens) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($bit_disponivel_viagens == $pessoa['bit_disponivel_viagens'])	? "<option value=$indice selected>$bit_disponivel_viagens</option>" : "<option value=$indice>$bit_disponivel_viagens</option>";
+	echo ($pes_bit_disponivel_viagens == $pessoa['pes_bit_disponivel_viagens'])	? "<option value=$indice selected>$pes_bit_disponivel_viagens</option>" : "<option value=$indice>$pes_bit_disponivel_viagens</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Pode trabalhar em outras cidades' . $LABEL_ .$TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="bit_trabalha_outras_cidades">';
+$SELECT = '<select name="pes_bit_trabalha_outras_cidades">';
 echo $SELECT;
-foreach ($array_resposta as $indice => $bit_trabalha_outras_cidades) {	
+foreach ($array_resposta as $indice => $pes_bit_trabalha_outras_cidades) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($bit_trabalha_outras_cidades == $pessoa['bit_trabalha_outras_cidades'])	? "<option value=$indice selected>$bit_trabalha_outras_cidades</option>" : "<option value=$indice>$bit_trabalha_outras_cidades</option>";
+	echo ($pes_bit_trabalha_outras_cidades == $pessoa['pes_bit_trabalha_outras_cidades'])	? "<option value=$indice selected>$pes_bit_trabalha_outras_cidades</option>" : "<option value=$indice>$pes_bit_trabalha_outras_cidades</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Pode trabalhar em outros países' . $LABEL_ .$TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="bit_trabalha_exterior">';
+$SELECT = '<select name="pes_bit_trabalha_exterior">';
 echo $SELECT;
-foreach ($array_resposta as $indice => $bit_trabalha_exterior) {	
+foreach ($array_resposta as $indice => $pes_bit_trabalha_exterior) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($bit_trabalha_exterior == $pessoa['bit_trabalha_exterior'])	? "<option value=$indice selected>$bit_trabalha_exterior</option>" : "<option value=$indice>$bit_trabalha_exterior</option>";
+	echo ($pes_bit_trabalha_exterior == $pessoa['pes_bit_trabalha_exterior'])	? "<option value=$indice selected>$pes_bit_trabalha_exterior</option>" : "<option value=$indice>$pes_bit_trabalha_exterior</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Pode trabalhar home office' . $LABEL_ .$TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="bit_trabalha_home_office">';
+$SELECT = '<select name="pes_bit_trabalha_home_office">';
 echo $SELECT;
-foreach ($array_resposta as $indice => $bit_trabalha_home_office) {	
+foreach ($array_resposta as $indice => $pes_bit_trabalha_home_office) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($bit_trabalha_home_office == $pessoa['bit_trabalha_home_office'])	? "<option value=$indice selected>$bit_trabalha_home_office</option>" : "<option value=$indice>$bit_trabalha_home_office</option>";
+	echo ($pes_bit_trabalha_home_office == $pessoa['pes_bit_trabalha_home_office'])	? "<option value=$indice selected>$pes_bit_trabalha_home_office</option>" : "<option value=$indice>$pes_bit_trabalha_home_office</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Possui carro' . $LABEL_ .$TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="bit_possui_carro">';
+$SELECT = '<select name="pes_bit_possui_carro">';
 echo $SELECT;
-foreach ($array_resposta as $indice => $bit_possui_carro) {	
+foreach ($array_resposta as $indice => $pes_bit_possui_carro) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($bit_possui_carro == $pessoa['bit_possui_carro'])	? "<option value=$indice selected>$bit_possui_carro</option>" : "<option value=$indice>$bit_possui_carro</option>";
+	echo ($pes_bit_possui_carro == $pessoa['pes_bit_possui_carro'])	? "<option value=$indice selected>$pes_bit_possui_carro</option>" : "<option value=$indice>$pes_bit_possui_carro</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Possui moto' . $LABEL_ .$TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="bit_bit_possui_moto">';
+$SELECT = '<select name="pes_pes_bit_possui_moto">';
 echo $SELECT;
-foreach ($array_resposta as $indice => $bit_possui_moto) {	
+foreach ($array_resposta as $indice => $pes_bit_possui_moto) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($bit_possui_moto == $pessoa['bit_possui_moto'])	? "<option value=$indice selected>$bit_possui_moto</option>" : "<option value=$indice>$bit_possui_moto</option>";
+	echo ($pes_bit_possui_moto == $pessoa['pes_bit_possui_moto'])	? "<option value=$indice selected>$pes_bit_possui_moto</option>" : "<option value=$indice>$pes_bit_possui_moto</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Foi dispensado do serviço militar' . $LABEL_ .$TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="bit_dispensado_servico_militar">';
+$SELECT = '<select name="pes_bit_dispensado_servico_militar">';
 echo $SELECT;
-foreach ($array_resposta as $indice => $bit_dispensado_servico_militar) {	
+foreach ($array_resposta as $indice => $pes_bit_dispensado_servico_militar) {	
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($bit_dispensado_servico_militar == $pessoa['bit_dispensado_servico_militar'])	? "<option value=$indice selected>$bit_dispensado_servico_militar</option>" : "<option value=$indice>$bit_dispensado_servico_militar</option>";
+	echo ($pes_bit_dispensado_servico_militar == $pessoa['pes_bit_dispensado_servico_militar'])	? "<option value=$indice selected>$pes_bit_dispensado_servico_militar</option>" : "<option value=$indice>$pes_bit_dispensado_servico_militar</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
