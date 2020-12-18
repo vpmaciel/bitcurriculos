@@ -13,7 +13,10 @@ echo $HEAD;
 require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
+
 require_once 'menu.php';
+require_once 'servicos.js';
+
 echo $DIV_MAIN;
 echo $H1 . 'SERVIÇOS' . $H1_;
 
