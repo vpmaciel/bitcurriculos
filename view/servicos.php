@@ -40,7 +40,7 @@ echo $TR . $TD . $TEXTAREA . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Celular' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['ser_char_celular'] = isset($_POST['ser_char_celular'])?$_POST['ser_char_celular']:'';
-$INPUT = '<input type="text" name="ser_char_celular" required size="70" minlength="10" maxlength="50" value="' . $pessoa['ser_char_celular'] .'">';
+$INPUT = '<input type="text" name="ser_char_celular"  id="telefone" placeholder="(99)9999-99999" required size="70" maxlength="14" value="' . $pessoa['ser_char_celular'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'E-mail' . $LABEL_ . $TD_ . $TR_; 

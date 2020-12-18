@@ -5,11 +5,9 @@
 <meta name="author" content="Vicente Paulo Maciel">
 <meta http-equiv="Cache-Control" content="no-store">
 <meta name="description" content="Site de recrutamento on-line, divulgar vagas de emprego e cadastro de currículos">
-<meta name="keywords" content="emprego,vaga,trabalho,currículo,rh,curriculum vitae,bitcurriculos,apostilas,idiomas">
+<meta name="keywords" content="emprego,vaga,trabalho,currículo,rh,curriculum vitae,bitcurriculos">
 <meta name="robots" content="no-cache">
 <link rel="icon" type="image/ico" href="../img/favicon.png">
 <link rel="stylesheet" href="../css/estilo.css">
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <script src="../lib/funcoes.js"></script>
 <title>BitCurrículo</title>
