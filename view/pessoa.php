@@ -47,7 +47,7 @@ echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Celular' . $LABEL_ .$TD_ . $TR_; 
 $pessoa['pes_char_celular_numero'] = isset($_POST['pes_char_celular_numero'])?$_POST['pes_char_celular_numero']:'';
-$INPUT = '<input type="text" name="pes_char_celular_numero" size="70" required maxlength="13" value="' . $pessoa['pes_char_celular_numero'] .'">';
+$INPUT = '<input type="text" name="pes_char_celular_numero" id="pes_char_celular_numero" size="70" required maxlength="13" value="' . $pessoa['pes_char_celular_numero'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Sexo' . $LABEL_ .$TD_ . $TR_; 
