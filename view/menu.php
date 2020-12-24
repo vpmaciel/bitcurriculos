@@ -5,7 +5,7 @@ echo '<a href="index.php">Home</a><br>';
 echo '<a href="registro.php">Registrar</a><br>';
 echo '<a href="login.php">Entrar</a><br>';
 echo '<a href="logoff.php">Sair</a><br>-<br>';
-echo '<a href="pessoa.php">Dados Pessoais</a><br>';
+echo '<a href="../controller/pessoa.php?a=s">Dados Pessoais</a><br>';
 echo '<a href="curso.php">Cursos</a><br>';
 echo '<a href="certificacao.php">Certificação</a><br>';
 echo '<a href="experiencia_profissional.php">Experiência Profissional</a><br>';
