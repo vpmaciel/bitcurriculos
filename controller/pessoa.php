@@ -15,7 +15,7 @@ $resultado = numero_registros('pessoa', $pessoa_model);
 $pessoa_model['pes_char_nome'] = $_POST['pes_char_nome'];
 $pessoa_model['pes_char_url_repositorio_codigos'] = $_POST['pes_char_url_repositorio_codigos'];
 $pessoa_model['pes_char_url_linkedin'] = $_POST['pes_char_url_linkedin'];
-$pessoa_model['pes_date_data_nascimento'] = $_POST['pes_date_data_nascimento'];
+$pessoa_model['pes_date_data_nascimento'] = date("Y-m-d", strtotime($_POST['pes_date_data_nascimento']));
 $pessoa_model['pes_char_celular_numero'] = $_POST['pes_char_celular_numero'];
 $pessoa_model['pes_bit_sexo'] = $_POST['pes_bit_sexo'];
 $pessoa_model['pes_int_escolaridade'] = $_POST['pes_int_escolaridade'];
@@ -42,20 +42,18 @@ if ($resultado == 0) {
     $resultado = inserir('pessoa', $pessoa_model);
     
     if ($resultado == TRUE) {
-		if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'BitCurriculos', 'Sua Senha', $usuario_model['usu_int_senha'],'')) {
-			header("location:..\\view\\sucesso.php?msg=Sua senha é foi enviada para seu e-mail !");
-		}
+		header('location:..\view\sucesso.php?msg=Operação realizada com sucesso !');
 	} else {
-		if (!empty($error)) {
-			header('location:..\view\erro.php?e=EEE');
-		}	
+		header('location: ..\view\erro.php?e=OPN');
 	} 
 } else {	
-	if (!isset($_SESSION['usu_int_id'])) {
-		$_SESSION['usu_int_id'] = $resultado;
-		header('location:..\view\sucesso.php?msg=Sessão criada com sucesso !');
-	} else {		
-		header('location: ..\view\erro.php?e=OPN&msg="Usuário já está logado !');
+    $condicao = $pessoa_model['usu_int_id'];
+    $resultado = atualizar('pessoa', $pessoa_model, $condicao);
+    
+    if ($resultado == TRUE) {
+		header('location:..\view\sucesso.php?msg=Operação realizada com sucesso !');
+	} else {
+		header('location: ..\view\erro.php?e=OPN');
 	}
 }
 

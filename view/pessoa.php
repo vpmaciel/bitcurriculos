@@ -10,6 +10,7 @@ echo $DOCTYPE;
 echo $HTML;
 echo $HEAD;
 require_once 'cabecalho.php';
+require_once 'pessoa.js';
 echo $HEAD_;
 echo $BODY;
 
@@ -41,7 +42,7 @@ echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Data de nascimento' . $LABEL_ .$TD_ . $TR_; 
 $pessoa['pes_date_data_nascimento'] = isset($_POST['pes_date_data_nascimento'])?$_POST['pes_date_data_nascimento']:'';
-$INPUT = '<input type="text" name="pes_date_data_nascimento" size="70" required onkeypress="$(this).mask(\'00-00-0000\');" minlength="10" maxlength="10" value="' . $pessoa['pes_date_data_nascimento'] .'">';
+$INPUT = '<input type="text" name="pes_date_data_nascimento" id="pes_date_data_nascimento" size="70" required onkeypress="$(this).mask(\'00-00-0000\');" minlength="10" maxlength="10" value="' . $pessoa['pes_date_data_nascimento'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Celular' . $LABEL_ .$TD_ . $TR_; 

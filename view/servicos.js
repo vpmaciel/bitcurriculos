@@ -1,6 +1,6 @@
 <script>
 window.onload = function(){
-	retornar_elemento_id('id_telefone').onkeypress = function(){
+	retornar_elemento_id('ser_char_celular').onkeypress = function(){
 		mascara( this, mascara_telefone );
 	}
 }

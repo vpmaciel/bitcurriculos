@@ -2,7 +2,7 @@
 function retornar_erro() : array {
     $VALOR = array(            
         'SNI' => 'Sessão não iniciada ! Faça login !',
-        'OPN' => 'Operação não realizada !',
+        'OPN' => 'Operação não realizada !',        
         'BDNC' => 'Banco de dados não conectado !',
         'PNE' => 'Página não encontrada !',
         'EG' => 'Erro geral !',
