@@ -142,7 +142,7 @@ foreach ($array_estado as $indice => $pes_int_estado) {
 	if ($indice == 0) {
 		continue;
 	}
-	echo ($pes_int_estado == $pessoa['pes_int_estado'])	? "<option value=$indice selected>$pes_int_estado</option>" : "<option value=$indice>$int_estado</option>";
+	echo ($pes_int_estado == $pessoa['pes_int_estado'])	? "<option value=$indice selected>$pes_int_estado</option>" : "<option value=$indice>$pes_int_estado</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
