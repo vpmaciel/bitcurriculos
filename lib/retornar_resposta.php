@@ -1,7 +1,6 @@
 <?php
 function retornar_resposta() : array {
-    $VALOR = array(
-        0 => 'TODOS',
+    $VALOR = array(        
         1 => 'SIM',
         2 => 'NÃO'
     );

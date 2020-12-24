@@ -1,7 +1,6 @@
 <?php
 function retornar_tipo_empresa() : array {
-    $VALOR = array(
-        0 => 'TODAS',
+    $VALOR = array(        
         1 => 'SOCIEDADE EMPRESÁRIA LIMITADA (LTDA.)',
         1 => 'EMPRESA INDIVIDUAL DE RESPONSABILIDADE LIMITADA (EIRELI)',
         2 => 'EMPRESA INDIVIDUAL',

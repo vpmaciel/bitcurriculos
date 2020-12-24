@@ -1,8 +1,7 @@
 <?php
 function retornar_cidade () {
 
-    $VALOR = array(
-        0 => 'TODAS',
+    $VALOR = array(        
         1 => 'ABADIA DE GOIÁS',
         2 => 'ABADIA DOS DOURADOS',
         3 => 'ABADIÂNIA',

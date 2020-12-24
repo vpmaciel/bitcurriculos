@@ -6,7 +6,7 @@ if(!isset($_SESSION['usu_int_id'])) {
 }
 require_once '../lib/biblioteca.php';
 require_once '../model/model.php';
-require_once '../database/sql.php';
+require_once '../sql/sql.php';
 
 $pessoa_model['usu_int_id'] = $_SESSION['usu_int_id'];
 
@@ -48,12 +48,22 @@ if ($resultado == 0) {
 	} 
 } else {	
     $condicao = $pessoa_model['usu_int_id'];
-    $resultado = atualizar('pessoa', $pessoa_model, $condicao);
+
+    if ($_POST['formulario']) {
+        $resultado = atualizar('pessoa', $pessoa_model, $condicao);
     
-    if ($resultado == TRUE) {
-		header('location:..\view\sucesso.php?msg=Operação realizada com sucesso !');
-	} else {
-		header('location: ..\view\erro.php?e=OPN');
-	}
+        if ($resultado == TRUE) {
+            header('location:..\view\sucesso.php?msg=Operação realizada com sucesso !');
+        } else {
+            header('location: ..\view\erro.php?e=OPN');
+        }
+    } else {
+        $pessoa_json = selecionar('pessoa', $condicao);
+
+        foreach($pessoa_json as $registro):
+            $registro->telefone;
+        endforeach;
+    }
+    
 }
 

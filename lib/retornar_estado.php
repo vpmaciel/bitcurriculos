@@ -1,7 +1,6 @@
 <?php
 function retornar_estado() : array {
-    $VALOR = array(
-        0 => 'TODOS',
+    $VALOR = array(        
         1 => 'ACRE',
         2 => 'ALAGOAS',
         3 => 'AMAPÁ',

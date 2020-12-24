@@ -1,7 +1,6 @@
 <?php
 function retornar_idioma() : array {
-    $VALOR = array(        
-        0 => 'TODOS',
+    $VALOR = array(                
         1 => 'ALEMÃO',
         2 => 'ÁRABE',
         3 => 'BENGALI',

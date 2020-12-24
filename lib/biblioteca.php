@@ -18,7 +18,6 @@ require_once 'retornar_nivel_conhecimento.php';
 require_once 'retornar_pais.php';
 require_once 'retornar_pretensao_salarial.php';
 require_once 'retornar_resposta.php';
-require_once 'retornar_segmento_empresarial.php';
 require_once 'retornar_sexo.php';
 require_once 'retornar_situacao.php';
 require_once 'retornar_tipo_empresa.php';

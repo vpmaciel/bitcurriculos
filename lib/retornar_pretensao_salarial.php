@@ -1,7 +1,6 @@
 <?php
 function retornar_pretensao_salarial() : array {
-    $VALOR = array(        
-        0 => 'TODOS',
+    $VALOR = array(                
         1 => 'MÍNIMO DE R$ 1.000,00',
         2 => 'MÍNIMO DE R$ 1.500,00',
         3 => 'MÍNIMO DE R$ 2.000,00',

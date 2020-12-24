@@ -1,7 +1,6 @@
 <?php
 function retornar_nivel_conhecimento_idioma() : array {
-    $VALOR = array(
-        0 => 'TODOS',
+    $VALOR = array(        
         1 => 'BÁSICO',
         2 => 'INTERMEDIÁRIO',
         3 => 'AVANÇADO',

@@ -22,7 +22,7 @@ echo $H1 . 'DADOS PESSOAIS' . $H1_;
 $FORM = '<form action="../controller/pessoa.php" method="post">';
 
 echo $FORM;
-
+$INPUT = '<input type="hidden" name="formulario"  value="1">';
 echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'Nome' . $LABEL_ .$TD_ . $TR_; 
@@ -55,9 +55,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_bit_sexo">';
 echo $SELECT;
 foreach ($array_sexo as $indice => $pes_bit_sexo) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_bit_sexo == $pessoa['pes_bit_sexo'])	? "<option value=$indice selected>$pes_bit_sexo</option>" : "<option value=$indice>$pes_bit_sexo</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -67,9 +64,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_int_escolaridade">';
 echo $SELECT;
 foreach ($array_escolaridade as $indice => $pes_int_escolaridade) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_int_escolaridade == $pessoa['pes_int_escolaridade'])	? "<option value=$indice selected>$pes_int_escolaridade</option>" : "<option value=$indice>$pes_int_escolaridade</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -79,9 +73,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_int_estado_civil">';
 echo $SELECT;
 foreach ($array_estado_civil as $indice => $pes_int_estado_civil) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_int_estado_civil == $pessoa['pes_int_estado_civil'])	? "<option value=$indice selected>$pes_int_estado_civil</option>" : "<option value=$indice>$pes_int_estado_civil</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -91,9 +82,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_int_nacionalidade">';
 echo $SELECT;
 foreach ($array_nacionalidade as $indice => $pes_int_nacionalidade) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_int_nacionalidade == $pessoa['pes_int_nacionalidade'])	? "<option value=$indice selected>$pes_int_nacionalidade</option>" : "<option value=$indice>$pes_int_nacionalidade</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -103,9 +91,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_bit_possui_filhos">';
 echo $SELECT;
 foreach ($array_resposta as $indice => $pes_bit_possui_filhos) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_bit_possui_filhos == $pessoa['pes_bit_possui_filhos'])	? "<option value=$indice selected>$pes_bit_possui_filhos</option>" : "<option value=$indice>$pes_bit_possui_filhos</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -115,9 +100,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_bit_possui_deficiencia">';
 echo $SELECT;
 foreach ($array_resposta as $indice => $pes_bit_possui_deficiencia) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_bit_possui_deficiencia == $pessoa['pes_bit_possui_deficiencia'])	? "<option value=$indice selected>$pes_bit_possui_deficiencia</option>" : "<option value=$indice>$pes_bit_possui_deficiencia</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -127,9 +109,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_int_pais">';
 echo $SELECT;
 foreach ($array_pais as $indice => $pes_int_pais) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_int_pais == $pessoa['pes_int_pais'])	? "<option value=$indice selected>$pes_int_pais</option>" : "<option value=$indice>$pes_int_pais</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -139,9 +118,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_int_estado">';
 echo $SELECT;
 foreach ($array_estado as $indice => $pes_int_estado) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_int_estado == $pessoa['pes_int_estado'])	? "<option value=$indice selected>$pes_int_estado</option>" : "<option value=$indice>$pes_int_estado</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -151,9 +127,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_int_cidade">';
 echo $SELECT;
 foreach ($array_cidade as $indice => $pes_int_cidade) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_int_cidade == $pessoa['pes_int_cidade'])	? "<option value=$indice selected>$pes_int_cidade</option>" : "<option value=$indice>$pes_int_cidade</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -163,9 +136,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_int_cnh">';
 echo $SELECT;
 foreach ($array_cnh as $indice => $pes_int_cnh) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_int_cnh == $pessoa['pes_int_cnh'])	? "<option value=$indice selected>$pes_int_cnh</option>" : "<option value=$indice>$pes_int_cnh</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -175,9 +145,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_int_ultimo_salario_mensal">';
 echo $SELECT;
 foreach ($array_ultimo_salario as $indice => $pes_int_ultimo_salario_mensal) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_int_ultimo_salario_mensal == $pessoa['pes_int_ultimo_salario_mensal'])	? "<option value=$indice selected>$pes_int_ultimo_salario_mensal</option>" : "<option value=$indice>$pes_int_ultimo_salario_mensal</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -187,9 +154,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_bit_empregado_atualmente">';
 echo $SELECT;
 foreach ($array_resposta as $indice => $pes_bit_empregado_atualmente) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_bit_empregado_atualmente == $pessoa['pes_bit_empregado_atualmente'])	? "<option value=$indice selected>$pes_bit_empregado_atualmente</option>" : "<option value=$indice>$pes_bit_empregado_atualmente</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -199,9 +163,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_bit_procurando_emprego_atualmente">';
 echo $SELECT;
 foreach ($array_resposta as $indice => $pes_bit_procurando_emprego_atualmente) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_bit_procurando_emprego_atualmente == $pessoa['pes_bit_procurando_emprego_atualmente'])	? "<option value=$indice selected>$pes_bit_procurando_emprego_atualmente</option>" : "<option value=$indice>$pes_bit_procurando_emprego_atualmente</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -211,9 +172,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_bit_disponivel_viagens">';
 echo $SELECT;
 foreach ($array_resposta as $indice => $pes_bit_disponivel_viagens) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_bit_disponivel_viagens == $pessoa['pes_bit_disponivel_viagens'])	? "<option value=$indice selected>$pes_bit_disponivel_viagens</option>" : "<option value=$indice>$pes_bit_disponivel_viagens</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -223,9 +181,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_bit_trabalha_outras_cidades">';
 echo $SELECT;
 foreach ($array_resposta as $indice => $pes_bit_trabalha_outras_cidades) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_bit_trabalha_outras_cidades == $pessoa['pes_bit_trabalha_outras_cidades'])	? "<option value=$indice selected>$pes_bit_trabalha_outras_cidades</option>" : "<option value=$indice>$pes_bit_trabalha_outras_cidades</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -235,9 +190,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_bit_trabalha_exterior">';
 echo $SELECT;
 foreach ($array_resposta as $indice => $pes_bit_trabalha_exterior) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_bit_trabalha_exterior == $pessoa['pes_bit_trabalha_exterior'])	? "<option value=$indice selected>$pes_bit_trabalha_exterior</option>" : "<option value=$indice>$pes_bit_trabalha_exterior</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -247,9 +199,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_bit_trabalha_home_office">';
 echo $SELECT;
 foreach ($array_resposta as $indice => $pes_bit_trabalha_home_office) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_bit_trabalha_home_office == $pessoa['pes_bit_trabalha_home_office'])	? "<option value=$indice selected>$pes_bit_trabalha_home_office</option>" : "<option value=$indice>$pes_bit_trabalha_home_office</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -259,9 +208,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_bit_possui_carro">';
 echo $SELECT;
 foreach ($array_resposta as $indice => $pes_bit_possui_carro) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_bit_possui_carro == $pessoa['pes_bit_possui_carro'])	? "<option value=$indice selected>$pes_bit_possui_carro</option>" : "<option value=$indice>$pes_bit_possui_carro</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -271,9 +217,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_pes_bit_possui_moto">';
 echo $SELECT;
 foreach ($array_resposta as $indice => $pes_bit_possui_moto) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_bit_possui_moto == $pessoa['pes_bit_possui_moto'])	? "<option value=$indice selected>$pes_bit_possui_moto</option>" : "<option value=$indice>$pes_bit_possui_moto</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
@@ -283,9 +226,6 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_bit_dispensado_servico_militar">';
 echo $SELECT;
 foreach ($array_resposta as $indice => $pes_bit_dispensado_servico_militar) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($pes_bit_dispensado_servico_militar == $pessoa['pes_bit_dispensado_servico_militar'])	? "<option value=$indice selected>$pes_bit_dispensado_servico_militar</option>" : "<option value=$indice>$pes_bit_dispensado_servico_militar</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;

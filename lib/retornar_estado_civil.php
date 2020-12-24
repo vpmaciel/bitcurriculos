@@ -1,7 +1,6 @@
 <?php
 function retornar_estado_civil() : array {
-    $VALOR = array(
-        0 => 'TODOS',
+    $VALOR = array(        
         1 => 'SOLTEIRO',
         2 => 'CASADO',
         3 => 'SEPARADO',

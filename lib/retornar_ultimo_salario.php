@@ -1,7 +1,6 @@
 <?php
 function retornar_ultimo_salario() : array {
-    $VALOR = array(        
-        0 => 'TODOS',
+    $VALOR = array(                
         1 => 'DE R$ 1.000,00 ATÉ R$ 1.999,99',
         2 => 'DE R$ 2.000,00 ATÉ R$ 2.999,99',
         3 => 'DE R$ 3.000,00 ATÉ R$ 3.999,99',

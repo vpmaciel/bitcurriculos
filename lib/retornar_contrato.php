@@ -1,8 +1,7 @@
 <?php
 function retornar_contrato() : array
 {
-    $VALOR = array(
-        0 => 'TODOS',
+    $VALOR = array(        
         1 => 'EFETIVO (CLT)',
         2 => 'ESTÁGIO',
         3 => 'TEMPORÁRIO',
