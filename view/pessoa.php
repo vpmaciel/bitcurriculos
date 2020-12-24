@@ -10,12 +10,12 @@ echo $DOCTYPE;
 echo $HTML;
 echo $HEAD;
 require_once 'cabecalho.php';
-require_once 'pessoa.js';
+
 echo $HEAD_;
 echo $BODY;
 
 require_once 'menu.php';
-
+require_once 'pessoa.js';
 echo $DIV_MAIN;
 echo $H1 . 'DADOS PESSOAIS' . $H1_;
 
@@ -42,12 +42,12 @@ echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Data de nascimento' . $LABEL_ .$TD_ . $TR_; 
 $pessoa['pes_date_data_nascimento'] = isset($_POST['pes_date_data_nascimento'])?$_POST['pes_date_data_nascimento']:'';
-$INPUT = '<input type="text" name="pes_date_data_nascimento" id="pes_date_data_nascimento" size="70" required onkeypress="$(this).mask(\'00-00-0000\');" minlength="10" maxlength="10" value="' . $pessoa['pes_date_data_nascimento'] .'">';
+$INPUT = '<input type="text" name="pes_date_data_nascimento" id="pes_date_data_nascimento" size="70" required maxlength="10" value="' . $pessoa['pes_date_data_nascimento'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Celular' . $LABEL_ .$TD_ . $TR_; 
 $pessoa['pes_char_celular_numero'] = isset($_POST['pes_char_celular_numero'])?$_POST['pes_char_celular_numero']:'';
-$INPUT = '<input type="text" name="pes_char_celular_numero" size="70" required onkeypress="$(this).mask(\'(00)0-0000-0000\');" minlength="15" maxlength="15" value="' . $pessoa['pes_char_celular_numero'] .'">';
+$INPUT = '<input type="text" name="pes_char_celular_numero" size="70" required maxlength="13" value="' . $pessoa['pes_char_celular_numero'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Sexo' . $LABEL_ .$TD_ . $TR_; 
