@@ -135,8 +135,10 @@ function selecionar($char_tabela, $array_condicao) {
 
     try {
         foreach($array_condicao as $chave => $valor) {
-            
-            $char_condicao .= $chave . "=" . "'" . $valor . "'";               
+            if (!is_numeric($valor)) {
+                $valor = "'$valor'";    
+            }            
+            $char_condicao .= $chave . "=" . $valor;                           
 
             if($contador < $tamanho_array_condicao) {
                 $char_condicao .= ' AND ';
@@ -185,7 +187,10 @@ function excluir($char_tabela, $array_condicao) : bool {
         $contador = 1;
         $tamanho = count ($array_condicao);
         foreach($array_condicao as $chave => $valor) {
-
+            if (!is_numeric($valor)) {
+                $valor = "'$valor'";    
+            }            
+            
             $char_condicao .= $chave . "=". $valor;               
 
             if($contador < $tamanho) {
