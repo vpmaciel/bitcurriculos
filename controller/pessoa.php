@@ -63,6 +63,9 @@ if ($resultado == 0) {
     } else {
         $condicao = $pessoa_model['usu_int_id'];
         $pessoa_json = json_decode(selecionar('pessoa', $pessoa_model));
+
+        $contador = 1;
+        $tamanho = count ($pessoa_model);
         
         foreach($pessoa_json as $registro) {            
             
@@ -95,7 +98,11 @@ if ($resultado == 0) {
         }
         $str = '';
         foreach ($pessoa_model as $k=>$v){ 
-            $str .= "pessoa_model[$k]" . "=" . $v . "&";
+            $str .= "pessoa_model[$k]" . "=" . $v;
+            if($contador < $tamanho) {
+                $str .= "&";
+            }
+            $contador++;
         }
         header('location: ..\view\pessoa.php?'. $str. "'");
     }

@@ -26,8 +26,8 @@ $INPUT = '<input type="hidden" name="formulario"  value="1">';
 echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'Nome' . $LABEL_ .$TD_ . $TR_; 
-$pessoa['pes_char_nome'] = isset($_POST['pes_char_nome'])?$_POST['pes_char_nome']:'';
-if (isset($_GET[pessoa_model['pes_char_nome]]')) {$pessoa['pes_char_nome'] = $_GET[pessoa_model['pes_char_nome]'];}
+$pessoa = ($_GET['pessoa_model']);
+exit(var_dump($_GET['pessoa_model']));
 $INPUT = '<input type="text" name="pes_char_nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['pes_char_nome'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
