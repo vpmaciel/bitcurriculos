@@ -31,7 +31,12 @@ function inserir($char_tabela, $array_model) : bool {
 
         foreach($array_model as $chave => $valor) {
             
-            $valores .= "'". $valor . "'";            
+            if (!is_numeric($valor)) {
+                $valores .= "'". $valor . "'";
+            } else {
+                $valores .= $valor;
+            }
+            
             $campos .= $chave;
 
             if($contador < $tamanho) {
@@ -75,8 +80,9 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
     try {
 
         foreach($array_model as $chave => $valor) {
-            
-            $valor = "'$valor'";
+            if (!is_numeric($valor)) {
+                $valor = "'$valor'";    
+            }            
             
             $campos .= $chave . "=". $valor;               
 
@@ -89,7 +95,9 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         $contador = 1;
         $tamanho = count ($array_condicao);
         foreach($array_condicao as $chave => $valor) {
-            $valor = "'$valor'";
+            if (!is_numeric($valor)) {
+                $valor = "'$valor'";    
+            }
             
             $char_condicao .= $chave . "=". $valor;               
 
@@ -100,6 +108,7 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         }
 
         $pdo->beginTransaction();
+        //die("UPDATE $char_tabela SET $campos WHERE ($char_condicao);");
         $stm = $pdo->prepare("UPDATE $char_tabela SET $campos WHERE ($char_condicao);");            
     
         $pdo->commit();
@@ -165,6 +174,7 @@ function excluir($char_tabela, $array_condicao) : bool {
         return FALSE;
     }
     $campos = '';
+    $char_condicao = '';
     $tamanho = count ($array_condicao);
     $contador = 1;
     if($tamanho == 0 || !isset($array_condicao)) {
@@ -176,16 +186,16 @@ function excluir($char_tabela, $array_condicao) : bool {
         $tamanho = count ($array_condicao);
         foreach($array_condicao as $chave => $valor) {
 
-            $array_condicao .= $chave . "=". $valor;               
+            $char_condicao .= $chave . "=". $valor;               
 
             if($contador < $tamanho) {
-                $array_condicao .= ' AND ';
+                $char_condicao .= ' AND ';
             }
             $contador++;
         }
 
         $pdo->beginTransaction();
-        $stmt = $pdo->prepare("DELETE FROM $char_tabela WHERE ($array_condicao);");            
+        $stmt = $pdo->prepare("DELETE FROM $char_tabela WHERE ($char_condicao);");            
         
         $pdo->commit();
 

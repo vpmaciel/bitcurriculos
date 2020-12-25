@@ -44,7 +44,7 @@ if ($resultado == 0) {
     $resultado = inserir('pessoa', $pessoa_model);
     
     if ($resultado == TRUE) {
-		header('location:..\view\sucesso.php?msg=Operação realizada com sucesso !');
+		header('location:..\view\sucesso.php');
 	} else {
 		header('location: ..\view\erro.php?e=OPN');
 	} 
@@ -56,7 +56,7 @@ if ($resultado == 0) {
         $resultado = atualizar('pessoa', $pessoa_model, $condicao);
     
         if ($resultado == TRUE) {
-            header('location:..\view\sucesso.php?msg=Operação realizada com sucesso !');
+            header('location:..\view\sucesso.php');
         } else {
             header('location: ..\view\erro.php?e=OPN');
         }
