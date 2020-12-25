@@ -62,9 +62,11 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         throw new Exception('Tipos de parametros imcompatíveis !');
         return FALSE;
     }
+    global $pdo;
     $campos = '';
     $tamanho = count ($array_model);
     $contador = 1;
+    $char_condicao = '';
     if($tamanho == 0)
     {
         return FALSE;
@@ -89,16 +91,16 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         foreach($array_condicao as $chave => $valor) {
             $valor = "'$valor'";
             
-            $array_condicao .= $chave . "=". $valor;               
+            $char_condicao .= $chave . "=". $valor;               
 
             if($contador < $tamanho) {
-                $array_condicao .= ' AND ';
+                $char_condicao .= ' AND ';
             }
             $contador++;
         }
 
         $pdo->beginTransaction();
-        $stm = $pdo->prepare("UPDATE $char_tabela SET $campos WHERE ($array_condicao);");            
+        $stm = $pdo->prepare("UPDATE $char_tabela SET $campos WHERE ($char_condicao);");            
     
         $pdo->commit();
     
@@ -107,6 +109,7 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         $pdo->rollback();
         throw $e;
     }
+    return TRUE;
 }
 
 function selecionar($char_tabela, $array_condicao) {
