@@ -12,7 +12,10 @@ echo $HEAD;
 require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
+
 require_once 'menu.php';
+require_once 'curso.js';
+
 echo $DIV_MAIN;
 echo $H1 . 'CURSO' . $H1_;
 
@@ -34,12 +37,12 @@ echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Ano de início' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['year_ano_inicio'] = isset($_POST['year_ano_inicio'])?$_POST['year_ano_inicio']:'';
-$INPUT = '<input type="number" name="year_ano_inicio" required size="70" min="1950" max="3000" value="' . $pessoa['year_ano_inicio'] .'">';
+$INPUT = '<input type="text" name="year_ano_inicio" required size="70" min="1950" max="3000" value="' . $pessoa['year_ano_inicio'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Ano de conclusão' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['year_ano_conclusao'] = isset($_POST['year_ano_conclusao'])?$_POST['year_ano_conclusao']:'';
-$INPUT = '<input type="number" name="year_ano_conclusao" required size="70" min="1950" max="3000" value="' . $pessoa['year_ano_conclusao'] .'">';
+$INPUT = '<input type="text" name="year_ano_conclusao" required size="70" min="1950" max="3000" value="' . $pessoa['year_ano_conclusao'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Situação' . $LABEL_ . $TD_ . $TR_; 
