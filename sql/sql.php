@@ -72,6 +72,8 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
     $tamanho = count ($array_model);
     $contador = 1;
     $char_condicao = '';
+    $retorno = FALSE;
+
     if($tamanho == 0)
     {
         return FALSE;
@@ -109,16 +111,18 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
 
         $pdo->beginTransaction();
         //die("UPDATE $char_tabela SET $campos WHERE ($char_condicao);");
-        $stm = $pdo->prepare("UPDATE $char_tabela SET $campos WHERE ($char_condicao);");            
+        $stmt = $pdo->prepare("UPDATE $char_tabela SET $campos WHERE ($char_condicao);");            
     
         $pdo->commit();
+        $retorno = ($stmt->execute()) ? TRUE : FALSE; 
     
     } catch(PDOException $e) {
         throw new PDOException($e);
         $pdo->rollback();
         throw $e;
+        $retorno = FALSE;
     }
-    return TRUE;
+    return $retorno;
 }
 
 function selecionar($char_tabela, $array_condicao) {

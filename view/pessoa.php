@@ -68,7 +68,7 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_int_escolaridade">';
 echo $SELECT;
 foreach ($array_escolaridade as $indice => $pes_int_escolaridade) {	
-	echo ($indice == $pessoa_model_get['pes_int_escolaridade'] || $indice == $pessoa_model_get['pes_int_escolaridade']) ? "<option value=$indice selected>$pes_int_escolaridade</option>" : "<option value=$indice>$pes_int_escolaridade</option>";
+	echo ($indice == $pessoa_model_get['pes_int_escolaridade']) ? "<option value=$indice selected>$pes_int_escolaridade</option>" : "<option value=$indice>$pes_int_escolaridade</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
@@ -77,7 +77,7 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_int_estado_civil">';
 echo $SELECT;
 foreach ($array_estado_civil as $indice => $pes_int_estado_civil) {	
-	echo ($pes_int_estado_civil == $pessoa_model_get['pes_int_estado_civil'] || $pes_int_estado_civil == $pessoa_model_get['pes_int_estado_civil']) ? "<option value=$indice selected>$pes_int_estado_civil</option>" : "<option value=$indice>$pes_int_estado_civil</option>";
+	echo ($indice == $pessoa_model_get['pes_int_estado_civil'] || $pes_int_estado_civil == $pessoa_model_get['pes_int_estado_civil']) ? "<option value=$indice selected>$pes_int_estado_civil</option>" : "<option value=$indice>$pes_int_estado_civil</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
@@ -86,7 +86,7 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_int_nacionalidade">';
 echo $SELECT;
 foreach ($array_nacionalidade as $indice => $pes_int_nacionalidade) {	
-	echo ($pes_int_nacionalidade == $pessoa_model_get['pes_int_nacionalidade'])	? "<option value=$indice selected>$pes_int_nacionalidade</option>" : "<option value=$indice>$pes_int_nacionalidade</option>";
+	echo ($indice == $pessoa_model_get['pes_int_nacionalidade'])	? "<option value=$indice selected>$pes_int_nacionalidade</option>" : "<option value=$indice>$pes_int_nacionalidade</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 

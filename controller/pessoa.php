@@ -94,17 +94,9 @@ if ($resultado == 0) {
             
         }
 
-        $contador = 1;
-        $tamanho = count ($pessoa_model);
-        //exit("t=".$tamanho);
         $str = '';
         foreach ($pessoa_model as $k=>$v){ 
-            $str .= "pessoa_model[$k]" . "=" . $v;
-            if($contador < $tamanho - 1) {
-                
-                $str .= "&";
-            }
-            $contador++;
+            $str .= "pessoa_model[$k]" . "=" . $v . "&";                        
         }
         header('location: ..\view\pessoa.php?'. $str. "'");
     }
