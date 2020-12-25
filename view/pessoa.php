@@ -39,17 +39,17 @@ $INPUT = '<input type="url" name="pes_char_url_repositorio_codigos" required siz
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'URL do linkedin' . $LABEL_ .$TD_ . $TR_; 
-$pessoa_model['pes_char_url_linkedin'] = isset($_POST['pes_char_url_linkedin']) ? $_POST['pes_char_url_linkedin']:'';
+$pessoa_model['pes_char_url_linkedin'] = isset($_POST['pes_char_url_linkedin']) ? $_POST['pes_char_url_linkedin'] : $pessoa_model_get['pes_char_url_linkedin'];
 $INPUT = '<input type="url" name="pes_char_url_linkedin" required size="70" minlength="10" maxlength="50" value="' . $pessoa_model['pes_char_url_linkedin'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Data de nascimento' . $LABEL_ .$TD_ . $TR_; 
-$pessoa_model['pes_date_data_nascimento'] = isset($_POST['pes_date_data_nascimento']) ? $_POST['pes_date_data_nascimento']:'';
+$pessoa_model['pes_date_data_nascimento'] = isset($_POST['pes_date_data_nascimento']) ? $_POST['pes_date_data_nascimento'] : $pessoa_model_get['pes_date_data_nascimento'];
 $INPUT = '<input type="text" name="pes_date_data_nascimento" id="pes_date_data_nascimento" size="70" required maxlength="10" value="' . $pessoa_model['pes_date_data_nascimento'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Celular' . $LABEL_ .$TD_ . $TR_; 
-$pessoa_model['pes_char_celular_numero'] = isset($_POST['pes_char_celular_numero']) ? $_POST['pes_char_celular_numero']:'';
+$pessoa_model['pes_char_celular_numero'] = isset($_POST['pes_char_celular_numero']) ? $_POST['pes_char_celular_numero'] : $pessoa_model_get['pes_char_celular_numero'];
 $INPUT = '<input type="text" name="pes_char_celular_numero" id="pes_char_celular_numero" size="70" required maxlength="13" value="' . $pessoa_model['pes_char_celular_numero'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_; 
 
@@ -58,7 +58,7 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_bit_sexo">';
 echo $SELECT;
 foreach ($array_sexo as $indice => $pes_bit_sexo) {	
-	echo ($pes_bit_sexo == $pessoa_model['pes_bit_sexo']) ? "<option value=$indice selected>$pes_bit_sexo</option>" : "<option value=$indice>$pes_bit_sexo</option>";
+	echo ($pes_bit_sexo == $pessoa_model['pes_bit_sexo'] || $pes_bit_sexo == $pessoa_model_get['pes_bit_sexo']) ? "<option value=$indice selected>$pes_bit_sexo</option>" : "<option value=$indice>$pes_bit_sexo</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
@@ -67,7 +67,7 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_int_escolaridade">';
 echo $SELECT;
 foreach ($array_escolaridade as $indice => $pes_int_escolaridade) {	
-	echo ($pes_int_escolaridade == $pessoa_model['pes_int_escolaridade']) ? "<option value=$indice selected>$pes_int_escolaridade</option>" : "<option value=$indice>$pes_int_escolaridade</option>";
+	echo ($pes_int_escolaridade == $pessoa_model_get['pes_int_escolaridade']) ? "<option value=$indice selected>$pes_int_escolaridade</option>" : "<option value=$indice>$pes_int_escolaridade</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
@@ -76,7 +76,7 @@ echo $TR. $TD;
 $SELECT = '<select name="pes_int_estado_civil">';
 echo $SELECT;
 foreach ($array_estado_civil as $indice => $pes_int_estado_civil) {	
-	echo ($pes_int_estado_civil == $pessoa_model['pes_int_estado_civil']) ? "<option value=$indice selected>$pes_int_estado_civil</option>" : "<option value=$indice>$pes_int_estado_civil</option>";
+	echo ($pes_int_estado_civil == $pessoa_model['pes_int_estado_civil'] || $pes_int_estado_civil == $pessoa_model_get['pes_int_estado_civil']) ? "<option value=$indice selected>$pes_int_estado_civil</option>" : "<option value=$indice>$pes_int_estado_civil</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
@@ -217,7 +217,7 @@ echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Possui moto' . $LABEL_ .$TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="pes_pes_bit_possui_moto">';
+$SELECT = '<select name="pes_bit_possui_moto">';
 echo $SELECT;
 foreach ($array_resposta as $indice => $pes_bit_possui_moto) {	
 	echo ($pes_bit_possui_moto == $pessoa_model['pes_bit_possui_moto'])	? "<option value=$indice selected>$pes_bit_possui_moto</option>" : "<option value=$indice>$pes_bit_possui_moto</option>";

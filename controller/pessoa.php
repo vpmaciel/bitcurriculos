@@ -12,7 +12,7 @@ $pessoa_model['usu_int_id'] = $_SESSION['usu_int_id'];
 
 $resultado = numero_registros('pessoa', $pessoa_model);
 
-if ($_GET['a'] != 's') {
+if (!isset($_GET['a'])) {
 
     $pessoa_model['pes_char_nome'] = $_POST['pes_char_nome'];
     $pessoa_model['pes_char_url_repositorio_codigos'] = urlencode($_POST['pes_char_url_repositorio_codigos']);
@@ -50,9 +50,9 @@ if ($resultado == 0) {
 	} 
 } else {	
     
-    $condicao = $pessoa_model['usu_int_id'];
+    $condicao['usu_int_id'] = $_SESSION['usu_int_id'];
 
-    if ($_GET['a'] != 's') {
+    if (!isset($_GET['a'])) {
         $resultado = atualizar('pessoa', $pessoa_model, $condicao);
     
         if ($resultado == TRUE) {
