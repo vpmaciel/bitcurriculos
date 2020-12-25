@@ -14,31 +14,31 @@ $resultado = numero_registros('pessoa', $pessoa_model);
 
 if (!isset($_GET['a'])) {
 
-    $pessoa_model['pes_char_nome'] = $_POST['pes_char_nome'];
-    $pessoa_model['pes_char_url_repositorio_codigos'] = urlencode($_POST['pes_char_url_repositorio_codigos']);
-    $pessoa_model['pes_char_url_linkedin'] = urlencode($_POST['pes_char_url_linkedin']);
-    $pessoa_model['pes_date_data_nascimento'] = date("Y-m-d", strtotime($_POST['pes_date_data_nascimento']));
-    $pessoa_model['pes_char_celular_numero'] = $_POST['pes_char_celular_numero'];
-    $pessoa_model['pes_bit_sexo'] = $_POST['pes_bit_sexo'];
-    $pessoa_model['pes_int_escolaridade'] = $_POST['pes_int_escolaridade'];
-    $pessoa_model['pes_int_estado_civil'] = $_POST['pes_int_estado_civil'];
-    $pessoa_model['pes_int_nacionalidade'] = $_POST['pes_int_nacionalidade'];
-    $pessoa_model['pes_bit_possui_filhos'] = $_POST['pes_bit_possui_filhos'];
-    $pessoa_model['pes_bit_possui_deficiencia'] = $_POST['pes_bit_possui_deficiencia'];
-    $pessoa_model['pes_int_pais'] = $_POST['pes_int_pais'];
-    $pessoa_model['pes_int_estado'] = $_POST['pes_int_estado'];
-    $pessoa_model['pes_int_cidade'] = $_POST['pes_int_cidade'];
-    $pessoa_model['pes_int_cnh'] = $_POST['pes_int_cnh'];
-    $pessoa_model['pes_int_ultimo_salario_mensal'] = $_POST['pes_int_ultimo_salario_mensal'];
-    $pessoa_model['pes_bit_empregado_atualmente'] = $_POST['pes_bit_empregado_atualmente'];
-    $pessoa_model['pes_bit_procurando_emprego_atualmente'] = $_POST['pes_bit_procurando_emprego_atualmente'];
-    $pessoa_model['pes_bit_disponivel_viagens'] = $_POST['pes_bit_disponivel_viagens'];
-    $pessoa_model['pes_bit_trabalha_outras_cidades'] = $_POST['pes_bit_trabalha_outras_cidades'];
-    $pessoa_model['pes_bit_trabalha_exterior'] = $_POST['pes_bit_trabalha_exterior'];
-    $pessoa_model['pes_bit_trabalha_home_office'] = $_POST['pes_bit_trabalha_home_office'];
-    $pessoa_model['pes_bit_possui_carro'] = $_POST['pes_bit_possui_carro'];
-    $pessoa_model['pes_bit_possui_moto'] = $_POST['pes_bit_possui_moto'];
-    $pessoa_model['pes_bit_dispensado_servico_militar'] = $_POST['pes_bit_dispensado_servico_militar'];
+    $pessoa_model['pes_char_nome'] = $_GET['pes_char_nome'];
+    $pessoa_model['pes_char_url_repositorio_codigos'] = urlencode($_GET['pes_char_url_repositorio_codigos']);
+    $pessoa_model['pes_char_url_linkedin'] = urlencode($_GET['pes_char_url_linkedin']);
+    $pessoa_model['pes_date_data_nascimento'] = date("Y-m-d", strtotime($_GET['pes_date_data_nascimento']));
+    $pessoa_model['pes_char_celular_numero'] = $_GET['pes_char_celular_numero'];
+    $pessoa_model['pes_bit_sexo'] = $_GET['pes_bit_sexo'];
+    $pessoa_model['pes_int_escolaridade'] = $_GET['pes_int_escolaridade'];
+    $pessoa_model['pes_int_estado_civil'] = $_GET['pes_int_estado_civil'];
+    $pessoa_model['pes_int_nacionalidade'] = $_GET['pes_int_nacionalidade'];
+    $pessoa_model['pes_bit_possui_filhos'] = $_GET['pes_bit_possui_filhos'];
+    $pessoa_model['pes_bit_possui_deficiencia'] = $_GET['pes_bit_possui_deficiencia'];
+    $pessoa_model['pes_int_pais'] = $_GET['pes_int_pais'];
+    $pessoa_model['pes_int_estado'] = $_GET['pes_int_estado'];
+    $pessoa_model['pes_int_cidade'] = $_GET['pes_int_cidade'];
+    $pessoa_model['pes_int_cnh'] = $_GET['pes_int_cnh'];
+    $pessoa_model['pes_int_ultimo_salario_mensal'] = $_GET['pes_int_ultimo_salario_mensal'];
+    $pessoa_model['pes_bit_empregado_atualmente'] = $_GET['pes_bit_empregado_atualmente'];
+    $pessoa_model['pes_bit_procurando_emprego_atualmente'] = $_GET['pes_bit_procurando_emprego_atualmente'];
+    $pessoa_model['pes_bit_disponivel_viagens'] = $_GET['pes_bit_disponivel_viagens'];
+    $pessoa_model['pes_bit_trabalha_outras_cidades'] = $_GET['pes_bit_trabalha_outras_cidades'];
+    $pessoa_model['pes_bit_trabalha_exterior'] = $_GET['pes_bit_trabalha_exterior'];
+    $pessoa_model['pes_bit_trabalha_home_office'] = $_GET['pes_bit_trabalha_home_office'];
+    $pessoa_model['pes_bit_possui_carro'] = $_GET['pes_bit_possui_carro'];
+    $pessoa_model['pes_bit_possui_moto'] = $_GET['pes_bit_possui_moto'];
+    $pessoa_model['pes_bit_dispensado_servico_militar'] = $_GET['pes_bit_dispensado_servico_militar'];
 }
 if ($resultado == 0) {
     $resultado = inserir('pessoa', $pessoa_model);
