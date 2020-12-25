@@ -62,13 +62,10 @@ if ($resultado == 0) {
         }
     } else {
         $condicao = $pessoa_model['usu_int_id'];
-        $pessoa_json = json_decode(selecionar('pessoa', $pessoa_model));
-
-        $contador = 1;
-        $tamanho = count ($pessoa_model);
+        $pessoa_json = json_decode(selecionar('pessoa', $pessoa_model));      
         
         foreach($pessoa_json as $registro) {            
-            
+            $pessoa_model['usu_int_in'] = $registro->usu_int_in;
             $pessoa_model['pes_char_nome'] = $registro->pes_char_nome;
             $pessoa_model['pes_char_url_repositorio_codigos'] = $registro->pes_char_url_repositorio_codigos;
             $pessoa_model['pes_char_url_linkedin'] = $registro->pes_char_url_linkedin;
@@ -96,10 +93,15 @@ if ($resultado == 0) {
             $pessoa_model['pes_bit_dispensado_servico_militar'] = $registro->pes_bit_dispensado_servico_militar;
             
         }
+
+        $contador = 1;
+        $tamanho = count ($pessoa_model);
+        //exit("t=".$tamanho);
         $str = '';
         foreach ($pessoa_model as $k=>$v){ 
             $str .= "pessoa_model[$k]" . "=" . $v;
-            if($contador < $tamanho) {
+            if($contador < $tamanho - 1) {
+                
                 $str .= "&";
             }
             $contador++;
