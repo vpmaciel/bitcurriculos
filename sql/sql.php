@@ -32,7 +32,7 @@ function inserir($char_tabela, $array_model) : bool {
         foreach($array_model as $chave => $valor) {
             
             if (!is_numeric($valor)) {
-                $valores .= "'". $valor . "'";
+                $valores .= "'".  mb_strtoupper( $valor, 'UTF-8') . "'";
             } else {
                 $valores .= $valor;
             }
@@ -84,6 +84,7 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         foreach($array_model as $chave => $valor) {
             if (!is_numeric($valor)) {
                 $valor = "'$valor'";    
+                $valor = mb_strtoupper( $valor, 'UTF-8');
             }            
             
             $campos .= $chave . "=". $valor;               

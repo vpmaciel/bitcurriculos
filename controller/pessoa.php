@@ -56,9 +56,11 @@ if ($resultado_numero_registros == 0) {
     $resultado_inserir = inserir('pessoa', $pessoa_model);
     
     if ($resultado_inserir == TRUE) {
-		header('location:..\view\sucesso.php');
+        header('location:..\view\sucesso.php');
+        exit;
 	} else {
-		header('location: ..\view\erro.php?e=OPN');
+        header('location: ..\view\erro.php?e=OPN');
+        exit;
 	} 
 } else {	
     
@@ -67,8 +69,10 @@ if ($resultado_numero_registros == 0) {
 
     if ($resultado_atualizar == TRUE) {
         header('location:..\view\sucesso.php');
+        exit;
     } else {
         header('location: ..\view\erro.php?e=OPN');
+        exit;
     }    
 }
 
@@ -115,5 +119,6 @@ CARREGAR:
         $str .= "pessoa_model[$k]" . "=" . $v . "&";                        
     }
     header('location: ..\view\pessoa.php?'. $str. "'");
+    exit;
 }
 ####################################################################################################
