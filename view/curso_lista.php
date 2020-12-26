@@ -6,6 +6,7 @@ if(!isset($_SESSION['usu_int_id'])) {
 }
 require_once '../lib/biblioteca.php';
 require_once '../model/model.php';
+require_once '../sql/sql.php';
 echo $DOCTYPE;
 echo $HTML;
 echo $HEAD;
@@ -29,6 +30,7 @@ $condicao = $curso_model['usu_int_id'];
 $curso_json = json_decode(selecionar('curso', $curso_model));      
 
 foreach($curso_json as $registro) {
+	$curso_model = array();
 	$curso_model['cur_int_id'] = $registro->cur_int_id;
 	$curso_model['cur_char_nome'] = $registro->cur_char_nome;
 	$curso_model['cur_char_instituicao'] = $registro->cur_char_instituicao;
@@ -46,11 +48,10 @@ foreach($curso_json as $registro) {
 	echo $TR . $TD . $LABEL . 'Ano de conclusão: ' . $curso_model['cur_year_ano_conclusao'] . $LABEL_ . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . 'Situação: ' . $curso_model['cur_int_situacao'] . $LABEL_ . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . 'Nível: ' . $curso_model['cur_int_nivel'] . $LABEL_ . $TD_ . $TR_; 
-	echo $TR . $TD . _ . $TD_ . $TR_; 
-	echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
+	echo $TR . $TD . '<a href="../view/curso.php?' . $str . '">Editar</a>' . $TD_ . $TR_; 
+	echo $TR . $TD . '<a href="../controller/' . $str . 'php">Excluir</a>' . $TD_ . $TR_; 
+	echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 	
 }
-
-echo $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;
 
