@@ -8,9 +8,21 @@ require_once '../lib/biblioteca.php';
 require_once '../model/model.php';
 require_once '../sql/sql.php';
 
+$acao = '';
+
+if(isset($_GET['acao'])){
+    $acao = $_GET['acao'];
+
+    if ($acao == 'carregar') {
+        goto CARREGAR;
+    }
+}
+
+####################################################################################################
+
 $pessoa_model['usu_int_id'] = $_SESSION['usu_int_id'];
 
-$resultado = numero_registros('pessoa', $pessoa_model);
+$resultado_numero_registros = resultado_numero_registros('pessoa', $pessoa_model);
 
 $pessoa_model['pes_char_nome'] = $_GET['pes_char_nome'];
 $pessoa_model['pes_char_url_repositorio_codigos'] = urlencode($_GET['pes_char_url_repositorio_codigos']);
@@ -38,10 +50,12 @@ $pessoa_model['pes_bit_possui_carro'] = $_GET['pes_bit_possui_carro'];
 $pessoa_model['pes_bit_possui_moto'] = $_GET['pes_bit_possui_moto'];
 $pessoa_model['pes_bit_dispensado_servico_militar'] = $_GET['pes_bit_dispensado_servico_militar'];
 
-if ($resultado == 0) {
-    $resultado = inserir('pessoa', $pessoa_model);
+####################################################################################################
+
+if ($resultado_numero_registros == 0) {
+    $resultado_inserir = inserir('pessoa', $pessoa_model);
     
-    if ($resultado == TRUE) {
+    if ($resultado_inserir == TRUE) {
 		header('location:..\view\sucesso.php');
 	} else {
 		header('location: ..\view\erro.php?e=OPN');
@@ -49,21 +63,23 @@ if ($resultado == 0) {
 } else {	
     
     $condicao['usu_int_id'] = $_SESSION['usu_int_id'];
+    $resultado_atualizar = atualizar('pessoa', $pessoa_model, $condicao);
 
-    
-    $resultado = atualizar('pessoa', $pessoa_model, $condicao);
-
-    if ($resultado == TRUE) {
+    if ($resultado_atualizar == TRUE) {
         header('location:..\view\sucesso.php');
     } else {
         header('location: ..\view\erro.php?e=OPN');
     }    
 }
-CARREGAR :
-{
+
+####################################################################################################
+
+CARREGAR:
+{    
+    $pessoa_model['usu_int_id'] = $_SESSION['usu_int_id'];
     $condicao = $pessoa_model['usu_int_id'];
     $pessoa_json = json_decode(selecionar('pessoa', $pessoa_model));      
-    
+    //exit(print_r($pessoa_json));
     foreach($pessoa_json as $registro) {            
         $pessoa_model['usu_int_in'] = $registro->usu_int_in;
         $pessoa_model['pes_char_nome'] = $registro->pes_char_nome;
@@ -100,3 +116,4 @@ CARREGAR :
     }
     header('location: ..\view\pessoa.php?'. $str. "'");
 }
+####################################################################################################

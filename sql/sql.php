@@ -45,7 +45,7 @@ function inserir($char_tabela, $array_model) : bool {
             }
             $contador++;
         }
-        exit("INSERT INTO $char_tabela ($campos) VALUES ($valores);");
+        //exit("INSERT INTO $char_tabela ($campos) VALUES ($valores);");
         $pdo->beginTransaction();
         $stmt = $pdo->prepare("INSERT INTO $char_tabela ($campos) VALUES ($valores);");
         
