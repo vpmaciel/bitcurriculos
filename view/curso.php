@@ -23,7 +23,7 @@ $FORM = '<form action="../controller/curso.php" method="get">';
 echo $FORM;
 
 echo $TABLE;
-$INPUT = '<input type="hidden" name="cur_int_id"  value="' . isset($_GET['cur_int_id']) ? isset($_GET['cur_int_id']) : 0 .'">';
+$INPUT = '<input type="hidden" name="cur_int_id"  value="' . (isset($_GET['cur_int_id']) ? $_GET['cur_int_id'] : 0) .'">';
 echo $INPUT;
 
 echo $TR . $TD . $LABEL . 'Nome do curso' . $LABEL_ . $TD_ . $TR_; 

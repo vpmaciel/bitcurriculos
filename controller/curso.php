@@ -21,9 +21,9 @@ if(isset($_GET['acao'])){
 
 ####################################################################################################
 
-$curso_model['usu_int_id'] = $_SESSION['usu_int_id'];
+$curso_model['cur_int_id'] = $_GET['cur_int_id'];
 
-$resultado_numero_registros = retonar_numero_registros('curso', $curso_model);
+$resultado_numero_registros = retornar_numero_registros('curso', $curso_model);
 
 $curso_model['cur_int_id'] = $_GET['cur_int_id'];
 $curso_model['usu_int_id'] = $_SESSION['usu_int_id'];
