@@ -217,7 +217,7 @@ function excluir($char_tabela, $array_condicao) : bool {
     }
 }
 
-function numero_registros($char_tabela, $array_condicao) : int {
+function retornar_numero_registros($char_tabela, $array_condicao) : int {
     global $pdo;
     
     if(!is_string($char_tabela) || !is_array($array_condicao)) {

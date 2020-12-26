@@ -22,7 +22,7 @@ if(isset($_GET['acao'])){
 
 $pessoa_model['usu_int_id'] = $_SESSION['usu_int_id'];
 
-$resultado_numero_registros = resultado_numero_registros('pessoa', $pessoa_model);
+$resultado_numero_registros = retornar_numero_registros('pessoa', $pessoa_model);
 
 $pessoa_model['pes_char_nome'] = $_GET['pes_char_nome'];
 $pessoa_model['pes_char_url_repositorio_codigos'] = urlencode($_GET['pes_char_url_repositorio_codigos']);
