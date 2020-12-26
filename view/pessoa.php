@@ -23,7 +23,7 @@ echo $H1 . 'DADOS PESSOAIS' . $H1_;
 $FORM = '<form action="../controller/pessoa.php" method="get">';
 
 echo $FORM;
-$INPUT = '<input type="hidden" name="formulario"  value="1">';
+
 echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'Nome' . $LABEL_ .$TD_ . $TR_; 
