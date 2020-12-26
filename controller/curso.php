@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', true);
+error_reporting(E_ALL);
 
 session_start();
 
@@ -49,11 +51,13 @@ if ($resultado_numero_registros == 0) {
 	$condicao['usu_int_id'] = $_SESSION['usu_int_id'];
 	$condicao['cur_int_id'] = $_GET['cur_int_id'];
 
-
+	
 	$resultado_atualizar = atualizar('curso', $curso_model, $condicao);
-
+	
 	if ($resultado_atualizar == TRUE) {
+		
 		header('location:..\view\sucesso.php');
+		exit("z=".$resultado_atualizar);
 	} else {
 		header('location: ..\view\erro.php?e=OPN');
 	}   
