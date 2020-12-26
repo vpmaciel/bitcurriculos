@@ -9,9 +9,21 @@ require_once '../lib/biblioteca.php';
 require_once '../model/model.php';
 require_once '../sql/sql.php';
 
+$acao = '';
+
+if(isset($_GET['acao'])){
+    $acao = $_GET['acao'];
+
+    if ($acao == 'carregar') {
+        goto CARREGAR;
+    }
+}
+
+####################################################################################################
+
 $curso_model['usu_int_id'] = $_SESSION['usu_int_id'];
 
-$resultado = numero_registros('curso', $curso_model);
+$resultado_numero_registros = retonar_numero_registros('curso', $curso_model);
 
 $curso_model['cur_int_id'] = $_GET['cur_int_id'];
 $curso_model['usu_int_id'] = $_SESSION['usu_int_id'];
@@ -22,29 +34,33 @@ $curso_model['cur_year_ano_conclusao'] = $_GET['cur_year_ano_conclusao'];
 $curso_model['cur_int_situacao'] = $_GET['cur_int_situacao'];
 $curso_model['cur_int_nivel'] = $_GET['cur_int_nivel'];
 
-if ($resultado == 0) {												# Inserir registro no banco de dados
-    $resultado = inserir('curso', $curso_model);
+####################################################################################################
+
+if ($resultado_numero_registros == 0) {	# Inserir registro no banco de dados
+    $resultado_inserir = inserir('curso', $curso_model);
     
-    if ($resultado == TRUE) {
+    if ($resultado_inserir == TRUE) {
 		header('location:..\view\sucesso.php');
 	} else {
 		header('location: ..\view\erro.php?e=OPN');
 	} 
-} else {															# Atualizar registro no banco de dados
+} else {
     
 	$condicao['usu_int_id'] = $_SESSION['usu_int_id'];
 	$condicao['cur_int_id'] = $_GET['cur_int_id'];
 
 
-	$resultado = atualizar('curso', $curso_model, $condicao);
+	$resultado_atualizar = atualizar('curso', $curso_model, $condicao);
 
-	if ($resultado == TRUE) {
+	if ($resultado_atualizar == TRUE) {
 		header('location:..\view\sucesso.php');
 	} else {
 		header('location: ..\view\erro.php?e=OPN');
 	}   
 }
+####################################################################################################
 
+CARREGAR:
 {
 	$condicao = $curso_model['usu_int_id'];
 	$condicao = $curso_model['cur_int_id'];
