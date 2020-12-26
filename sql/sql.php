@@ -100,6 +100,7 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         foreach($array_condicao as $chave => $valor) {
             if (!is_numeric($valor)) {
                 $valor = "'$valor'";    
+                mb_strtoupper( $valor, 'UTF-8');
             }
             
             $char_condicao .= $chave . "=". $valor;               
@@ -194,6 +195,7 @@ function excluir($char_tabela, $array_condicao) : bool {
         foreach($array_condicao as $chave => $valor) {
             if (!is_numeric($valor)) {
                 $valor = "'$valor'";    
+                $valor = mb_strtoupper( $valor, 'UTF-8');
             }            
             
             $char_condicao .= $chave . "=". $valor;               

@@ -1,16 +1,16 @@
 <?php
 function retornar_escolaridade() : array {
     $VALOR = array(        
-        1 => 'PÓS DOUTORADO', 
-        2 => 'DOUTORADO', 
-        3 => 'MESTRADO', 
-        4 => 'PÓS GRADUAÇÃO', 
-        5 => 'MBA', 
-        6 => 'SUPERIOR',            
-        7 => 'TECNÓLOGO', 
-        8 => 'TÉCNICO',
-        9 => 'SEGUNDO GRAU',
-        10 => 'PRIMEIRO GRAU',
+        0 => 'PÓS DOUTORADO', 
+        1 => 'DOUTORADO', 
+        2 => 'MESTRADO', 
+        3 => 'PÓS GRADUAÇÃO', 
+        4 => 'MBA', 
+        5 => 'SUPERIOR',            
+        6 => 'TECNÓLOGO', 
+        7 => 'TÉCNICO',
+        8 => 'SEGUNDO GRAU',
+        9 => 'PRIMEIRO GRAU'
     );
     return $VALOR;
 }
