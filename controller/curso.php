@@ -36,7 +36,7 @@ $curso_model['cur_int_nivel'] = $_GET['cur_int_nivel'];
 
 ####################################################################################################
 
-if ($resultado_numero_registros == 0) {	# Inserir registro no banco de dados
+if ($resultado_numero_registros == 0) {
     $resultado_inserir = inserir('curso', $curso_model);
     
     if ($resultado_inserir == TRUE) {
