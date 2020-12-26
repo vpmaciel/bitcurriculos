@@ -49,7 +49,7 @@ echo $TR. $TD;
 $SELECT = '<select name="cur_int_situacao">';
 echo $SELECT;
 foreach ($array_situacao as $indice => $cur_int_situacao) {	
-	echo ($cur_int_situacao == $pessoa['cur_int_situacao'])	? "<option value=$indice selected>$cur_int_situacao</option>" : "<option value=$indice>$cur_int_situacao</option>";
+	echo ($indice == $pessoa['cur_int_situacao'])	? "<option value=$indice selected>$cur_int_situacao</option>" : "<option value=$indice>$cur_int_situacao</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
@@ -58,7 +58,7 @@ echo $TR. $TD;
 $SELECT = '<select name="cur_int_nivel">';
 echo $SELECT;
 foreach ($array_escolaridade as $indice => $cur_int_nivel) {	
-	echo ($cur_int_nivel == $pessoa['cur_int_nivel'])	? "<option value=$indice selected>$cur_int_nivel</option>" : "<option value=$indice>$cur_int_nivel</option>";
+	echo ($indice == $pessoa['cur_int_nivel'])	? "<option value=$indice selected>$cur_int_nivel</option>" : "<option value=$indice>$cur_int_nivel</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 

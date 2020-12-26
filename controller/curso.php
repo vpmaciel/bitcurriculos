@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+/*
 if(!isset($_SESSION['usu_int_id'])) {
 	header('location:..\view\erro.php?e=UNL');
 }
@@ -15,7 +15,7 @@ $resultado = numero_registros('curso', $curso_model);
 if (!isset($_GET['a'])) {
 
     $curso_model['cur_int_id'] = $_GET['cur_int_id'];
-    $curso_model['usu_int_id'] = $_GET['usu_int_id'];
+    $curso_model['usu_int_id'] = $_SESSION['usu_int_id'];
     $curso_model['cur_char_nome'] = $_GET['cur_char_nome'];
     $curso_model['cur_char_instituicao'] = $_GET['cur_char_instituicao'];
     $curso_model['cur_year_ano_inicio'] = $_GET['cur_year_ano_inicio'];
@@ -65,4 +65,4 @@ if ($resultado == 0) {
         header('location: ..\view\curso.php?'. $str. "'");
     }
     
-}
+}*/
