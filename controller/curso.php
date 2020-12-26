@@ -1,4 +1,5 @@
-<?php/*
+<?php
+
 session_start();
 
 if(!isset($_SESSION['usu_int_id'])) {
@@ -33,7 +34,8 @@ if ($resultado == 0) {
 	} 
 } else {	
     
-    $condicao['usu_int_id'] = $_SESSION['usu_int_id'];
+	$condicao['usu_int_id'] = $_SESSION['usu_int_id'];
+	$condicao['cur_int_id'] = $_GET['cur_int_id'];
 
     if (!isset($_GET['a'])) {
         $resultado = atualizar('curso', $curso_model, $condicao);
@@ -44,7 +46,8 @@ if ($resultado == 0) {
             header('location: ..\view\erro.php?e=OPN');
         }
     } else {
-        $condicao = $curso_model['usu_int_id'];
+		$condicao = $curso_model['usu_int_id'];
+		$condicao = $curso_model['cur_int_id'];
         $curso_json = json_decode(selecionar('curso', $curso_model));      
         
         foreach($curso_json as $registro) {            
@@ -65,4 +68,4 @@ if ($resultado == 0) {
         header('location: ..\view\curso.php?'. $str. "'");
     }
     
-}*/
+}
