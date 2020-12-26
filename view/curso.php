@@ -18,7 +18,7 @@ require_once 'menu.php';
 echo $DIV_MAIN;
 echo $H1 . 'CURSO' . $H1_;
 
-$FORM = '<form action="../controller/curso.php" method="post">';
+$FORM = '<form action="../controller/curso.php" method="get">';
 
 echo $FORM;
 
