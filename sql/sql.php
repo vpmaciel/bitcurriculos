@@ -17,7 +17,8 @@ try {
     $retorno = FALSE;
     echo "Erro na conexão:" . $pdoException->getMessage();
 }
-        
+
+####################################################################################################
 
 function inserir($char_tabela, $array_model) : bool {
     
@@ -35,7 +36,9 @@ function inserir($char_tabela, $array_model) : bool {
     try {
 
         foreach($array_model as $chave => $valor) {
-            
+            if(verificarSQL($valor)) {
+                throw new Exception('Tentativa de SQL injection !');               
+            }
             if (!is_numeric($valor)) {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
@@ -43,9 +46,7 @@ function inserir($char_tabela, $array_model) : bool {
                     $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";
                 }                
             }
-                $valores .= $valor;
-            
-            
+            $valores .= $valor;  
             $campos .= $chave;
 
             if($contador < $tamanho) {
@@ -71,6 +72,8 @@ function inserir($char_tabela, $array_model) : bool {
     return FALSE;
 }
 
+####################################################################################################
+
 function atualizar($char_tabela, $array_model, $array_condicao) : bool {
     if(!is_array($array_model) || !is_array($array_condicao) || !is_string($char_tabela)) {
         throw new Exception('Tipos de parametros imcompatíveis !');
@@ -91,6 +94,9 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
     try {
 
         foreach($array_model as $chave => $valor) {
+            if(verificarSQL($valor)) {
+                throw new Exception('Tentativa de SQL injection !');               
+            }
             if (!is_numeric($valor)) {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
@@ -140,6 +146,8 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
     return FALSE;
 }
 
+####################################################################################################
+
 function selecionar($char_tabela, $array_condicao) {
     global $pdo;
     
@@ -154,11 +162,16 @@ function selecionar($char_tabela, $array_condicao) {
 
     try {
         foreach($array_condicao as $chave => $valor) {
+            if(verificarSQL($valor)) {
+                throw new Exception('Tentativa de SQL injection !');               
+            }
             if (!is_numeric($valor)) {
-                $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";                
-            } else  if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
-                $valor .= "'".  mb_strtolower( $valor, 'UTF-8') . "'";
-            }            
+                if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
+                    $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
+                } else {
+                    $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";
+                }                
+            }
             $char_condicao .= $chave . "=" . $valor;                           
 
             if($contador < $tamanho_array_condicao) {
@@ -194,6 +207,8 @@ function selecionar($char_tabela, $array_condicao) {
     }
 }
 
+####################################################################################################
+
 function excluir($char_tabela, $array_condicao) : bool {
     global $pdo;
     if(!is_array($array_condicao) && !is_string($char_tabela)) {
@@ -211,11 +226,16 @@ function excluir($char_tabela, $array_condicao) : bool {
     try {
         $contador = 1;
         $tamanho = count ($array_condicao);
-        foreach($array_condicao as $chave => $valor) {               
+        foreach($array_condicao as $chave => $valor) { 
+            if(verificarSQL($valor)) {
+                throw new Exception('Tentativa de SQL injection !');               
+            }
             if (!is_numeric($valor)) {
-                $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";                
-            } else  if (strstr($valor, '@') !== false || strstr($valor, '.') !== false ) {
-                $valores .= "'".  mb_strtolower( $valor, 'UTF-8') . "'";
+                if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
+                    $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
+                } else {
+                    $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";
+                }                
             }
             
             $char_condicao .= $chave . "=". $valor;               
@@ -242,11 +262,13 @@ function excluir($char_tabela, $array_condicao) : bool {
     }
 }
 
+####################################################################################################
+
 function retornar_numero_registros($char_tabela, $array_condicao) : int {
     global $pdo;
     
     if(!is_string($char_tabela) || !is_array($array_condicao)) {
-        throw new Exception('Tipos de parametros imcompatíveis !');        
+        throw new Exception('Tipos de parametros imcompatíveis !');
         return 0;
     }
     $char_condicao = '';
@@ -254,12 +276,18 @@ function retornar_numero_registros($char_tabela, $array_condicao) : int {
 
     try {
         $contador = 1;
-        foreach($array_condicao as $chave => $valor) {            
+        foreach($array_condicao as $chave => $valor) {
 
+            if(verificarSQL($valor)) {
+                throw new Exception('Tentativa de SQL injection !');               
+            }
+            
             if (!is_numeric($valor)) {
-                $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";                
-            } else  if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
-                $valor .= "'".  mb_strtolower( $valor, 'UTF-8') . "'";
+                if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
+                    $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
+                } else {
+                    $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";
+                }                
             }
                
             $char_condicao .= $chave . "=" . $valor;               
@@ -283,4 +311,13 @@ function retornar_numero_registros($char_tabela, $array_condicao) : int {
         $pdo->rollback();
         return 0;
     }
+}
+
+####################################################################################################
+
+function verificarSQL($valor) {
+    if (strstr(mb_strtoupper( $valor, 'UTF-8'), ' AND ') !== false || strstr(mb_strtoupper( $valor, 'UTF-8'), ' OR ') !== false|| strstr(mb_strtoupper( $valor, 'UTF-8'), ' OR ') !== false || strstr(mb_strtoupper( $valor, 'UTF-8'), 'UPDATE') !== false || strstr(mb_strtoupper( $valor, 'UTF-8'), 'DELETE') !== false || strstr(mb_strtoupper( $valor, 'UTF-8'), 'FROM') !== false) {
+        return TRUE;
+    }
+    return FALSE;
 }
