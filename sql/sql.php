@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', TRUE);
+error_reporting(E_ALL);
+
 require_once '../lib/biblioteca.php';
 
 $dsn = "mysql:host=localhost;dbname=bitcurriculos";
@@ -8,11 +11,11 @@ $pdo = NULL;
 try {
     $pdo = new PDO($dsn, $usuario, $senha);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    throw new PDOException($e);
+} catch (PDOException $pdoException) {
+    throw new PDOException($pdoException);
     $pdo->rollback();
     $retorno = FALSE;
-    echo "Erro na conexão:" . $e->getMessage();
+    echo "Erro na conexão:" . $pdoException->getMessage();
 }
         
 
@@ -35,6 +38,8 @@ function inserir($char_tabela, $array_model) : bool {
             
             if (!is_numeric($valor)) {
                 $valores .= "'".  mb_strtoupper( $valor, 'UTF-8') . "'";
+            } if (strstr($valor, '@') || strstr($valor, '.')) {
+                $valores .= "'".  mb_strtolower( $valor, 'UTF-8') . "'";
             } else {
                 $valores .= $valor;
             }
@@ -54,9 +59,9 @@ function inserir($char_tabela, $array_model) : bool {
         $pdo->commit();
         return TRUE;
     
-    } catch(PDOException $e) {
-        throw new PDOException($e);    
-        echo "Erro na inserção:" . $e->getMessage();
+    } catch(PDOException $pdoException) {
+        throw new PDOException($pdoException);    
+        echo "Erro na inserção:" . $pdoException->getMessage();
         $pdo->rollback();
         return FALSE;
     }
@@ -85,8 +90,9 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
 
         foreach($array_model as $chave => $valor) {
             if (!is_numeric($valor)) {
-                $valor = "'$valor'";    
-                $valor = mb_strtoupper( $valor, 'UTF-8');
+                $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";
+            } else if (strstr($valor, '@') || strstr($valor, '.')) {
+                $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
             }            
             
             $campos .= $chave . "=". $valor;               
@@ -101,8 +107,9 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         $tamanho = count ($array_condicao);
         foreach($array_condicao as $chave => $valor) {
             if (!is_numeric($valor)) {
-                $valor = "'$valor'";    
-                mb_strtoupper( $valor, 'UTF-8');
+                $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";                
+            } else  if (strstr($valor, '@') || strstr($valor, '.')) {
+                $valor .= "'".  mb_strtolower( $valor, 'UTF-8') . "'";
             }
             
             $char_condicao .= $chave . "=". $valor;               
@@ -119,9 +126,9 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         $stmt->execute(); 
         $pdo->commit();    
         return TRUE;
-    } catch(PDOException $e) {
-        throw new PDOException($e);    
-        echo "Erro na atualização:" . $e->getMessage();
+    } catch(PDOException $pdoException) {
+        throw new PDOException($pdoException);    
+        echo "Erro na atualização:" . $pdoException->getMessage();
         $pdo->rollback();
         return FALSE;
     }
@@ -143,7 +150,9 @@ function selecionar($char_tabela, $array_condicao) {
     try {
         foreach($array_condicao as $chave => $valor) {
             if (!is_numeric($valor)) {
-                $valor = "'$valor'";    
+                $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";                
+            } else  if (strstr($valor, '@') || strstr($valor, '.')) {
+                $valor .= "'".  mb_strtolower( $valor, 'UTF-8') . "'";
             }            
             $char_condicao .= $chave . "=" . $valor;                           
 
@@ -172,9 +181,9 @@ function selecionar($char_tabela, $array_condicao) {
         
         return json_encode($linhas);;
     
-    } catch(PDOException $e) {           
-        throw new PDOException($e);    
-        echo "Erro na seleção:" . $e->getMessage();
+    } catch(PDOException $pdoException) {           
+        throw new PDOException($pdoException);    
+        echo "Erro na seleção:" . $pdoException->getMessage();
         $pdo->rollback();
         return NULL;
     }
@@ -197,11 +206,12 @@ function excluir($char_tabela, $array_condicao) : bool {
     try {
         $contador = 1;
         $tamanho = count ($array_condicao);
-        foreach($array_condicao as $chave => $valor) {
+        foreach($array_condicao as $chave => $valor) {               
             if (!is_numeric($valor)) {
-                $valor = "'$valor'";    
-                $valor = mb_strtoupper( $valor, 'UTF-8');
-            }            
+                $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";                
+            } else  if (strstr($valor, '@') || strstr($valor, '.')) {
+                $valores .= "'".  mb_strtolower( $valor, 'UTF-8') . "'";
+            }
             
             $char_condicao .= $chave . "=". $valor;               
 
@@ -219,9 +229,9 @@ function excluir($char_tabela, $array_condicao) : bool {
 
         return TRUE;
     
-    } catch(PDOException $e) {
-        throw new PDOException($e);    
-        echo "Erro na exclusão:" . $e->getMessage();
+    } catch(PDOException $pdoException) {
+        throw new PDOException($pdoException);    
+        echo "Erro na exclusão:" . $pdoException->getMessage();
         $pdo->rollback();
         return FALSE;
     }
@@ -240,8 +250,14 @@ function retornar_numero_registros($char_tabela, $array_condicao) : int {
     try {
         $contador = 1;
         foreach($array_condicao as $chave => $valor) {            
+
+            if (!is_numeric($valor)) {
+                $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";                
+            } else  if (strstr($valor, '@') || strstr($valor, '.')) {
+                $valor .= "'".  mb_strtolower( $valor, 'UTF-8') . "'";
+            }
                
-            $char_condicao .= $chave . "=" . "'" . $valor . "'";               
+            $char_condicao .= $chave . "=" . $valor;               
 
             if($contador < $tamanho_array_condicao) {
                 $char_condicao .= ' AND ';
@@ -256,9 +272,9 @@ function retornar_numero_registros($char_tabela, $array_condicao) : int {
         $numero_registros = $stmt->fetchColumn(); 
         $pdo->commit();       
         return $numero_registros;    
-    } catch(PDOException $e) {           
-        throw new PDOException($e);    
-        echo "Erro na inserção:" . $e->getMessage();
+    } catch(PDOException $pdoException) {           
+        throw new PDOException($pdoException);    
+        echo "Erro na inserção:" . $pdoException->getMessage();
         $pdo->rollback();
         return 0;
     }
