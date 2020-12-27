@@ -49,20 +49,19 @@ function inserir($char_tabela, $array_model) : bool {
         }
         //exit("INSERT INTO $char_tabela ($campos) VALUES ($valores);");
         $pdo->beginTransaction();
-        $stmt = $pdo->prepare("INSERT INTO $char_tabela ($campos) VALUES ($valores);");
-        
-        $retorno = ($stmt->execute()) ? TRUE : FALSE;        
-        
+        $stmt = $pdo->prepare("INSERT INTO $char_tabela ($campos) VALUES ($valores);");        
+        $stmt->execute();        
         $pdo->commit();
+        return TRUE;
     
     } catch(PDOException $e) {
         throw new PDOException($e);    
         echo "Erro na inserção:" . $e->getMessage();
         $pdo->rollback();
-        $retorno = FALSE;
+        return FALSE;
     }
 
-    return $retorno;
+    return FALSE;
 }
 
 function atualizar($char_tabela, $array_model, $array_condicao) : bool {
@@ -117,17 +116,16 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         $pdo->beginTransaction();
         //die("UPDATE $char_tabela SET $campos WHERE ($char_condicao);");
         $stmt = $pdo->prepare("UPDATE $char_tabela SET $campos WHERE ($char_condicao);");            
-    
-        $pdo->commit();
-        $retorno = ($stmt->execute()) ? TRUE : FALSE; 
-    
+        $stmt->execute(); 
+        $pdo->commit();    
+        return TRUE;
     } catch(PDOException $e) {
         throw new PDOException($e);    
         echo "Erro na atualização:" . $e->getMessage();
         $pdo->rollback();
-        $retorno = FALSE;
+        return FALSE;
     }
-    return $retorno;
+    return FALSE;
 }
 
 function selecionar($char_tabela, $array_condicao) {
@@ -135,7 +133,7 @@ function selecionar($char_tabela, $array_condicao) {
     
     if(!is_array($array_condicao) || !is_string($char_tabela)) {
         throw new Exception('Tipos de parametros imcompatíveis !');
-        return FALSE;
+        return NULL;
     }
 
     $char_condicao = '';
@@ -155,7 +153,6 @@ function selecionar($char_tabela, $array_condicao) {
             $contador++;
         }
         
-        
         $stmt = NULL;
         
         if (!empty($array_condicao)) {
@@ -167,10 +164,11 @@ function selecionar($char_tabela, $array_condicao) {
 
         if (!$stmt->execute()) {
             throw new Exception('Não executou !');            
-            return FALSE;
+            return NULL;
         }
-        
+        $pdo->beginTransaction();        
         $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $pdo->commit();
         
         return json_encode($linhas);;
     
@@ -178,7 +176,7 @@ function selecionar($char_tabela, $array_condicao) {
         throw new PDOException($e);    
         echo "Erro na seleção:" . $e->getMessage();
         $pdo->rollback();
-        $retorno = FALSE;
+        return NULL;
     }
 }
 
@@ -225,7 +223,7 @@ function excluir($char_tabela, $array_condicao) : bool {
         throw new PDOException($e);    
         echo "Erro na exclusão:" . $e->getMessage();
         $pdo->rollback();
-        $retorno = FALSE;
+        return FALSE;
     }
 }
 
@@ -236,7 +234,6 @@ function retornar_numero_registros($char_tabela, $array_condicao) : int {
         throw new Exception('Tipos de parametros imcompatíveis !');        
         return 0;
     }
-
     $char_condicao = '';
     $tamanho_array_condicao = count ($array_condicao);        
 
@@ -250,17 +247,19 @@ function retornar_numero_registros($char_tabela, $array_condicao) : int {
                 $char_condicao .= ' AND ';
             }
             $contador++;
-        }
-        
+        }        
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM $char_tabela WHERE ($char_condicao);");
         if (!$stmt->execute()) {
             return 0;
         }
-        
-        return $stmt->fetchColumn(); 
-    
+        $pdo->beginTransaction();
+        $numero_registros = $stmt->fetchColumn(); 
+        $pdo->commit();       
+        return $numero_registros;    
     } catch(PDOException $e) {           
-        throw new PDOException($e);
+        throw new PDOException($e);    
+        echo "Erro na inserção:" . $e->getMessage();
+        $pdo->rollback();
         return 0;
     }
 }

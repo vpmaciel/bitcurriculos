@@ -27,7 +27,9 @@ echo $TABLE;
 
 $curso_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $curso_model['usu_int_id'];
-$curso_json = json_decode(selecionar('curso', $curso_model));      
+$curso_json = json_decode(selecionar('curso', $curso_model));
+echo $TR . $TD . '<a href="curso.php">Cadastrar novo curso</a><br>' . $TD_ . $TR_; 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 
 foreach($curso_json as $registro) {
 	$curso_model = array();
