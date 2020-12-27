@@ -16,7 +16,7 @@ require_once 'menu.php';
 echo $DIV_MAIN;
 echo $H1 . 'OBJETIVO PROFISSIONAL' . $H1_;
 
-$FORM = '<form action="../controller/objetivoprofissional.php" method="post">';
+$FORM = '<form action="../controller/objetivoprofissional.php" method="get">';
 
 echo $FORM;
 

@@ -16,35 +16,42 @@ require_once 'menu.php';
 echo $DIV_MAIN;
 echo $H1 . 'EXPERIÊNCIA PROFISSIONAL' . $H1_;
 
-$FORM = '<form action="../controller/experienciaprofissional.php" method="post">';
+$FORM = '<form action="../controller/experiencia_profissional.php" method="get">';
+if (isset($_GET['experiencia_profissional_model'])) {
+	$experiencia_profissional_model_get = $_GET['experiencia_profissional_model'];
+}
 
 echo $FORM;
 
 echo $TABLE;
 
+$experiencia_profissional_model['exp_prof_int_id'] = isset($_GET['experiencia_profissional_model']) ? $experiencia_profissional_model_get['exp_prof_int_id'] : '';
+$INPUT = '<input type="hidden" name="exp_prof_int_id"  value="' . $experiencia_profissional_model['exp_prof_int_id'] .'">';
+echo $INPUT;
+
 echo $TR . $TD . $LABEL . 'Empresa' . $LABEL_ . $TD_ . $TR_;
-$pessoa['char_empresa'] = isset($_POST['char_empresa'])?$_POST['char_empresa']:'';
-$INPUT = '<input type="text" name="char_empresa" required size="70" minlength="1" maxlength="50" value="' . $pessoa['char_empresa'] .'">';
+$experiencia_profissional_model['exp_prof_char_empresa'] = isset($_GET['experiencia_profissional_model']) ? $experiencia_profissional_model_get['exp_prof_int_id'] : '';
+$INPUT = '<input type="text" name="exp_prof_char_empresa" required size="70" maxlength="50" value="' . $experiencia_profissional_model['exp_prof_char_empresa'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_;
-$pessoa['char_cargo'] = isset($_POST['char_cargo'])?$_POST['char_cargo']:'';
-$INPUT = '<input type="text" name="char_cargo" required size="70" minlength="1" maxlength="50" value="' . $pessoa['char_cargo'] .'">';
+$experiencia_profissional_model['exp_prof_char_cargo'] = isset($_GET['experiencia_profissional_model']) ? $experiencia_profissional_model_get['exp_prof_int_id'] : '';
+$INPUT = '<input type="text" name="exp_prof_char_cargo" required size="70" maxlength="50" value="' . $experiencia_profissional_model['exp_prof_char_cargo'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Data de admissão' . $LABEL_ . $TD_ . $TR_;
-$pessoa['date_data_admissao'] = isset($_POST['date_data_admissao'])?$_POST['date_data_admissao']:'';
-$INPUT = '<input type="text" name="date_data_admissao" required size="70" required onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['date_data_admissao'] .'">';
+$experiencia_profissional_model['exp_prof_date_data_admissao'] = isset($_GET['experiencia_profissional_model']) ? $experiencia_profissional_model_get['exp_prof_int_id'] : '';
+$INPUT = '<input type="text" name="exp_prof_date_data_admissao" required size="70" maxlength="10" value="' . $experiencia_profissional_model['exp_prof_date_data_admissao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Data de saída' . $LABEL_ . $TD_ . $TR_;
-$pessoa['date_data_saida'] = isset($_POST['date_data_saida'])?$_POST['date_data_saida']:'';
-$INPUT = '<input type="text" name="date_data_saida" size="70" onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['date_data_saida'] .'">';
+$experiencia_profissional_model['exp_prof_date_data_saida'] = isset($_GET['experiencia_profissional_model']) ? $experiencia_profissional_model_get['exp_prof_int_id'] : '';
+$INPUT = '<input type="text" name="exp_prof_date_data_saida" size="70"  maxlength="10" value="' . $experiencia_profissional_model['exp_prof_date_data_saida'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Funções' . $LABEL_ . $TD_ . $TR_;
-$pessoa['char_funcoes'] = isset($_POST['char_funcoes'])?$_POST['char_funcoes']:'';
-$TEXTAREA = '<textarea  name="char_funcoes" maxlength="500" rows="4" cols="50">' . $pessoa['char_funcoes'] .'</textarea>';
+$experiencia_profissional_model['exp_prof_char_funcoes'] = isset($_GET['experiencia_profissional_model']) ? $experiencia_profissional_model_get['exp_prof_int_id'] : '';
+$TEXTAREA = '<textarea  name="exp_prof_char_funcoes" maxlength="500" rows="4" cols="50">' . $experiencia_profissional_model['exp_prof_char_funcoes'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;

@@ -26,7 +26,7 @@ echo $TABLE;
 $certificacao_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $certificacao_model['usu_int_id'];
 $certificacao_json = json_decode(selecionar('certificacao', $certificacao_model));
-echo $TR . $TD . '<a href="certificacao.php">Cadastrar nova certificacao</a><br>' . $TD_ . $TR_; 
+echo $TR . $TD . '<a href="certificacao.php">Cadastrar Certificação</a><br>' . $TD_ . $TR_; 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 
 foreach($certificacao_json as $registro) {

@@ -1,6 +1,76 @@
 <?php
 session_start();
-if (!isset($_SESSION["usuario_id"]))
-{
-	//header("location: erro.php?erro=1");
+
+if(!isset($_SESSION['usu_int_id'])) {
+	header('location:..\view\erro.php?e=UNL');
 }
+require_once '../lib/biblioteca.php';
+require_once '../model/model.php';
+require_once '../sql/sql.php';
+
+$acao = '';
+
+if(isset($_GET['acao'])){
+    $acao = $_GET['acao'];
+}
+
+####################################################################################################
+
+$experiencia_profissional_model['exp_prof_int_id'] = $_GET['exp_prof_int_id'];
+
+$resultado_numero_registros = retornar_numero_registros('experiencia_profissional', $experiencia_profissional_model);
+
+$experiencia_profissional_model['exp_prof_int_id'] = $_GET['exp_prof_int_id'];
+$experiencia_profissional_model['usu_int_id'] = $_SESSION['usu_int_id'];
+$experiencia_profissional_model['exp_prof_char_empresa'] = $_GET['exp_prof_char_empresa'];
+$experiencia_profissional_model['exp_prof_char_cargo'] = $_GET['exp_prof_char_cargo'];
+$experiencia_profissional_model['exp_prof_date_data_admissao'] = $_GET['exp_prof_date_data_admissao'];
+$experiencia_profissional_model['exp_prof_date_data_saida'] = $_GET['exp_prof_date_data_saida'];
+$experiencia_profissional_model['exp_prof_char_funcoes'] = $_GET['exp_prof_char_funcoes'];
+
+####################################################################################################
+
+if ($acao == 'excluir') {
+
+	$experiencia_profissional_model = $_GET['experiencia_profissional_model'];
+
+	$resultado_excluir = excluir('experiencia_profissional', $experiencia_profissional_model);
+
+	if ($resultado_excluir == TRUE) {
+		
+		header('location:..\view\sucesso.php');
+		exit;
+	} else {
+		header('location: ..\view\erro.php?e=OPN');
+		exit;
+	}   			
+}
+
+if ($resultado_numero_registros == 0) {
+    $resultado_inserir = inserir('experiencia_profissional', $experiencia_profissional_model);
+    
+    if ($resultado_inserir == TRUE) {
+		header('location:..\view\sucesso.php');
+		exit;
+	} else {
+		header('location: ..\view\erro.php?e=OPN');
+		exit;
+	} 
+} else {
+    
+	$condicao['usu_int_id'] = $_SESSION['usu_int_id'];
+	$condicao['exp_prof_int_id'] = $_GET['exp_prof_int_id'];
+
+	
+	$resultado_atualizar = atualizar('experiencia_profissional', $experiencia_profissional_model, $condicao);
+	
+	if ($resultado_atualizar == TRUE) {
+		
+		header('location:..\view\sucesso.php');
+		exit;
+	} else {
+		header('location: ..\view\erro.php?e=OPN');
+		exit;
+	}   
+}
+####################################################################################################
