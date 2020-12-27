@@ -42,6 +42,7 @@ foreach($curso_json as $registro) {
 	foreach ($curso_model as $k=>$v){ 
 		$str .= "curso_model[$k]" . "=" . $v . "&";                        
 	}
+	//print_r($array_situacao);exit;
 	echo $TR . $TD . $LABEL . 'Nome do curso: ' . $curso_model['cur_char_nome'] . $LABEL_ . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . 'Instituição: ' . $curso_model['cur_char_instituicao'] . $LABEL_ . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . 'Ano de início: ' . $curso_model['cur_year_ano_inicio'] . $LABEL_ . $TD_ . $TR_; 

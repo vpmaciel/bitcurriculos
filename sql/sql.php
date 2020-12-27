@@ -177,7 +177,8 @@ function selecionar($char_tabela, $array_condicao) {
 }
 
 function excluir($char_tabela, $array_condicao) : bool {
-    if(!is_array($array_condicao) && !is_array($char_tabela)) {
+    global $pdo;
+    if(!is_array($array_condicao) && !is_string($char_tabela)) {
         throw new Exception('Tipos de parametros imcompatíveis !');        
         return FALSE;
     }
@@ -185,7 +186,7 @@ function excluir($char_tabela, $array_condicao) : bool {
     $char_condicao = '';
     $tamanho = count ($array_condicao);
     $contador = 1;
-    if($tamanho == 0 || !isset($array_condicao)) {
+    if($tamanho == 0 || !isset($array_condicao)) {exit("a");
         return FALSE;
     }   
     
@@ -207,7 +208,8 @@ function excluir($char_tabela, $array_condicao) : bool {
         }
 
         $pdo->beginTransaction();
-        $stmt = $pdo->prepare("DELETE FROM $char_tabela WHERE ($char_condicao);");            
+        exit("DELETE FROM $char_tabela WHERE ($char_condicao);");
+        $stmt = $pdo->prepare("DELETE FROM $char_tabela WHERE ($char_condicao);");
         
         $pdo->commit();
 

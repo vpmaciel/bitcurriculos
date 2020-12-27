@@ -15,12 +15,6 @@ $acao = '';
 
 if(isset($_GET['acao'])){
     $acao = $_GET['acao'];
-
-    if ($acao == 'carregar') {
-        goto CARREGAR;
-	} else if ($acao == 'excluir') {
-		goto EXCLUIR;
-	}
 }
 
 ####################################################################################################
@@ -39,6 +33,19 @@ $curso_model['cur_int_situacao'] = $_GET['cur_int_situacao'];
 $curso_model['cur_int_nivel'] = $_GET['cur_int_nivel'];
 
 ####################################################################################################
+
+if ($acao == 'excluir') {
+	$resultado_excluir = excluir('curso', $curso_model);
+
+	if ($resultado_excluir == TRUE) {
+		
+		header('location:..\view\sucesso.php');
+		exit;
+	} else {
+		header('location: ..\view\erro.php?e=OPN');
+		exit;
+	}   			
+}
 
 if ($resultado_numero_registros == 0) {
     $resultado_inserir = inserir('curso', $curso_model);
@@ -69,17 +76,3 @@ if ($resultado_numero_registros == 0) {
 }
 ####################################################################################################
 
-EXCLUIR:
-{
-	$resultado_excluir = exlcuir('curso', $curso_model);
-
-	if ($resultado_excluir == TRUE) {
-		header('location:..\view\sucesso.php');
-		exit;
-	} else {
-		header('location: ..\view\erro.php?e=OPN');
-		exit;
-	} 
-}
-
-####################################################################################################
