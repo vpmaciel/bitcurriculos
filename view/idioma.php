@@ -16,33 +16,35 @@ require_once 'menu.php';
 echo $DIV_MAIN;
 echo $H1 . 'IDIOMA' . $H1_;
 
-$FORM_PESSOA = '<form action="../controller/curso.php" method="post">';
+$FORM = '<form action="../controller/idioma.php" method="get">';
 
-echo $FORM_PESSOA;
+echo $FORM;
+
+if (isset($_GET['idioma_model'])) {
+	$idioma_model_get = $_GET['idioma_model'];
+}
 
 echo $TABLE;
 
+$idioma_model['idi_int_id'] = isset($_GET['idioma_model']) ? $idioma_model_get['idi_int_id'] : '';
+$INPUT = '<input type="hidden" name="idi_int_id"  value="' . $idioma_model['idi_int_id'] .'">';
+echo $INPUT;
+
 echo $TR . $TD . $LABEL . 'Idioma' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
-$SELECT = '<select name="int_idioma">';
+$SELECT = '<select name="idi_int_idioma">';
 echo $SELECT;
-foreach ($array_idioma as $indice => $int_idioma) {	
-	if ($indice == 0) {
-		continue;
-	}
-	echo ($int_idioma == $pessoa['int_idioma'])	? "<option value=$indice selected>$int_idioma</option>" : "<option value=$indice>$int_idioma</option>";
+foreach ($array_idioma as $indice => $idi_int_idioma) {	
+	echo ($indice == $idioma_model_get['idi_int_idioma']) ? "<option value=$indice selected>$idi_int_idioma</option>" : "<option value=$indice>$idi_int_idioma</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Nível de conhecimento' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
-$SELECT = '<select name="int_nivel_conhecimento">';
+$SELECT = '<select name="idi_int_nivel_conhecimento">';
 echo $SELECT;
-foreach ($array_nivel_conhecimento_idioma as $indice => $int_nivel_conhecimento) {	
-	if ($indice == 0) {
-		continue;
-	}
-	echo ($int_nivel_conhecimento == $pessoa['int_nivel_conhecimento'])	? "<option value=$indice selected>$int_nivel_conhecimento</option>" : "<option value=$indice>$int_nivel_conhecimento</option>";
+foreach ($array_nivel_conhecimento_idioma as $indice => $idi_int_nivel_conhecimento) {		
+	echo ($indice == $idioma_model_get['idi_int_nivel_conhecimento']) ? "<option value=$indice selected>$idi_int_nivel_conhecimento</option>" : "<option value=$indice>$idi_int_nivel_conhecimento</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 

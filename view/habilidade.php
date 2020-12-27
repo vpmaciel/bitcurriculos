@@ -16,11 +16,18 @@ require_once 'menu.php';
 echo $DIV_MAIN;
 echo $H1 . 'HABILIDADE' . $H1_;
 
-$FORM_PESSOA = '<form action="../controller/habilidade.php" method="post">';
+$FORM = '<form action="../controller/habilidade.php" method="post">';
+echo $FORM;
 
-echo $FORM_PESSOA;
+if (isset($_GET['objetivo_profissional_model'])) {
+	$objetivo_profissional_model_get = $_GET['objetivo_profissional_model'];
+}
 
 echo $TABLE;
+
+$objetivo_profissional_model['obj_pro_int_id'] = isset($_GET['objetivo_profissional_model']) ? $objetivo_profissional_model_get['obj_pro_int_id'] : '';
+$INPUT = '<input type="hidden" name="obj_pro_int_id"  value="' . $objetivo_profissional_model['obj_pro_int_id'] .'">';
+echo $INPUT;
 
 echo $TR . $TD . $LABEL . 'Habilidade' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['char_habilidade'] = isset($_POST['char_habilidade'])?$_POST['char_habilidade']:'';
@@ -32,10 +39,7 @@ echo $TR. $TD;
 $SELECT = '<select name="int_nivel_conhecimento">';
 echo $SELECT;
 foreach ($array_nivel_conhecimento as $indice => $int_nivel_conhecimento) {	
-	if ($indice == 0) {
-		continue;
-	}
-	echo ($int_nivel_conhecimento == $pessoa['int_nivel_conhecimento'])	? "<option value=$indice selected>$int_nivel_conhecimento</option>" : "<option value=$indice>$int_nivel_conhecimento</option>";
+	echo ($indice == $objetivo_profissional_model_get['obj_pro_int_pretensao_salarial']) ? "<option value=$indice selected>$obj_pro_int_pretensao_salarial</option>" : "<option value=$indice>$obj_pro_int_pretensao_salarial</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
