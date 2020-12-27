@@ -91,7 +91,7 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         foreach($array_model as $chave => $valor) {
             if (!is_numeric($valor)) {
                 $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";
-            } else if (strstr($valor, '@') || strstr($valor, '.')) {
+            } else if (strstr($valor, 'http') || strstr($valor, 'www') || strstr($valor, '@')) {
                 $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
             }            
             

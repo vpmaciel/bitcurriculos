@@ -20,8 +20,7 @@ select, input, textarea, select:focus, input:focus, textarea:focus {
     border-radius: 0px;
     outline: none;
     box-shadow: none;
-    border: 1px solid#6d7874;
-	text-transform: uppercase;
+    border: 1px solid#6d7874;	
 	font-size: 12px;	
 	padding: 2px;
 	width: 100%;
@@ -99,9 +98,6 @@ body {
 	display: table;
 	clear: both;
 	min-height: 100%;
-}
-input[type="email"] ,input[type="url"] {
-	text-transform: lowercase;
 }
 @media only screen and (max-width: 1259px) {
 	.esquerda {
