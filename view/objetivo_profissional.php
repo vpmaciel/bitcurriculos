@@ -16,48 +16,38 @@ require_once 'menu.php';
 echo $DIV_MAIN;
 echo $H1 . 'OBJETIVO PROFISSIONAL' . $H1_;
 
-$FORM = '<form action="../controller/objetivoprofissional.php" method="get">';
-
-if (isset($_GET['curso_model'])) {
-	$curso_model_get = $_GET['curso_model'];
+$FORM = '<form action="../controller/objetivo_profissional.php" method="get">';
+echo $FORM;
+if (isset($_GET['objetivo_profissional_model'])) {
+	$objetivo_profissional_model_get = $_GET['objetivo_profissional_model'];
 }
 
 echo $TABLE;
 
-$curso_model['cur_int_id'] = isset($_GET['curso_model']) ? $curso_model_get['cur_int_id'] : '';
-$INPUT = '<input type="hidden" name="cur_int_id"  value="' . $curso_model['cur_int_id'] .'">';
-echo $INPUT;
-
-$curso['cur_char_nome'] = isset($_GET['curso_model']) ? $curso_model_get['cur_char_nome'] : '';
-$INPUT = '<input type="hidden" name="exp_prof_int_id"  value="' . $experiencia_profissional_model['exp_prof_int_id'] .'">';
+$objetivo_profissional_model['obj_pro_int_id'] = isset($_GET['objetivo_profissional_model']) ? $objetivo_profissional_model_get['obj_pro_int_id'] : '';
+$INPUT = '<input type="hidden" name="obj_pro_int_id"  value="' . $objetivo_profissional_model['obj_pro_int_id'] .'">';
 echo $INPUT;
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_;
-$pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';
-$CARGO = '<input type="text" name="nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa['nome'] .'">';
+$objetivo_profissional_model['obj_pro_char_cargo'] = isset($_GET['objetivo_profissional_model']) ? $objetivo_profissional_model_get['obj_pro_char_cargo'] : '';
+$CARGO = '<input type="text" name="obj_pro_char_cargo" required size="70" minlength="10" maxlength="50" value="' . $objetivo_profissional_model['obj_pro_char_cargo'] .'">';
 echo $TR. $TD . $CARGO . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Pretensão salarial' . $LABEL_ . $TD_ . $TR_;
 echo $TR. $TD;
-$SELECT = '<select name="$pretensao_salario">';
+$SELECT = '<select name="$obj_pro_int_pretensao_salarial">';
 echo $SELECT;
-foreach ($array_pretensao_salarial as $indice => $pretensao_salario) {	
-	if ($indice == 0) {
-		continue;
-	}
-	echo ($pretensao_salario == $pessoa['$pretensao_salario'])	? "<option value=$indice selected>$pretensao_salario</option>" : "<option value=$indice>$pretensao_salario</option>";
+foreach ($array_pretensao_salarial as $indice => $obj_pro_int_pretensao_salarial) {		
+	echo ($indice == $objetivo_profissional_model_get['obj_pro_int_pretensao_salarial']) ? "<option value=$indice selected>$obj_pro_int_pretensao_salarial</option>" : "<option value=$indice>$obj_pro_int_pretensao_salarial</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Contrato' . $LABEL_ . $TD_ . $TR_;
 echo $TR. $TD;
-$SELECT = '<select name="contrato">';
+$SELECT = '<select name="obj_pro_int_contrato">';
 echo $SELECT;
-foreach ($array_contrato as $indice => $contrato) {	
-	if ($indice == 0) {
-		continue;
-	}
-	echo ($contrato == $pessoa['contrato'])	? "<option value=$indice selected>$contrato</option>" : "<option value=$indice>$contrato</option>";
+foreach ($array_contrato as $indice => $obj_pro_int_contrato) {	
+	echo ($indice == $objetivo_profissional_model_get['obj_pro_int_contrato']) ? "<option value=$indice selected>$obj_pro_int_contrato</option>" : "<option value=$indice>$obj_pro_int_contrato</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
