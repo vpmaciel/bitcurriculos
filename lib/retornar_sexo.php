@@ -1,8 +1,8 @@
 <?php
 function retornar_sexo() : array {
     $VALOR = array(        
-        1 => 'MASCULINO',
-        2 => 'FEMININO'
+        'MASCULINO',
+        'FEMININO'
     );
     return $VALOR;
 }

@@ -1,11 +1,11 @@
 <?php
 function retornar_estado_civil() : array {
     $VALOR = array(        
-        1 => 'SOLTEIRO',
-        2 => 'CASADO',
-        3 => 'SEPARADO',
-        4 => 'DIVORCIADO',
-        5 => 'VIÚVO'
+        'SOLTEIRO',
+        'CASADO',
+        'SEPARADO',
+        'DIVORCIADO',
+        'VIÚVO'
     );
     return $VALOR;
 }

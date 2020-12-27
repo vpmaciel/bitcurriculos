@@ -1,8 +1,8 @@
 <?php
 function retornar_resposta() : array {
     $VALOR = array(        
-        1 => 'SIM',
-        2 => 'NÃO'
+        'SIM',
+        'NÃO'
     );
     return $VALOR;
 }

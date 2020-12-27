@@ -1,8 +1,8 @@
 <?php
 function retornar_pais() : array {
     $VALOR = array(        
-        1 => 'BRASIL',
-        2 => 'EXTERIOR'
+        'BRASIL',
+        'EXTERIOR'
     );
     return $VALOR;
 }

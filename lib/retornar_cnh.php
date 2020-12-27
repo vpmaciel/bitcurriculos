@@ -2,9 +2,9 @@
 function retonar_cnh() : array
 {
     $VALOR = array(        
-        1 => 'NÃO POSSUI',
-        2 => 'A',
-        3 => 'B',
+        'NÃO POSSUI',
+        'A',
+        'B',
     );
 
     return $VALOR;

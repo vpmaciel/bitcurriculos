@@ -1,9 +1,9 @@
 <?php
 function retornar_nivel_conhecimento() : array {
     $VALOR = array(        
-        1 => 'BÁSICO',
-        2 => 'INTERMEDIÁRIO',
-        3 => 'AVANÇADO'
+        'BÁSICO',
+        'INTERMEDIÁRIO',
+        'AVANÇADO'
     );
     return $VALOR;
 }
