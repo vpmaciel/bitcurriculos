@@ -39,7 +39,8 @@ function inserir($char_tabela, $array_model) : bool {
             if(verificarSQL($valor)) {
                 throw new Exception('Tentativa de SQL injection !');               
             }
-            $valor = trim($valor);
+            $valor = remover_caracteres($valor);
+            
             if (!is_numeric($valor)) {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
@@ -98,7 +99,7 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
             if(verificarSQL($valor)) {
                 throw new Exception('Tentativa de SQL injection !');               
             }
-            $valor = trim($valor);
+            $valor = remover_caracteres($valor);
             if (!is_numeric($valor)) {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
@@ -118,7 +119,7 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         $contador = 1;
         $tamanho = count ($array_condicao);
         foreach($array_condicao as $chave => $valor) {
-            $valor = trim($valor);
+            $valor = remover_caracteres($valor);
             if (!is_numeric($valor)) {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
@@ -168,7 +169,7 @@ function selecionar($char_tabela, $array_condicao) {
             if(verificarSQL($valor)) {
                 throw new Exception('Tentativa de SQL injection !');               
             }
-            $valor = trim($valor);
+            $valor = remover_caracteres($valor);
             if (!is_numeric($valor)) {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
@@ -234,6 +235,7 @@ function excluir($char_tabela, $array_condicao) : bool {
             if(verificarSQL($valor)) {
                 throw new Exception('Tentativa de SQL injection !');               
             }
+            $valor = remover_caracteres($valor);
             if (!is_numeric($valor)) {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
@@ -285,7 +287,7 @@ function retornar_numero_registros($char_tabela, $array_condicao) : int {
             if(verificarSQL($valor)) {
                 throw new Exception('Tentativa de SQL injection !');               
             }
-            
+            $valor = remover_caracteres($valor);
             if (!is_numeric($valor)) {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
@@ -324,4 +326,12 @@ function verificarSQL($valor) {
         return TRUE;
     }
     return FALSE;
+}
+
+####################################################################################################
+
+function remover_caracteres($valor) {
+    $remover = array("\\", "'", "\"", "o", "\r\n", "\n", "\r");
+    $retorno = str_replace($remover, "", $valor);
+    return trim($retorno);
 }

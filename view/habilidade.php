@@ -18,28 +18,27 @@ echo $H1 . 'HABILIDADE' . $H1_;
 
 $FORM = '<form action="../controller/habilidade.php" method="post">';
 echo $FORM;
-
-if (isset($_GET['objetivo_profissional_model'])) {
-	$objetivo_profissional_model_get = $_GET['objetivo_profissional_model'];
+if (isset($_GET['habilidade_model'])) {
+	$habilidade_model_get = $_GET['habilidade_model'];
 }
 
 echo $TABLE;
 
-$objetivo_profissional_model['obj_pro_int_id'] = isset($_GET['objetivo_profissional_model']) ? $objetivo_profissional_model_get['obj_pro_int_id'] : '';
-$INPUT = '<input type="hidden" name="obj_pro_int_id"  value="' . $objetivo_profissional_model['obj_pro_int_id'] .'">';
+$habilidade_model['hab_int_id'] = isset($_GET['habilidade_model']) ? $habilidade_model_get['hab_int_id'] : '';
+$INPUT = '<input type="hidden" name="hab_int_id"  value="' . $habilidade_model['hab_int_id'] .'">';
 echo $INPUT;
 
 echo $TR . $TD . $LABEL . 'Habilidade' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['char_habilidade'] = isset($_POST['char_habilidade'])?$_POST['char_habilidade']:'';
-$INPUT = '<input type="text" name="char_habilidade" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_habilidade'] .'">';
+$habilidade_model['hab_char_habilidade'] = isset($_GET['habilidade_model']) ? $habilidade_model_get['hab_char_habilidade'] : '';
+$INPUT = '<input type="text" name="hab_char_habilidade" required size="70" maxlength="50" value="' . $habilidade_model['hab_char_habilidade'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Nível' . $LABEL_ . $TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="int_nivel_conhecimento">';
+$SELECT = '<select name="hab_int_nivel_conhecimento">';
 echo $SELECT;
-foreach ($array_nivel_conhecimento as $indice => $int_nivel_conhecimento) {	
-	echo ($indice == $objetivo_profissional_model_get['obj_pro_int_pretensao_salarial']) ? "<option value=$indice selected>$obj_pro_int_pretensao_salarial</option>" : "<option value=$indice>$obj_pro_int_pretensao_salarial</option>";
+foreach ($array_nivel_conhecimento as $indice => $hab_int_nivel_conhecimento) {	
+	echo ($indice == $habilidade_model_get['hab_int_nivel_conhecimento']) ? "<option value=$indice selected>$hab_int_nivel_conhecimento</option>" : "<option value=$indice>$hab_int_nivel_conhecimento</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
