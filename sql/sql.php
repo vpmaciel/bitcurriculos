@@ -39,6 +39,7 @@ function inserir($char_tabela, $array_model) : bool {
             if(verificarSQL($valor)) {
                 throw new Exception('Tentativa de SQL injection !');               
             }
+            $valor = trim($valor);
             if (!is_numeric($valor)) {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
@@ -97,6 +98,7 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
             if(verificarSQL($valor)) {
                 throw new Exception('Tentativa de SQL injection !');               
             }
+            $valor = trim($valor);
             if (!is_numeric($valor)) {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
@@ -116,6 +118,7 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         $contador = 1;
         $tamanho = count ($array_condicao);
         foreach($array_condicao as $chave => $valor) {
+            $valor = trim($valor);
             if (!is_numeric($valor)) {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
@@ -165,6 +168,7 @@ function selecionar($char_tabela, $array_condicao) {
             if(verificarSQL($valor)) {
                 throw new Exception('Tentativa de SQL injection !');               
             }
+            $valor = trim($valor);
             if (!is_numeric($valor)) {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
