@@ -18,9 +18,19 @@ echo $H1 . 'OBJETIVO PROFISSIONAL' . $H1_;
 
 $FORM = '<form action="../controller/objetivoprofissional.php" method="get">';
 
-echo $FORM;
+if (isset($_GET['curso_model'])) {
+	$curso_model_get = $_GET['curso_model'];
+}
 
 echo $TABLE;
+
+$curso_model['cur_int_id'] = isset($_GET['curso_model']) ? $curso_model_get['cur_int_id'] : '';
+$INPUT = '<input type="hidden" name="cur_int_id"  value="' . $curso_model['cur_int_id'] .'">';
+echo $INPUT;
+
+$curso['cur_char_nome'] = isset($_GET['curso_model']) ? $curso_model_get['cur_char_nome'] : '';
+$INPUT = '<input type="hidden" name="exp_prof_int_id"  value="' . $experiencia_profissional_model['exp_prof_int_id'] .'">';
+echo $INPUT;
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_;
 $pessoa['nome'] = isset($_POST['nome'])?$_POST['nome']:'';

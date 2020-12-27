@@ -24,8 +24,8 @@ $experiencia_profissional_model['exp_prof_int_id'] = $_GET['exp_prof_int_id'];
 $experiencia_profissional_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $experiencia_profissional_model['exp_prof_char_empresa'] = $_GET['exp_prof_char_empresa'];
 $experiencia_profissional_model['exp_prof_char_cargo'] = $_GET['exp_prof_char_cargo'];
-$experiencia_profissional_model['exp_prof_date_data_admissao'] = $_GET['exp_prof_date_data_admissao'];
-$experiencia_profissional_model['exp_prof_date_data_saida'] = $_GET['exp_prof_date_data_saida'];
+$experiencia_profissional_model['exp_prof_char_data_admissao'] = $_GET['exp_prof_char_data_admissao'];
+$experiencia_profissional_model['exp_prof_char_data_saida'] = $_GET['exp_prof_char_data_saida'];
 $experiencia_profissional_model['exp_prof_char_funcoes'] = $_GET['exp_prof_char_funcoes'];
 
 ####################################################################################################

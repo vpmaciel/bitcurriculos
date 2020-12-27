@@ -17,7 +17,7 @@ echo $BODY;
 require_once 'menu.php';
 
 echo $DIV_MAIN;
-echo $H1 . 'CURSO' . $H1_;
+echo $H1 . 'CERTIFICAÇÃO' . $H1_;
 
 $FORM = '<form action="../controller/certificacao.php" method="get">';
 

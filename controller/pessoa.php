@@ -27,7 +27,7 @@ $resultado_numero_registros = retornar_numero_registros('pessoa', $pessoa_model)
 $pessoa_model['pes_char_nome'] = $_GET['pes_char_nome'];
 $pessoa_model['pes_char_url_repositorio_codigos'] = urlencode($_GET['pes_char_url_repositorio_codigos']);
 $pessoa_model['pes_char_url_linkedin'] = urlencode($_GET['pes_char_url_linkedin']);
-$pessoa_model['pes_date_data_nascimento'] = date("Y-m-d", strtotime($_GET['pes_date_data_nascimento']));
+$pessoa_model['pes_char_data_nascimento'] = $_GET['pes_char_data_nascimento'];
 $pessoa_model['pes_char_celular_numero'] = $_GET['pes_char_celular_numero'];
 $pessoa_model['pes_bit_sexo'] = $_GET['pes_bit_sexo'];
 $pessoa_model['pes_int_escolaridade'] = $_GET['pes_int_escolaridade'];
@@ -89,7 +89,7 @@ CARREGAR:
         $pessoa_model['pes_char_nome'] = $registro->pes_char_nome;
         $pessoa_model['pes_char_url_repositorio_codigos'] = $registro->pes_char_url_repositorio_codigos;
         $pessoa_model['pes_char_url_linkedin'] = $registro->pes_char_url_linkedin;
-        $pessoa_model['pes_date_data_nascimento'] = date("d-m-Y", strtotime("" . $registro->pes_date_data_nascimento));
+        $pessoa_model['pes_char_data_nascimento'] = $registro->pes_char_data_nascimento;
         $pessoa_model['pes_char_celular_numero'] = $registro->pes_char_celular_numero;
         $pessoa_model['pes_bit_sexo'] = $registro->pes_bit_sexo;
         $pessoa_model['pes_int_escolaridade'] = $registro->pes_int_escolaridade;

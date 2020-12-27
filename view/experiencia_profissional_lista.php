@@ -17,9 +17,7 @@ echo $BODY;
 require_once 'menu.php';
 
 echo $DIV_MAIN;
-echo $H1 . 'CURSO' . $H1_;
-
-$FORM = '<form action="../controller/experiencia_profissional.php" method="get">';
+echo $H1 . 'EXPERIÊNCIA' . $H1_;
 
 echo $TABLE;
 
@@ -34,8 +32,8 @@ foreach($experiencia_profissional_json as $registro) {
 	$experiencia_profissional_model['exp_prof_int_id'] = $registro->exp_prof_int_id;
 	$experiencia_profissional_model['exp_prof_char_empresa'] = $registro->exp_prof_char_empresa;
 	$experiencia_profissional_model['exp_prof_char_cargo'] = $registro->exp_prof_char_cargo;
-	$experiencia_profissional_model['exp_prof_date_data_admissao'] = date("d-m-Y", strtotime($registro->exp_prof_date_data_admissao));
-	$experiencia_profissional_model['exp_prof_date_data_saida'] = date("d-m-Y", strtotime($registro->exp_prof_date_data_saida));
+	$experiencia_profissional_model['exp_prof_char_data_admissao'] = $registro->exp_prof_char_data_admissao;
+	$experiencia_profissional_model['exp_prof_char_data_saida'] = $registro->exp_prof_char_data_saida;
 	$experiencia_profissional_model['exp_prof_char_funcoes'] = $registro->exp_prof_char_funcoes;
 	
 	$str = '';
@@ -45,8 +43,8 @@ foreach($experiencia_profissional_json as $registro) {
 
 	echo $TR . $TD . $LABEL . 'Empresa: ' . $experiencia_profissional_model['exp_prof_char_empresa'] . $LABEL_ . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . 'Cargo: ' . $experiencia_profissional_model['exp_prof_char_cargo'] . $LABEL_ . $TD_ . $TR_; 
-	echo $TR . $TD . $LABEL . 'Data de admissão: ' . $experiencia_profissional_model['exp_prof_date_data_admissao'] . $LABEL_ . $TD_ . $TR_; 
-	echo $TR . $TD . $LABEL . 'Data de saída: ' . $experiencia_profissional_model['exp_prof_date_data_saida'] . $LABEL_ . $TD_ . $TR_; 
+	echo $TR . $TD . $LABEL . 'Data de admissão: ' . $experiencia_profissional_model['exp_prof_char_data_admissao'] . $LABEL_ . $TD_ . $TR_; 
+	echo $TR . $TD . $LABEL . 'Data de saída: ' . $experiencia_profissional_model['exp_prof_char_data_saida'] . $LABEL_ . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . 'Funções: ' . $experiencia_profissional_model['exp_prof_char_funcoes'] . $LABEL_ . $TD_ . $TR_; 	
 	echo $TR . $TD . '<a href="../view/experiencia_profissional.php?' . $str . '">Editar</a>' . $TD_ . $TR_; 
 	echo $TR . $TD . '<a href="../controller/experiencia_profissional.php?acao=excluir&' . $str . '">Excluir</a>' . $TD_ . $TR_; 

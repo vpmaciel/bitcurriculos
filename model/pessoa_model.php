@@ -5,7 +5,7 @@ function pessoa_model() : array {
         'pes_char_nome' => '',
         'pes_char_url_repositorio_codigos' => '',
         'pes_char_url_linkedin' => '',
-        'pes_date_data_nascimento' => '',
+        'pes_char_data_nascimento' => '',
         'pes_char_celular_numero' => '',
         'pes_bit_sexo' => '',
         'pes_int_escolaridade' => '',

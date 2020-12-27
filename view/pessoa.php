@@ -45,8 +45,8 @@ $INPUT = '<input type="url" name="pes_char_url_linkedin" required size="70" minl
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Data de nascimento' . $LABEL_ .$TD_ . $TR_; 
-$pessoa_model['pes_date_data_nascimento'] = isset($_GET['pessoa_model']) ? $pessoa_model_get['pes_date_data_nascimento'] : $pessoa_model_get['pes_date_data_nascimento'];
-$INPUT = '<input type="text" name="pes_date_data_nascimento" id="pes_date_data_nascimento" size="70" required maxlength="10" value="' . $pessoa_model['pes_date_data_nascimento'] .'">';
+$pessoa_model['pes_char_data_nascimento'] = isset($_GET['pessoa_model']) ? $pessoa_model_get['pes_char_data_nascimento'] : $pessoa_model_get['pes_char_data_nascimento'];
+$INPUT = '<input type="text" name="pes_char_data_nascimento" id="pes_char_data_nascimento" size="70" required maxlength="10" value="' . $pessoa_model['pes_char_data_nascimento'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Celular' . $LABEL_ .$TD_ . $TR_; 
