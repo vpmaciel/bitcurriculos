@@ -87,11 +87,10 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
     }   
 
     try {
-
         foreach($array_model as $chave => $valor) {
             if (!is_numeric($valor)) {
                 $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";
-            } else if (strstr($valor, 'http') || strstr($valor, 'www') || strstr($valor, '@')) {
+            } else if ((mb_strpos(mb_strtolower( $valor, 'UTF-8'), '.') !== false) || (mb_strpos(mb_strtolower( $valor, 'UTF-8'), 'www') !== false) || (mb_strpos(mb_strtolower( $valor, 'UTF-8'), 'http') !== false)) {
                 $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
             }            
             
@@ -106,9 +105,10 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         $contador = 1;
         $tamanho = count ($array_condicao);
         foreach($array_condicao as $chave => $valor) {
-            if (!is_numeric($valor)) {
-                $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";                
-            } else  if (strstr($valor, '@') || strstr($valor, '.')) {
+            $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";
+            if (!is_numeric($valor)) {                
+                $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";
+            } else if ((mb_strpos(strtolower( $valor), '.') !== false) || (mb_strpos(strtolower( $valor), 'www') !== false) || (mb_strpos(strtolower( $valor), 'http') !== false)) {
                 $valor .= "'".  mb_strtolower( $valor, 'UTF-8') . "'";
             }
             
@@ -121,7 +121,7 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         }
 
         $pdo->beginTransaction();
-        //die("UPDATE $char_tabela SET $campos WHERE ($char_condicao);");
+        die("UPDATE $char_tabela SET $campos WHERE ($char_condicao);");
         $stmt = $pdo->prepare("UPDATE $char_tabela SET $campos WHERE ($char_condicao);");            
         $stmt->execute(); 
         $pdo->commit();    
@@ -151,7 +151,7 @@ function selecionar($char_tabela, $array_condicao) {
         foreach($array_condicao as $chave => $valor) {
             if (!is_numeric($valor)) {
                 $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";                
-            } else  if (strstr($valor, '@') || strstr($valor, '.')) {
+            } else if ((mb_strpos(mb_strtolower( $valor, 'UTF-8'), '.') !== false) || (mb_strpos(mb_strtolower( $valor, 'UTF-8'), 'www') !== false) || (mb_strpos(mb_strtolower( $valor, 'UTF-8'), 'http') !== false)) {
                 $valor .= "'".  mb_strtolower( $valor, 'UTF-8') . "'";
             }            
             $char_condicao .= $chave . "=" . $valor;                           
@@ -209,7 +209,7 @@ function excluir($char_tabela, $array_condicao) : bool {
         foreach($array_condicao as $chave => $valor) {               
             if (!is_numeric($valor)) {
                 $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";                
-            } else  if (strstr($valor, '@') || strstr($valor, '.')) {
+            } else if ((mb_strpos(mb_strtolower( $valor, 'UTF-8'), '.') !== false) || (mb_strpos(mb_strtolower( $valor, 'UTF-8'), 'www') !== false) || (mb_strpos(mb_strtolower( $valor, 'UTF-8'), 'http') !== false)) {
                 $valores .= "'".  mb_strtolower( $valor, 'UTF-8') . "'";
             }
             
@@ -253,7 +253,7 @@ function retornar_numero_registros($char_tabela, $array_condicao) : int {
 
             if (!is_numeric($valor)) {
                 $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";                
-            } else  if (strstr($valor, '@') || strstr($valor, '.')) {
+            } else if ((mb_strpos(mb_strtolower( $valor, 'UTF-8'), '.') !== false) || (mb_strpos(mb_strtolower( $valor, 'UTF-8'), 'www') !== false) || (mb_strpos(mb_strtolower( $valor, 'UTF-8'), 'http') !== false)) {
                 $valor .= "'".  mb_strtolower( $valor, 'UTF-8') . "'";
             }
                
