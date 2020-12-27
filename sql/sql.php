@@ -37,12 +37,14 @@ function inserir($char_tabela, $array_model) : bool {
         foreach($array_model as $chave => $valor) {
             
             if (!is_numeric($valor)) {
-                $valores .= "'".  mb_strtoupper( $valor, 'UTF-8') . "'";
-            } if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
-                $valores .= "'".  mb_strtolower( $valor, 'UTF-8') . "'";
-            } else {
-                $valores .= $valor;
+                if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
+                    $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
+                } else {
+                    $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";
+                }                
             }
+                $valores .= $valor;
+            
             
             $campos .= $chave;
 
@@ -90,10 +92,12 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
 
         foreach($array_model as $chave => $valor) {
             if (!is_numeric($valor)) {
-                $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";
-            } else if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
-                $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
-            }            
+                if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
+                    $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
+                } else {
+                    $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";
+                }                
+            }             
             
             $campos .= $chave . "=". $valor;               
 
@@ -107,11 +111,12 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         $tamanho = count ($array_condicao);
         foreach($array_condicao as $chave => $valor) {
             if (!is_numeric($valor)) {
-                $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";                
-            } else  if (strstr($valor, '@') || strstr($valor, '.')) {
-                $valor .= "'".  mb_strtolower( $valor, 'UTF-8') . "'";
+                if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
+                    $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
+                } else {
+                    $valor = "'" . mb_strtoupper( $valor, 'UTF-8') . "'";
+                }                
             }
-            
             $char_condicao .= $chave . "=". $valor;               
 
             if($contador < $tamanho) {
