@@ -10,6 +10,8 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     throw new PDOException($e);
+    $pdo->rollback();
+    $retorno = FALSE;
     echo "Erro na conexão:" . $e->getMessage();
 }
         
@@ -54,7 +56,8 @@ function inserir($char_tabela, $array_model) : bool {
         $pdo->commit();
     
     } catch(PDOException $e) {
-        throw new PDOException($e);
+        throw new PDOException($e);    
+        echo "Erro na inserção:" . $e->getMessage();
         $pdo->rollback();
         $retorno = FALSE;
     }
@@ -119,9 +122,9 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         $retorno = ($stmt->execute()) ? TRUE : FALSE; 
     
     } catch(PDOException $e) {
-        throw new PDOException($e);
+        throw new PDOException($e);    
+        echo "Erro na atualização:" . $e->getMessage();
         $pdo->rollback();
-        throw $e;
         $retorno = FALSE;
     }
     return $retorno;
@@ -172,7 +175,10 @@ function selecionar($char_tabela, $array_condicao) {
         return json_encode($linhas);;
     
     } catch(PDOException $e) {           
-        throw new PDOException($e);
+        throw new PDOException($e);    
+        echo "Erro na seleção:" . $e->getMessage();
+        $pdo->rollback();
+        $retorno = FALSE;
     }
 }
 
@@ -186,7 +192,7 @@ function excluir($char_tabela, $array_condicao) : bool {
     $char_condicao = '';
     $tamanho = count ($array_condicao);
     $contador = 1;
-    if($tamanho == 0 || !isset($array_condicao)) {exit("a");
+    if($tamanho == 0 || !isset($array_condicao)) {
         return FALSE;
     }   
     
@@ -208,17 +214,18 @@ function excluir($char_tabela, $array_condicao) : bool {
         }
 
         $pdo->beginTransaction();
-        exit("DELETE FROM $char_tabela WHERE ($char_condicao);");
+        //exit("DELETE FROM $char_tabela WHERE ($char_condicao);");
         $stmt = $pdo->prepare("DELETE FROM $char_tabela WHERE ($char_condicao);");
-        
+        $retorno = ($stmt->execute()) ? TRUE : FALSE; 
         $pdo->commit();
 
         return TRUE;
     
     } catch(PDOException $e) {
-    
+        throw new PDOException($e);    
+        echo "Erro na exclusão:" . $e->getMessage();
         $pdo->rollback();
-        throw new PDOException($e);
+        $retorno = FALSE;
     }
 }
 

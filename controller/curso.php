@@ -35,6 +35,9 @@ $curso_model['cur_int_nivel'] = $_GET['cur_int_nivel'];
 ####################################################################################################
 
 if ($acao == 'excluir') {
+
+	$curso_model = $_GET['curso_model'];
+
 	$resultado_excluir = excluir('curso', $curso_model);
 
 	if ($resultado_excluir == TRUE) {
