@@ -23,18 +23,18 @@ echo $FORM_PESSOA;
 echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'Certificação' . $LABEL_ . $TD_ . $TR_; 
-$certificacao['char_certificacao'] = isset($_POST['char_certificacao'])?$_POST['char_certificacao']:'';
-$INPUT = '<input type="text" name="char_certificacao" required size="70" minlength="1" maxlength="50" value="' . $certificacao['char_certificacao'] .'">';
+$certificacao['cer_char_certificacao'] = isset($_POST['cer_char_certificacao'])?$_POST['cer_char_certificacao']:'';
+$INPUT = '<input type="text" name="cer_char_certificacao" required size="70" minlength="1" maxlength="50" value="' . $certificacao['cer_char_certificacao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Instituição' . $LABEL_ . $TD_ . $TR_;
-$certificacao['char_instituicao'] = isset($_POST['char_instituicao'])?$_POST['char_instituicao']:'';
-$INPUT = '<input type="text" name="char_instituicao" required size="70" minlength="1" maxlength="50" value="' . $certificacao['char_instituicao'] .'">';
+$certificacao['cer_char_instituicao'] = isset($_POST['cer_char_instituicao'])?$_POST['cer_char_instituicao']:'';
+$INPUT = '<input type="text" name="cer_char_instituicao" required size="70" minlength="1" maxlength="50" value="' . $certificacao['cer_char_instituicao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Ano de obtenção' . $LABEL_ . $TD_ . $TR_; 
-$certificacao['year_ano_obtencao'] = isset($_POST['year_ano_obtencao'])?$_POST['year_ano_obtencao']:'';
-$INPUT = '<input type="number" name="year_ano_obtencao" required size="70" min="1950" max="3000" value="' . $certificacao['year_ano_obtencao'] .'">';
+$certificacao['cer_year_ano_obtencao'] = isset($_POST['cer_year_ano_obtencao'])?$_POST['cer_year_ano_obtencao']:'';
+$INPUT = '<input type="number" name="cer_year_ano_obtencao" required size="70" min="1950" max="3000" value="' . $certificacao['cer_year_ano_obtencao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR. $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
