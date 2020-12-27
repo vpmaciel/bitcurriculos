@@ -16,26 +16,23 @@ if(isset($_GET['acao'])){
 
 ####################################################################################################
 
-$curso_model['cur_int_id'] = $_GET['cur_int_id'];
+$certificacao_model['cer_int_id'] = $_GET['cer_int_id'];
 
-$resultado_numero_registros = retornar_numero_registros('curso', $curso_model);
+$resultado_numero_registros = retornar_numero_registros('certificacao', $certificacao_model);
 
-$curso_model['cur_int_id'] = $_GET['cur_int_id'];
-$curso_model['usu_int_id'] = $_SESSION['usu_int_id'];
-$curso_model['cur_char_nome'] = $_GET['cur_char_nome'];
-$curso_model['cur_char_instituicao'] = $_GET['cur_char_instituicao'];
-$curso_model['cur_year_ano_inicio'] = $_GET['cur_year_ano_inicio'];
-$curso_model['cur_year_ano_conclusao'] = $_GET['cur_year_ano_conclusao'];
-$curso_model['cur_int_situacao'] = $_GET['cur_int_situacao'];
-$curso_model['cur_int_nivel'] = $_GET['cur_int_nivel'];
+$certificacao_model['cer_int_id'] = $_GET['cer_int_id'];
+$certificacao_model['usu_int_id'] = $_SESSION['usu_int_id'];
+$certificacao_model['cer_char_certificacao'] = $_GET['cer_char_certificacao'];
+$certificacao_model['cer_char_instituicao'] = $_GET['cer_char_instituicao'];
+$certificacao_model['cer_year_ano_obtencao'] = $_GET['cer_year_ano_obtencao'];
 
 ####################################################################################################
 
 if ($acao == 'excluir') {
 
-	$curso_model = $_GET['curso_model'];
+	$certificacao_model = $_GET['certificacao_model'];
 
-	$resultado_excluir = excluir('curso', $curso_model);
+	$resultado_excluir = excluir('certificacao', $certificacao_model);
 
 	if ($resultado_excluir == TRUE) {
 		
@@ -48,7 +45,7 @@ if ($acao == 'excluir') {
 }
 
 if ($resultado_numero_registros == 0) {
-    $resultado_inserir = inserir('curso', $curso_model);
+    $resultado_inserir = inserir('certificacao', $certificacao_model);
     
     if ($resultado_inserir == TRUE) {
 		header('location:..\view\sucesso.php');
@@ -60,10 +57,10 @@ if ($resultado_numero_registros == 0) {
 } else {
     
 	$condicao['usu_int_id'] = $_SESSION['usu_int_id'];
-	$condicao['cur_int_id'] = $_GET['cur_int_id'];
+	$condicao['cer_int_id'] = $_GET['cer_int_id'];
 
 	
-	$resultado_atualizar = atualizar('curso', $curso_model, $condicao);
+	$resultado_atualizar = atualizar('certificacao', $certificacao_model, $condicao);
 	
 	if ($resultado_atualizar == TRUE) {
 		

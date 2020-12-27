@@ -25,6 +25,7 @@ if (isset($_GET['curso_model'])) {
 	$curso_model_get = $_GET['curso_model'];
 }
 echo $TABLE;
+
 $curso_model['cur_int_id'] = isset($_GET['curso_model']) ? $curso_model_get['cur_int_id'] : '';
 $INPUT = '<input type="hidden" name="cur_int_id"  value="' . $curso_model['cur_int_id'] .'">';
 echo $INPUT;
