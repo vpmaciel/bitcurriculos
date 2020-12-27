@@ -31,7 +31,7 @@ echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 
 foreach($objetivo_profissional_json as $registro) {
 	$objetivo_profissional_model = array();
-	$objetivo_profissional_model['obj_pro_int_id '] = $registro->obj_pro_int_id ;
+	$objetivo_profissional_model['obj_pro_int_id'] = $registro->obj_pro_int_id ;
 	$objetivo_profissional_model['obj_pro_char_cargo'] = $registro->obj_pro_char_cargo;
 	$objetivo_profissional_model['obj_pro_int_pretensao_salarial'] = $registro->obj_pro_int_pretensao_salarial;
 	$objetivo_profissional_model['obj_pro_int_contrato'] = $registro->obj_pro_int_contrato;
@@ -41,8 +41,8 @@ foreach($objetivo_profissional_json as $registro) {
 	}
 
 	echo $TR . $TD . $LABEL . 'Cargo: ' . $objetivo_profissional_model['obj_pro_char_cargo'] . $LABEL_ . $TD_ . $TR_; 
-	echo $TR . $TD . $LABEL . 'Pretensão salarial: ' . $objetivo_profissional_model['obj_pro_int_pretensao_salarial'] . $LABEL_ . $TD_ . $TR_; 
-	echo $TR . $TD . $LABEL . 'Contrato: ' . $objetivo_profissional_model['obj_pro_int_contrato'] . $LABEL_ . $TD_ . $TR_;  
+	echo $TR . $TD . $LABEL . 'Pretensão salarial: ' . $array_pretensao_salarial[$objetivo_profissional_model['obj_pro_int_pretensao_salarial']] . $LABEL_ . $TD_ . $TR_; 
+	echo $TR . $TD . $LABEL . 'Contrato: ' . $array_contrato[$objetivo_profissional_model['obj_pro_int_contrato']] . $LABEL_ . $TD_ . $TR_;  
 	echo $TR . $TD . '<a href="../view/objetivo_profissional.php?' . $str . '">Editar</a>' . $TD_ . $TR_; 
 	echo $TR . $TD . '<a href="../controller/objetivo_profissional.php?acao=excluir&' . $str . '">Excluir</a>' . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 	

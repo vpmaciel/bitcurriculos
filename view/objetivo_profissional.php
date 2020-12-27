@@ -35,7 +35,7 @@ echo $TR. $TD . $CARGO . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Pretensão salarial' . $LABEL_ . $TD_ . $TR_;
 echo $TR. $TD;
-$SELECT = '<select name="$obj_pro_int_pretensao_salarial">';
+$SELECT = '<select name="obj_pro_int_pretensao_salarial">';
 echo $SELECT;
 foreach ($array_pretensao_salarial as $indice => $obj_pro_int_pretensao_salarial) {		
 	echo ($indice == $objetivo_profissional_model_get['obj_pro_int_pretensao_salarial']) ? "<option value=$indice selected>$obj_pro_int_pretensao_salarial</option>" : "<option value=$indice>$obj_pro_int_pretensao_salarial</option>";
