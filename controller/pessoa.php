@@ -85,7 +85,7 @@ CARREGAR:
     $pessoa_json = json_decode(selecionar('pessoa', $pessoa_model));      
     //exit(print_r($pessoa_json));
     foreach($pessoa_json as $registro) {            
-        $pessoa_model['usu_int_in'] = $registro->usu_int_in;
+        $pessoa_model['usu_int_id'] = $registro->usu_int_id;
         $pessoa_model['pes_char_nome'] = $registro->pes_char_nome;
         $pessoa_model['pes_char_url_repositorio_codigos'] = $registro->pes_char_url_repositorio_codigos;
         $pessoa_model['pes_char_url_linkedin'] = $registro->pes_char_url_linkedin;

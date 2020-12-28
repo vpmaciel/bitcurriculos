@@ -22,7 +22,116 @@ $pdf->SetFont('arial', 'B', 12);
 $pdf->Ln(20);
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DADOS PESSOAIS"), 0, 1, 'L'); 
 
-
+$pessoa_model['usu_int_id'] = $_SESSION['usu_int_id'];
+    $condicao = $pessoa_model['usu_int_id'];
+    $pessoa_json = json_decode(selecionar('pessoa', $pessoa_model));      
+    $pessoa_model = array();
+    foreach($pessoa_json as $registro) {            
+        $pessoa_model['usu_int_id'] = $registro->usu_int_id;
+        $pessoa_model['pes_char_nome'] = $registro->pes_char_nome;
+        $pessoa_model['pes_char_url_repositorio_codigos'] = $registro->pes_char_url_repositorio_codigos;
+        $pessoa_model['pes_char_url_linkedin'] = $registro->pes_char_url_linkedin;
+        $pessoa_model['pes_char_data_nascimento'] = $registro->pes_char_data_nascimento;
+        $pessoa_model['pes_char_celular_numero'] = $registro->pes_char_celular_numero;
+        $pessoa_model['pes_bit_sexo'] = $registro->pes_bit_sexo;
+        $pessoa_model['pes_int_escolaridade'] = $registro->pes_int_escolaridade;
+        $pessoa_model['pes_int_estado_civil'] = $registro->pes_int_estado_civil;
+        $pessoa_model['pes_int_nacionalidade'] = $registro->pes_int_nacionalidade;
+        $pessoa_model['pes_bit_possui_filhos'] = $registro->pes_bit_possui_filhos;
+        $pessoa_model['pes_bit_possui_deficiencia'] = $registro->pes_bit_possui_deficiencia;
+        $pessoa_model['pes_int_pais'] = $registro->pes_int_pais;
+        $pessoa_model['pes_int_estado'] = $registro->pes_int_estado;
+        $pessoa_model['pes_int_cidade'] = $registro->pes_int_cidade;
+        $pessoa_model['pes_int_cnh'] = $registro->pes_int_cnh;
+        $pessoa_model['pes_int_ultimo_salario_mensal'] = $registro->pes_int_ultimo_salario_mensal;
+        $pessoa_model['pes_bit_empregado_atualmente'] = $registro->pes_bit_empregado_atualmente;
+        $pessoa_model['pes_bit_procurando_emprego_atualmente'] = $registro->pes_bit_procurando_emprego_atualmente;
+        $pessoa_model['pes_bit_disponivel_viagens'] = $registro->pes_bit_disponivel_viagens;
+        $pessoa_model['pes_bit_trabalha_outras_cidades'] = $registro->pes_bit_trabalha_outras_cidades;
+        $pessoa_model['pes_bit_trabalha_exterior'] = $registro->pes_bit_trabalha_exterior;
+        $pessoa_model['pes_bit_trabalha_home_office'] = $registro->pes_bit_trabalha_home_office;
+        $pessoa_model['pes_bit_possui_carro'] = $registro->pes_bit_possui_carro;
+        $pessoa_model['pes_bit_possui_moto'] = $registro->pes_bit_possui_moto;
+        $pessoa_model['pes_bit_dispensado_servico_militar'] = $registro->pes_bit_dispensado_servico_militar;
+        
+	}
+	
+	$pdf->Ln(10);
+	$saida = "Nome: ". $pessoa_model['pes_char_nome'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "URL de repositório de códigos: ". $pessoa_model['pes_char_url_repositorio_codigos'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "URL do linkedin: ". $pessoa_model['pes_char_url_linkedin'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');	
+	$pdf->Ln(10);
+	$saida = "Data de nascimento: ". $pessoa_model['pes_char_data_nascimento'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Celular: ". $pessoa_model['pes_char_celular_numero'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Sexo: ". $pessoa_model['pes_bit_sexo'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Escolaridade: ". $pessoa_model['pes_int_escolaridade'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Estado civil: ". $pessoa_model['pes_int_estado_civil'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Nacionalidade: ". $pessoa_model['pes_int_nacionalidade'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Possui filhos: ". $pessoa_model['pes_bit_possui_filhos'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Possui deficiência: ". $pessoa_model['pes_bit_possui_deficiencia'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "País: ". $pessoa_model['pes_int_pais'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Estado: ". $pessoa_model['pes_int_estado'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Cidade: ". $pessoa_model['pes_int_cidade'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "CNH: ". $pessoa_model['pes_int_cnh'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Último salário mensal (R$): ". $pessoa_model['pes_int_ultimo_salario_mensal'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Está empregado atualmente: ". $pessoa_model['pes_bit_empregado_atualmente'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Está porcurando emprego atualmente: ". $pessoa_model['pes_bit_procurando_emprego_atualmente'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Está disponível para viagem: ". $pessoa_model['pes_bit_disponivel_viagens'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Pode trabalhar em outras cidades: ". $pessoa_model['pes_bit_trabalha_outras_cidades'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Pode trabalhar em outros países: ". $pessoa_model['pes_bit_trabalha_exterior'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Pode trabalhar home office: ". $pessoa_model['pes_bit_trabalha_home_office'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Possui carro: ". $pessoa_model['pes_bit_possui_carro'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Possui moto: ". $pessoa_model['pes_bit_possui_moto'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+	$pdf->Ln(10);
+	$saida = "Foi dispensado do serviço militar: ". $pessoa_model['pes_bit_dispensado_servico_militar'];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
+/*
 $lista = $this->PessoaModel->ObterRegistro($usuario);
 
 while ($cadastro = array_shift($lista)) {
@@ -35,7 +144,7 @@ while ($cadastro = array_shift($lista)) {
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $mensagem), 0, 1, 'C');
 }
 
-/*
+
 $lista = $this->PessoaModel->ObterRegistro($usuario);
 while ($cadastro = array_shift($lista)) {
 	$pdf->Ln(15);
@@ -50,61 +159,7 @@ while ($cadastro = array_shift($lista)) {
 		$email = $cadastro_usuario[Constante::E_MAIL];
 		$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "E-MAIL: $email"), 0, 1, 'L');
 	}
-	$pdf->Ln(10);
-	$data_nascimento = $cadastro[Constante::DATA_NASCIMENTO];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DATA DE NASCIMENTO: $data_nascimento"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$sexo = $sexo_array[$cadastro[Constante::SEXO]];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "SEXO: $sexo"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$email = $cadastro[Constante::CELULAR_CODIGO_AREA];
-	$mensagem = "CELULAR: " . $cadastro[Constante::CELULAR_CODIGO_AREA] ."-". $cadastro[Constante::CELULAR_NUMERO];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "$mensagem"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$possui_filhos = $resposta_array[$cadastro[Constante::POSSUI_FILHOS]];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "POSSUI FILHOS: $possui_filhos"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$possui_deficiencia = $deficiencia_array[$cadastro[Constante::POSSUI_DEFICIENCIA]];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "POSSUI DEFICIÊNCIA: $possui_deficiencia"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$pais = $pais_array[$cadastro[Constante::PAIS]];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "PAÍS: $pais"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$estado = $estado_array[$cadastro[Constante::ESTADO]];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "ESTADO: $estado"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$cidade = $cadastro[Constante::CIDADE];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CIDADE: $cidade"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$bairro = $cadastro[Constante::BAIRRO];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "BAIRRO: $bairro"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$logradouro = $cadastro[Constante::LOGRADOURO];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "ENDEREÇO: $logradouro"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$complemento = $cadastro[Constante::COMPLEMENTO];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "COMPLEMENTO: $complemento"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$cep = $cadastro[Constante::CEP];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CEP: $cep"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$cnh = $cnh_array[$cadastro[Constante::CNH]];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CNH: $cnh"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$ultimo_salario = $ultimo_salarioArray[$cadastro[Constante::ULTIMO_SALARIO]];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "ÚLTIMO SALÁRIO (R$): $ultimo_salario"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$empregado_atualmente = $resposta_array[$cadastro[Constante::EMPREGADO_ATUALMENTE]];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "EMPREGADO ATUALMENTE: $empregado_atualmente"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$disponivel_viagens = $resposta_array[$cadastro[Constante::DISPONIVEL_VIAGENS]];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DISPONÍVEL PARA VIAGENS: $disponivel_viagens"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$trabalha_outras_cidades = $resposta_array[$cadastro[Constante::TRABALHA_OUTRAS_CIDADES]];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DISPONÍVEL PARA TRABALHAR EM OUTRAS CIDADES: $trabalha_outras_cidades"), 0, 1, 'L');
-	$pdf->Ln(10);
-	$trabalha_exterior = $resposta_array[$cadastro[Constante::TRABALHA_EXTERIOR]];
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DISPONÍVEL PARA TRABALHAR NO EXTERIOR: $trabalha_exterior"), 0, 1, 'L');
+	
 }
 
 $lista = $this->ObjetivoProfissionalModel->ObterRegistro(null, $usuario);;
