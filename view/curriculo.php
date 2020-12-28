@@ -6,12 +6,23 @@ if(!isset($_SESSION['usu_int_id'])) {
 }
 
 require_once '../lib/biblioteca.php';
+require_once '../model/model.php';
+require_once '../sql/sql.php';
 
 define('FPDF_FONTPATH', '../fpdf/font/');
 require ('../fpdf/fpdf.php');
 $pdf = new FPDF("P", "pt", "A4");
 $pdf->AddPage();
-/*
+
+$pdf->SetFont('arial', 'B', 12);
+$pdf->Ln(20);
+$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CURRÍCULO"), 0, 1, 'C'); 
+
+$pdf->SetFont('arial', 'B', 12);
+$pdf->Ln(20);
+$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DADOS PESSOAIS"), 0, 1, 'L'); 
+
+
 $lista = $this->PessoaModel->ObterRegistro($usuario);
 
 while ($cadastro = array_shift($lista)) {
@@ -23,10 +34,7 @@ while ($cadastro = array_shift($lista)) {
 	$mensagem = $escolaridade_array[$cadastro[Constante::ESCOLARIDADE]] . ", " . $estado_civil_array[$cadastro[Constante::ESTADO_CIVIL]] . ", " . $cadastro[Constante::IDADE] ." ANOS";
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $mensagem), 0, 1, 'C');
 }
-*/
-$pdf->SetFont('arial', 'B', 12);
-$pdf->Ln(20);
-$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DADOS PESSOAIS"), 0, 1, 'L'); 
+
 /*
 $lista = $this->PessoaModel->ObterRegistro($usuario);
 while ($cadastro = array_shift($lista)) {
@@ -244,12 +252,13 @@ $caminhoCompletoArquivo = "../file/curriculo" . $_SESSION['usu_int_id'] . ".pdf"
 $pdf->Output('f', $caminhoCompletoArquivo);
 
 /* adiciona o arquivo físico ao e-mail */
-if (smtpmailer('vpmaciel@live.comthallescakan@outlook.com.br', 'vpmaciel@gmail.com', 'BitCurriculos', 'Sua Senha','Candidato', 'curriculo'. $_SESSION['usu_int_id'] .'.pdf')) {
+if (smtpmailer('thallescakan@outlook.com.br', 'vpmaciel@gmail.com', 'BitCurriculos', 'Sua Senha','Candidato', 'curriculo'. $_SESSION['usu_int_id'] .'.pdf')) {
 	header("location:..\\view\\sucesso.php?msg=Sua senha é foi enviada para seu e-mail !");
 }
 
 /* exclui o arquivo pdf do servidor */
 if (file_exists ($caminhoCompletoArquivo)) {
-   //unlink($caminhoCompletoArquivo);
+	sleep(5);
+	//unlink($caminhoCompletoArquivo);
 }
 //}
