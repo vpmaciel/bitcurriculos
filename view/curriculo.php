@@ -239,17 +239,17 @@ while ($cadastro = array_shift($lista)) {
 
 if (isset($nome)) {
 */	
-$caminhoCompletoArquivo = '../file/curriculo.php';
+$caminhoCompletoArquivo = "../file/curriculo" . $_SESSION['usu_int_id'] . ".pdf";
 	/* executa a geração do seu PDF*/
 $pdf->Output('f', $caminhoCompletoArquivo);
 
 /* adiciona o arquivo físico ao e-mail */
-if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'BitCurriculos', 'Sua Senha','Candidato', 'curriculo.php')) {
+if (smtpmailer('vpmaciel@live.comthallescakan@outlook.com.br', 'vpmaciel@gmail.com', 'BitCurriculos', 'Sua Senha','Candidato', 'curriculo'. $_SESSION['usu_int_id'] .'.pdf')) {
 	header("location:..\\view\\sucesso.php?msg=Sua senha é foi enviada para seu e-mail !");
 }
 
 /* exclui o arquivo pdf do servidor */
 if (file_exists ($caminhoCompletoArquivo)) {
-   unlink($caminhoCompletoArquivo);
+   //unlink($caminhoCompletoArquivo);
 }
 //}

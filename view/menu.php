@@ -13,6 +13,6 @@ echo '<a href="../view/objetivo_profissional_lista.php">Objetivo Profissional</a
 echo '<a href="../view/idioma_lista.php">Idiomas</a><br>';
 echo '<a href="../view/habilidade_lista.php">Habilidades</a><br>';
 echo '<a href="../view/vagas.php">Pesquisar Vagas</a><br>';
-echo '<a href="../controller/curriculo.php">Exibir Currículo</a><br>-<br>';
-echo '<a href="../controller/publica_vaga.php">Publicar Vaga de Emprego</a>';
+echo '<a href="../view/curriculo.php">Exibir Currículo</a><br>-<br>';
+echo '<a href="../view/publica_vaga.php">Publicar Vaga de Emprego</a>';
 echo '</div>';

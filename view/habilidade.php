@@ -16,7 +16,7 @@ require_once 'menu.php';
 echo $DIV_MAIN;
 echo $H1 . 'HABILIDADE' . $H1_;
 
-$FORM = '<form action="../controller/habilidade.php" method="post">';
+$FORM = '<form action="../controller/habilidade.php" method="get">';
 echo $FORM;
 if (isset($_GET['habilidade_model'])) {
 	$habilidade_model_get = $_GET['habilidade_model'];
