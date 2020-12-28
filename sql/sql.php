@@ -136,7 +136,7 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
         }
 
         $pdo->beginTransaction();
-        //die("UPDATE $char_tabela SET $campos WHERE ($char_condicao);");
+        die("UPDATE $char_tabela SET $campos WHERE ($char_condicao);");
         $stmt = $pdo->prepare("UPDATE $char_tabela SET $campos WHERE ($char_condicao);");            
         $stmt->execute(); 
         $pdo->commit();    
