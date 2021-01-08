@@ -57,6 +57,15 @@ $pessoa['int_vagas'] = isset($_POST['int_vagas'])?$_POST['int_vagas']:'';
 $INPUT = '<input type="number" name="int_vagas" required size="70" minlength="1" maxlength="40" min="1" max="1000000" value="' . $pessoa['int_vagas'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
+echo $TR . $TD . $LABEL . 'Home office' . $LABEL_ . $TD_ . $TR_;	 
+echo $TR. $TD;
+$SELECT = '<select name="bit_home_office">';
+echo $SELECT;
+foreach ($array_resposta as $indice => $bit_home_office) {	
+	echo ($bit_home_office == $pessoa['bit_home_office'])	? "<option value=$indice selected>$bit_home_office</option>" : "<option value=$indice>$bit_home_office</option>";
+}
+echo $SELECT_ . $TD_ . $TR_;
+
 echo $TR . $TD . $LABEL . 'Contrato' . $LABEL_ . $TD_ . $TR_;	 
 echo $TR. $TD;
 $SELECT = '<select name="contrato">';
@@ -88,9 +97,6 @@ echo $TR. $TD;
 $SELECT = '<select name="int_int_cidade">';
 echo $SELECT;
 foreach ($array_cidade as $indice => $int_cidade) {	
-	if ($indice == 0) {
-		continue;
-	}
 	echo ($int_cidade == $pessoa['int_cidade'])	? "<option value=$indice selected>$int_cidade</option>" : "<option value=$indice>$int_cidade</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;

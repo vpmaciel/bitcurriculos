@@ -302,7 +302,8 @@ function retornar_numero_registros($char_tabela, $array_condicao) : int {
                 $char_condicao .= ' AND ';
             }
             $contador++;
-        }        
+        }
+        //exit("SELECT COUNT(*) FROM $char_tabela WHERE ($char_condicao);");
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM $char_tabela WHERE ($char_condicao);");
         if (!$stmt->execute()) {
             return 0;
@@ -331,7 +332,7 @@ function verificarSQL($valor) {
 ####################################################################################################
 
 function remover_caracteres($valor) {
-    $remover = array("\\", "'", "\"", "o", "\r\n", "\n", "\r");
+    $remover = array("\\", "'", "\"", "or", "and", "\r\n", "\n", "\r");
     $retorno = str_replace($remover, "", $valor);
     return trim($retorno);
 }

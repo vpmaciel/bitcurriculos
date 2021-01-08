@@ -27,11 +27,13 @@ echo $FORM;
 echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'Nome' . $LABEL_ .$TD_ . $TR_; 
-$pessoa_model_get = $_GET['pessoa_model'];
 
+if (isset($_GET['pessoa_model'])) {
+	$pessoa_model_get = $_GET['pessoa_model'];
+}
 
 $pessoa_model['pes_char_nome'] = isset($_GET['pessoa_model']) ? $pessoa_model_get['pes_char_nome'] : '';
-$INPUT = '<input type="text" name="pes_char_nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa_model['pes_char_nome'] .'">';
+$INPUT = '<input type="text" name="pes_char_nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa_model_get['pes_char_nome'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'URL de repositório de códigos' . $LABEL_ .$TD_ . $TR_; 
