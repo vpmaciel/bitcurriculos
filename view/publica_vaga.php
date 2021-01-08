@@ -19,10 +19,18 @@ echo $H1 . 'PUBLICAR VAGA' . $H1_;
 $FORM = '<form action="../controller/curso.php" method="post">';
 
 echo $FORM;
+if (isset($_GET['publica_vaga_model'])) {
+	$publica_vaga_model_get = $_GET['publica_vaga_model'];
+}
 
 echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'Empresa' . $LABEL_ . $TD_ . $TR_; 
+$publica_vaga_model['pub_vag_int_id'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model['pub_vag_int_id'] : '';
+$INPUT = '<input type="hidden" name="pub_vag_int_id"  value="' . $publica_vaga_model['pub_vag_int_id'] .'">';
+echo $INPUT;
+
+$publica_vaga_model['empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model['empresa'] : '';
 $pessoa['empresa'] = isset($_POST['empresa'])?$_POST['empresa']:'';
 $INPUT = '<input type="text" name="empresa" required size="70" minlength="1" maxlength="50" value="' . $pessoa['empresa'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
@@ -54,7 +62,7 @@ echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Vagas' . $LABEL_ . $TD_ . $TR_; 
 $pessoa['int_vagas'] = isset($_POST['int_vagas'])?$_POST['int_vagas']:'';
-$INPUT = '<input type="number" name="int_vagas" required size="70" maxlength="40" min="1" max="1000000" value="' . $pessoa['int_vagas'] .'">';
+$INPUT = '<input type="number" name="int_vagas" required size="70" min="1" max="1000000" value="' . $pessoa['int_vagas'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Home office' . $LABEL_ . $TD_ . $TR_;	 
