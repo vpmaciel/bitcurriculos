@@ -30,33 +30,33 @@ $publica_vaga_model['pub_vag_int_id'] = isset($_GET['publica_vaga_model_model'])
 $INPUT = '<input type="hidden" name="pub_vag_int_id"  value="' . $publica_vaga_model['pub_vag_int_id'] .'">';
 echo $INPUT;
 
-$publica_vaga_model['empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model['empresa'] : '';
+$publica_vaga_model['empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['empresa'] : '';
 $pessoa['empresa'] = isset($_POST['empresa'])?$_POST['empresa']:'';
 $INPUT = '<input type="text" name="empresa" required size="70" minlength="1" maxlength="50" value="' . $pessoa['empresa'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['char_cargo'] = isset($_POST['char_cargo'])?$_POST['char_cargo']:'';
+$publica_vaga_model['empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['empresa'] : '';
 $INPUT = '<input type="text" name="char_cargo" required size="70" minlength="1" maxlength="50" value="' . $pessoa['char_cargo'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Requisitos' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['char_requisitos'] = isset($_POST['char_requisitos'])?$_POST['char_requisitos']:'';
+$publica_vaga_model['empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['empresa'] : '';
 $TEXTAREA = '<textarea id="char_requisitos" name="char_requisitos" rows="2" cols="50" maxlength="500">' . $pessoa['char_requisitos'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Funções' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['char_funcoes'] = isset($_POST['char_funcoes'])?$_POST['char_funcoes']:'';
+$publica_vaga_model['empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['empresa'] : '';
 $TEXTAREA = '<textarea id="char_funcoes" name="char_funcoes" rows="2" cols="50" maxlength="500">' . $pessoa['char_funcoes'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Benefícios' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['char_beneficios'] = isset($_POST['char_beneficios'])?$_POST['char_beneficios']:'';
+$publica_vaga_model['empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['empresa'] : '';
 $TEXTAREA = '<textarea id="char_beneficios" name="char_beneficios" rows="2" cols="50" maxlength="500">' . $pessoa['char_beneficios'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Data de publicacao' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['date_data_publicacao'] = isset($_POST['date_data_publicacao'])?$_POST['date_data_publicacao']:'';
+$publica_vaga_model['empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['empresa'] : '';
 $INPUT = '<input type="text" name="date_data_publicacao" size="70" onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['date_data_publicacao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_; 
 
