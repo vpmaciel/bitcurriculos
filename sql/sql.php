@@ -188,9 +188,11 @@ function selecionar($char_tabela, $array_condicao) {
         $stmt = NULL;
         
         if (!empty($array_condicao)) {
+            //die("SELECT * FROM $char_tabela WHERE ($char_condicao);");
             $stmt = $pdo->prepare("SELECT * FROM $char_tabela WHERE ($char_condicao);");
             
         } else {
+            //die("SELECT * FROM $char_tabela;");
             $stmt = $pdo->prepare("SELECT * FROM $char_tabela;");
         }
 
@@ -202,7 +204,7 @@ function selecionar($char_tabela, $array_condicao) {
         $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $pdo->commit();
         
-        return json_encode($linhas);;
+        return json_encode($linhas);
     
     } catch(PDOException $pdoException) {           
         throw new PDOException($pdoException);    

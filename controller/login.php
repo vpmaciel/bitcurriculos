@@ -18,7 +18,7 @@ if ($resultado_retornar_numero_registros == 0) {
 		$curso_json = json_decode(selecionar('usuario', $usuario_model));
 
 		foreach($curso_json as $registro) {
-			$_SESSION['usu_int_id'] = $registro->usu_int_id;
+			$_SESSION['usu_int_id'] = $registro->usu_int_id;						
 		}
 		
 		header('location:..\view\sucesso.php?msg=Sessão criada com sucesso !');

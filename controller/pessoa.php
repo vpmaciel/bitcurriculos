@@ -79,11 +79,11 @@ if ($resultado_numero_registros == 0) {
 ####################################################################################################
 
 CARREGAR:
-{    
-    $pessoa_model['usu_int_id'] = $_SESSION['usu_int_id'];
-    $condicao = $pessoa_model['usu_int_id'];
+{   
+    $pessoa_model = array();
+    $pessoa_model['usu_int_id'] = $_SESSION['usu_int_id'];    
     $pessoa_json = json_decode(selecionar('pessoa', $pessoa_model));      
-    //exit(print_r($pessoa_json));
+ 
     foreach($pessoa_json as $registro) {            
         $pessoa_model['usu_int_id'] = $registro->usu_int_id;
         $pessoa_model['pes_char_nome'] = $registro->pes_char_nome;
