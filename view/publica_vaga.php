@@ -25,11 +25,15 @@ if (isset($_GET['publica_vaga_model'])) {
 
 echo $TABLE;
 
-echo $TR . $TD . $LABEL . 'Empresa' . $LABEL_ . $TD_ . $TR_; 
+
 $publica_vaga_model['pub_vag_int_id'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model['pub_vag_int_id'] : '';
 $INPUT = '<input type="hidden" name="pub_vag_int_id"  value="' . $publica_vaga_model['pub_vag_int_id'] .'">';
 echo $INPUT;
 
+$publica_vaga_model['pub_vag_char_data_publicacao '] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model['pub_vag_char_data_publicacao '] : '';
+$INPUT = '<input type="hidden" name="pub_vag_char_data_publicacao "  value="' . $publica_vaga_model['pub_vag_char_data_publicacao '] .'">';
+echo $INPUT;
+echo $TR . $TD . $LABEL . 'Empresa' . $LABEL_ . $TD_ . $TR_; 
 $publica_vaga_model['pub_vag_char_empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['pub_vag_char_empresa'] : '';
 $pessoa['pub_vag_char_empresa'] = isset($_POST['pub_vag_char_empresa'])?$_POST['pub_vag_char_empresa']:'';
 $INPUT = '<input type="text" name="pub_vag_char_empresa" required size="70" minlength="1" maxlength="50" value="' . $publica_vaga_model['pub_vag_char_empresa'] .'">';
