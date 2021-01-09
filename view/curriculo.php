@@ -132,6 +132,23 @@ $pdf->Ln(10);
 $saida = "FOI DISPENSADO DO SERVIÇO MILITAR: ". $array_resposta[$pessoa_model['pes_bit_dispensado_servico_militar']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 
+####################################################################################################
+
+$pessoa_model['usu_int_id'] = $_SESSION['usu_int_id'];
+$condicao = $pessoa_model['usu_int_id'];
+$pessoa_json = json_decode(selecionar('objetivo_profissional', $pessoa_model));      
+
+if (!empty($pessoa_json)) {
+	$pdf->Ln(20);	
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "OBJETIVO PROFISSIONAL"), 0, 1, 'L');
+}
+
+$objetivo_profissional_model = array();
+foreach($pessoa_json as $registro) {            
+	$objetivo_profissional_model['obj_pro_char_cargo'] = $registro->obj_pro_char_cargo;
+	$objetivo_profissional_model['obj_pro_int_pretensao_salarial'] = $registro->obj_pro_int_pretensao_salarial;
+	$objetivo_profissional_model['obj_pro_int_contrato'] = $registro->obj_pro_int_contrato;
+}
 
 
 $lista = $this->ObjetivoProfissionalModel->ObterRegistro(null, $usuario);;
