@@ -30,82 +30,65 @@ $publica_vaga_model['pub_vag_int_id'] = isset($_GET['publica_vaga_model_model'])
 $INPUT = '<input type="hidden" name="pub_vag_int_id"  value="' . $publica_vaga_model['pub_vag_int_id'] .'">';
 echo $INPUT;
 
-$publica_vaga_model['empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['empresa'] : '';
-$pessoa['empresa'] = isset($_POST['empresa'])?$_POST['empresa']:'';
-$INPUT = '<input type="text" name="empresa" required size="70" minlength="1" maxlength="50" value="' . $pessoa['empresa'] .'">';
+$publica_vaga_model['pub_vag_char_empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['pub_vag_char_empresa'] : '';
+$pessoa['pub_vag_char_empresa'] = isset($_POST['pub_vag_char_empresa'])?$_POST['pub_vag_char_empresa']:'';
+$INPUT = '<input type="text" name="pub_vag_char_empresa" required size="70" minlength="1" maxlength="50" value="' . $pessoa['pub_vag_char_empresa'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_; 
-$publica_vaga_model['empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['empresa'] : '';
-$INPUT = '<input type="text" name="char_cargo" required size="70" minlength="1" maxlength="50" value="' . $pessoa['char_cargo'] .'">';
+$publica_vaga_model['pub_vag_char_cargo'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['pub_vag_char_cargo'] : '';
+$INPUT = '<input type="text" name="pub_vag_char_cargo" required size="70" minlength="1" maxlength="50" value="' . $pessoa['pub_vag_char_cargo'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Requisitos' . $LABEL_ . $TD_ . $TR_; 
-$publica_vaga_model['empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['empresa'] : '';
-$TEXTAREA = '<textarea id="char_requisitos" name="char_requisitos" rows="2" cols="50" maxlength="500">' . $pessoa['char_requisitos'] .'</textarea>';
+$publica_vaga_model['pub_vag_char_requisitos'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['pub_vag_char_requisitos'] : '';
+$TEXTAREA = '<textarea id="pub_vag_char_requisitos" name="pub_vag_char_requisitos" rows="2" cols="50" maxlength="500">' . $pessoa['pub_vag_char_requisitos'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Funções' . $LABEL_ . $TD_ . $TR_; 
-$publica_vaga_model['empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['empresa'] : '';
-$TEXTAREA = '<textarea id="char_funcoes" name="char_funcoes" rows="2" cols="50" maxlength="500">' . $pessoa['char_funcoes'] .'</textarea>';
+$publica_vaga_model['pub_vag_char_funcoes'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['pub_vag_char_funcoes'] : '';
+$TEXTAREA = '<textarea id="pub_vag_char_funcoes" name="pub_vag_char_funcoes" rows="2" cols="50" maxlength="500">' . $pessoa['pub_vag_char_funcoes'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Benefícios' . $LABEL_ . $TD_ . $TR_; 
-$publica_vaga_model['empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['empresa'] : '';
-$TEXTAREA = '<textarea id="char_beneficios" name="char_beneficios" rows="2" cols="50" maxlength="500">' . $pessoa['char_beneficios'] .'</textarea>';
+$publica_vaga_model['pub_vag_char_beneficios'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['pub_vag_char_beneficios'] : '';
+$TEXTAREA = '<textarea id="pub_vag_char_beneficios" name="pub_vag_char_beneficios" rows="2" cols="50" maxlength="500">' . $pessoa['pub_vag_char_beneficios'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
-echo $TR . $TD . $LABEL . 'Data de publicacao' . $LABEL_ . $TD_ . $TR_; 
-$publica_vaga_model['empresa'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['empresa'] : '';
-$INPUT = '<input type="text" name="date_data_publicacao" size="70" onkeypress="$(this).mask(\'00-00-0000\');" minlength="4" maxlength="4" value="' . $pessoa['date_data_publicacao'] .'">';
-echo $TR. $TD . $INPUT . $TD_ . $TR_; 
-
 echo $TR . $TD . $LABEL . 'Vagas' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['int_vagas'] = isset($_POST['int_vagas'])?$_POST['int_vagas']:'';
-$INPUT = '<input type="number" name="int_vagas" required size="70" min="1" max="1000000" value="' . $pessoa['int_vagas'] .'">';
+$publica_vaga_model['pub_vag_int_vagas'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['pub_vag_int_vagas'] : '';
+$INPUT = '<input type="number" name="pub_vag_int_vagas" required size="70" min="1" max="1000000" value="' . $pessoa['pub_vag_int_vagas'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
-
-echo $TR . $TD . $LABEL . 'Home office' . $LABEL_ . $TD_ . $TR_;	 
-echo $TR. $TD;
-$SELECT = '<select name="bit_home_office">';
-echo $SELECT;
-foreach ($array_resposta as $indice => $bit_home_office) {	
-	echo ($bit_home_office == $pessoa['bit_home_office'])	? "<option value=$indice selected>$bit_home_office</option>" : "<option value=$indice>$bit_home_office</option>";
-}
-echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Contrato' . $LABEL_ . $TD_ . $TR_;	 
 echo $TR. $TD;
-$SELECT = '<select name="contrato">';
+$SELECT = '<select name="pub_vag_int_contrato">';
 echo $SELECT;
-foreach ($array_contrato as $indice => $int_contrato) {	
-	echo ($int_contrato == $pessoa['int_contrato'])	? "<option value=$indice selected>$int_contrato</option>" : "<option value=$indice>$int_contrato</option>";
+foreach ($array_contrato as $indice => $pub_vag_int_contrato) {	
+	echo ($indice == $objetivo_profissional_model_get['pub_vag_int_contrato']) ? "<option value=$indice selected>$pub_vag_int_contrato</option>" : "<option value=$indice>$pub_vag_int_contrato</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Salário mensal (R$)' . $LABEL_ . $TD_ . $TR_; 
-$pessoa['char_cargo'] = isset($_POST['char_cargo'])?$_POST['char_cargo']:'';
-$INPUT = '<input type="text" name="char_cargo" required size="70" minlength="10" maxlength="50" value="' . $pessoa['char_cargo'] .'">';
+$pessoa['pub_vag_dec_salario_mensal'] = isset($_POST['pub_vag_dec_salario_mensal'])?$_POST['pub_vag_dec_salario_mensal']:'';
+$INPUT = '<input type="text" name="pub_vag_dec_salario_mensal" required size="70" minlength="10" maxlength="50" value="' . $pessoa['pub_vag_dec_salario_mensal'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="int_estado">';
+$SELECT = '<select name="pub_vag_int_estado">';
 echo $SELECT;
-foreach ($array_estado as $indice => $int_estado) {	
-	if ($indice == 0) {
-		continue;
-	}
-	echo ($int_estado == $pessoa['int_estado'])	? "<option value=$indice selected>$int_estado</option>" : "<option value=$indice>$int_estado</option>";
+foreach ($array_estado as $indice => $pub_vag_int_estado) {	
+	echo ($indice == $objetivo_profissional_model_get['pub_vag_int_estado']) ? "<option value=$indice selected>$pub_vag_int_estado</option>" : "<option value=$indice>$pub_vag_int_estado</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Cidade' . $LABEL_ . $TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="int_int_cidade">';
+$SELECT = '<select name="pub_vag_int_cidade">';
 echo $SELECT;
-foreach ($array_cidade as $indice => $int_cidade) {	
-	echo ($int_cidade == $pessoa['int_cidade'])	? "<option value=$indice selected>$int_cidade</option>" : "<option value=$indice>$int_cidade</option>";
+foreach ($array_cidade as $indice => $pub_vag_int_cidade) {	
+	echo ($indice == $objetivo_profissional_model_get['pub_vag_int_cidade']) ? "<option value=$indice selected>$pub_vag_int_cidade</option>" : "<option value=$indice>$pub_vag_int_cidade</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
