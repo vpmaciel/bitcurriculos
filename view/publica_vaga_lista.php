@@ -26,7 +26,7 @@ echo $TABLE;
 $publica_vaga_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $publica_vaga_model['usu_int_id'];
 $publica_vaga_json = json_decode(selecionar('publica_vaga', $publica_vaga_model));
-echo $TR . $TD . '<a href="publica_vaga.php">Cadastrar Vaga</a><br>' . $TD_ . $TR_; 
+echo $TR . $TD . '<a href="publica_vaga.php">Cadastrar Vaga </a><br>' . $TD_ . $TR_; 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 
 foreach($publica_vaga_json as $registro) {

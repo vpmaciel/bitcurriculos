@@ -16,7 +16,7 @@ require_once 'menu.php';
 echo $DIV_MAIN;
 echo $H1 . 'PUBLICAR VAGA' . $H1_;
 
-$FORM = '<form action="../controller/publica_vaga.php" method="post">';
+$FORM = '<form action="../controller/publica_vaga.php" method="get">';
 
 echo $FORM;
 if (isset($_GET['publica_vaga_model'])) {
@@ -57,7 +57,7 @@ echo $TR. $TD . $TEXTAREA . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Vagas' . $LABEL_ . $TD_ . $TR_; 
 $publica_vaga_model['pub_vag_int_vagas'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['pub_vag_int_vagas'] : '';
-$INPUT = '<input type="number" name="pub_vag_int_vagas" required size="70" min="1" max="1000000" value="' . $publica_vaga_model['pub_vag_int_vagas'] .'">';
+$INPUT = '<input type="number" name="pub_vag_int_vagas" required size="70" min="1" max="1000" value="' . $publica_vaga_model['pub_vag_int_vagas'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Contrato' . $LABEL_ . $TD_ . $TR_;	 
@@ -71,7 +71,7 @@ echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Salário mensal (R$)' . $LABEL_ . $TD_ . $TR_; 
 $publica_vaga_model['pub_vag_dec_salario_mensal'] = isset($_GET['publica_vaga_model_model']) ? $publica_vaga_model_get['pub_vag_dec_salario_mensal'] : '';
-$INPUT = '<input type="text" name="pub_vag_dec_salario_mensal" required size="70" minlength="10" maxlength="50" value="' . $publica_vaga_model['pub_vag_dec_salario_mensal'] .'">';
+$INPUT = '<input type="text" name="pub_vag_dec_salario_mensal" required size="70" value="' . $publica_vaga_model['pub_vag_dec_salario_mensal'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_ . $TR_; 
