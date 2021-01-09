@@ -21,7 +21,7 @@ echo $H1 . 'PUBLICAÇÃO DE VAGA' . $H1_;
 
 echo $TABLE;
 
-$publica_vaga_model['pub_vag_char_cargo'] = $_GET['pub_vag_char_cargo'];
+$publica_vaga_model['pub_vag_char_cargo'] = remover_acentos($_GET['pub_vag_char_cargo']);
 $condicao = $publica_vaga_model['pub_vag_char_cargo'];
 $publica_vaga_json = json_decode(selecionar('publica_vaga', $publica_vaga_model));
 echo $TR . $TD . '<a href="publica_vaga.php">Cadastrar Vaga </a><br>' . $TD_ . $TR_; 
