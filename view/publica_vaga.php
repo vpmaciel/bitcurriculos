@@ -74,8 +74,8 @@ foreach ($array_contrato as $indice => $pub_vag_int_contrato) {
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Salário mensal (R$)' . $LABEL_ . $TD_ . $TR_; 
-$publica_vaga_model['pub_vag_dec_salario_mensal'] = isset($_GET['publica_vaga_model']) ? $publica_vaga_model_get['pub_vag_dec_salario_mensal'] : '';
-$INPUT = '<input type="text" name="pub_vag_dec_salario_mensal" required size="70" value="' . $publica_vaga_model['pub_vag_dec_salario_mensal'] .'">';
+$publica_vaga_model['pub_vag_int_salario_mensal'] = isset($_GET['publica_vaga_model']) ? $publica_vaga_model_get['pub_vag_int_salario_mensal'] : '';
+$INPUT = '<input type="text" name="pub_vag_int_salario_mensal" required size="70" value="' . $publica_vaga_model['pub_vag_int_salario_mensal'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_ . $TR_; 

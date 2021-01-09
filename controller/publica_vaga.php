@@ -30,7 +30,7 @@ $publica_vaga_model['pub_vag_char_beneficios'] = $_GET['pub_vag_char_beneficios'
 $publica_vaga_model['pub_vag_char_data_publicacao'] = isset($_GET['pub_vag_char_data_publicacao']) ? $_GET['pub_vag_char_data_publicacao'] : date("d-m-Y");
 $publica_vaga_model['pub_vag_int_vagas'] = $_GET['pub_vag_int_vagas'];
 $publica_vaga_model['pub_vag_int_contrato'] = $_GET['pub_vag_int_contrato'];
-$publica_vaga_model['pub_vag_dec_salario_mensal'] = $_GET['pub_vag_dec_salario_mensal'];
+$publica_vaga_model['pub_vag_int_salario_mensal'] = $_GET['pub_vag_int_salario_mensal'];
 $publica_vaga_model['pub_vag_int_estado'] = $_GET['pub_vag_int_estado'];
 $publica_vaga_model['pub_vag_int_cidade'] = $_GET['pub_vag_int_cidade'];
 

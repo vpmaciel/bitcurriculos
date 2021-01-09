@@ -40,7 +40,7 @@ foreach($publica_vaga_json as $registro) {
 	$publica_vaga_model['pub_vag_char_data_publicacao'] = $registro->pub_vag_char_data_publicacao;
 	$publica_vaga_model['pub_vag_int_vagas'] = $registro->pub_vag_int_vagas;
 	$publica_vaga_model['pub_vag_int_contrato'] = $registro->pub_vag_int_contrato ;
-	$publica_vaga_model['pub_vag_dec_salario_mensal'] = $registro->pub_vag_dec_salario_mensal;
+	$publica_vaga_model['pub_vag_int_salario_mensal'] = $registro->pub_vag_int_salario_mensal;
 	$publica_vaga_model['pub_vag_int_estado'] = $registro->pub_vag_int_estado;
 	$publica_vaga_model['pub_vag_int_cidade'] = $registro->pub_vag_int_cidade;
 	
@@ -57,7 +57,7 @@ foreach($publica_vaga_json as $registro) {
 	echo $TR . $TD . $LABEL . 'Benefícios: ' . $publica_vaga_model['pub_vag_char_beneficios'] . $LABEL_ . $TD_ . $TR_;
 	echo $TR . $TD . $LABEL . 'Vagas: ' . $publica_vaga_model['pub_vag_int_vagas'] . $LABEL_ . $TD_ . $TR_;
 	echo $TR . $TD . $LABEL . 'Contrato: ' . $array_contrato[$publica_vaga_model['pub_vag_int_contrato']] . $LABEL_ . $TD_ . $TR_;
-	echo $TR . $TD . $LABEL . 'Salário mensal (R$): ' . $publica_vaga_model['pub_vag_dec_salario_mensal'] . $LABEL_ . $TD_ . $TR_;
+	echo $TR . $TD . $LABEL . 'Salário mensal (R$): ' . $publica_vaga_model['pub_vag_int_salario_mensal'] . $LABEL_ . $TD_ . $TR_;
 	echo $TR . $TD . $LABEL . 'Estado: ' . $array_estado[$publica_vaga_model['pub_vag_int_estado']] . $LABEL_ . $TD_ . $TR_;
 	echo $TR . $TD . $LABEL . 'Cidade: ' . $array_cidade[$publica_vaga_model['pub_vag_int_cidade']] . $LABEL_ . $TD_ . $TR_;
 	echo $TR . $TD . '<a href="../view/publica_vaga.php?' . $str . '">Editar</a>' . $TD_ . $TR_; 
