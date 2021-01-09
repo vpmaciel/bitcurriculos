@@ -22,6 +22,7 @@ $pdf->SetFont('arial', 'B', 12);
 $pdf->Ln(20);
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DADOS PESSOAIS"), 0, 1, 'L'); 
 $pdf->Ln(10);
+$pdf->SetFont('arial', '', 12);
 
 $pessoa_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $pessoa_model['usu_int_id'];
@@ -139,9 +140,11 @@ $usuario_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $pessoa_json = json_decode(selecionar('objetivo_profissional', $usuario_model));      
 
 if (!empty($pessoa_json)) {
+	$pdf->SetFont('arial', 'B', 12);
 	$pdf->Ln(20);	
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "OBJETIVO PROFISSIONAL"), 0, 1, 'L');
 	$pdf->Ln(10);
+	$pdf->SetFont('arial', '', 12);
 }
 
 foreach($pessoa_json as $registro) {
