@@ -19,8 +19,6 @@ require_once 'menu.php';
 echo $DIV_MAIN;
 echo $H1 . 'PUBLICAÇÃO DE VAGA' . $H1_;
 
-$FORM = '<form action="../controller/publica_vaga.php" method="get">';
-
 echo $TABLE;
 
 $publica_vaga_model['usu_int_id'] = $_SESSION['usu_int_id'];
