@@ -24,7 +24,7 @@ echo $TABLE;
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_; 
 $vaga['pub_vag_char_cargo'] = isset($_POST['pub_vag_char_cargo'])?$_POST['pub_vag_char_cargo']:'';
-$INPUT = '<input type="text" name="pub_vag_char_cargo" required size="70" minlength="1" maxlength="50" value="' . $vaga['pub_vag_char_cargo'] .'">';
+$INPUT = '<input type="text" name="pub_vag_char_cargo" size="70" maxlength="50" value="' . $vaga['pub_vag_char_cargo'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 

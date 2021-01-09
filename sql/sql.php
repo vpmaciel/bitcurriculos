@@ -357,9 +357,9 @@ function procurar($char_tabela, $char_campo, $char_valor) {
     
         $stmt = NULL;
         
-        if (!empty($char_condicao)) {
+        if (!empty($char_valor)) {
             //die("SELECT * FROM $char_tabela WHERE ($char_condicao);");
-            $stmt = $pdo->prepare("SELECT * FROM $char_tabela WHERE $char_campo  LIKE '%" . $char_entrada . "%'");
+            $stmt = $pdo->prepare("SELECT * FROM $char_tabela WHERE $char_campo  LIKE '%" . $char_valor . "%'");
             
         } else {
             //die("SELECT * FROM $char_tabela;");

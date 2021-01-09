@@ -22,8 +22,7 @@ echo $H1 . 'VAGAS DISPONÍVEIS' . $H1_;
 echo $TABLE;
 
 $publica_vaga_model['pub_vag_char_cargo'] = remover_acentos($_GET['pub_vag_char_cargo']);
-$publica_vaga_json = json_decode(selecionar('publica_vaga', $publica_vaga_model));
-echo $TR . $TD . '<a href="publica_vaga.php">Cadastrar Vaga </a><br>' . $TD_ . $TR_; 
+$publica_vaga_json = json_decode(procurar('publica_vaga', 'pub_vag_char_cargo', $publica_vaga_model['pub_vag_char_cargo']));
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 
 foreach($publica_vaga_json as $registro) {
