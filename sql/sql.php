@@ -338,3 +338,48 @@ function remover_caracteres($valor) {
     $retorno = str_replace($remover, "", $valor);
     return trim($retorno);
 }
+####################################################################################################
+
+function procurar($char_tabela, $char_campo, $char_valor) {
+    global $pdo;
+    
+    if(!is_string($char_tabela) || !is_string($char_campo) || !is_string($char_valor)) {
+        throw new Exception('Tipos de parametros imcompatíveis !');
+        return NULL;
+    }
+
+    try {
+        if(verificarSQL($char_valor)) {
+            throw new Exception('Tentativa de SQL injection !');               
+        }
+        $char_valor = remover_caracteres($char_valor);
+        $char_valor = mb_strtoupper( $char_valor, 'UTF-8');
+    
+        $stmt = NULL;
+        
+        if (!empty($char_condicao)) {
+            //die("SELECT * FROM $char_tabela WHERE ($char_condicao);");
+            $stmt = $pdo->prepare("SELECT * FROM $char_tabela WHERE $char_campo  LIKE '%" . $char_entrada . "%'");
+            
+        } else {
+            //die("SELECT * FROM $char_tabela;");
+            $stmt = $pdo->prepare("SELECT * FROM $char_tabela;");
+        }
+
+        if (!$stmt->execute()) {
+            throw new Exception('Não executou !');            
+            return NULL;
+        }
+        $pdo->beginTransaction();        
+        $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $pdo->commit();
+        
+        return json_encode($linhas);
+    
+    } catch(PDOException $pdoException) {           
+        throw new PDOException($pdoException);    
+        echo "Erro na seleção:" . $pdoException->getMessage();
+        $pdo->rollback();
+        return NULL;
+    }
+}
