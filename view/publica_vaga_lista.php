@@ -17,7 +17,7 @@ echo $BODY;
 require_once 'menu.php';
 
 echo $DIV_MAIN;
-echo $H1 . 'OBJETIVO PROFISSIONAL' . $H1_;
+echo $H1 . 'PUBLICAÇÃO DE VAGA' . $H1_;
 
 $FORM = '<form action="../controller/publica_vaga.php" method="get">';
 
@@ -26,13 +26,13 @@ echo $TABLE;
 $publica_vaga_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $publica_vaga_model['usu_int_id'];
 $publica_vaga_json = json_decode(selecionar('publica_vaga', $publica_vaga_model));
-echo $TR . $TD . '<a href="publica_vaga.php">Cadastrar Curso</a><br>' . $TD_ . $TR_; 
+echo $TR . $TD . '<a href="publica_vaga.php">Cadastrar Vaga</a><br>' . $TD_ . $TR_; 
 echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 
 foreach($publica_vaga_json as $registro) {
 	$publica_vaga_model = array();
 	$publica_vaga_model['pub_vag_int_id'] = $registro->pub_vag_int_id;
-	$publica_vaga_model['pub_vag_date_data'] = $registro->pub_vag_date_data;
+	$publica_vaga_model['pub_vag_date_data'] = $registro->pub_vag_char_data;
 	$publica_vaga_model['pub_vag_char_empresa'] = $registro->pub_vag_char_empresa;
 	$publica_vaga_model['pub_vag_char_cargo'] = $registro->pub_vag_char_cargo;
 	$publica_vaga_model['pub_vag_char_requisitos'] = $registro->pub_vag_char_requisitos;
@@ -50,18 +50,17 @@ foreach($publica_vaga_json as $registro) {
 		$str .= "publica_vaga_model[$k]" . "=" . $v . "&";                        
 	}
 
-	echo $TR . $TD . $LABEL . 'Data de Publicação: ' . $publica_vaga_model['obj_pro_char_cargo'] . $LABEL_ . $TD_ . $TR_; 
-	echo $TR . $TD . $LABEL . 'Empresa: ' . $array_pretensao_salarial[$publica_vaga_model['obj_pro_int_pretensao_salarial']] . $LABEL_ . $TD_ . $TR_; 
-	echo $TR . $TD . $LABEL . 'Cargo: ' . $array_contrato[$publica_vaga_model['obj_pro_int_contrato']] . $LABEL_ . $TD_ . $TR_;  
-	echo $TR . $TD . $LABEL . 'Requisitos: ' . $publica_vaga_model['obj_pro_char_cargo'] . $LABEL_ . $TD_ . $TR_; 
-	echo $TR . $TD . $LABEL . 'Funções: ' . $array_pretensao_salarial[$publica_vaga_model['obj_pro_int_pretensao_salarial']] . $LABEL_ . $TD_ . $TR_; 
-	echo $TR . $TD . $LABEL . 'Benefícios: ' . $array_contrato[$publica_vaga_model['obj_pro_int_contrato']] . $LABEL_ . $TD_ . $TR_;  
-	echo $TR . $TD . $LABEL . 'Vagas: ' . $publica_vaga_model['obj_pro_char_cargo'] . $LABEL_ . $TD_ . $TR_; 
-	echo $TR . $TD . $LABEL . 'Contrato: ' . $array_pretensao_salarial[$publica_vaga_model['obj_pro_int_pretensao_salarial']] . $LABEL_ . $TD_ . $TR_; 
-	echo $TR . $TD . $LABEL . 'Contrato: ' . $array_contrato[$publica_vaga_model['obj_pro_int_contrato']] . $LABEL_ . $TD_ . $TR_;  
-	echo $TR . $TD . $LABEL . 'Cargo: ' . $publica_vaga_model['obj_pro_char_cargo'] . $LABEL_ . $TD_ . $TR_; 
-	echo $TR . $TD . $LABEL . 'Pretensão salarial: ' . $array_pretensao_salarial[$publica_vaga_model['obj_pro_int_pretensao_salarial']] . $LABEL_ . $TD_ . $TR_; 
-	echo $TR . $TD . $LABEL . 'Contrato: ' . $array_contrato[$publica_vaga_model['obj_pro_int_contrato']] . $LABEL_ . $TD_ . $TR_;  
+	echo $TR . $TD . $LABEL . 'Data de Publicação: ' . $publica_vaga_model['pub_vag_char_data'] . $LABEL_ . $TD_ . $TR_;
+	echo $TR . $TD . $LABEL . 'Empresa: ' . $publica_vaga_model['pub_vag_char_empresa'] . $LABEL_ . $TD_ . $TR_;
+	echo $TR . $TD . $LABEL . 'Cargo: ' . $publica_vaga_model['pub_vag_char_cargo'] . $LABEL_ . $TD_ . $TR_;
+	echo $TR . $TD . $LABEL . 'Requisitos: ' . $publica_vaga_model['pub_vag_char_requisitos'] . $LABEL_ . $TD_ . $TR_;
+	echo $TR . $TD . $LABEL . 'Funções: ' . $publica_vaga_model['pub_vag_char_funcoes'] . $LABEL_ . $TD_ . $TR_;
+	echo $TR . $TD . $LABEL . 'Benefícios: ' . $publica_vaga_model['pub_vag_char_beneficios'] . $LABEL_ . $TD_ . $TR_;
+	echo $TR . $TD . $LABEL . 'Vagas: ' . $publica_vaga_model['pub_vag_int_vagas'] . $LABEL_ . $TD_ . $TR_;
+	echo $TR . $TD . $LABEL . 'Contrato: ' . $array_contrato[$publica_vaga_model['pub_vag_int_contrato']] . $LABEL_ . $TD_ . $TR_;
+	echo $TR . $TD . $LABEL . 'Salário mensal (R$): ' . $publica_vaga_model['pub_vag_dec_salario_mensal'] . $LABEL_ . $TD_ . $TR_;
+	echo $TR . $TD . $LABEL . 'Estado: ' . $array_estado[$publica_vaga_model['pub_vag_int_estado']] . $LABEL_ . $TD_ . $TR_;
+	echo $TR . $TD . $LABEL . 'Cidade: ' . $array_cidade[$publica_vaga_model['pub_vag_int_cidade']] . $LABEL_ . $TD_ . $TR_;
 	echo $TR . $TD . '<a href="../view/publica_vaga.php?' . $str . '">Editar</a>' . $TD_ . $TR_; 
 	echo $TR . $TD . '<a href="../controller/publica_vaga.php?acao=excluir&' . $str . '">Excluir</a>' . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 	
