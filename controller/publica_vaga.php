@@ -27,7 +27,7 @@ $publica_vaga_model['pub_vag_char_cargo'] = $_GET['pub_vag_char_cargo'];
 $publica_vaga_model['pub_vag_char_requisitos'] = $_GET['pub_vag_char_requisitos'];
 $publica_vaga_model['pub_vag_char_funcoes'] = $_GET['pub_vag_char_funcoes'];
 $publica_vaga_model['pub_vag_char_beneficios'] = $_GET['pub_vag_char_beneficios'];
-$publica_vaga_model['pub_vag_char_data_publicacao'] = $_GET['pub_vag_char_data_publicacao'];
+$publica_vaga_model['pub_vag_char_data_publicacao'] = isset($_GET['pub_vag_char_data_publicacao']) ? $_GET['pub_vag_char_data_publicacao'] : date("d-m-Y");
 $publica_vaga_model['pub_vag_int_vagas'] = $_GET['pub_vag_int_vagas'];
 $publica_vaga_model['pub_vag_int_contrato'] = $_GET['pub_vag_int_contrato'];
 $publica_vaga_model['pub_vag_dec_salario_mensal'] = $_GET['pub_vag_dec_salario_mensal'];
@@ -54,7 +54,6 @@ if ($acao == 'excluir') {
 }
 
 if ($resultado_numero_registros == 0) {
-	$publica_vaga_model['pub_char_date_data'] = new date("d-m-Y");
     $resultado_inserir = inserir('publica_vaga', $publica_vaga_model);
     
     if ($resultado_inserir == TRUE) {
@@ -67,7 +66,7 @@ if ($resultado_numero_registros == 0) {
 } else {
     
 	$condicao['usu_int_id'] = $_SESSION['usu_int_id'];
-	$condicao['obj_pro_int_id'] = $_GET['obj_pro_int_id'];
+	$condicao['pub_vag_int_id'] = $_GET['pub_vag_int_id'];
 
 	
 	$resultado_atualizar = atualizar('publica_vaga', $publica_vaga_model, $condicao);

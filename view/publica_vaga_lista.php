@@ -32,7 +32,6 @@ echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
 foreach($publica_vaga_json as $registro) {
 	$publica_vaga_model = array();
 	$publica_vaga_model['pub_vag_int_id'] = $registro->pub_vag_int_id;
-	$publica_vaga_model['pub_vag_date_data'] = $registro->pub_vag_char_data;
 	$publica_vaga_model['pub_vag_char_empresa'] = $registro->pub_vag_char_empresa;
 	$publica_vaga_model['pub_vag_char_cargo'] = $registro->pub_vag_char_cargo;
 	$publica_vaga_model['pub_vag_char_requisitos'] = $registro->pub_vag_char_requisitos;
@@ -50,7 +49,7 @@ foreach($publica_vaga_json as $registro) {
 		$str .= "publica_vaga_model[$k]" . "=" . $v . "&";                        
 	}
 
-	echo $TR . $TD . $LABEL . 'Data de Publicação: ' . $publica_vaga_model['pub_vag_char_data'] . $LABEL_ . $TD_ . $TR_;
+	echo $TR . $TD . $LABEL . 'Data de Publicação: ' . $publica_vaga_model['pub_vag_char_data_publicacao'] . $LABEL_ . $TD_ . $TR_;
 	echo $TR . $TD . $LABEL . 'Empresa: ' . $publica_vaga_model['pub_vag_char_empresa'] . $LABEL_ . $TD_ . $TR_;
 	echo $TR . $TD . $LABEL . 'Cargo: ' . $publica_vaga_model['pub_vag_char_cargo'] . $LABEL_ . $TD_ . $TR_;
 	echo $TR . $TD . $LABEL . 'Requisitos: ' . $publica_vaga_model['pub_vag_char_requisitos'] . $LABEL_ . $TD_ . $TR_;
