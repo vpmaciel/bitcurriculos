@@ -5,9 +5,7 @@ function retornar_escolaridade() : array {
         'DOUTORADO', 
         'MESTRADO', 
         'PÓS GRADUAÇÃO', 
-        'MBA', 
-        'SUPERIOR',            
-        'TECNÓLOGO', 
+        'SUPERIOR',
         'TÉCNICO',
         'SEGUNDO GRAU',
         'PRIMEIRO GRAU'
