@@ -162,7 +162,7 @@ foreach($pessoa_json as $registro) {
 ####################################################################################################
 
 $usuario_model['usu_int_id'] = $_SESSION['usu_int_id'];
-$pessoa_json = json_decode(selecionar('cursos', $usuario_model));      
+$pessoa_json = json_decode(selecionar('curso', $usuario_model));      
 
 if (!empty($pessoa_json)) {
 	$pdf->SetFont('arial', 'B', 10);
@@ -173,15 +173,24 @@ if (!empty($pessoa_json)) {
 }
 
 foreach($pessoa_json as $registro) {
-	$valor = $registro->obj_pro_char_cargo;
+	$valor = $registro->cur_char_nome;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CARGO: $valor"), 0, 1, 'L');
-	$valor = $array_pretensao_salarial[$registro->obj_pro_int_pretensao_salarial];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "NOME DO CURSO: $valor"), 0, 1, 'L');
+	$valor = $registro->cur_char_instituicao;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "PRETENSÃO SALARIAL: $valor"), 0, 1, 'L');
-	$valor = $array_contrato[$registro->obj_pro_int_contrato];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "INSTITUIÇÃO: $valor"), 0, 1, 'L');
+	$valor = $registro->cur_year_ano_inicio;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CONTRATO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "ANO DE INÍCIO: $valor"), 0, 1, 'L');
+	$valor = $registro->cur_year_ano_conclusao;
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "ANO DE CONCLUSÃO: $valor"), 0, 1, 'L');
+	$valor = $array_situacao[$registro->cur_int_situacao];
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "SITUAÇÃO: $valor"), 0, 1, 'L');
+	$valor = $array_escolaridade[$registro->cur_int_nivel];
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "NÍVEL: $valor"), 0, 1, 'L');	
 }
 
 ####################################################################################################
