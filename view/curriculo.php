@@ -14,15 +14,15 @@ require ('../fpdf/fpdf.php');
 $pdf = new FPDF("P", "pt", "A4");
 $pdf->AddPage();
 
-$pdf->SetFont('arial', 'B', 12);
+$pdf->SetFont('arial', 'B', 10);
 $pdf->Ln(20);
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CURRÍCULO"), 0, 1, 'C'); 
 
-$pdf->SetFont('arial', 'B', 12);
+$pdf->SetFont('arial', 'B', 10);
 $pdf->Ln(20);
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DADOS PESSOAIS"), 0, 1, 'L'); 
 $pdf->Ln(10);
-$pdf->SetFont('arial', '', 12);
+$pdf->SetFont('arial', '', 10);
 
 $pessoa_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $pessoa_model['usu_int_id'];
@@ -140,11 +140,11 @@ $usuario_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $pessoa_json = json_decode(selecionar('objetivo_profissional', $usuario_model));      
 
 if (!empty($pessoa_json)) {
-	$pdf->SetFont('arial', 'B', 12);
+	$pdf->SetFont('arial', 'B', 10);
 	$pdf->Ln(20);	
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "OBJETIVO PROFISSIONAL"), 0, 1, 'L');
 	$pdf->Ln(10);
-	$pdf->SetFont('arial', '', 12);
+	$pdf->SetFont('arial', '', 10);
 }
 
 foreach($pessoa_json as $registro) {
@@ -159,13 +159,114 @@ foreach($pessoa_json as $registro) {
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CONTRATO: $valor"), 0, 1, 'L');
 }
 
+####################################################################################################
+
+$usuario_model['usu_int_id'] = $_SESSION['usu_int_id'];
+$pessoa_json = json_decode(selecionar('cursos', $usuario_model));      
+
+if (!empty($pessoa_json)) {
+	$pdf->SetFont('arial', 'B', 10);
+	$pdf->Ln(20);	
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CURSOS"), 0, 1, 'L');
+	$pdf->Ln(10);
+	$pdf->SetFont('arial', '', 10);
+}
+
+foreach($pessoa_json as $registro) {
+	$valor = $registro->obj_pro_char_cargo;
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CARGO: $valor"), 0, 1, 'L');
+	$valor = $array_pretensao_salarial[$registro->obj_pro_int_pretensao_salarial];
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "PRETENSÃO SALARIAL: $valor"), 0, 1, 'L');
+	$valor = $array_contrato[$registro->obj_pro_int_contrato];
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CONTRATO: $valor"), 0, 1, 'L');
+}
+
+####################################################################################################
+
+$usuario_model['usu_int_id'] = $_SESSION['usu_int_id'];
+$pessoa_json = json_decode(selecionar('objetivo_profissional', $usuario_model));      
+
+if (!empty($pessoa_json)) {
+	$pdf->SetFont('arial', 'B', 10);
+	$pdf->Ln(20);	
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "OBJETIVO PROFISSIONAL"), 0, 1, 'L');
+	$pdf->Ln(10);
+	$pdf->SetFont('arial', '', 10);
+}
+
+foreach($pessoa_json as $registro) {
+	$valor = $registro->obj_pro_char_cargo;
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CARGO: $valor"), 0, 1, 'L');
+	$valor = $array_pretensao_salarial[$registro->obj_pro_int_pretensao_salarial];
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "PRETENSÃO SALARIAL: $valor"), 0, 1, 'L');
+	$valor = $array_contrato[$registro->obj_pro_int_contrato];
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CONTRATO: $valor"), 0, 1, 'L');
+}
+
+####################################################################################################
+
+$usuario_model['usu_int_id'] = $_SESSION['usu_int_id'];
+$pessoa_json = json_decode(selecionar('objetivo_profissional', $usuario_model));      
+
+if (!empty($pessoa_json)) {
+	$pdf->SetFont('arial', 'B', 10);
+	$pdf->Ln(20);	
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "OBJETIVO PROFISSIONAL"), 0, 1, 'L');
+	$pdf->Ln(10);
+	$pdf->SetFont('arial', '', 10);
+}
+
+foreach($pessoa_json as $registro) {
+	$valor = $registro->obj_pro_char_cargo;
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CARGO: $valor"), 0, 1, 'L');
+	$valor = $array_pretensao_salarial[$registro->obj_pro_int_pretensao_salarial];
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "PRETENSÃO SALARIAL: $valor"), 0, 1, 'L');
+	$valor = $array_contrato[$registro->obj_pro_int_contrato];
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CONTRATO: $valor"), 0, 1, 'L');
+}
+
+####################################################################################################
+
+$usuario_model['usu_int_id'] = $_SESSION['usu_int_id'];
+$pessoa_json = json_decode(selecionar('objetivo_profissional', $usuario_model));      
+
+if (!empty($pessoa_json)) {
+	$pdf->SetFont('arial', 'B', 10);
+	$pdf->Ln(20);	
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "OBJETIVO PROFISSIONAL"), 0, 1, 'L');
+	$pdf->Ln(10);
+	$pdf->SetFont('arial', '', 10);
+}
+
+foreach($pessoa_json as $registro) {
+	$valor = $registro->obj_pro_char_cargo;
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CARGO: $valor"), 0, 1, 'L');
+	$valor = $array_pretensao_salarial[$registro->obj_pro_int_pretensao_salarial];
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "PRETENSÃO SALARIAL: $valor"), 0, 1, 'L');
+	$valor = $array_contrato[$registro->obj_pro_int_contrato];
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CONTRATO: $valor"), 0, 1, 'L');
+}
+
+
 $caminhoCompletoArquivo = "../file/curriculo" . $_SESSION['usu_int_id'] . ".pdf";
 	/* executa a geração do seu PDF*/
 $pdf->Output('f', $caminhoCompletoArquivo);
 
 /* adiciona o arquivo físico ao e-mail */
 if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'BitCurriculos', 'Sua Senha','Candidato', 'curriculo'. $_SESSION['usu_int_id'] .'.pdf')) {
-	header("location:..\\view\\sucesso.php?msg=Sua senha é foi enviada para seu e-mail !");
+	header("location:..\\view\\sucesso.php?msg=Seu currículo foi enviado para seu e-mail !");
 }
 
 /* exclui o arquivo pdf do servidor */
