@@ -196,76 +196,101 @@ foreach($pessoa_json as $registro) {
 ####################################################################################################
 
 $usuario_model['usu_int_id'] = $_SESSION['usu_int_id'];
-$pessoa_json = json_decode(selecionar('objetivo_profissional', $usuario_model));      
+$pessoa_json = json_decode(selecionar('certificacao', $usuario_model));      
 
 if (!empty($pessoa_json)) {
 	$pdf->SetFont('arial', 'B', 10);
 	$pdf->Ln(20);	
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "OBJETIVO PROFISSIONAL"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CETIFICAÇÃO"), 0, 1, 'L');
 	$pdf->Ln(10);
 	$pdf->SetFont('arial', '', 10);
 }
 
 foreach($pessoa_json as $registro) {
-	$valor = $registro->obj_pro_char_cargo;
+	$valor = $registro->cer_char_certificacao;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CARGO: $valor"), 0, 1, 'L');
-	$valor = $array_pretensao_salarial[$registro->obj_pro_int_pretensao_salarial];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CERTIFICAÇÃO: $valor"), 0, 1, 'L');
+	$valor = $registro->cer_char_instituicao;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "PRETENSÃO SALARIAL: $valor"), 0, 1, 'L');
-	$valor = $array_contrato[$registro->obj_pro_int_contrato];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "INSTITUIÇÃO: $valor"), 0, 1, 'L');
+	$valor = $registro->cer_year_ano_obtencao;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CONTRATO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "ANO DE OBTENÇÃO: $valor"), 0, 1, 'L');
 }
 
 ####################################################################################################
 
 $usuario_model['usu_int_id'] = $_SESSION['usu_int_id'];
-$pessoa_json = json_decode(selecionar('objetivo_profissional', $usuario_model));      
+$pessoa_json = json_decode(selecionar('idioma', $usuario_model));      
 
 if (!empty($pessoa_json)) {
 	$pdf->SetFont('arial', 'B', 10);
 	$pdf->Ln(20);	
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "OBJETIVO PROFISSIONAL"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "IDIOMAS"), 0, 1, 'L');
 	$pdf->Ln(10);
 	$pdf->SetFont('arial', '', 10);
 }
 
 foreach($pessoa_json as $registro) {
-	$valor = $registro->obj_pro_char_cargo;
+	$valor = $array_idioma[$registro->idi_int_idioma];
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CARGO: $valor"), 0, 1, 'L');
-	$valor = $array_pretensao_salarial[$registro->obj_pro_int_pretensao_salarial];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "IDIOMA: $valor"), 0, 1, 'L');
+	$valor = $array_nivel_conhecimento_idioma[$registro->idi_int_nivel_conhecimento];
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "PRETENSÃO SALARIAL: $valor"), 0, 1, 'L');
-	$valor = $array_contrato[$registro->obj_pro_int_contrato];
-	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CONTRATO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "NÍVEL DE CONHECIMENTO: $valor"), 0, 1, 'L');
 }
 
 ####################################################################################################
 
 $usuario_model['usu_int_id'] = $_SESSION['usu_int_id'];
-$pessoa_json = json_decode(selecionar('objetivo_profissional', $usuario_model));      
+$pessoa_json = json_decode(selecionar('habilidade', $usuario_model));      
 
 if (!empty($pessoa_json)) {
 	$pdf->SetFont('arial', 'B', 10);
 	$pdf->Ln(20);	
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "OBJETIVO PROFISSIONAL"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "HABILIDADES"), 0, 1, 'L');
 	$pdf->Ln(10);
 	$pdf->SetFont('arial', '', 10);
 }
 
 foreach($pessoa_json as $registro) {
-	$valor = $registro->obj_pro_char_cargo;
+	$valor = $registro->hab_char_habilidade;
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "HABILIDADE: $valor"), 0, 1, 'L');
+	$valor = $array_nivel_conhecimento[$registro->hab_int_nivel_conhecimento];
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "NÍVEL: $valor"), 0, 1, 'L');
+}
+
+####################################################################################################
+
+$usuario_model['usu_int_id'] = $_SESSION['usu_int_id'];
+$pessoa_json = json_decode(selecionar('experiencia_profissional', $usuario_model));      
+
+if (!empty($pessoa_json)) {
+	$pdf->SetFont('arial', 'B', 10);
+	$pdf->Ln(20);	
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "EXPERIÊNCIA PROFISSIONAL"), 0, 1, 'L');
+	$pdf->Ln(10);
+	$pdf->SetFont('arial', '', 10);
+}
+
+foreach($pessoa_json as $registro) {
+	$valor = $registro->exp_prof_char_empresa;
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "EMPRESA: $valor"), 0, 1, 'L');
+	$valor = $registro->exp_prof_char_cargo;
 	$pdf->Ln(10);
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CARGO: $valor"), 0, 1, 'L');
-	$valor = $array_pretensao_salarial[$registro->obj_pro_int_pretensao_salarial];
+	$valor = $registro->exp_prof_char_data_admissao;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "PRETENSÃO SALARIAL: $valor"), 0, 1, 'L');
-	$valor = $array_contrato[$registro->obj_pro_int_contrato];
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DATA DE ADMISSÃO: $valor"), 0, 1, 'L');
+	$valor = $registro->exp_prof_char_data_saida;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CONTRATO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DATA DE SAÍDA: $valor"), 0, 1, 'L');
+	$valor = $registro->exp_prof_char_funcoes;
+	$pdf->Ln(10);
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "FUNÇÕES: $valor"), 0, 1, 'L');
 }
 
 
