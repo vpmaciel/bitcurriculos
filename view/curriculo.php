@@ -149,7 +149,7 @@ if (!empty($pessoa_json)) {
 
 foreach($pessoa_json as $registro) {
 	$valor = $registro->obj_pro_char_cargo;
-	$pdf->Ln(10);
+	$pdf->Ln(20);
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CARGO: $valor"), 0, 1, 'L');
 	$valor = $array_pretensao_salarial[$registro->obj_pro_int_pretensao_salarial];
 	$pdf->Ln(10);
@@ -174,7 +174,7 @@ if (!empty($pessoa_json)) {
 
 foreach($pessoa_json as $registro) {
 	$valor = $registro->cur_char_nome;
-	$pdf->Ln(10);
+	$pdf->Ln(20);
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "NOME DO CURSO: $valor"), 0, 1, 'L');
 	$valor = $registro->cur_char_instituicao;
 	$pdf->Ln(10);
@@ -208,7 +208,7 @@ if (!empty($pessoa_json)) {
 
 foreach($pessoa_json as $registro) {
 	$valor = $registro->cer_char_certificacao;
-	$pdf->Ln(10);
+	$pdf->Ln(20);
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CERTIFICAÇÃO: $valor"), 0, 1, 'L');
 	$valor = $registro->cer_char_instituicao;
 	$pdf->Ln(10);
@@ -233,7 +233,7 @@ if (!empty($pessoa_json)) {
 
 foreach($pessoa_json as $registro) {
 	$valor = $array_idioma[$registro->idi_int_idioma];
-	$pdf->Ln(10);
+	$pdf->Ln(20);
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "IDIOMA: $valor"), 0, 1, 'L');
 	$valor = $array_nivel_conhecimento_idioma[$registro->idi_int_nivel_conhecimento];
 	$pdf->Ln(10);
@@ -255,7 +255,7 @@ if (!empty($pessoa_json)) {
 
 foreach($pessoa_json as $registro) {
 	$valor = $registro->hab_char_habilidade;
-	$pdf->Ln(10);
+	$pdf->Ln(20);
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "HABILIDADE: $valor"), 0, 1, 'L');
 	$valor = $array_nivel_conhecimento[$registro->hab_int_nivel_conhecimento];
 	$pdf->Ln(10);
@@ -277,7 +277,7 @@ if (!empty($pessoa_json)) {
 
 foreach($pessoa_json as $registro) {
 	$valor = $registro->exp_prof_char_empresa;
-	$pdf->Ln(10);
+	$pdf->Ln(20);
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "EMPRESA: $valor"), 0, 1, 'L');
 	$valor = $registro->exp_prof_char_cargo;
 	$pdf->Ln(10);
