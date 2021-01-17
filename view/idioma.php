@@ -14,7 +14,6 @@ echo $HEAD_;
 echo $BODY;
 require_once 'menu.php';
 echo $DIV_MAIN;
-echo $H1 . 'IDIOMA' . $H1_;
 
 $FORM = '<form action="../controller/idioma.php" method="get">';
 
@@ -25,6 +24,7 @@ if (isset($_GET['idioma_model'])) {
 }
 
 echo $TABLE;
+echo $TR . $TH . 'IDIOMA' . $TH_ . $TR_;
 
 $idioma_model['idi_int_id'] = isset($_GET['idioma_model']) ? $idioma_model_get['idi_int_id'] : '';
 $INPUT = '<input type="hidden" name="idi_int_id"  value="' . $idioma_model['idi_int_id'] .'">';

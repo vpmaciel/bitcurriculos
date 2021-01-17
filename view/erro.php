@@ -10,10 +10,9 @@ echo $HEAD_;
 echo $BODY;
 require_once 'menu.php';
 echo $DIV_MAIN;
-echo $H1 . 'ERRO' . $H1_;
 
 echo $TABLE;
-
+echo $TR . $TH . 'ERRO' . $TH_ . $TR_;
 echo $TR . $TD . '<p class="erro">' . $array_erro[$_GET['e']]. '</p>'  . $TD_ . $TR_;
 
 if (isset($_GET['msg'])) {

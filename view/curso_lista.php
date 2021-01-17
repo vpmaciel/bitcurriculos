@@ -17,11 +17,11 @@ echo $BODY;
 require_once 'menu.php';
 
 echo $DIV_MAIN;
-echo $H1 . 'CURSO' . $H1_;
 
 $FORM = '<form action="../controller/curso.php" method="get">';
 
 echo $TABLE;
+echo $TR . $TH . 'CURSO' . $TH_ . $TR_;
 
 $curso_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $curso_model['usu_int_id'];

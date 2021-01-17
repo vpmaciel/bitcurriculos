@@ -17,11 +17,11 @@ echo $BODY;
 require_once 'menu.php';
 
 echo $DIV_MAIN;
-echo $H1 . 'IDIOMA' . $H1_;
 
 $FORM = '<form action="../controller/idioma.php" method="get">';
 
 echo $TABLE;
+echo $TR . $TH . 'IDIOMA' . $TH_ . $TR_;
 
 $idioma_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $idioma_model['usu_int_id'];

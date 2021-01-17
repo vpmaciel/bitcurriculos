@@ -14,7 +14,6 @@ echo $HEAD_;
 echo $BODY;
 require_once 'menu.php';
 echo $DIV_MAIN;
-echo $H1 . 'HABILIDADE' . $H1_;
 
 $FORM = '<form action="../controller/habilidade.php" method="get">';
 echo $FORM;
@@ -23,6 +22,7 @@ if (isset($_GET['habilidade_model'])) {
 }
 
 echo $TABLE;
+echo $TR . $TH . 'HABILIDADE' . $TH_ . $TR_;
 
 $habilidade_model['hab_int_id'] = isset($_GET['habilidade_model']) ? $habilidade_model_get['hab_int_id'] : '';
 $INPUT = '<input type="hidden" name="hab_int_id"  value="' . $habilidade_model['hab_int_id'] .'">';

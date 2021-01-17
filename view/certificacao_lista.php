@@ -17,11 +17,11 @@ echo $BODY;
 require_once 'menu.php';
 
 echo $DIV_MAIN;
-echo $H1 . 'CERTIFICAÇÃO' . $H1_;
 
 $FORM = '<form action="../controller/certificacao.php" method="get">';
 
 echo $TABLE;
+echo $TR . $TH . 'CERTIFICAÇÃO' . $TH_ . $TR_;
 
 $certificacao_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $certificacao_model['usu_int_id'];

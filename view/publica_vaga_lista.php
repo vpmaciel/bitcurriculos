@@ -17,9 +17,9 @@ echo $BODY;
 require_once 'menu.php';
 
 echo $DIV_MAIN;
-echo $H1 . 'PUBLICAÇÃO DE VAGA' . $H1_;
 
 echo $TABLE;
+echo $TR . $TH . 'PUBLICAÇÃO DE VAGA'  . $TH_ . $TR_; 
 
 $publica_vaga_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $publica_vaga_model['usu_int_id'];

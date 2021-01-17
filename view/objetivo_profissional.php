@@ -14,7 +14,6 @@ echo $HEAD_;
 echo $BODY;
 require_once 'menu.php';
 echo $DIV_MAIN;
-echo $H1 . 'OBJETIVO PROFISSIONAL' . $H1_;
 
 $FORM = '<form action="../controller/objetivo_profissional.php" method="get">';
 echo $FORM;
@@ -23,6 +22,7 @@ if (isset($_GET['objetivo_profissional_model'])) {
 }
 
 echo $TABLE;
+echo $TR . $TH . 'OBJETIVO PROFISSIONAL'  . $TH_ . $TR_; 
 
 $objetivo_profissional_model['obj_pro_int_id'] = isset($_GET['objetivo_profissional_model']) ? $objetivo_profissional_model_get['obj_pro_int_id'] : '';
 $INPUT = '<input type="hidden" name="obj_pro_int_id"  value="' . $objetivo_profissional_model['obj_pro_int_id'] .'">';

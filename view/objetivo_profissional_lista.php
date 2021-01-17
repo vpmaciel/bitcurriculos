@@ -17,11 +17,11 @@ echo $BODY;
 require_once 'menu.php';
 
 echo $DIV_MAIN;
-echo $H1 . 'OBJETIVO PROFISSIONAL' . $H1_;
 
 $FORM = '<form action="../controller/objetivo_profissional.php" method="get">';
 
 echo $TABLE;
+echo $TR . $TH . 'OBJETIVO PROFISSIONAL'  . $TH_ . $TR_; 
 
 $objetivo_profissional_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $objetivo_profissional_model['usu_int_id'];

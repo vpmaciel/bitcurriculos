@@ -14,7 +14,6 @@ echo $HEAD_;
 echo $BODY;
 require_once 'menu.php';
 echo $DIV_MAIN;
-echo $H1 . 'PUBLICAR VAGA' . $H1_;
 
 $FORM = '<form action="../controller/publica_vaga.php" method="get">';
 
@@ -24,7 +23,7 @@ if (isset($_GET['publica_vaga_model'])) {
 }
 
 echo $TABLE;
-
+echo $TR . $TH . 'PUBLICAÇÃO DE VAGA'  . $TH_ . $TR_; 
 
 $publica_vaga_model['pub_vag_int_id'] = isset($_GET['publica_vaga_model']) ? $publica_vaga_model_get['pub_vag_int_id'] : '';
 $INPUT = '<input type="hidden" name="pub_vag_int_id"  value="' . $publica_vaga_model['pub_vag_int_id'] .'">';

@@ -17,9 +17,9 @@ echo $BODY;
 require_once 'menu.php';
 
 echo $DIV_MAIN;
-echo $H1 . 'EXPERIÊNCIA' . $H1_;
 
 echo $TABLE;
+echo $TR . $TH . 'EXPERIÊNCIA PROFISSIONAL' . $TH_ . $TR_;
 
 $experiencia_profissional_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $experiencia_profissional_model['usu_int_id'];

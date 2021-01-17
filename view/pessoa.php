@@ -18,13 +18,13 @@ require_once 'menu.php';
 require_once 'pessoa.js';
 
 echo $DIV_MAIN;
-echo $H1 . 'DADOS PESSOAIS' . $H1_;
 
 $FORM = '<form action="../controller/pessoa.php" method="get">';
 
 echo $FORM;
 
 echo $TABLE;
+echo $TR . $TH . 'DADOS PESSOAIS'  . $TH_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Nome' . $LABEL_ .$TD_ . $TR_; 
 

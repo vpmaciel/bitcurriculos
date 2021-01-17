@@ -11,9 +11,9 @@ echo $HEAD_;
 echo $BODY;
 require_once 'menu.php';
 echo $DIV_MAIN;
-echo $H1 . 'SUCESSO' . $H1_;
 
 echo $TABLE;
+echo $TR . $TH . 'SUCESSO'  . $TH_ . $TR_; 
 
 echo $TR . $TD . '<p class="sucesso">' . 'Operação realizada com sucesso !'. '</p>'  . $TD_ . $TR_;
 

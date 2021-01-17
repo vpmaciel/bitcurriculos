@@ -14,7 +14,6 @@ echo $HEAD_;
 echo $BODY;
 require_once 'menu.php';
 echo $DIV_MAIN;
-echo $H1 . 'EXPERIÊNCIA PROFISSIONAL' . $H1_;
 
 $FORM = '<form action="../controller/experiencia_profissional.php" method="get">';
 if (isset($_GET['experiencia_profissional_model'])) {
@@ -24,6 +23,7 @@ if (isset($_GET['experiencia_profissional_model'])) {
 echo $FORM;
 
 echo $TABLE;
+echo $TR . $TH . 'EXPERIÊNCIA PROFISSIONAL' . $TH_ . $TR_;
 
 $experiencia_profissional_model['exp_prof_int_id'] = isset($_GET['experiencia_profissional_model']) ? $experiencia_profissional_model_get['exp_prof_int_id'] : '';
 $INPUT = '<input type="hidden" name="exp_prof_int_id"  value="' . $experiencia_profissional_model['exp_prof_int_id'] .'">';

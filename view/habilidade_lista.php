@@ -17,11 +17,11 @@ echo $BODY;
 require_once 'menu.php';
 
 echo $DIV_MAIN;
-echo $H1 . 'HABILIDADE' . $H1_;
 
 $FORM = '<form action="../controller/habilidade.php" method="get">';
 
 echo $TABLE;
+echo $TR . $TH . 'HABILIDADE' . $TH_ . $TR_;
 
 $habilidade_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $habilidade_model['usu_int_id'];
