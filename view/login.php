@@ -10,13 +10,14 @@ echo $HEAD_;
 echo $BODY;
 require_once 'menu.php';
 echo $DIV_MAIN;
-echo $H1 . 'LOGIN' . $H1_;
 
 $FORM = '<form action="../controller/login.php" method="post">';
 
 echo $FORM;
 
 echo $TABLE;
+
+echo $TR . $TD . $LABEL . 'LOGIN' . $LABEL_ . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'E-mail' . $LABEL_ . $TD_ . $TR_; 
 $usuario['usu_char_email'] = isset($_POST['usu_char_email']) ? $_POST['usu_char_email']:'';
