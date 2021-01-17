@@ -47,10 +47,13 @@ table, th, td {
 	width: 100%;
 	border-collapse: collapse;
 	border: 1px solid#6d7874;
-	background-color: #FFFAF0;
+	background-color: #F9B978;
 }
 th, td {	
-	padding: 5px;
+	padding: 10px;
+}
+td:first-child(1) {
+	background-color: yellow;
 }
 * {
 	font-weight: normal;
