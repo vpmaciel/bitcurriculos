@@ -1,7 +1,9 @@
 <?php
 echo '<div class="linha">';
 echo '<div class="coluna esquerda">';
-echo $TABLE;
+
+$TABELA = '<table align="center" class="menu">';
+echo $TABELA;
 
 echo $TR . $TD . $LABEL . '<a href="index.php">Home</a><br>' . $LABEL_; 
 echo $TR . $TD . $LABEL . '<a href="registro.php">Registrar</a><br>' . $LABEL_; 
