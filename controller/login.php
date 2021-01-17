@@ -12,6 +12,7 @@ $resultado_retornar_numero_registros = retornar_numero_registros('usuario', $usu
 
 if ($resultado_retornar_numero_registros == 0) {
 	header('location: ..\view\erro.php?e=OPN&msg="E-mail ou senha incorretos !"');
+	exit;
 } else {	
 
 	if (!isset($_SESSION['usu_int_id'])) {

@@ -14,6 +14,7 @@ $resultado = numero_registros('usuario', $condicao);
 
 if ($resultado != 0) {
 	header('location: ..\view\erro.php?e=OPN&msg="E-mail já cadastrado ou inválido !"');
+	exit;
 } else {
 	
 	$resultado = inserir('usuario', $usuario_model);
