@@ -32,22 +32,22 @@ echo $INPUT;
 
 echo $TR . $TD . $LABEL . 'Nome do curso' . $LABEL_ . $TD_ . $TR_; 
 $curso_model['cur_char_nome'] = isset($_GET['curso_model']) ? $curso_model_get['cur_char_nome'] : '';
-$INPUT = '<input type="text" name="cur_char_nome" required size="70" minlength="1" maxlength="50" value="' . $curso_model['cur_char_nome'] .'">';
+$INPUT = '<input type="text" name="cur_char_nome" required minlength="1" maxlength="50" value="' . $curso_model['cur_char_nome'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Instituição' . $LABEL_ . $TD_ . $TR_; 
 $curso_model['cur_char_instituicao'] = isset($_GET['curso_model']) ? $curso_model_get['cur_char_instituicao'] : '';
-$INPUT = '<input type="text" name="cur_char_instituicao" required size="70" minlength="1" maxlength="50" value="' . $curso_model['cur_char_instituicao'] .'">';
+$INPUT = '<input type="text" name="cur_char_instituicao" required minlength="1" maxlength="50" value="' . $curso_model['cur_char_instituicao'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Ano de início' . $LABEL_ . $TD_ . $TR_; 
 $curso_model['cur_year_ano_inicio'] = isset($_GET['curso_model']) ? $curso_model_get['cur_year_ano_inicio'] : '';
-$INPUT = '<input type="number" name="cur_year_ano_inicio" required size="70" min="1950" max="3000" value="' . $curso_model['cur_year_ano_inicio'] .'">';
+$INPUT = '<input type="number" name="cur_year_ano_inicio" required min="1950" max="3000" value="' . $curso_model['cur_year_ano_inicio'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Ano de conclusão' . $LABEL_ . $TD_ . $TR_; 
 $curso_model['cur_year_ano_conclusao'] = isset($_GET['curso_model']) ? $curso_model_get['cur_year_ano_conclusao'] : '';
-$INPUT = '<input type="number" name="cur_year_ano_conclusao" size="70" min="1950" max="3000" value="' . $curso_model['cur_year_ano_conclusao'] .'">';
+$INPUT = '<input type="number" name="cur_year_ano_conclusao" min="1950" max="3000" value="' . $curso_model['cur_year_ano_conclusao'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Situação' . $LABEL_ . $TD_ . $TR_; 
@@ -68,9 +68,7 @@ foreach ($array_escolaridade as $indice => $cur_int_nivel) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
-
-$SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
+$SUBMIT = '<input type="submit" value="SALVAR" onclick=\'return confirmar();\'>';
 echo $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;

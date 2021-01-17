@@ -30,7 +30,7 @@ echo $INPUT;
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_;
 $objetivo_profissional_model['obj_pro_char_cargo'] = isset($_GET['objetivo_profissional_model']) ? $objetivo_profissional_model_get['obj_pro_char_cargo'] : '';
-$CARGO = '<input type="text" name="obj_pro_char_cargo" required size="70" minlength="10" maxlength="50" value="' . $objetivo_profissional_model['obj_pro_char_cargo'] .'">';
+$CARGO = '<input type="text" name="obj_pro_char_cargo" required minlength="10" maxlength="50" value="' . $objetivo_profissional_model['obj_pro_char_cargo'] .'">';
 echo $TR. $TD . $CARGO . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Pretensão salarial' . $LABEL_ . $TD_ . $TR_;
@@ -51,9 +51,7 @@ foreach ($array_contrato as $indice => $obj_pro_int_contrato) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
-
-$SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
+$SUBMIT = '<input type="submit" value="SALVAR" onclick=\'return confirmar();\'>';
 echo $TR. $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;

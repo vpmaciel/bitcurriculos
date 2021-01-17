@@ -30,7 +30,7 @@ echo $INPUT;
 
 echo $TR . $TD . $LABEL . 'Habilidade' . $LABEL_ . $TD_ . $TR_; 
 $habilidade_model['hab_char_habilidade'] = isset($_GET['habilidade_model']) ? $habilidade_model_get['hab_char_habilidade'] : '';
-$INPUT = '<input type="text" name="hab_char_habilidade" required size="70" maxlength="50" value="' . $habilidade_model['hab_char_habilidade'] .'">';
+$INPUT = '<input type="text" name="hab_char_habilidade" required maxlength="50" value="' . $habilidade_model['hab_char_habilidade'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Nível' . $LABEL_ . $TD_ . $TR_; 
@@ -42,9 +42,7 @@ foreach ($array_nivel_conhecimento as $indice => $hab_int_nivel_conhecimento) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
-
-$SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
+$SUBMIT = '<input type="submit" value="SALVAR" onclick=\'return confirmar();\'>';
 echo $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;

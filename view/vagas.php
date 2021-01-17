@@ -24,10 +24,8 @@ echo $TR . $TH . 'PESQUISAR VAGAS'  . $TH_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_; 
 $vaga['pub_vag_char_cargo'] = isset($_POST['pub_vag_char_cargo'])?$_POST['pub_vag_char_cargo']:'';
-$INPUT = '<input type="text" name="pub_vag_char_cargo" size="70" maxlength="50" value="' . $vaga['pub_vag_char_cargo'] .'">';
+$INPUT = '<input type="text" name="pub_vag_char_cargo" maxlength="50" value="' . $vaga['pub_vag_char_cargo'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
-
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
 $SUBMIT = '<input type="submit" value="Pesquisar" onclick=\'return confirmar();\'>';
 echo $TR. $TD . $SUBMIT . $TD_ . $TR_;

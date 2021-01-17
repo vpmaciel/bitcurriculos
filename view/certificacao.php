@@ -31,22 +31,22 @@ echo $INPUT;
 
 echo $TR . $TD . $LABEL . 'Certificação' . $LABEL_ . $TD_ . $TR_; 
 $certificacao_model['cer_char_certificacao'] = isset($_GET['certificacao_model']) ? $certificacao_model_get['cer_char_certificacao'] : '';
-$INPUT = '<input type="text" name="cer_char_certificacao" required size="70" maxlength="50" value="' . $certificacao_model['cer_char_certificacao'] .'">';
+$INPUT = '<input type="text" name="cer_char_certificacao" required maxlength="50" value="' . $certificacao_model['cer_char_certificacao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Instituição' . $LABEL_ . $TD_ . $TR_;
 $certificacao_model['cer_char_instituicao'] = isset($_GET['certificacao_model']) ? $certificacao_model_get['cer_char_instituicao'] : '';
-$INPUT = '<input type="text" name="cer_char_instituicao" required size="70" maxlength="50" value="' . $certificacao_model['cer_char_instituicao'] .'">';
+$INPUT = '<input type="text" name="cer_char_instituicao" required maxlength="50" value="' . $certificacao_model['cer_char_instituicao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Ano de obtenção' . $LABEL_ . $TD_ . $TR_; 
 $certificacao_model['cer_year_ano_obtencao'] = isset($_GET['certificacao_model']) ? $certificacao_model_get['cer_year_ano_obtencao'] : '';
-$INPUT = '<input type="number" name="cer_year_ano_obtencao" required size="70" min="1950" max="3000" value="' . $certificacao_model['cer_year_ano_obtencao'] .'">';
+$INPUT = '<input type="number" name="cer_year_ano_obtencao" required min="1950" max="3000" value="' . $certificacao_model['cer_year_ano_obtencao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR. $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
-$SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
+$SUBMIT = '<input type="submit" value="SALVAR" onclick=\'return confirmar();\'>';
 echo $TR. $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;

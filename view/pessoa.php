@@ -33,27 +33,27 @@ if (isset($_GET['pessoa_model'])) {
 }
 
 $pessoa_model['pes_char_nome'] = isset($_GET['pessoa_model']) ? $pessoa_model_get['pes_char_nome'] : '';
-$INPUT = '<input type="text" name="pes_char_nome" required size="70" minlength="10" maxlength="50" value="' . $pessoa_model_get['pes_char_nome'] .'">';
+$INPUT = '<input type="text" name="pes_char_nome" required minlength="10" maxlength="50" value="' . $pessoa_model_get['pes_char_nome'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'URL de repositório de códigos' . $LABEL_ .$TD_ . $TR_; 
 $pessoa_model['pes_char_url_repositorio_codigos'] = isset($_GET['pessoa_model']) ? $pessoa_model_get['pes_char_url_repositorio_codigos'] : '';
-$INPUT = '<input type="url" name="pes_char_url_repositorio_codigos" required size="70" minlength="10" maxlength="50" value="' . $pessoa_model['pes_char_url_repositorio_codigos'] .'">';
+$INPUT = '<input type="url" name="pes_char_url_repositorio_codigos" required minlength="10" maxlength="50" value="' . $pessoa_model['pes_char_url_repositorio_codigos'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'URL do linkedin' . $LABEL_ .$TD_ . $TR_; 
 $pessoa_model['pes_char_url_linkedin'] = isset($_GET['pessoa_model']) ? $pessoa_model_get['pes_char_url_linkedin'] : '';
-$INPUT = '<input type="url" name="pes_char_url_linkedin" required size="70" minlength="10" maxlength="50" value="' . $pessoa_model['pes_char_url_linkedin'] .'">';
+$INPUT = '<input type="url" name="pes_char_url_linkedin" required minlength="10" maxlength="50" value="' . $pessoa_model['pes_char_url_linkedin'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Data de nascimento' . $LABEL_ .$TD_ . $TR_; 
 $pessoa_model['pes_char_data_nascimento'] = isset($_GET['pessoa_model']) ? $pessoa_model_get['pes_char_data_nascimento'] : $pessoa_model_get['pes_char_data_nascimento'];
-$INPUT = '<input type="text" name="pes_char_data_nascimento" id="pes_char_data_nascimento" size="70" required maxlength="10" value="' . $pessoa_model['pes_char_data_nascimento'] .'">';
+$INPUT = '<input type="text" name="pes_char_data_nascimento" id="pes_char_data_nascimento" required maxlength="10" value="' . $pessoa_model['pes_char_data_nascimento'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Celular' . $LABEL_ .$TD_ . $TR_; 
 $pessoa_model['pes_char_celular_numero'] = isset($_GET['pessoa_model']) ? $pessoa_model_get['pes_char_celular_numero'] : $pessoa_model_get['pes_char_celular_numero'];
-$INPUT = '<input type="text" name="pes_char_celular_numero" id="pes_char_celular_numero" size="70" required maxlength="13" value="' . $pessoa_model['pes_char_celular_numero'] .'">';
+$INPUT = '<input type="text" name="pes_char_celular_numero" id="pes_char_celular_numero" required maxlength="13" value="' . $pessoa_model['pes_char_celular_numero'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Sexo' . $LABEL_ .$TD_ . $TR_; 
@@ -237,9 +237,7 @@ foreach ($array_resposta as $indice => $pes_bit_dispensado_servico_militar) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
-echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ .$TD_ . $TR_; 
-
-$SUBMIT = '<input type="submit" value="Salvar" onclick=\'return confirmar();\'>';
+$SUBMIT = '<input type="submit" value="SALVAR" onclick=\'return confirmar();\'>';
 echo $TR. $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;
