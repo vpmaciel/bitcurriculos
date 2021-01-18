@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['usu_int_id'])) {
+if(!isset($_SESSION['usu_id'])) {
 	header('location:..\view\erro.php?e=UNL');
 	exit;
 }
@@ -29,25 +29,25 @@ if (isset($_GET['idioma_model'])) {
 echo $TABLE;
 echo $TR . $TH . 'Idioma' . $TH_ . $TR_;
 
-$idioma_model['idi_int_id'] = isset($_GET['idioma_model']) ? $idioma_model_get['idi_int_id'] : '';
-$INPUT = '<input type="hidden" name="idi_int_id"  value="' . $idioma_model['idi_int_id'] .'">';
+$idioma_model['idi_id'] = isset($_GET['idioma_model']) ? $idioma_model_get['idi_id'] : '';
+$INPUT = '<input type="hidden" name="idi_id"  value="' . $idioma_model['idi_id'] .'">';
 echo $INPUT;
 
 echo $TR . $TD . $LABEL . 'Idioma' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
-$SELECT = '<select name="idi_int_idioma">';
+$SELECT = '<select name="idi_idioma">';
 echo $SELECT;
-foreach ($array_idioma as $indice => $idi_int_idioma) {	
-	echo ($indice == $idioma_model_get['idi_int_idioma']) ? "<option value=$indice selected>$idi_int_idioma</option>" : "<option value=$indice>$idi_int_idioma</option>";
+foreach ($array_idioma as $indice => $idi_idioma) {	
+	echo ($indice == $idioma_model_get['idi_idioma']) ? "<option value=$indice selected>$idi_idioma</option>" : "<option value=$indice>$idi_idioma</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Nível de conhecimento' . $LABEL_ . $TD_ . $TR_; 
 echo $TR . $TD;
-$SELECT = '<select name="idi_int_nivel_conhecimento">';
+$SELECT = '<select name="idi_nivel_conhecimento">';
 echo $SELECT;
-foreach ($array_nivel_conhecimento_idioma as $indice => $idi_int_nivel_conhecimento) {		
-	echo ($indice == $idioma_model_get['idi_int_nivel_conhecimento']) ? "<option value=$indice selected>$idi_int_nivel_conhecimento</option>" : "<option value=$indice>$idi_int_nivel_conhecimento</option>";
+foreach ($array_nivel_conhecimento_idioma as $indice => $idi_nivel_conhecimento) {		
+	echo ($indice == $idioma_model_get['idi_nivel_conhecimento']) ? "<option value=$indice selected>$idi_nivel_conhecimento</option>" : "<option value=$indice>$idi_nivel_conhecimento</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 

@@ -1,7 +1,7 @@
 <?php
-echo '<a href="index.php">Home</a> || '; 
-echo '<a href="registro.php">Registrar</a> || '; 
-echo '<a href="login.php">Entrar</a> || '; 
+echo '<a href="index.php">HOME</a> || '; 
+echo '<a href="registro.php">REGISTRAR</a> || '; 
+echo '<a href="login.php">ENTRAR</a> || '; 
 echo '<a href="logoff.php">Sair</a> || '; 
 echo '<a href="../controller/pessoa.php?acao=carregar">Dados Pessoais</a> || '; 
 echo '<a href="../view/curso_lista.php">Cursos</a> || '; 

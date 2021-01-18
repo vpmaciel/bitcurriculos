@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['usu_int_id'])) {
+if(!isset($_SESSION['usu_id'])) {
 	header('location:..\view\erro.php?e=UNL');
 	exit;
 }
@@ -17,14 +17,14 @@ if(isset($_GET['acao'])){
 
 ####################################################################################################
 
-$habilidade_model['hab_int_id'] = $_GET['hab_int_id'];
+$habilidade_model['hab_id'] = $_GET['hab_id'];
 
 $resultado_numero_registros = retornar_numero_registros('habilidade', $habilidade_model);
 
-$habilidade_model['hab_int_id'] = $_GET['hab_int_id'];
-$habilidade_model['usu_int_id'] = $_SESSION['usu_int_id'];
-$habilidade_model['hab_char_habilidade'] = $_GET['hab_char_habilidade'];
-$habilidade_model['hab_int_nivel_conhecimento'] = $_GET['hab_int_nivel_conhecimento'];
+$habilidade_model['hab_id'] = $_GET['hab_id'];
+$habilidade_model['usu_id'] = $_SESSION['usu_id'];
+$habilidade_model['hab_habilidade'] = $_GET['hab_habilidade'];
+$habilidade_model['hab_nivel_conhecimento'] = $_GET['hab_nivel_conhecimento'];
 
 ####################################################################################################
 
@@ -56,8 +56,8 @@ if ($resultado_numero_registros == 0) {
 	} 
 } else {
     
-	$condicao['usu_int_id'] = $_SESSION['usu_int_id'];
-	$condicao['hab_int_id'] = $_GET['hab_int_id'];
+	$condicao['usu_id'] = $_SESSION['usu_id'];
+	$condicao['hab_id'] = $_GET['hab_id'];
 
 	
 	$resultado_atualizar = atualizar('habilidade', $habilidade_model, $condicao);

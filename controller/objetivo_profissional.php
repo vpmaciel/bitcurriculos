@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['usu_int_id'])) {
+if(!isset($_SESSION['usu_id'])) {
 	header('location:..\view\erro.php?e=UNL');
 	exit;
 }
@@ -17,15 +17,15 @@ if(isset($_GET['acao'])){
 
 ####################################################################################################
 
-$objetivo_profissional_model['obj_pro_int_id'] = $_GET['obj_pro_int_id'];
+$objetivo_profissional_model['obj_pro_id'] = $_GET['obj_pro_id'];
 
 $resultado_numero_registros = retornar_numero_registros('objetivo_profissional', $objetivo_profissional_model);
 
-$objetivo_profissional_model['obj_pro_int_id'] = $_GET['obj_pro_int_id'];
-$objetivo_profissional_model['usu_int_id'] = $_SESSION['usu_int_id'];
-$objetivo_profissional_model['obj_pro_char_cargo'] = $_GET['obj_pro_char_cargo'];
-$objetivo_profissional_model['obj_pro_int_pretensao_salarial'] = $_GET['obj_pro_int_pretensao_salarial'];
-$objetivo_profissional_model['obj_pro_int_contrato'] = $_GET['obj_pro_int_contrato'];
+$objetivo_profissional_model['obj_pro_id'] = $_GET['obj_pro_id'];
+$objetivo_profissional_model['usu_id'] = $_SESSION['usu_id'];
+$objetivo_profissional_model['obj_pro_cargo'] = $_GET['obj_pro_cargo'];
+$objetivo_profissional_model['obj_pro_pretensao_salarial'] = $_GET['obj_pro_pretensao_salarial'];
+$objetivo_profissional_model['obj_pro_contrato'] = $_GET['obj_pro_contrato'];
 
 ####################################################################################################
 
@@ -57,8 +57,8 @@ if ($resultado_numero_registros == 0) {
 	} 
 } else {
     
-	$condicao['usu_int_id'] = $_SESSION['usu_int_id'];
-	$condicao['obj_pro_int_id'] = $_GET['obj_pro_int_id'];
+	$condicao['usu_id'] = $_SESSION['usu_id'];
+	$condicao['obj_pro_id'] = $_GET['obj_pro_id'];
 
 	
 	$resultado_atualizar = atualizar('objetivo_profissional', $objetivo_profissional_model, $condicao);

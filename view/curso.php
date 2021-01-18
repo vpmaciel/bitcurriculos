@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['usu_int_id'])) {
+if(!isset($_SESSION['usu_id'])) {
 	header('location:..\view\erro.php?e=UNL');
 	exit;
 }
@@ -27,45 +27,45 @@ if (isset($_GET['curso_model'])) {
 echo $TABLE;
 echo $TR . $TH . 'Curso' . $TH_ . $TR_;
 
-$curso_model['cur_int_id'] = isset($_GET['curso_model']) ? $curso_model_get['cur_int_id'] : '';
-$INPUT = '<input type="hidden" name="cur_int_id"  value="' . $curso_model['cur_int_id'] .'">';
+$curso_model['cur_id'] = isset($_GET['curso_model']) ? $curso_model_get['cur_id'] : '';
+$INPUT = '<input type="hidden" name="cur_id"  value="' . $curso_model['cur_id'] .'">';
 echo $INPUT;
 
 echo $TR . $TD . $LABEL . 'Nome do curso' . $LABEL_ . $TD_ . $TR_; 
-$curso_model['cur_char_nome'] = isset($_GET['curso_model']) ? $curso_model_get['cur_char_nome'] : '';
-$INPUT = '<input type="text" name="cur_char_nome" required minlength="1" maxlength="50" value="' . $curso_model['cur_char_nome'] .'">';
+$curso_model['cur_nome'] = isset($_GET['curso_model']) ? $curso_model_get['cur_nome'] : '';
+$INPUT = '<input type="text" name="cur_nome" required minlength="1" maxlength="50" value="' . $curso_model['cur_nome'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Instituição' . $LABEL_ . $TD_ . $TR_; 
-$curso_model['cur_char_instituicao'] = isset($_GET['curso_model']) ? $curso_model_get['cur_char_instituicao'] : '';
-$INPUT = '<input type="text" name="cur_char_instituicao" required minlength="1" maxlength="50" value="' . $curso_model['cur_char_instituicao'] .'">';
+$curso_model['cur_instituicao'] = isset($_GET['curso_model']) ? $curso_model_get['cur_instituicao'] : '';
+$INPUT = '<input type="text" name="cur_instituicao" required minlength="1" maxlength="50" value="' . $curso_model['cur_instituicao'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Ano de início' . $LABEL_ . $TD_ . $TR_; 
-$curso_model['cur_year_ano_inicio'] = isset($_GET['curso_model']) ? $curso_model_get['cur_year_ano_inicio'] : '';
-$INPUT = '<input type="number" name="cur_year_ano_inicio" required min="1950" max="3000" value="' . $curso_model['cur_year_ano_inicio'] .'">';
+$curso_model['cur_ano_inicio'] = isset($_GET['curso_model']) ? $curso_model_get['cur_ano_inicio'] : '';
+$INPUT = '<input type="number" name="cur_ano_inicio" required min="1950" max="3000" value="' . $curso_model['cur_ano_inicio'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Ano de conclusão' . $LABEL_ . $TD_ . $TR_; 
-$curso_model['cur_year_ano_conclusao'] = isset($_GET['curso_model']) ? $curso_model_get['cur_year_ano_conclusao'] : '';
-$INPUT = '<input type="number" name="cur_year_ano_conclusao" min="1950" max="3000" value="' . $curso_model['cur_year_ano_conclusao'] .'">';
+$curso_model['cur_ano_conclusao'] = isset($_GET['curso_model']) ? $curso_model_get['cur_ano_conclusao'] : '';
+$INPUT = '<input type="number" name="cur_ano_conclusao" min="1950" max="3000" value="' . $curso_model['cur_ano_conclusao'] .'">';
 echo $TD . $INPUT . $TD_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Situação' . $LABEL_ . $TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="cur_int_situacao">';
+$SELECT = '<select name="cur_situacao">';
 echo $SELECT;
-foreach ($array_situacao as $indice => $cur_int_situacao) {	
-	echo ($indice == $curso_model_get['cur_int_situacao']) ? "<option value=$indice selected>$cur_int_situacao</option>" : "<option value=$indice>$cur_int_situacao</option>";
+foreach ($array_situacao as $indice => $cur_situacao) {	
+	echo ($indice == $curso_model_get['cur_situacao']) ? "<option value=$indice selected>$cur_situacao</option>" : "<option value=$indice>$cur_situacao</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Nível' . $LABEL_ . $TD_ . $TR_; 
 echo $TR. $TD;
-$SELECT = '<select name="cur_int_nivel">';
+$SELECT = '<select name="cur_nivel">';
 echo $SELECT;
-foreach ($array_escolaridade as $indice => $cur_int_nivel) {	
-	echo ($indice == $curso_model_get['cur_int_nivel']) ? "<option value=$indice selected>$cur_int_nivel</option>" : "<option value=$indice>$cur_int_nivel</option>";
+foreach ($array_escolaridade as $indice => $cur_nivel) {	
+	echo ($indice == $curso_model_get['cur_nivel']) ? "<option value=$indice selected>$cur_nivel</option>" : "<option value=$indice>$cur_nivel</option>";
 }
 echo $SELECT_ . $TD_ . $TR_;
 

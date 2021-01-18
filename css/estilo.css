@@ -14,7 +14,7 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
 	color: #FFF;
-	font-size: 18px;	
+	font-size: 16px;	
 	padding: 0px;
 }
 select, input, textarea, select:focus, input:focus, textarea:focus {
@@ -69,7 +69,7 @@ html{
 body {
 	font-family: Fonte, sans-serif;
 	color: #FFF;
-	font-size: 18px;
+	font-size: 16px;
 	margin: auto 0;
 	padding: 0px;
 	width: 100%;

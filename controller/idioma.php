@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['usu_int_id'])) {
+if(!isset($_SESSION['usu_id'])) {
 	header('location:..\view\erro.php?e=UNL');
 	exit;
 }
@@ -17,14 +17,14 @@ if(isset($_GET['acao'])){
 
 ####################################################################################################
 
-$idioma_model['idi_int_id'] = $_GET['idi_int_id'];
+$idioma_model['idi_id'] = $_GET['idi_id'];
 
 $resultado_numero_registros = retornar_numero_registros('idioma', $idioma_model);
 
-$idioma_model['idi_int_id'] = $_GET['idi_int_id'];
-$idioma_model['usu_int_id'] = $_SESSION['usu_int_id'];
-$idioma_model['idi_int_idioma'] = $_GET['idi_int_idioma'];
-$idioma_model['idi_int_nivel_conhecimento'] = $_GET['idi_int_nivel_conhecimento'];
+$idioma_model['idi_id'] = $_GET['idi_id'];
+$idioma_model['usu_id'] = $_SESSION['usu_id'];
+$idioma_model['idi_idioma'] = $_GET['idi_idioma'];
+$idioma_model['idi_nivel_conhecimento'] = $_GET['idi_nivel_conhecimento'];
 
 ####################################################################################################
 
@@ -56,8 +56,8 @@ if ($resultado_numero_registros == 0) {
 	} 
 } else {
     
-	$condicao['usu_int_id'] = $_SESSION['usu_int_id'];
-	$condicao['idi_int_id'] = $_GET['idi_int_id'];
+	$condicao['usu_id'] = $_SESSION['usu_id'];
+	$condicao['idi_id'] = $_GET['idi_id'];
 
 	
 	$resultado_atualizar = atualizar('idioma', $idioma_model, $condicao);

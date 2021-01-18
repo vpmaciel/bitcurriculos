@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['usu_int_id'])) {
+if(!isset($_SESSION['usu_id'])) {
     header('location:..\view\erro.php?e=UNL');
     exit;
 }
@@ -21,35 +21,35 @@ if(isset($_GET['acao'])){
 
 ####################################################################################################
 
-$pessoa_model['usu_int_id'] = $_SESSION['usu_int_id'];
+$pessoa_model['usu_id'] = $_SESSION['usu_id'];
 
 $resultado_numero_registros = retornar_numero_registros('pessoa', $pessoa_model);
 
-$pessoa_model['pes_char_nome'] = $_GET['pes_char_nome'];
-$pessoa_model['pes_char_url_repositorio_codigos'] = urlencode($_GET['pes_char_url_repositorio_codigos']);
-$pessoa_model['pes_char_url_linkedin'] = urlencode($_GET['pes_char_url_linkedin']);
-$pessoa_model['pes_char_data_nascimento'] = $_GET['pes_char_data_nascimento'];
-$pessoa_model['pes_char_celular_numero'] = $_GET['pes_char_celular_numero'];
-$pessoa_model['pes_bit_sexo'] = $_GET['pes_bit_sexo'];
-$pessoa_model['pes_int_escolaridade'] = $_GET['pes_int_escolaridade'];
-$pessoa_model['pes_int_estado_civil'] = $_GET['pes_int_estado_civil'];
-$pessoa_model['pes_int_nacionalidade'] = $_GET['pes_int_nacionalidade'];
-$pessoa_model['pes_bit_possui_filhos'] = $_GET['pes_bit_possui_filhos'];
-$pessoa_model['pes_bit_possui_deficiencia'] = $_GET['pes_bit_possui_deficiencia'];
-$pessoa_model['pes_int_pais'] = $_GET['pes_int_pais'];
-$pessoa_model['pes_int_estado'] = $_GET['pes_int_estado'];
-$pessoa_model['pes_int_cidade'] = $_GET['pes_int_cidade'];
-$pessoa_model['pes_int_cnh'] = $_GET['pes_int_cnh'];
-$pessoa_model['pes_int_ultimo_salario_mensal'] = $_GET['pes_int_ultimo_salario_mensal'];
-$pessoa_model['pes_bit_empregado_atualmente'] = $_GET['pes_bit_empregado_atualmente'];
-$pessoa_model['pes_bit_procurando_emprego_atualmente'] = $_GET['pes_bit_procurando_emprego_atualmente'];
-$pessoa_model['pes_bit_disponivel_viagens'] = $_GET['pes_bit_disponivel_viagens'];
-$pessoa_model['pes_bit_trabalha_outras_cidades'] = $_GET['pes_bit_trabalha_outras_cidades'];
-$pessoa_model['pes_bit_trabalha_exterior'] = $_GET['pes_bit_trabalha_exterior'];
-$pessoa_model['pes_bit_trabalha_home_office'] = $_GET['pes_bit_trabalha_home_office'];
-$pessoa_model['pes_bit_possui_carro'] = $_GET['pes_bit_possui_carro'];
-$pessoa_model['pes_bit_possui_moto'] = $_GET['pes_bit_possui_moto'];
-$pessoa_model['pes_bit_dispensado_servico_militar'] = $_GET['pes_bit_dispensado_servico_militar'];
+$pessoa_model['pes_nome'] = $_GET['pes_nome'];
+$pessoa_model['pes_url_repositorio_codigos'] = urlencode($_GET['pes_url_repositorio_codigos']);
+$pessoa_model['pes_url_linkedin'] = urlencode($_GET['pes_url_linkedin']);
+$pessoa_model['pes_data_nascimento'] = $_GET['pes_data_nascimento'];
+$pessoa_model['pes_celular_numero'] = $_GET['pes_celular_numero'];
+$pessoa_model['pes_sexo'] = $_GET['pes_sexo'];
+$pessoa_model['pes_escolaridade'] = $_GET['pes_escolaridade'];
+$pessoa_model['pes_estado_civil'] = $_GET['pes_estado_civil'];
+$pessoa_model['pes_nacionalidade'] = $_GET['pes_nacionalidade'];
+$pessoa_model['pes_possui_filhos'] = $_GET['pes_possui_filhos'];
+$pessoa_model['pes_possui_deficiencia'] = $_GET['pes_possui_deficiencia'];
+$pessoa_model['pes_pais'] = $_GET['pes_pais'];
+$pessoa_model['pes_estado'] = $_GET['pes_estado'];
+$pessoa_model['pes_cidade'] = $_GET['pes_cidade'];
+$pessoa_model['pes_cnh'] = $_GET['pes_cnh'];
+$pessoa_model['pes_ultimo_salario_mensal'] = $_GET['pes_ultimo_salario_mensal'];
+$pessoa_model['pes_empregado_atualmente'] = $_GET['pes_empregado_atualmente'];
+$pessoa_model['pes_procurando_emprego_atualmente'] = $_GET['pes_procurando_emprego_atualmente'];
+$pessoa_model['pes_disponivel_viagens'] = $_GET['pes_disponivel_viagens'];
+$pessoa_model['pes_trabalha_outras_cidades'] = $_GET['pes_trabalha_outras_cidades'];
+$pessoa_model['pes_trabalha_exterior'] = $_GET['pes_trabalha_exterior'];
+$pessoa_model['pes_trabalha_home_office'] = $_GET['pes_trabalha_home_office'];
+$pessoa_model['pes_possui_carro'] = $_GET['pes_possui_carro'];
+$pessoa_model['pes_possui_moto'] = $_GET['pes_possui_moto'];
+$pessoa_model['pes_dispensado_servico_militar'] = $_GET['pes_dispensado_servico_militar'];
 
 ####################################################################################################
 
@@ -65,7 +65,7 @@ if ($resultado_numero_registros == 0) {
 	} 
 } else {	
     
-    $condicao['usu_int_id'] = $_SESSION['usu_int_id'];
+    $condicao['usu_id'] = $_SESSION['usu_id'];
     $resultado_atualizar = atualizar('pessoa', $pessoa_model, $condicao);
 
     if ($resultado_atualizar == TRUE) {
@@ -82,36 +82,36 @@ if ($resultado_numero_registros == 0) {
 CARREGAR:
 {   
     $pessoa_model = array();
-    $pessoa_model['usu_int_id'] = $_SESSION['usu_int_id'];    
+    $pessoa_model['usu_id'] = $_SESSION['usu_id'];    
     $pessoa_json = json_decode(selecionar('pessoa', $pessoa_model));      
  
     foreach($pessoa_json as $registro) {            
-        $pessoa_model['usu_int_id'] = $registro->usu_int_id;
-        $pessoa_model['pes_char_nome'] = $registro->pes_char_nome;
-        $pessoa_model['pes_char_url_repositorio_codigos'] = $registro->pes_char_url_repositorio_codigos;
-        $pessoa_model['pes_char_url_linkedin'] = $registro->pes_char_url_linkedin;
-        $pessoa_model['pes_char_data_nascimento'] = $registro->pes_char_data_nascimento;
-        $pessoa_model['pes_char_celular_numero'] = $registro->pes_char_celular_numero;
-        $pessoa_model['pes_bit_sexo'] = $registro->pes_bit_sexo;
-        $pessoa_model['pes_int_escolaridade'] = $registro->pes_int_escolaridade;
-        $pessoa_model['pes_int_estado_civil'] = $registro->pes_int_estado_civil;
-        $pessoa_model['pes_int_nacionalidade'] = $registro->pes_int_nacionalidade;
-        $pessoa_model['pes_bit_possui_filhos'] = $registro->pes_bit_possui_filhos;
-        $pessoa_model['pes_bit_possui_deficiencia'] = $registro->pes_bit_possui_deficiencia;
-        $pessoa_model['pes_int_pais'] = $registro->pes_int_pais;
-        $pessoa_model['pes_int_estado'] = $registro->pes_int_estado;
-        $pessoa_model['pes_int_cidade'] = $registro->pes_int_cidade;
-        $pessoa_model['pes_int_cnh'] = $registro->pes_int_cnh;
-        $pessoa_model['pes_int_ultimo_salario_mensal'] = $registro->pes_int_ultimo_salario_mensal;
-        $pessoa_model['pes_bit_empregado_atualmente'] = $registro->pes_bit_empregado_atualmente;
-        $pessoa_model['pes_bit_procurando_emprego_atualmente'] = $registro->pes_bit_procurando_emprego_atualmente;
-        $pessoa_model['pes_bit_disponivel_viagens'] = $registro->pes_bit_disponivel_viagens;
-        $pessoa_model['pes_bit_trabalha_outras_cidades'] = $registro->pes_bit_trabalha_outras_cidades;
-        $pessoa_model['pes_bit_trabalha_exterior'] = $registro->pes_bit_trabalha_exterior;
-        $pessoa_model['pes_bit_trabalha_home_office'] = $registro->pes_bit_trabalha_home_office;
-        $pessoa_model['pes_bit_possui_carro'] = $registro->pes_bit_possui_carro;
-        $pessoa_model['pes_bit_possui_moto'] = $registro->pes_bit_possui_moto;
-        $pessoa_model['pes_bit_dispensado_servico_militar'] = $registro->pes_bit_dispensado_servico_militar;
+        $pessoa_model['usu_id'] = $registro->usu_id;
+        $pessoa_model['pes_nome'] = $registro->pes_nome;
+        $pessoa_model['pes_url_repositorio_codigos'] = $registro->pes_url_repositorio_codigos;
+        $pessoa_model['pes_url_linkedin'] = $registro->pes_url_linkedin;
+        $pessoa_model['pes_data_nascimento'] = $registro->pes_data_nascimento;
+        $pessoa_model['pes_celular_numero'] = $registro->pes_celular_numero;
+        $pessoa_model['pes_sexo'] = $registro->pes_sexo;
+        $pessoa_model['pes_escolaridade'] = $registro->pes_escolaridade;
+        $pessoa_model['pes_estado_civil'] = $registro->pes_estado_civil;
+        $pessoa_model['pes_nacionalidade'] = $registro->pes_nacionalidade;
+        $pessoa_model['pes_possui_filhos'] = $registro->pes_possui_filhos;
+        $pessoa_model['pes_possui_deficiencia'] = $registro->pes_possui_deficiencia;
+        $pessoa_model['pes_pais'] = $registro->pes_pais;
+        $pessoa_model['pes_estado'] = $registro->pes_estado;
+        $pessoa_model['pes_cidade'] = $registro->pes_cidade;
+        $pessoa_model['pes_cnh'] = $registro->pes_cnh;
+        $pessoa_model['pes_ultimo_salario_mensal'] = $registro->pes_ultimo_salario_mensal;
+        $pessoa_model['pes_empregado_atualmente'] = $registro->pes_empregado_atualmente;
+        $pessoa_model['pes_procurando_emprego_atualmente'] = $registro->pes_procurando_emprego_atualmente;
+        $pessoa_model['pes_disponivel_viagens'] = $registro->pes_disponivel_viagens;
+        $pessoa_model['pes_trabalha_outras_cidades'] = $registro->pes_trabalha_outras_cidades;
+        $pessoa_model['pes_trabalha_exterior'] = $registro->pes_trabalha_exterior;
+        $pessoa_model['pes_trabalha_home_office'] = $registro->pes_trabalha_home_office;
+        $pessoa_model['pes_possui_carro'] = $registro->pes_possui_carro;
+        $pessoa_model['pes_possui_moto'] = $registro->pes_possui_moto;
+        $pessoa_model['pes_dispensado_servico_militar'] = $registro->pes_dispensado_servico_militar;
         
     }
 

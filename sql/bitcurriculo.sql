@@ -28,11 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `certificacao` (
-  `cer_int_id` int(11) UNSIGNED NOT NULL,
-  `usu_int_id` int(11) UNSIGNED NOT NULL,
-  `cer_char_certificacao` varchar(50) NOT NULL,
-  `cer_char_instituicao` varchar(50) NOT NULL,
-  `cer_year_ano_obtencao` year(4) NOT NULL
+  `cer_id` int(11) UNSIGNED NOT NULL,
+  `usu_id` int(11) UNSIGNED NOT NULL,
+  `cer_certificacao` varchar(50) NOT NULL,
+  `cer_instituicao` varchar(50) NOT NULL,
+  `cer_ano_obtencao` year(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -42,14 +42,14 @@ CREATE TABLE `certificacao` (
 --
 
 CREATE TABLE `curso` (
-  `cur_int_id` int(11) UNSIGNED NOT NULL,
-  `usu_int_id` int(11) UNSIGNED NOT NULL,
-  `cur_char_nome` varchar(50) NOT NULL,
-  `cur_char_instituicao` varchar(50) NOT NULL,
-  `cur_year_ano_inicio` year(4) NOT NULL,
-  `cur_year_ano_conclusao` year(4) NOT NULL,
-  `cur_int_situacao` tinyint(4) UNSIGNED NOT NULL,
-  `cur_int_nivel` tinyint(4) UNSIGNED NOT NULL
+  `cur_id` int(11) UNSIGNED NOT NULL,
+  `usu_id` int(11) UNSIGNED NOT NULL,
+  `cur_nome` varchar(50) NOT NULL,
+  `cur_instituicao` varchar(50) NOT NULL,
+  `cur_ano_inicio` year(4) NOT NULL,
+  `cur_ano_conclusao` year(4) NOT NULL,
+  `cur_situacao` tinyint(4) UNSIGNED NOT NULL,
+  `cur_nivel` tinyint(4) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -59,13 +59,13 @@ CREATE TABLE `curso` (
 --
 
 CREATE TABLE `experiencia_profissional` (
-  `exp_prof_int_id` int(11) UNSIGNED NOT NULL,
-  `usu_int_id` int(11) UNSIGNED NOT NULL,
-  `exp_prof_char_empresa` varchar(50) NOT NULL,
-  `exp_prof_char_cargo` varchar(50) NOT NULL,
-  `exp_prof_char_data_admissao` char(10) NOT NULL,
-  `exp_prof_char_data_saida` char(10) NOT NULL,
-  `exp_prof_char_funcoes` varchar(500) NOT NULL
+  `exp_prof_id` int(11) UNSIGNED NOT NULL,
+  `usu_id` int(11) UNSIGNED NOT NULL,
+  `exp_prof_empresa` varchar(50) NOT NULL,
+  `exp_prof_cargo` varchar(50) NOT NULL,
+  `exp_prof_data_admissao` char(10) NOT NULL,
+  `exp_prof_data_saida` char(10) NOT NULL,
+  `exp_prof_funcoes` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -75,10 +75,10 @@ CREATE TABLE `experiencia_profissional` (
 --
 
 CREATE TABLE `habilidade` (
-  `hab_int_id` int(11) UNSIGNED NOT NULL,
-  `usu_int_id` int(11) UNSIGNED NOT NULL,
-  `hab_char_habilidade` varchar(50) NOT NULL,
-  `hab_int_nivel_conhecimento` tinyint(4) UNSIGNED NOT NULL
+  `hab_id` int(11) UNSIGNED NOT NULL,
+  `usu_id` int(11) UNSIGNED NOT NULL,
+  `hab_habilidade` varchar(50) NOT NULL,
+  `hab_nivel_conhecimento` tinyint(4) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -88,10 +88,10 @@ CREATE TABLE `habilidade` (
 --
 
 CREATE TABLE `idioma` (
-  `idi_int_id` int(11) UNSIGNED NOT NULL,
-  `usu_int_id` int(11) UNSIGNED NOT NULL,
-  `idi_int_idioma` tinyint(4) UNSIGNED NOT NULL,
-  `idi_int_nivel_conhecimento` tinyint(4) UNSIGNED NOT NULL
+  `idi_id` int(11) UNSIGNED NOT NULL,
+  `usu_id` int(11) UNSIGNED NOT NULL,
+  `idi_idioma` tinyint(4) UNSIGNED NOT NULL,
+  `idi_nivel_conhecimento` tinyint(4) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -101,11 +101,11 @@ CREATE TABLE `idioma` (
 --
 
 CREATE TABLE `objetivo_profissional` (
-  `obj_pro_int_id` int(11) UNSIGNED NOT NULL,
-  `usu_int_id` int(11) UNSIGNED NOT NULL,
-  `obj_pro_char_cargo` varchar(50) NOT NULL,
-  `obj_pro_int_pretensao_salarial` tinyint(4) UNSIGNED NOT NULL,
-  `obj_pro_int_contrato` tinyint(4) UNSIGNED NOT NULL
+  `obj_pro_id` int(11) UNSIGNED NOT NULL,
+  `usu_id` int(11) UNSIGNED NOT NULL,
+  `obj_pro_cargo` varchar(50) NOT NULL,
+  `obj_pro_pretensao_salarial` tinyint(4) UNSIGNED NOT NULL,
+  `obj_pro_contrato` tinyint(4) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -115,32 +115,32 @@ CREATE TABLE `objetivo_profissional` (
 --
 
 CREATE TABLE `pessoa` (
-  `usu_int_id` int(11) UNSIGNED NOT NULL,
-  `pes_char_nome` varchar(50) NOT NULL,
-  `pes_char_url_repositorio_codigos` varchar(500) NOT NULL,
-  `pes_char_url_linkedin` varchar(500) NOT NULL,
-  `pes_char_data_nascimento` char(10) NOT NULL,
-  `pes_char_celular_numero` char(15) NOT NULL,
-  `pes_bit_sexo` tinyint(4) UNSIGNED NOT NULL,
-  `pes_int_escolaridade` tinyint(4) UNSIGNED NOT NULL,
-  `pes_int_estado_civil` tinyint(4) UNSIGNED NOT NULL,
-  `pes_int_nacionalidade` tinyint(4) UNSIGNED NOT NULL,
-  `pes_bit_possui_filhos` tinyint(4) UNSIGNED NOT NULL,
-  `pes_bit_possui_deficiencia` tinyint(4) UNSIGNED NOT NULL,
-  `pes_int_pais` tinyint(4) UNSIGNED NOT NULL,
-  `pes_int_estado` tinyint(4) UNSIGNED NOT NULL,
-  `pes_int_cidade` smallint(6) UNSIGNED NOT NULL,
-  `pes_int_cnh` tinyint(4) UNSIGNED NOT NULL,
-  `pes_int_ultimo_salario_mensal` tinyint(4) UNSIGNED NOT NULL,
-  `pes_bit_empregado_atualmente` tinyint(4) UNSIGNED NOT NULL,
-  `pes_bit_procurando_emprego_atualmente` tinyint(4) UNSIGNED NOT NULL,
-  `pes_bit_disponivel_viagens` tinyint(4) UNSIGNED NOT NULL,
-  `pes_bit_trabalha_outras_cidades` tinyint(4) UNSIGNED NOT NULL,
-  `pes_bit_trabalha_exterior` tinyint(4) UNSIGNED NOT NULL,
-  `pes_bit_trabalha_home_office` tinyint(4) UNSIGNED NOT NULL,
-  `pes_bit_possui_carro` tinyint(4) UNSIGNED NOT NULL,
-  `pes_bit_possui_moto` tinyint(4) UNSIGNED NOT NULL,
-  `pes_bit_dispensado_servico_militar` tinyint(4) UNSIGNED NOT NULL
+  `usu_id` int(11) UNSIGNED NOT NULL,
+  `pes_nome` varchar(50) NOT NULL,
+  `pes_url_repositorio_codigos` varchar(500) NOT NULL,
+  `pes_url_linkedin` varchar(500) NOT NULL,
+  `pes_data_nascimento` char(10) NOT NULL,
+  `pes_celular_numero` char(15) NOT NULL,
+  `pes_sexo` tinyint(4) UNSIGNED NOT NULL,
+  `pes_escolaridade` tinyint(4) UNSIGNED NOT NULL,
+  `pes_estado_civil` tinyint(4) UNSIGNED NOT NULL,
+  `pes_nacionalidade` tinyint(4) UNSIGNED NOT NULL,
+  `pes_possui_filhos` tinyint(4) UNSIGNED NOT NULL,
+  `pes_possui_deficiencia` tinyint(4) UNSIGNED NOT NULL,
+  `pes_pais` tinyint(4) UNSIGNED NOT NULL,
+  `pes_estado` tinyint(4) UNSIGNED NOT NULL,
+  `pes_cidade` smallint(6) UNSIGNED NOT NULL,
+  `pes_cnh` tinyint(4) UNSIGNED NOT NULL,
+  `pes_ultimo_salario_mensal` tinyint(4) UNSIGNED NOT NULL,
+  `pes_empregado_atualmente` tinyint(4) UNSIGNED NOT NULL,
+  `pes_procurando_emprego_atualmente` tinyint(4) UNSIGNED NOT NULL,
+  `pes_disponivel_viagens` tinyint(4) UNSIGNED NOT NULL,
+  `pes_trabalha_outras_cidades` tinyint(4) UNSIGNED NOT NULL,
+  `pes_trabalha_exterior` tinyint(4) UNSIGNED NOT NULL,
+  `pes_trabalha_home_office` tinyint(4) UNSIGNED NOT NULL,
+  `pes_possui_carro` tinyint(4) UNSIGNED NOT NULL,
+  `pes_possui_moto` tinyint(4) UNSIGNED NOT NULL,
+  `pes_dispensado_servico_militar` tinyint(4) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -150,20 +150,20 @@ CREATE TABLE `pessoa` (
 --
 
 CREATE TABLE `publica_vaga` (
-  `pub_vag_int_id` int(11) UNSIGNED NOT NULL,
-  `usu_int_id` int(11) UNSIGNED NOT NULL,
-  `pub_char_date_data` char(10) NOT NULL,
-  `pub_vag_char_empresa` varchar(50) NOT NULL,
-  `pub_vag_char_cargo` varchar(50) NOT NULL,
-  `pub_vag_char_requisitos` varchar(500) NOT NULL,
-  `pub_vag_char_funcoes` varchar(500) NOT NULL,
-  `pub_vag_char_beneficios` varchar(500) NOT NULL,
-  `pub_vag_char_data_publicacao` char(10) NOT NULL,
-  `pub_vag_int_vagas` smallint(6) UNSIGNED NOT NULL,
-  `pub_vag_int_contrato` tinyint(4) UNSIGNED NOT NULL,
+  `pub_vag_id` int(11) UNSIGNED NOT NULL,
+  `usu_id` int(11) UNSIGNED NOT NULL,
+  `pub_date_data` char(10) NOT NULL,
+  `pub_vag_empresa` varchar(50) NOT NULL,
+  `pub_vag_cargo` varchar(50) NOT NULL,
+  `pub_vag_requisitos` varchar(500) NOT NULL,
+  `pub_vag_funcoes` varchar(500) NOT NULL,
+  `pub_vag_beneficios` varchar(500) NOT NULL,
+  `pub_vag_data_publicacao` char(10) NOT NULL,
+  `pub_vag_vagas` smallint(6) UNSIGNED NOT NULL,
+  `pub_vag_contrato` tinyint(4) UNSIGNED NOT NULL,
   `pub_vag_dec_salario_mensal` float NOT NULL,
-  `pub_vag_int_estado` smallint(6) UNSIGNED NOT NULL,
-  `pub_vag_int_cidade` smallint(6) UNSIGNED NOT NULL
+  `pub_vag_estado` smallint(6) UNSIGNED NOT NULL,
+  `pub_vag_cidade` smallint(6) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -173,9 +173,9 @@ CREATE TABLE `publica_vaga` (
 --
 
 CREATE TABLE `usuario` (
-  `usu_int_id` int(11) UNSIGNED NOT NULL,
-  `usu_char_email` varchar(100) NOT NULL,
-  `usu_int_senha` smallint(6) UNSIGNED NOT NULL,
+  `usu_id` int(11) UNSIGNED NOT NULL,
+  `usu_email` varchar(100) NOT NULL,
+  `usu_senha` smallint(6) UNSIGNED NOT NULL,
   `usu_date_ultimo_login` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -187,63 +187,63 @@ CREATE TABLE `usuario` (
 -- Índices para tabela `certificacao`
 --
 ALTER TABLE `certificacao`
-  ADD PRIMARY KEY (`cer_int_id`),
-  ADD KEY `usu_int_id` (`usu_int_id`);
+  ADD PRIMARY KEY (`cer_id`),
+  ADD KEY `usu_id` (`usu_id`);
 
 --
 -- Índices para tabela `curso`
 --
 ALTER TABLE `curso`
-  ADD PRIMARY KEY (`cur_int_id`),
-  ADD KEY `usu_int_id` (`usu_int_id`);
+  ADD PRIMARY KEY (`cur_id`),
+  ADD KEY `usu_id` (`usu_id`);
 
 --
 -- Índices para tabela `experiencia_profissional`
 --
 ALTER TABLE `experiencia_profissional`
-  ADD PRIMARY KEY (`exp_prof_int_id`),
-  ADD KEY `usu_int_id` (`usu_int_id`);
+  ADD PRIMARY KEY (`exp_prof_id`),
+  ADD KEY `usu_id` (`usu_id`);
 
 --
 -- Índices para tabela `habilidade`
 --
 ALTER TABLE `habilidade`
-  ADD PRIMARY KEY (`hab_int_id`),
-  ADD KEY `usu_int_id` (`usu_int_id`);
+  ADD PRIMARY KEY (`hab_id`),
+  ADD KEY `usu_id` (`usu_id`);
 
 --
 -- Índices para tabela `idioma`
 --
 ALTER TABLE `idioma`
-  ADD PRIMARY KEY (`idi_int_id`),
-  ADD KEY `usu_int_id` (`usu_int_id`);
+  ADD PRIMARY KEY (`idi_id`),
+  ADD KEY `usu_id` (`usu_id`);
 
 --
 -- Índices para tabela `objetivo_profissional`
 --
 ALTER TABLE `objetivo_profissional`
-  ADD PRIMARY KEY (`obj_pro_int_id`),
-  ADD KEY `usu_int_id` (`usu_int_id`);
+  ADD PRIMARY KEY (`obj_pro_id`),
+  ADD KEY `usu_id` (`usu_id`);
 
 --
 -- Índices para tabela `pessoa`
 --
 ALTER TABLE `pessoa`
-  ADD PRIMARY KEY (`usu_int_id`);
+  ADD PRIMARY KEY (`usu_id`);
 
 --
 -- Índices para tabela `publica_vaga`
 --
 ALTER TABLE `publica_vaga`
-  ADD PRIMARY KEY (`pub_vag_int_id`),
-  ADD KEY `usu_int_id` (`usu_int_id`);
+  ADD PRIMARY KEY (`pub_vag_id`),
+  ADD KEY `usu_id` (`usu_id`);
 
 --
 -- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`usu_int_id`),
-  ADD UNIQUE KEY `idx_usuario_usu_char_email` (`usu_char_email`) USING BTREE;
+  ADD PRIMARY KEY (`usu_id`),
+  ADD UNIQUE KEY `idx_usuario_usu_email` (`usu_email`) USING BTREE;
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -253,49 +253,49 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `certificacao`
 --
 ALTER TABLE `certificacao`
-  MODIFY `cer_int_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `cer_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `curso`
 --
 ALTER TABLE `curso`
-  MODIFY `cur_int_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `cur_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `experiencia_profissional`
 --
 ALTER TABLE `experiencia_profissional`
-  MODIFY `exp_prof_int_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `exp_prof_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `habilidade`
 --
 ALTER TABLE `habilidade`
-  MODIFY `hab_int_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `hab_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `idioma`
 --
 ALTER TABLE `idioma`
-  MODIFY `idi_int_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `idi_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `objetivo_profissional`
 --
 ALTER TABLE `objetivo_profissional`
-  MODIFY `obj_pro_int_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `obj_pro_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `publica_vaga`
 --
 ALTER TABLE `publica_vaga`
-  MODIFY `pub_vag_int_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `pub_vag_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usu_int_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `usu_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições para despejos de tabelas
@@ -305,49 +305,49 @@ ALTER TABLE `usuario`
 -- Limitadores para a tabela `certificacao`
 --
 ALTER TABLE `certificacao`
-  ADD CONSTRAINT `certificacao_ibfk_1` FOREIGN KEY (`usu_int_id`) REFERENCES `usuario` (`usu_int_id`);
+  ADD CONSTRAINT `certificacao_ibfk_1` FOREIGN KEY (`usu_id`) REFERENCES `usuario` (`usu_id`);
 
 --
 -- Limitadores para a tabela `curso`
 --
 ALTER TABLE `curso`
-  ADD CONSTRAINT `curso_ibfk_1` FOREIGN KEY (`usu_int_id`) REFERENCES `usuario` (`usu_int_id`);
+  ADD CONSTRAINT `curso_ibfk_1` FOREIGN KEY (`usu_id`) REFERENCES `usuario` (`usu_id`);
 
 --
 -- Limitadores para a tabela `experiencia_profissional`
 --
 ALTER TABLE `experiencia_profissional`
-  ADD CONSTRAINT `experiencia_profissional_ibfk_1` FOREIGN KEY (`usu_int_id`) REFERENCES `usuario` (`usu_int_id`);
+  ADD CONSTRAINT `experiencia_profissional_ibfk_1` FOREIGN KEY (`usu_id`) REFERENCES `usuario` (`usu_id`);
 
 --
 -- Limitadores para a tabela `habilidade`
 --
 ALTER TABLE `habilidade`
-  ADD CONSTRAINT `habilidade_ibfk_1` FOREIGN KEY (`usu_int_id`) REFERENCES `usuario` (`usu_int_id`);
+  ADD CONSTRAINT `habilidade_ibfk_1` FOREIGN KEY (`usu_id`) REFERENCES `usuario` (`usu_id`);
 
 --
 -- Limitadores para a tabela `idioma`
 --
 ALTER TABLE `idioma`
-  ADD CONSTRAINT `idioma_ibfk_1` FOREIGN KEY (`usu_int_id`) REFERENCES `usuario` (`usu_int_id`);
+  ADD CONSTRAINT `idioma_ibfk_1` FOREIGN KEY (`usu_id`) REFERENCES `usuario` (`usu_id`);
 
 --
 -- Limitadores para a tabela `objetivo_profissional`
 --
 ALTER TABLE `objetivo_profissional`
-  ADD CONSTRAINT `objetivo_profissional_ibfk_1` FOREIGN KEY (`usu_int_id`) REFERENCES `usuario` (`usu_int_id`);
+  ADD CONSTRAINT `objetivo_profissional_ibfk_1` FOREIGN KEY (`usu_id`) REFERENCES `usuario` (`usu_id`);
 
 --
 -- Limitadores para a tabela `pessoa`
 --
 ALTER TABLE `pessoa`
-  ADD CONSTRAINT `pessoa_ibfk_1` FOREIGN KEY (`usu_int_id`) REFERENCES `usuario` (`usu_int_id`);
+  ADD CONSTRAINT `pessoa_ibfk_1` FOREIGN KEY (`usu_id`) REFERENCES `usuario` (`usu_id`);
 
 --
 -- Limitadores para a tabela `publica_vaga`
 --
 ALTER TABLE `publica_vaga`
-  ADD CONSTRAINT `publica_vaga_ibfk_1` FOREIGN KEY (`usu_int_id`) REFERENCES `usuario` (`usu_int_id`);
+  ADD CONSTRAINT `publica_vaga_ibfk_1` FOREIGN KEY (`usu_id`) REFERENCES `usuario` (`usu_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

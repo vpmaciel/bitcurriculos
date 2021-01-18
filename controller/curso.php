@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['usu_int_id'])) {
+if(!isset($_SESSION['usu_id'])) {
 	header('location:..\view\erro.php?e=UNL');
 	exit;
 }
@@ -17,18 +17,18 @@ if(isset($_GET['acao'])){
 
 ####################################################################################################
 
-$curso_model['cur_int_id'] = $_GET['cur_int_id'];
+$curso_model['cur_id'] = $_GET['cur_id'];
 
 $resultado_numero_registros = retornar_numero_registros('curso', $curso_model);
 
-$curso_model['cur_int_id'] = $_GET['cur_int_id'];
-$curso_model['usu_int_id'] = $_SESSION['usu_int_id'];
-$curso_model['cur_char_nome'] = $_GET['cur_char_nome'];
-$curso_model['cur_char_instituicao'] = $_GET['cur_char_instituicao'];
-$curso_model['cur_year_ano_inicio'] = $_GET['cur_year_ano_inicio'];
-$curso_model['cur_year_ano_conclusao'] = $_GET['cur_year_ano_conclusao'];
-$curso_model['cur_int_situacao'] = $_GET['cur_int_situacao'];
-$curso_model['cur_int_nivel'] = $_GET['cur_int_nivel'];
+$curso_model['cur_id'] = $_GET['cur_id'];
+$curso_model['usu_id'] = $_SESSION['usu_id'];
+$curso_model['cur_nome'] = $_GET['cur_nome'];
+$curso_model['cur_instituicao'] = $_GET['cur_instituicao'];
+$curso_model['cur_ano_inicio'] = $_GET['cur_ano_inicio'];
+$curso_model['cur_ano_conclusao'] = $_GET['cur_ano_conclusao'];
+$curso_model['cur_situacao'] = $_GET['cur_situacao'];
+$curso_model['cur_nivel'] = $_GET['cur_nivel'];
 
 ####################################################################################################
 
@@ -60,8 +60,8 @@ if ($resultado_numero_registros == 0) {
 	} 
 } else {
     
-	$condicao['usu_int_id'] = $_SESSION['usu_int_id'];
-	$condicao['cur_int_id'] = $_GET['cur_int_id'];
+	$condicao['usu_id'] = $_SESSION['usu_id'];
+	$condicao['cur_id'] = $_GET['cur_id'];
 
 	
 	$resultado_atualizar = atualizar('curso', $curso_model, $condicao);

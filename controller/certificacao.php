@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['usu_int_id'])) {
+if(!isset($_SESSION['usu_id'])) {
 	header('location:..\view\erro.php?e=UNL');
 	exit;
 }
@@ -17,15 +17,15 @@ if(isset($_GET['acao'])){
 
 ####################################################################################################
 
-$certificacao_model['cer_int_id'] = $_GET['cer_int_id'];
+$certificacao_model['cer_id'] = $_GET['cer_id'];
 
 $resultado_numero_registros = retornar_numero_registros('certificacao', $certificacao_model);
 
-$certificacao_model['cer_int_id'] = $_GET['cer_int_id'];
-$certificacao_model['usu_int_id'] = $_SESSION['usu_int_id'];
-$certificacao_model['cer_char_certificacao'] = $_GET['cer_char_certificacao'];
-$certificacao_model['cer_char_instituicao'] = $_GET['cer_char_instituicao'];
-$certificacao_model['cer_year_ano_obtencao'] = $_GET['cer_year_ano_obtencao'];
+$certificacao_model['cer_id'] = $_GET['cer_id'];
+$certificacao_model['usu_id'] = $_SESSION['usu_id'];
+$certificacao_model['cer_certificacao'] = $_GET['cer_certificacao'];
+$certificacao_model['cer_instituicao'] = $_GET['cer_instituicao'];
+$certificacao_model['cer_ano_obtencao'] = $_GET['cer_ano_obtencao'];
 
 ####################################################################################################
 
@@ -57,8 +57,8 @@ if ($resultado_numero_registros == 0) {
 	} 
 } else {
     
-	$condicao['usu_int_id'] = $_SESSION['usu_int_id'];
-	$condicao['cer_int_id'] = $_GET['cer_int_id'];
+	$condicao['usu_id'] = $_SESSION['usu_id'];
+	$condicao['cer_id'] = $_GET['cer_id'];
 
 	
 	$resultado_atualizar = atualizar('certificacao', $certificacao_model, $condicao);
