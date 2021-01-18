@@ -46,7 +46,7 @@ p {
 
 table, th, td {	
 	table-layout: fixed;
-	width: 80px;
+	width: 50%;
 	border-collapse: collapse;
 		
 }
