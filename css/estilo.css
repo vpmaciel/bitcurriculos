@@ -79,24 +79,12 @@ body {
 	background-color: #2C2F33;	
 }
  
-.direita {
+.tela {
 	width: 100%;	
 	background-color:#FFF;	
 	min-height: 100vh;
-	padding: 10px;
+	padding: 5px;
 	background-color: #2C2F33;
-}
-.linha:after {
-	content: "";
-	display: table;
-	clear: both;
-	min-height: 100%;
-}
-@media only screen and (max-width: 1200px) {
-	.direita {		
-		width: 100%;		
-		border-left: none;
-	}	
 }
 .visitas {		
 	text-align: center;		

@@ -15,7 +15,7 @@ $BODY_ = '</body>';
 
 $DIV_ = '</div>';
 
-$DIV_MAIN = '<div class="coluna direita">';
+$DIV_MAIN = '<div class="tela">';
 
 $TD = '<td>';
 
