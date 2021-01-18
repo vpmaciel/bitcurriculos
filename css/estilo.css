@@ -46,7 +46,7 @@ p {
 
 table, th, td {	
 	table-layout: fixed;
-	width: 100%;
+	width: 50%;
 	border-collapse: collapse;
 		
 }
@@ -85,6 +85,13 @@ body {
 	min-height: 100vh;
 	padding: 5px;
 	background-color: #2C2F33;
+}
+
+@media only screen and (max-width: 801px) {
+	table, th, td {			
+		width: 100%;			
+	}
+	
 }
 .visitas {		
 	text-align: center;		
