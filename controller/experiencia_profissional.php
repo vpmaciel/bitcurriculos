@@ -17,17 +17,17 @@ if(isset($_GET['acao'])){
 
 ####################################################################################################
 
-$experiencia_profissional_model['exp_prof_id'] = $_GET['exp_prof_id'];
+$experiencia_profissional_model['exp_pro_id'] = $_GET['exp_pro_id'];
 
 $resultado_numero_registros = retornar_numero_registros('experiencia_profissional', $experiencia_profissional_model);
 
-$experiencia_profissional_model['exp_prof_id'] = $_GET['exp_prof_id'];
+$experiencia_profissional_model['exp_pro_id'] = $_GET['exp_pro_id'];
 $experiencia_profissional_model['usu_id'] = $_SESSION['usu_id'];
-$experiencia_profissional_model['exp_prof_empresa'] = $_GET['exp_prof_empresa'];
-$experiencia_profissional_model['exp_prof_cargo'] = $_GET['exp_prof_cargo'];
-$experiencia_profissional_model['exp_prof_data_admissao'] = $_GET['exp_prof_data_admissao'];
-$experiencia_profissional_model['exp_prof_data_saida'] = $_GET['exp_prof_data_saida'];
-$experiencia_profissional_model['exp_prof_funcoes'] = $_GET['exp_prof_funcoes'];
+$experiencia_profissional_model['exp_pro_empresa'] = $_GET['exp_pro_empresa'];
+$experiencia_profissional_model['exp_pro_cargo'] = $_GET['exp_pro_cargo'];
+$experiencia_profissional_model['exp_pro_data_admissao'] = $_GET['exp_pro_data_admissao'];
+$experiencia_profissional_model['exp_pro_data_saida'] = $_GET['exp_pro_data_saida'];
+$experiencia_profissional_model['exp_pro_funcoes'] = $_GET['exp_pro_funcoes'];
 
 ####################################################################################################
 
@@ -60,7 +60,7 @@ if ($resultado_numero_registros == 0) {
 } else {
     
 	$condicao['usu_id'] = $_SESSION['usu_id'];
-	$condicao['exp_prof_id'] = $_GET['exp_prof_id'];
+	$condicao['exp_pro_id'] = $_GET['exp_pro_id'];
 
 	
 	$resultado_atualizar = atualizar('experiencia_profissional', $experiencia_profissional_model, $condicao);

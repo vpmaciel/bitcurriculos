@@ -6,10 +6,12 @@
 a {
 	color: #FFF;	
 	text-decoration: none;	
+	font-size: 12px;
 }
 a:hover {
 	color: #FFF;	
 	text-decoration: underline;	
+	font-size: 12px;
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		

@@ -59,13 +59,13 @@ CREATE TABLE `curso` (
 --
 
 CREATE TABLE `experiencia_profissional` (
-  `exp_prof_id` int(11) UNSIGNED NOT NULL,
+  `exp_pro_id` int(11) UNSIGNED NOT NULL,
   `usu_id` int(11) UNSIGNED NOT NULL,
-  `exp_prof_empresa` varchar(50) NOT NULL,
-  `exp_prof_cargo` varchar(50) NOT NULL,
-  `exp_prof_data_admissao` char(10) NOT NULL,
-  `exp_prof_data_saida` char(10) NOT NULL,
-  `exp_prof_funcoes` varchar(500) NOT NULL
+  `exp_pro_empresa` varchar(50) NOT NULL,
+  `exp_pro_cargo` varchar(50) NOT NULL,
+  `exp_pro_data_admissao` char(10) NOT NULL,
+  `exp_pro_data_saida` char(10) NOT NULL,
+  `exp_pro_funcoes` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -201,7 +201,7 @@ ALTER TABLE `curso`
 -- Índices para tabela `experiencia_profissional`
 --
 ALTER TABLE `experiencia_profissional`
-  ADD PRIMARY KEY (`exp_prof_id`),
+  ADD PRIMARY KEY (`exp_pro_id`),
   ADD KEY `usu_id` (`usu_id`);
 
 --
@@ -265,7 +265,7 @@ ALTER TABLE `curso`
 -- AUTO_INCREMENT de tabela `experiencia_profissional`
 --
 ALTER TABLE `experiencia_profissional`
-  MODIFY `exp_prof_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `exp_pro_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `habilidade`

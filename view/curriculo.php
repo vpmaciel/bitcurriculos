@@ -277,19 +277,19 @@ if (!empty($pessoa_json)) {
 }
 
 foreach($pessoa_json as $registro) {
-	$valor = $registro->exp_prof_empresa;
+	$valor = $registro->exp_pro_empresa;
 	$pdf->Ln(20);
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "EMPRESA: $valor"), 0, 1, 'L');
-	$valor = $registro->exp_prof_cargo;
+	$valor = $registro->exp_pro_cargo;
 	$pdf->Ln(10);
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CARGO: $valor"), 0, 1, 'L');
-	$valor = $registro->exp_prof_data_admissao;
+	$valor = $registro->exp_pro_data_admissao;
 	$pdf->Ln(10);
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DATA DE ADMISSÃO: $valor"), 0, 1, 'L');
-	$valor = $registro->exp_prof_data_saida;
+	$valor = $registro->exp_pro_data_saida;
 	$pdf->Ln(10);
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DATA DE SAÍDA: $valor"), 0, 1, 'L');
-	$valor = $registro->exp_prof_funcoes;
+	$valor = $registro->exp_pro_funcoes;
 	$pdf->Ln(10);
 	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "FUNÇÕES: $valor"), 0, 1, 'L');
 }
