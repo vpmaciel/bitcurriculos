@@ -15,12 +15,12 @@ require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
 
-require_once 'menu.php';
-
 echo $DIV_MAIN;
 
+require_once 'menu.php';
+
 echo $TABLE;
-echo $TR . $TH . 'PUBLICAÇÃO DE VAGA'  . $TH_ . $TR_; 
+echo $TR . $TH . 'Publicação de Vaga'  . $TH_ . $TR_; 
 
 $publica_vaga_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $publica_vaga_model['usu_int_id'];

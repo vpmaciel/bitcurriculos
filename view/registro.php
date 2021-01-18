@@ -8,15 +8,17 @@ echo $HEAD;
 require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
-require_once 'menu.php';
+
 echo $DIV_MAIN;
+
+require_once 'menu.php';
 
 $FORM = '<form action="../controller/registro.php" name="formulario" method="post">';
 
 echo $FORM;
 
 echo $TABLE;
-echo $TR . $TH . 'CADASTRO'  . $TH_ . $TR_; 
+echo $TR . $TH . 'Cadastro'  . $TH_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'E-mail (Você receberá a senha neste e-mail)' . $LABEL_ . $TD_ . $TR_; 
 $usuario_model['usu_char_email'] = isset($_POST['usu_char_email']) ? $_POST['usu_char_email']:' ';

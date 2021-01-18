@@ -15,14 +15,14 @@ require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
 
-require_once 'menu.php';
-
 echo $DIV_MAIN;
+
+require_once 'menu.php';
 
 $FORM = '<form action="../controller/idioma.php" method="get">';
 
 echo $TABLE;
-echo $TR . $TH . 'IDIOMA' . $TH_ . $TR_;
+echo $TR . $TH . 'Idioma' . $TH_ . $TR_;
 
 $idioma_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $idioma_model['usu_int_id'];

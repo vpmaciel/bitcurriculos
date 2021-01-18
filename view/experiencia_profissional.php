@@ -13,8 +13,10 @@ echo $HEAD;
 require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
-require_once 'menu.php';
+
 echo $DIV_MAIN;
+
+require_once 'menu.php';
 
 $FORM = '<form action="../controller/experiencia_profissional.php" method="get">';
 if (isset($_GET['experiencia_profissional_model'])) {
@@ -24,7 +26,7 @@ if (isset($_GET['experiencia_profissional_model'])) {
 echo $FORM;
 
 echo $TABLE;
-echo $TR . $TH . 'EXPERIÊNCIA PROFISSIONAL' . $TH_ . $TR_;
+echo $TR . $TH . 'Experiência Profissional' . $TH_ . $TR_;
 
 $experiencia_profissional_model['exp_prof_int_id'] = isset($_GET['experiencia_profissional_model']) ? $experiencia_profissional_model_get['exp_prof_int_id'] : '';
 $INPUT = '<input type="hidden" name="exp_prof_int_id"  value="' . $experiencia_profissional_model['exp_prof_int_id'] .'">';

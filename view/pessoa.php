@@ -15,17 +15,18 @@ require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
 
-require_once 'menu.php';
 require_once 'pessoa.js';
 
 echo $DIV_MAIN;
+
+require_once 'menu.php';
 
 $FORM = '<form action="../controller/pessoa.php" method="get">';
 
 echo $FORM;
 
 echo $TABLE;
-echo $TR . $TH . 'DADOS PESSOAIS'  . $TH_ . $TR_; 
+echo $TR . $TH . 'Dados Pessoais'  . $TH_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Nome' . $LABEL_ .$TD_ . $TR_; 
 

@@ -15,14 +15,14 @@ require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
 
-require_once 'menu.php';
-
 echo $DIV_MAIN;
+
+require_once 'menu.php';
 
 $FORM = '<form action="../controller/habilidade.php" method="get">';
 
 echo $TABLE;
-echo $TR . $TH . 'HABILIDADE' . $TH_ . $TR_;
+echo $TR . $TH . 'Habilidade' . $TH_ . $TR_;
 
 $habilidade_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $habilidade_model['usu_int_id'];

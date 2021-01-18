@@ -15,12 +15,12 @@ require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
 
-require_once 'menu.php';
-
 echo $DIV_MAIN;
 
+require_once 'menu.php';
+
 echo $TABLE;
-echo $TR . $TH . 'VAGAS DISPONÍVEIS'  . $TH_ . $TR_; 
+echo $TR . $TH . 'Vagas'  . $TH_ . $TR_; 
 
 $publica_vaga_model['pub_vag_char_cargo'] = remover_acentos($_GET['pub_vag_char_cargo']);
 $publica_vaga_json = json_decode(procurar('publica_vaga', 'pub_vag_char_cargo', $publica_vaga_model['pub_vag_char_cargo']));

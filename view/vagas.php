@@ -13,15 +13,17 @@ echo $HEAD;
 require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
-require_once 'menu.php';
+
 echo $DIV_MAIN;
+
+require_once 'menu.php';
 
 $FORM = '<form action="../controller/vagas.php" method="get">';
 
 echo $FORM;
 
 echo $TABLE;
-echo $TR . $TH . 'PESQUISAR VAGAS'  . $TH_ . $TR_; 
+echo $TR . $TH . 'Vagas'  . $TH_ . $TR_; 
 
 echo $TR . $TD . $LABEL . 'Cargo' . $LABEL_ . $TD_ . $TR_; 
 $vaga['pub_vag_char_cargo'] = isset($_POST['pub_vag_char_cargo'])?$_POST['pub_vag_char_cargo']:'';

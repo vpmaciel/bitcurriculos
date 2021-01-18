@@ -15,14 +15,14 @@ require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
 
-require_once 'menu.php';
-
 echo $DIV_MAIN;
+
+require_once 'menu.php';
 
 $FORM = '<form action="../controller/objetivo_profissional.php" method="get">';
 
 echo $TABLE;
-echo $TR . $TH . 'OBJETIVO PROFISSIONAL'  . $TH_ . $TR_; 
+echo $TR . $TH . 'Objetivo Profissional'  . $TH_ . $TR_; 
 
 $objetivo_profissional_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $objetivo_profissional_model['usu_int_id'];

@@ -22,7 +22,7 @@ require_once 'menu.php';
 $FORM = '<form action="../controller/certificacao.php" method="get">';
 
 echo $TABLE;
-echo $TR . $TH . 'CERTIFICAÇÃO' . $TH_ . $TR_;
+echo $TR . $TH . 'Certificação' . $TH_ . $TR_;
 
 $certificacao_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $certificacao_model['usu_int_id'];

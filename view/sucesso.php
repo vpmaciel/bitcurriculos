@@ -9,11 +9,13 @@ echo $HEAD;
 require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
-require_once 'menu.php';
+
 echo $DIV_MAIN;
 
+require_once 'menu.php';
+
 echo $TABLE;
-echo $TR . $TH . 'SUCESSO'  . $TH_ . $TR_; 
+echo $TR . $TH . 'Sucesso'  . $TH_ . $TR_; 
 
 echo $TR . $TD . '<p class="sucesso">' . 'Operação realizada com sucesso !'. '</p>'  . $TD_ . $TR_;
 

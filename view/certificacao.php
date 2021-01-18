@@ -13,8 +13,10 @@ echo $HEAD;
 require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
-require_once 'menu.php';
+
 echo $DIV_MAIN;
+
+require_once 'menu.php';
 
 $FORM = '<form action="../controller/certificacao.php" method="get">';
 
@@ -24,7 +26,7 @@ if (isset($_GET['certificacao_model'])) {
 }
 
 echo $TABLE;
-echo $TR . $TH . 'CERTIFICAÇÃO' . $TH_ . $TR_;
+echo $TR . $TH . 'Certificação' . $TH_ . $TR_;
 
 $certificacao_model['cer_int_id'] = isset($_GET['certificacao_model']) ? $certificacao_model_get['cer_int_id'] : '';
 $INPUT = '<input type="hidden" name="cer_int_id"  value="' . $certificacao_model['cer_int_id'] .'">';

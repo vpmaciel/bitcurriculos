@@ -15,12 +15,12 @@ require_once 'cabecalho.php';
 echo $HEAD_;
 echo $BODY;
 
-require_once 'menu.php';
-
 echo $DIV_MAIN;
 
+require_once 'menu.php';
+
 echo $TABLE;
-echo $TR . $TH . 'EXPERIÊNCIA PROFISSIONAL' . $TH_ . $TR_;
+echo $TR . $TH . 'Experiência Profissional' . $TH_ . $TR_;
 
 $experiencia_profissional_model['usu_int_id'] = $_SESSION['usu_int_id'];
 $condicao = $experiencia_profissional_model['usu_int_id'];
