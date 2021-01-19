@@ -126,8 +126,7 @@ div {
 }
   
 .topnav a:hover {
-	background-color: #ddd;
-	color: black;
+	text-decoration: underline;	
 }
   
 .topnav a.active {
