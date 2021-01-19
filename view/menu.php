@@ -1,5 +1,4 @@
 <?php
-echo '<marquee scrolldelay="125">';
 echo '<a href="index.php">HOME</a> | '; 
 echo '<a href="registro.php">REGISTRAR</a> | '; 
 echo '<a href="login.php">ENTRAR</a> | '; 
@@ -14,5 +13,4 @@ echo '<a href="../view/habilidade_lista.php">HABILIDADES</a> | ';
 echo '<a href="../view/vagas.php">PESQUISAR VAGAS</a> | '; 
 echo '<a href="../view/curriculo.php">EXIBIR CURRÍCULO</a> | '; 
 echo '<a href="../view/publica_vaga_lista.php">PUBLICAR VAGA</a>'; 
-echo '</marquee>';
 echo '<br><br>';
