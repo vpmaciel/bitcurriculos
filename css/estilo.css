@@ -126,7 +126,8 @@ div {
 }
   
 .topnav a:hover {
-	text-decoration: underline;	
+	text-decoration: underline;
+	
 }
   
 .topnav a.active {
