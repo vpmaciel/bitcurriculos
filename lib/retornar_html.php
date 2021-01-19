@@ -15,7 +15,7 @@ $BODY_ = '</body>';
 
 $DIV_ = '</div>';
 
-$DIV_MAIN = '<div class="tela">';
+$DIV_MAIN = '<div class="tela" align="center">';
 
 $TD = '<td>';
 
