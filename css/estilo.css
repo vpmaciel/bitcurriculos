@@ -6,12 +6,12 @@
 a {
 	color: #FFF;	
 	text-decoration: none;	
-	font-size: 14px;
+	font-size: 16px;
 }
 a:hover {
 	color: #FFF;	
 	text-decoration: underline;	
-	font-size: 14px;
+	font-size: 16px;
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
@@ -24,7 +24,7 @@ select, input, textarea, select:focus, input:focus, textarea:focus {
     outline: none;
     box-shadow: none;
     border: 1px solid#000;	
-	font-size: 14px;	
+	font-size: 16px;	
 	padding: 2px;
 	width: 100%;
 	resize: none;
@@ -111,7 +111,7 @@ div {
 }
 .topnav {
 	overflow: hidden;
-	background-color: red;
+	background-color: #70161D;
 	width: 100%;	
 }
   
@@ -119,9 +119,9 @@ div {
 	float: left;
 	color: #f2f2f2;
 	text-align: center;
-	padding: 5px;
+	padding: 5px 15px;
 	text-decoration: none;
-	font-size: 14px;	
+	font-size: 16px;	
 	font-weight: lighter;
 }
   
