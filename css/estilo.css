@@ -25,13 +25,12 @@ select, input, textarea, select:focus, input:focus, textarea:focus {
     box-shadow: none;
     border: 1px solid#000;	
 	font-size: 16px;	
-	padding: 2px;
+	padding: 5px;
 	width: 100%;
 	resize: none;
 }
 input[type="submit"] {
-	 padding: 2px;
-	 font-weight: bold;	 
+	padding: 5px;	 
 	 width: auto;
 }
 label {
