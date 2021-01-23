@@ -48,7 +48,7 @@ foreach($experiencia_profissional_json as $registro) {
 	echo $TR . $TD . $LABEL . 'Data de saída: ' . $experiencia_profissional_model['exp_pro_data_saida'] . $LABEL_ . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . 'Funções: ' . $experiencia_profissional_model['exp_pro_funcoes'] . $LABEL_ . $TD_ . $TR_; 	
 	echo $TR . $TD . '<a href="../view/experiencia_profissional.php?' . $str . '">Editar</a>' . $TD_ . $TR_; 
-	echo $TR . $TD . '<a href="../controller/experiencia_profissional.php?acao=excluir&' . $str . '">Excluir</a>' . $TD_ . $TR_; 
+	echo $TR . $TD . '<a href="../controller/experiencia_profissional.php?acao=excluir&' . $str . ' " onclick="return confirmar();">Excluir</a>' . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 	
 }
 

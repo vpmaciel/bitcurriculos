@@ -58,7 +58,7 @@ foreach($publica_vaga_json as $registro) {
 	echo $TR . $TD . $LABEL . 'Estado: ' . $array_estado[$publica_vaga_model['pub_vag_estado']] . $LABEL_ . $TD_ . $TR_;
 	echo $TR . $TD . $LABEL . 'Cidade: ' . $array_cidade[$publica_vaga_model['pub_vag_cidade']] . $LABEL_ . $TD_ . $TR_;
 	echo $TR . $TD . '<a href="../view/publica_vaga.php?' . $str . '">Enviar currículo</a>' . $TD_ . $TR_; 
-		echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 	
+	echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 	
 }
 
 echo $TABLE_;

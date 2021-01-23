@@ -44,7 +44,7 @@ foreach($habilidade_json as $registro) {
 	echo $TR . $TD . $LABEL . 'Habilidade: ' . $habilidade_model['hab_habilidade'] . $LABEL_ . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . 'Nível: ' . $array_nivel_conhecimento[$habilidade_model['hab_nivel_conhecimento']] . $LABEL_ . $TD_ . $TR_; 
 	echo $TR . $TD . '<a href="../view/habilidade.php?' . $str . '">Editar</a>' . $TD_ . $TR_; 
-	echo $TR . $TD . '<a href="../controller/habilidade.php?acao=excluir&' . $str . '">Excluir</a>' . $TD_ . $TR_; 
+	echo $TR . $TD . '<a href="../controller/habilidade.php?acao=excluir&' . $str . ' " onclick="return confirmar();">Excluir</a>' . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 	
 }
 

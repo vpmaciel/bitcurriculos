@@ -51,7 +51,7 @@ foreach($curso_json as $registro) {
 	echo $TR . $TD . $LABEL . 'Situação: ' . $array_situacao[$curso_model['cur_situacao']] . $LABEL_ . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . 'Nível: ' . $array_escolaridade[$curso_model['cur_nivel']] . $LABEL_ . $TD_ . $TR_; 
 	echo $TR . $TD . '<a href="../view/curso.php?' . $str . '">Editar</a>' . $TD_ . $TR_; 
-	echo $TR . $TD . '<a href="../controller/curso.php?acao=excluir&' . $str . '">Excluir</a>' . $TD_ . $TR_; 
+	echo $TR . $TD . '<a href="../controller/curso.php?acao=excluir&' . $str . ' " onclick="return confirmar();">Excluir</a>' . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 	
 }
 

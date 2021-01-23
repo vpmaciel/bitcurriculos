@@ -43,7 +43,7 @@ foreach($idioma_json as $registro) {
 	echo $TR . $TD . $LABEL . 'Idioma: ' . $array_idioma[$idioma_model['idi_idioma']] . $LABEL_ . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . 'Nível de conhecimento: ' . $array_nivel_conhecimento_idioma[$idioma_model['idi_nivel_conhecimento']] . $LABEL_ . $TD_ . $TR_;  
 	echo $TR . $TD . '<a href="../view/idioma.php?' . $str . '">Editar</a>' . $TD_ . $TR_; 
-	echo $TR . $TD . '<a href="../controller/idioma.php?acao=excluir&' . $str . '">Excluir</a>' . $TD_ . $TR_; 
+	echo $TR . $TD . '<a href="../controller/idioma.php?acao=excluir&' . $str . ' " onclick="return confirmar();">Excluir</a>' . $TD_ . $TR_;  
 	echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 	
 }
 

@@ -44,7 +44,7 @@ foreach($certificacao_json as $registro) {
 	echo $TR . $TD . $LABEL . 'Instituição: ' . $certificacao_model['cer_instituicao'] . $LABEL_ . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . 'Ano de obtenção: ' . $certificacao_model['cer_ano_obtencao'] . $LABEL_ . $TD_ . $TR_; 
 	echo $TR . $TD . '<a href="../view/certificacao.php?' . $str . '">Editar</a>' . $TD_ . $TR_; 
-	echo $TR . $TD . '<a href="../controller/certificacao.php?acao=excluir&' . $str .'"  onclick="return confirm("Confirmar Operação ?")>Excluir</a>' . $TD_ . $TR_; 
+	echo $TR . $TD . '<a href="../controller/certificacao.php?acao=excluir&' . $str . ' " onclick="return confirmar();">Excluir</a>' . $TD_ . $TR_; 
 	echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 	
 }
 
