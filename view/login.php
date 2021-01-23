@@ -31,6 +31,8 @@ $usuario['usu_senha'] = isset($_POST['usu_senha']) ? $_POST['usu_senha']:'';
 $INPUT = '<input type="password" name="usu_senha" placeholder="0000" required onkeypress="$(this).mask(\'0000\');" minlength="4" maxlength="4" value="' . $usuario['usu_senha'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
+
 $SUBMIT = '<input type="submit" value="ENVIAR" onclick=\'return confirmar();\'>';
 echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
 

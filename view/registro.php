@@ -25,6 +25,8 @@ $usuario_model['usu_email'] = isset($_POST['usu_email']) ? $_POST['usu_email']:'
 $INPUT = '<input type="email" name="usu_email" required maxlength="100" value="' . $usuario_model['usu_email'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
+
 $SUBMIT = '<input type="submit" value="ENVIAR">';
 echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
 

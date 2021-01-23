@@ -30,6 +30,30 @@ $vaga['pub_vag_cargo'] = isset($_POST['pub_vag_cargo'])?$_POST['pub_vag_cargo']:
 $INPUT = '<input type="text" name="pub_vag_cargo" maxlength="50" value="' . $vaga['pub_vag_cargo'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
+echo $TR . $TD . $LABEL . 'Estado' . $LABEL_ . $TD_ . $TR_; 
+echo $TR. $TD;
+$SELECT = '<select name="pub_vag_estado">';
+echo $SELECT;
+$OPTION = ' <option value="">TODOS</option>';
+echo $OPTION;
+foreach ($array_estado as $indice => $pub_vag_estado) {	
+	echo "<option value=$indice>$pub_vag_estado</option>";
+}
+echo $SELECT_ . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . 'Cidade' . $LABEL_ . $TD_ . $TR_; 
+echo $TR. $TD;
+$SELECT = '<select name="pub_vag_cidade">';
+echo $SELECT;
+$OPTION = ' <option value="">TODOS</option>';
+echo $OPTION;
+foreach ($array_cidade as $indice => $pub_vag_cidade) {	
+	echo "<option value=$indice>$pub_vag_cidade</option>";
+}
+echo $SELECT_ . $TD_ . $TR_;
+
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
+
 $SUBMIT = '<input type="submit" value="Pesquisar" onclick=\'return confirmar();\'>';
 echo $TR. $TD . $SUBMIT . $TD_ . $TR_;
 

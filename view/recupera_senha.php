@@ -26,6 +26,8 @@ $usuario['usu_email'] = isset($_POST['usu_email']) ? $_POST['usu_email']:'';
 $INPUT = '<input type="email" name="usu_email" required minlength="5" maxlength="100" value="' . $usuario['usu_email'] .'">';
 echo $TR . $TD . $INPUT . $TD_ . $TR_;
 
+echo $TR . $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
+
 $SUBMIT = '<input type="submit" value="Enviar" onclick=\'return confirmar();\'>';
 echo $TR . $TD . $SUBMIT . $TD_ . $TR_;
 
