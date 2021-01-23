@@ -4,18 +4,18 @@
 	src: url(../fonte/Arsenal/Arsenal-Regular.ttf);
 }
 a {
-	color: #FFF;	
+	color: #C29375;	
 	text-decoration: none;	
 	font-size: 1em;
 }
 a:hover {
-	color: #FFF;	
+	color: #C29375;	
 	text-decoration: underline;	
 	font-size: 1em;
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
-	color: #FFF;
+	color: #C29375;
 	font-size: 1em;	
 	padding: 0px;
 }
@@ -34,7 +34,7 @@ input[type="submit"] {
 	 width: auto;
 }
 label {
-	color: #FFF;			
+	color: #C29375;			
 	font-weight: lighter;	
 }
 p {
@@ -42,24 +42,20 @@ p {
 	text-indent: 2em;
 	padding: 10px;			
 }
-
 table, th, td {	
 	table-layout: fixed;
 	width: 50%;
-	border-collapse: collapse;
-		
+	border-collapse: collapse;		
 }
 th, td {	
 	padding: 5px;
 }
-
 * {
 	font-weight: normal;
 	border-radius: 0px;
 	box-sizing: border-box;	
 	padding: 0;
 }
-
 html{
 	height: 100%;
 	overflow: -moz-scrollbars-vertical; 
@@ -69,7 +65,7 @@ html{
 }
 body {
 	font-family: Fonte, sans-serif;
-	color: #FFF;
+	color: #C29375;
 	font-size: 1em;
 	margin: auto 0;
 	padding: 0px;
@@ -77,12 +73,9 @@ body {
     height:100%;
 	background-color: #2C2F33;	
 }
- 
 .tela {
-	
 	margin: auto;
-	width: 100%;
-	background: #fff;	
+	width: 100%;	
 	padding: 0px;
 	min-height: 100vh;
 	background-color: #2C2F33;
@@ -91,8 +84,7 @@ body {
 @media only screen and (max-width: 801px) {
 	table, th, td {			
 		width: 100%;			
-	}
-	
+	}	
 }
 .visitas {		
 	text-align: center;		
@@ -113,10 +105,9 @@ div {
 	background-color: #70221D;
 	width: 100%;	
 }
-  
 .topnav a {
 	float: left;
-	color: #f2f2f2;
+	color: #C29375;
 	text-align: center;
 	padding: 5px 15px;
 	text-decoration: none;
@@ -125,11 +116,5 @@ div {
 }
   
 .topnav a:hover {
-	text-decoration: underline;
-	
-}
-  
-.topnav a.active {
-	background-color: #4CAF50;
-	color: white;
-}
+	text-decoration: underline;	
+} 
