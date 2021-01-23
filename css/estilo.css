@@ -1,22 +1,22 @@
 @charset "UTF-8";
 @font-face {
 	font-family: Fonte;
-	src: url(../fonte/Arsenal/Arsenal-Regular.ttf);
+	src: url(../fonte/Barlow_Condensed/BarlowCondensed-Light.ttf);
 }
 a {
 	color: #FFF;	
 	text-decoration: none;	
-	font-size: 16px;
+	font-size: 22px;
 }
 a:hover {
 	color: #FFF;	
 	text-decoration: underline;	
-	font-size: 16px;
+	font-size: 22px;
 }
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;		
 	color: #FFF;
-	font-size: 16px;	
+	font-size: 22px;	
 	padding: 0px;
 }
 select, input, textarea, select:focus, input:focus, textarea:focus {
@@ -24,7 +24,7 @@ select, input, textarea, select:focus, input:focus, textarea:focus {
     outline: none;
     box-shadow: none;
     border: 1px solid#000;	
-	font-size: 16px;	
+	font-size: 22px;	
 	padding: 5px;
 	width: 100%;
 	resize: none;
@@ -68,9 +68,9 @@ html{
 	background-color: #2C2F33;	
 }
 body {
-	font-family: Fonte, sans-serif;		
+	font-family: Fonte, sans-serif;
 	color: #FFF;
-	font-size: 16px;
+	font-size: 22px;
 	margin: auto 0;
 	padding: 0px;
 	width: 100%;
@@ -110,7 +110,7 @@ div {
 }
 .topnav {
 	overflow: hidden;
-	background-color: #70161D;
+	background-color: #70221D;
 	width: 100%;	
 }
   
@@ -120,7 +120,7 @@ div {
 	text-align: center;
 	padding: 5px 15px;
 	text-decoration: none;
-	font-size: 16px;	
+	font-size: 22px;	
 	font-weight: lighter;
 }
   
