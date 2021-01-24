@@ -18,7 +18,7 @@ echo $DIV_MAIN;
 
 require_once 'menu.php';
 
-$FORM = '<form action="../controller/certificacao.php" method="get">';
+$FORM = '<form action="../controller/certificacao.php" method="get" onsubmit="return validar_form()">';
 
 echo $FORM;
 if (isset($_GET['certificacao_model'])) {
@@ -44,7 +44,7 @@ echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Ano de obtenção' . $LABEL_ . $TD_ . $TR_; 
 $certificacao_model['cer_ano_obtencao'] = isset($_GET['certificacao_model']) ? $certificacao_model_get['cer_ano_obtencao'] : '';
-$INPUT = '<input type="number" name="cer_ano_obtencao" required min="1950" max="3000" value="' . $certificacao_model['cer_ano_obtencao'] .'">';
+$INPUT = '<input type="number" name="cer_ano_obtencao" required min="1900" max="3000" value="' . $certificacao_model['cer_ano_obtencao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR. $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
