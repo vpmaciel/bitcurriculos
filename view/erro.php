@@ -22,7 +22,6 @@ if (isset($_GET['msg'])) {
 }
 
 $MSG = '<script>setTimeout(function() { window.history.back(); }, 10000);</script>';
-
 echo $MSG;
 
 echo $TABLE_;

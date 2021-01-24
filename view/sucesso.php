@@ -23,9 +23,11 @@ if (isset($_GET['msg'])) {
     echo $TR . $TD . '<p class="sucesso">' . $_GET['msg']. '</p>'  . $TD_ . $TR_;
 }
 
-$MSG = '<script>setTimeout(function() { window.history.back(); }, 10000);</script>';
+$url = isset($_GET['url_voltar']) ? $_GET['url_voltar'] : '';
 
-echo $MSG;
+if (isset($_GET['url_voltar'])) {
+    header( "refresh:5;url= $url.php" );
+}
 
 echo $TABLE_;
 

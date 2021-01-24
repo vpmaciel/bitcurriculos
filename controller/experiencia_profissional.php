@@ -39,7 +39,7 @@ if ($acao == 'excluir') {
 
 	if ($resultado_excluir == TRUE) {
 		
-		header('location:..\view\sucesso.php');
+		header('location:..\view\sucesso.php?url_voltar=experiencia_profissional_lista');
 		exit;
 	} else {
 		header('location: ..\view\erro.php?e=OPN');
@@ -51,7 +51,7 @@ if ($resultado_numero_registros == 0) {
     $resultado_inserir = inserir('experiencia_profissional', $experiencia_profissional_model);
     
     if ($resultado_inserir == TRUE) {
-		header('location:..\view\sucesso.php');
+		header('location:..\view\sucesso.php?url_voltar=experiencia_profissional_lista');
 		exit;
 	} else {
 		header('location: ..\view\erro.php?e=OPN');
@@ -67,7 +67,7 @@ if ($resultado_numero_registros == 0) {
 	
 	if ($resultado_atualizar == TRUE) {
 		
-		header('location:..\view\sucesso.php');
+		header('location:..\view\sucesso.php?url_voltar=experiencia_profissional_lista');
 		exit;
 	} else {
 		header('location: ..\view\erro.php?e=OPN');

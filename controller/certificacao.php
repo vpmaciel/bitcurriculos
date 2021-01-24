@@ -37,7 +37,7 @@ if ($acao == 'excluir') {
 
 	if ($resultado_excluir == TRUE) {
 		
-		header('location:..\view\sucesso.php');
+		header('location:..\view\sucesso.php?url_voltar=certificacao_lista');
 		exit;
 	} else {
 		header('location: ..\view\erro.php?e=OPN');
@@ -49,7 +49,7 @@ if ($resultado_numero_registros == 0) {
     $resultado_inserir = inserir('certificacao', $certificacao_model);
     
     if ($resultado_inserir == TRUE) {
-		header('location:..\view\sucesso.php');
+		header('location:..\view\sucesso.php?url_voltar=certificacao_lista');
 		exit;
 	} else {
 		header('location: ..\view\erro.php?e=OPN');
@@ -65,7 +65,7 @@ if ($resultado_numero_registros == 0) {
 	
 	if ($resultado_atualizar == TRUE) {
 		
-		header('location:..\view\sucesso.php');
+		header('location:..\view\sucesso.php?url_voltar=certificacao_lista');
 		exit;
 	} else {
 		header('location: ..\view\erro.php?e=OPN');

@@ -46,7 +46,7 @@ if ($acao == 'excluir') {
 
 	if ($resultado_excluir == TRUE) {
 		
-		header('location:..\view\sucesso.php');
+		header('location:..\view\sucesso.php?url_voltar=publica_vaga_lista');
 		exit;
 	} else {
 		header('location: ..\view\erro.php?e=OPN');
@@ -58,7 +58,7 @@ if ($resultado_numero_registros == 0) {
     $resultado_inserir = inserir('publica_vaga', $publica_vaga_model);
     
     if ($resultado_inserir == TRUE) {
-		header('location:..\view\sucesso.php');
+		header('location:..\view\sucesso.php?url_voltar=publica_vaga_lista');
 		exit;
 	} else {
 		header('location: ..\view\erro.php?e=OPN');
@@ -74,7 +74,7 @@ if ($resultado_numero_registros == 0) {
 	
 	if ($resultado_atualizar == TRUE) {
 		
-		header('location:..\view\sucesso.php');
+		header('location:..\view\sucesso.php?url_voltar=publica_vaga_lista');
 		exit;
 	} else {
 		header('location: ..\view\erro.php?e=OPN');
