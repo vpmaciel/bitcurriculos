@@ -11,6 +11,7 @@ echo $DOCTYPE;
 echo $HTML;
 echo $HEAD;
 require_once 'cabecalho.php';
+
 echo $HEAD_;
 echo $BODY;
 
@@ -26,25 +27,25 @@ if (isset($_GET['certificacao_model'])) {
 }
 
 echo $TABLE;
-echo $TR . $TH . 'Certificação' . $TH_ . $TR_;
+echo $TR . $TH . 'Certificação' .'<span id="demo"></span>' .$TH_ . $TR_;
 
 $certificacao_model['cer_id'] = isset($_GET['certificacao_model']) ? $certificacao_model_get['cer_id'] : '';
-$INPUT = '<input type="hidden" name="cer_id"  value="' . $certificacao_model['cer_id'] .'">';
+$INPUT = '<input type="hidden" id="cer_id" name="cer_id"  value="' . $certificacao_model['cer_id'] .'">';
 echo $INPUT;
 
 echo $TR . $TD . $LABEL . 'Certificação' . $LABEL_ . $TD_ . $TR_; 
 $certificacao_model['cer_certificacao'] = isset($_GET['certificacao_model']) ? $certificacao_model_get['cer_certificacao'] : '';
-$INPUT = '<input type="text" name="cer_certificacao" required maxlength="50" value="' . $certificacao_model['cer_certificacao'] .'">';
+$INPUT = '<input type="text" id="cer_certificacao" name="cer_certificacao" required maxlength="50" value="' . $certificacao_model['cer_certificacao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Instituição' . $LABEL_ . $TD_ . $TR_;
 $certificacao_model['cer_instituicao'] = isset($_GET['certificacao_model']) ? $certificacao_model_get['cer_instituicao'] : '';
-$INPUT = '<input type="text" name="cer_instituicao" required maxlength="50" value="' . $certificacao_model['cer_instituicao'] .'">';
+$INPUT = '<input type="text" id="cer_instituicao" name="cer_instituicao" required maxlength="50" value="' . $certificacao_model['cer_instituicao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR . $TD . $LABEL . 'Ano de obtenção' . $LABEL_ . $TD_ . $TR_; 
 $certificacao_model['cer_ano_obtencao'] = isset($_GET['certificacao_model']) ? $certificacao_model_get['cer_ano_obtencao'] : '';
-$INPUT = '<input type="number" name="cer_ano_obtencao" required min="1900" max="3000" value="' . $certificacao_model['cer_ano_obtencao'] .'">';
+$INPUT = '<input type="number" id="cer_ano_obtencao" name="cer_ano_obtencao" required min="1900" max="3000" value="' . $certificacao_model['cer_ano_obtencao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR. $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
@@ -59,6 +60,8 @@ echo $FORM_;
 echo $DIV_;
 
 echo $DIV_;
+
+echo '<script src="certificacao.js"></script>';
 
 echo $BODY_;
 
