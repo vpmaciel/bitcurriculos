@@ -60,79 +60,79 @@ foreach($pessoa_json as $registro) {
 }
 
 $pdf->Ln(10);
-$saida = "NOME: ". $pessoa_model['pes_nome'];
+$saida = "Nome: ". $pessoa_model['pes_nome'];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "REPOSITÓRIO DE CÓDIGOS: ". urldecode($pessoa_model['pes_url_repositorio_codigos']);	
+$saida = "Repositório De Códigos: ". urldecode($pessoa_model['pes_url_repositorio_codigos']);	
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "LINKEDIN: ". urldecode($pessoa_model['pes_url_linkedin']);
+$saida = "LinkedIn: ". urldecode($pessoa_model['pes_url_linkedin']);
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "DATA DE NASCIMENTO: ". $pessoa_model['pes_data_nascimento'];
+$saida = "Data De Nascimento: ". $pessoa_model['pes_data_nascimento'];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "CELULAR: ". $pessoa_model['pes_celular_numero'];
+$saida = "Celular: ". $pessoa_model['pes_celular_numero'];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "SEXO: ". $array_sexo[$pessoa_model['pes_sexo']];
+$saida = "Sexo: ". $array_sexo[$pessoa_model['pes_sexo']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "ESCOLARIDADE: ". $array_escolaridade[$pessoa_model['pes_escolaridade']];
+$saida = "Escolaridade: ". $array_escolaridade[$pessoa_model['pes_escolaridade']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "ESTADO CIVÍL: ". $array_estado_civil[$pessoa_model['pes_estado_civil']];
+$saida = "Estado Civíl: ". $array_estado_civil[$pessoa_model['pes_estado_civil']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "NACIONALIDADE: ". $array_nacionalidade[$pessoa_model['pes_nacionalidade']];
+$saida = "Nacionalidade: ". $array_nacionalidade[$pessoa_model['pes_nacionalidade']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "POSSUI FILHOS: ". $array_resposta[$pessoa_model['pes_possui_filhos']];
+$saida = "Possui Filhos: ". $array_resposta[$pessoa_model['pes_possui_filhos']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "POSSUI DEFICIÊNCIA: ". $array_resposta[$pessoa_model['pes_possui_deficiencia']];
+$saida = "Possui Deficiência: ". $array_resposta[$pessoa_model['pes_possui_deficiencia']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "PAÍS: ". $array_pais[$pessoa_model['pes_pais']];
+$saida = "País: ". $array_pais[$pessoa_model['pes_pais']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "ESTADO: ". $array_estado[$pessoa_model['pes_estado']];
+$saida = "Estado: ". $array_estado[$pessoa_model['pes_estado']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "CIDADE: ". $array_cidade[$pessoa_model['pes_cidade']];
+$saida = "Cidade: ". $array_cidade[$pessoa_model['pes_cidade']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
 $saida = "CNH: ". $array_cnh[$pessoa_model['pes_cnh']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "ÚTIMO SALÁRIO MENSAL (R$): ". $array_ultimo_salario[$pessoa_model['pes_ultimo_salario_mensal']];
+$saida = "Último Salário Mensal (R$): ". $array_ultimo_salario[$pessoa_model['pes_ultimo_salario_mensal']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "EMPREGADO ATUALMENTE: ". $array_resposta[$pessoa_model['pes_empregado_atualmente']];
+$saida = "Empregado Atualmente: ". $array_resposta[$pessoa_model['pes_empregado_atualmente']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "PROCUANDO EMPREGO ATUALMENTE: ". $array_resposta[$pessoa_model['pes_procurando_emprego_atualmente']];
+$saida = "Procurando Emprego Atualmente: ". $array_resposta[$pessoa_model['pes_procurando_emprego_atualmente']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "DISPONÍVEL PARA VIAGEM: ". $array_resposta[$pessoa_model['pes_disponivel_viagens']];
+$saida = "Disponível Para Viagens: ". $array_resposta[$pessoa_model['pes_disponivel_viagens']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "PODE TRABALHAR EM OUTRAS CIDADES: ". $array_resposta[$pessoa_model['pes_trabalha_outras_cidades']];
+$saida = "Pode Trabalhar Em Outras Cidades: ". $array_resposta[$pessoa_model['pes_trabalha_outras_cidades']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "PODE TRABALHAR EM OUTROS PAÍSES: ". $array_resposta[$pessoa_model['pes_trabalha_exterior']];
+$saida = "Pode Trabalhar Em Outros Países: ". $array_resposta[$pessoa_model['pes_trabalha_exterior']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "PODE TRABALHAR HOME OFFICE: ". $array_resposta[$pessoa_model['pes_trabalha_home_office']];
+$saida = "Pode Trabalhar Home Office: ". $array_resposta[$pessoa_model['pes_trabalha_home_office']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "POSSUI CARRO: ". $array_resposta[$pessoa_model['pes_possui_carro']];
+$saida = "Possui Carro: ". $array_resposta[$pessoa_model['pes_possui_carro']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "POSSUI MOTO: ". $array_resposta[$pessoa_model['pes_possui_moto']];
+$saida = "Possui Moto: ". $array_resposta[$pessoa_model['pes_possui_moto']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 $pdf->Ln(10);
-$saida = "FOI DISPENSADO DO SERVIÇO MILITAR: ". $array_resposta[$pessoa_model['pes_dispensado_servico_militar']];
+$saida = "Foi Dispensado Do Serviço Militar: ". $array_resposta[$pessoa_model['pes_dispensado_servico_militar']];
 $pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', $saida), 0, 1, 'L');
 
 ####################################################################################################
@@ -151,13 +151,13 @@ if (!empty($pessoa_json)) {
 foreach($pessoa_json as $registro) {
 	$valor = $registro->obj_pro_cargo;
 	$pdf->Ln(20);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CARGO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Cargo: $valor"), 0, 1, 'L');
 	$valor = $array_pretensao_salarial[$registro->obj_pro_pretensao_salarial];
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "PRETENSÃO SALARIAL: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Pretensão Salarial: $valor"), 0, 1, 'L');
 	$valor = $array_contrato[$registro->obj_pro_contrato];
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CONTRATO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Contrato: $valor"), 0, 1, 'L');
 }
 
 ####################################################################################################
@@ -176,22 +176,22 @@ if (!empty($pessoa_json)) {
 foreach($pessoa_json as $registro) {
 	$valor = $registro->cur_nome;
 	$pdf->Ln(20);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "NOME DO CURSO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Curso: $valor"), 0, 1, 'L');
 	$valor = $registro->cur_instituicao;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "INSTITUIÇÃO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Instituição: $valor"), 0, 1, 'L');
 	$valor = $registro->cur_ano_inicio;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "ANO DE INÍCIO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Ano De Início: $valor"), 0, 1, 'L');
 	$valor = $registro->cur_ano_conclusao;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "ANO DE CONCLUSÃO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Ano De Conclusão: $valor"), 0, 1, 'L');
 	$valor = $array_situacao[$registro->cur_situacao];
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "SITUAÇÃO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Situtação: $valor"), 0, 1, 'L');
 	$valor = $array_escolaridade[$registro->cur_nivel];
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "NÍVEL: $valor"), 0, 1, 'L');	
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Nível: $valor"), 0, 1, 'L');	
 }
 
 ####################################################################################################
@@ -210,13 +210,13 @@ if (!empty($pessoa_json)) {
 foreach($pessoa_json as $registro) {
 	$valor = $registro->cer_certificacao;
 	$pdf->Ln(20);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CERTIFICAÇÃO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Certificação: $valor"), 0, 1, 'L');
 	$valor = $registro->cer_instituicao;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "INSTITUIÇÃO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Instituição: $valor"), 0, 1, 'L');
 	$valor = $registro->cer_ano_obtencao;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "ANO DE OBTENÇÃO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Ano De Obtenção: $valor"), 0, 1, 'L');
 }
 
 ####################################################################################################
@@ -235,10 +235,10 @@ if (!empty($pessoa_json)) {
 foreach($pessoa_json as $registro) {
 	$valor = $array_idioma[$registro->idi_idioma];
 	$pdf->Ln(20);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "IDIOMA: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Idioma: $valor"), 0, 1, 'L');
 	$valor = $array_nivel_conhecimento_idioma[$registro->idi_nivel_conhecimento];
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "NÍVEL DE CONHECIMENTO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Nível De Conhecimento: $valor"), 0, 1, 'L');
 }
 
 ####################################################################################################
@@ -257,10 +257,10 @@ if (!empty($pessoa_json)) {
 foreach($pessoa_json as $registro) {
 	$valor = $registro->hab_habilidade;
 	$pdf->Ln(20);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "HABILIDADE: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Habilidade: $valor"), 0, 1, 'L');
 	$valor = $array_nivel_conhecimento[$registro->hab_nivel_conhecimento];
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "NÍVEL: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Nível: $valor"), 0, 1, 'L');
 }
 
 ####################################################################################################
@@ -279,19 +279,19 @@ if (!empty($pessoa_json)) {
 foreach($pessoa_json as $registro) {
 	$valor = $registro->exp_pro_empresa;
 	$pdf->Ln(20);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "EMPRESA: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Empresa: $valor"), 0, 1, 'L');
 	$valor = $registro->exp_pro_cargo;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "CARGO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Cargo: $valor"), 0, 1, 'L');
 	$valor = $registro->exp_pro_data_admissao;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DATA DE ADMISSÃO: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Data De Admissão: $valor"), 0, 1, 'L');
 	$valor = $registro->exp_pro_data_saida;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "DATA DE SAÍDA: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Data De Saída: $valor"), 0, 1, 'L');
 	$valor = $registro->exp_pro_funcoes;
 	$pdf->Ln(10);
-	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "FUNÇÕES: $valor"), 0, 1, 'L');
+	$pdf->Cell(0, 5, iconv('utf-8', 'iso-8859-1', "Funções: $valor"), 0, 1, 'L');
 }
 
 
@@ -306,7 +306,6 @@ if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'BitCurriculos', 'Sua 
 
 /* exclui o arquivo pdf do servidor */
 if (file_exists ($caminhoCompletoArquivo)) {
-	sleep(5);
-	//unlink($caminhoCompletoArquivo);
+	sleep(10);
+	unlink($caminhoCompletoArquivo);
 }
-//}
