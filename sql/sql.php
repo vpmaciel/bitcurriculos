@@ -44,7 +44,8 @@ function inserir($char_tabela, $array_model) : bool {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
                 } else {
-                    $valor = "'" . mb_convert_case(mb_strtolower( $valor, 'UTF-8'),  MB_CASE_TITLE); . "'";                    
+                    $valor = "'" . mb_convert_case(mb_strtolower( $valor, 'UTF-8'),  MB_CASE_TITLE) . "'";
+                    
                 }                
             }
             $valores .= $valor;  
@@ -103,7 +104,7 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
                 } else {
-                    $valor = "'" . mb_strtolower( $valor, 'UTF-8') . "'";
+                    $valor = "'" . mb_convert_case(mb_strtolower( $valor, 'UTF-8'),  MB_CASE_TITLE) . "'";
                 }                
             }             
             
@@ -123,7 +124,7 @@ function atualizar($char_tabela, $array_model, $array_condicao) : bool {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
                 } else {
-                    $valor = "'" . mb_strtolower( $valor, 'UTF-8') . "'";
+                    $valor = "'" . mb_convert_case(mb_strtolower( $valor, 'UTF-8'),  MB_CASE_TITLE) . "'";
                 }                
             }
             $char_condicao .= $chave . "=". $valor;               
@@ -173,7 +174,7 @@ function selecionar($char_tabela, $array_condicao) {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
                 } else {
-                    $valor = "'" . mb_strtolower( $valor, 'UTF-8') . "'";
+                    $valor = "'" . mb_convert_case(mb_strtolower( $valor, 'UTF-8'),  MB_CASE_TITLE) . "'";
                 }                
             }
             $char_condicao .= $chave . "=" . $valor;                           
@@ -241,7 +242,7 @@ function excluir($char_tabela, $array_condicao) : bool {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
                 } else {
-                    $valor = "'" . mb_strtolower( $valor, 'UTF-8') . "'";
+                    $valor = "'" . mb_convert_case(mb_strtolower( $valor, 'UTF-8'),  MB_CASE_TITLE) . "'";
                 }                
             }
             
@@ -293,7 +294,7 @@ function retornar_numero_registros($char_tabela, $array_condicao) : int {
                 if (strstr($valor, '@') !== false || strstr($valor, '.') !== false) {
                     $valor = "'".  mb_strtolower( $valor, 'UTF-8') . "'";
                 } else {
-                    $valor = "'" . mb_strtolower( $valor, 'UTF-8') . "'";
+                    $valor = "'" . mb_convert_case(mb_strtolower( $valor, 'UTF-8'),  MB_CASE_TITLE) . "'";
                 }                
             }
                
