@@ -57,6 +57,8 @@ $experiencia_profissional_model['exp_pro_funcoes'] = isset($_GET['experiencia_pr
 $TEXTAREA = '<textarea  name="exp_pro_funcoes" maxlength="500" rows="4" cols="50">' . $experiencia_profissional_model['exp_pro_funcoes'] .'</textarea>';
 echo $TR. $TD . $TEXTAREA . $TD_ . $TR_; 
 
+echo $TR. $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
+
 $SUBMIT = '<input type="submit" value="SALVAR" onclick=\'return confirmar();\'>';
 echo $TR. $TD . $SUBMIT . $TD_ . $TR_;
 

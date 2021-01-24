@@ -6,7 +6,7 @@
 a {
 	color: #C29375;	
 	text-decoration: none;	
-	font-size: 1em;
+	font-size: 1em;	
 }
 a:hover {
 	color: #C29375;	
@@ -62,6 +62,7 @@ html{
 	overflow-y: scroll;
 	width: 100%;
 	background-color: #2C2F33;	
+	padding: 0px;
 }
 body {
 	font-family: Fonte, sans-serif;
@@ -74,7 +75,7 @@ body {
 	background-color: #2C2F33;	
 }
 .tela {
-	margin: auto;
+	margin: 0 auto;
 	width: 100%;	
 	padding: 0px;
 	min-height: 100vh;
@@ -98,9 +99,11 @@ body {
 	text-align: center;
 }
 div {    
+	padding: 0px;
 	display: inline-block;
 }
 .topnav {
+	padding: 5px 5px 5px 5px;
 	overflow: hidden;
 	background-color: #70221D;
 	width: 100%;	
@@ -109,7 +112,7 @@ div {
 	float: left;
 	color: #C29375;
 	text-align: center;
-	padding: 5px 15px;
+	padding: 0px;
 	text-decoration: none;
 	font-size: 1em;	
 	font-weight: lighter;
@@ -118,3 +121,7 @@ div {
 .topnav a:hover {
 	text-decoration: underline;	
 } 
+.menu { 
+	width: 200px;	
+	padding: 0px;
+}

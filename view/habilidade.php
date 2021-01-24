@@ -45,6 +45,8 @@ foreach ($array_nivel_conhecimento as $indice => $hab_nivel_conhecimento) {
 }
 echo $SELECT_ . $TD_ . $TR_;
 
+echo $TR. $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_;
+
 $SUBMIT = '<input type="submit" value="SALVAR" onclick=\'return confirmar();\'>';
 echo $TD . $SUBMIT . $TD_ . $TR_;
 
