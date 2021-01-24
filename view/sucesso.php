@@ -23,6 +23,10 @@ if (isset($_GET['msg'])) {
     echo $TR . $TD . '<p class="sucesso">' . $_GET['msg']. '</p>'  . $TD_ . $TR_;
 }
 
+$MSG = '<script>setTimeout(function() { window.history.back(); }, 6000);</script>';
+
+echo $MSG;
+
 echo $TABLE_;
 
 echo $DIV_;
