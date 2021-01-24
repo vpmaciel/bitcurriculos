@@ -21,7 +21,7 @@ if (isset($_GET['msg'])) {
     echo $TR . $TD . '<p class="erro">' . $_GET['msg']. '</p>'  . $TD_ . $TR_;
 }
 
-$MSG = '<script>setTimeout(function() { window.history.back(); }, 6000);</script>';
+$MSG = '<script>setTimeout(function() { window.history.back(); }, 10000);</script>';
 
 echo $MSG;
 
