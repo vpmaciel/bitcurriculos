@@ -61,7 +61,7 @@ echo $DIV_;
 
 echo $DIV_;
 
-echo '<script src="certificacao.js"></script>';
+echo '<script>'. require_once('certificacao.js').'</script>';
 
 echo $BODY_;
 
