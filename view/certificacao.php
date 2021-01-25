@@ -27,7 +27,7 @@ if (isset($_GET['certificacao_model'])) {
 }
 
 echo $TABLE;
-echo $TR . $TH . 'Certificação' . $TH_ . $TR_;
+echo $TR . $TH . 'Certificação<span id="msg_cer_certificacao"></span>' . $TH_ . $TR_;
 
 $certificacao_model['cer_id'] = isset($_GET['certificacao_model']) ? $certificacao_model_get['cer_id'] : '';
 $INPUT = '<input type="hidden" id="cer_id" name="cer_id"  value="' . $certificacao_model['cer_id'] .'">';
