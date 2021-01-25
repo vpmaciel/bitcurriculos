@@ -1,31 +1,28 @@
-var cer_id = document.getElementById('cer_id').value;
-var cer_certificacao = document.getElementById('cer_certificacao').value;
-var cer_instituicao = document.getElementById('cer_instituicao').value;
-var cer_ano_obtencao = document.getElementById('cer_ano_obtencao').value;
+var cer_id = document.getElementById('cer_id');
+var cer_certificacao = document.getElementById('cer_certificacao');
+var cer_instituicao = document.getElementById('cer_instituicao');
+var cer_ano_obtencao = document.getElementById('cer_ano_obtencao');
 
 
 function validar_form(){    
-    document.getElementById('msg_certificacao').innerHTML=Date();
-    document.getElementById('msg_instituicao').innerHTML=Date();
-    document.getElementById('msg_ano_obtencao').innerHTML=Date();
-    
-    if (isNaN(cer_ano_obtencao)){
-        alert('Digite um Ano de Obtenção válido !');
-        return false;
+    alert(cer_certificacao.value.length);
+    var validado = true;
+    if (isNaN(cer_ano_obtencao.value)){
+        document.getElementById('msg_ano_obtencao').innerHTML = ' Digite um Ano de Obtenção de 1900 a 3000 !';
+        validado = false;
     }
-    if (cer_ano_obtencao < 1900 || cer_ano_obtencao > 3000) {
-        alert('Digite um Ano de Obtenção de 1900 a 3000 !');
-        return false;
+    if (cer_ano_obtencao.value < 1900 || cer_ano_obtencao.value > 3000) {
+        document.getElementById('msg_ano_obtencao').innerHTML = ' Digite um Ano de Obtenção de 1900 a 3000 !';
+        validado = false;
     } 
-    if (cer_certificacao.length > 50){
-        alert('Digite um Ano de Obtenção válido !');
-        return false;
+    if (cer_certificacao.value.length > 50){
+        document.getElementById('msg_certificacao').innerHTML = ' O campo Certificação não pode ter mais que 50 caracteres !';
+        validado = false;
     }
-    if (cer_instituicao.length > 50){
-        alert('Digite um Ano de Obtenção válido !');
-        return false;
+    if (cer_instituicao.value.length > 50){
+        document.getElementById('msg_instituicao').innerHTML = ' O campo Instituição não pode ter mais que 50 caracteres !';
+        validado = false;
     }
-
-    return true;
+    return validado;
 }
 
