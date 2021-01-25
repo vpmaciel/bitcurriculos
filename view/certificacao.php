@@ -11,7 +11,7 @@ echo $DOCTYPE;
 echo $HTML;
 echo $HEAD;
 require_once 'cabecalho.php';
-
+echo '<script src="certificacao.js"></script>';
 echo $HEAD_;
 echo $BODY;
 
@@ -50,7 +50,7 @@ echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR. $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
-$SUBMIT = '<input type="submit" value="SALVAR" onclick=\'return confirmar();\'>';
+$SUBMIT = '<button id="salvar" class="botao">Salvar</button>';
 echo $TR. $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;
@@ -60,8 +60,6 @@ echo $FORM_;
 echo $DIV_;
 
 echo $DIV_;
-
-echo '<script src="certificacao.js"></script>';
 
 echo $BODY_;
 

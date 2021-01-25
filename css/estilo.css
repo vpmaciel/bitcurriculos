@@ -29,9 +29,15 @@ select, input, textarea, select:focus, input:focus, textarea:focus {
 	width: 100%;
 	resize: none;
 }
-input[type="submit"] {
+.botao, input[type="button"], input[type="submit"] {
+	border-radius: 0px;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid#000;	
+	font-size: 1em;			
+	resize: none;
 	padding: 5px;	 
-	 width: auto;
+	width: 100px;
 }
 label {
 	color: #C29375;			
