@@ -17,10 +17,10 @@ require_once 'menu.php';
 echo $TABLE;
 echo $TR . $TH . 'Sucesso'  . $TH_ . $TR_; 
 
-echo $TR . $TD . '<p class="sucesso">' . 'Operação realizada com sucesso !'. '</p>'  . $TD_ . $TR_;
+echo '<span class="sucesso">' . 'Operação realizada com sucesso !'. '</span><br>';
 
 if (isset($_GET['msg'])) {
-    echo $TR . $TD . '<p class="sucesso">' . $_GET['msg']. '</p>'  . $TD_ . $TR_;
+    echo '<span class="sucesso">' . $_GET['msg']. '</span>';
 }
 
 $url = isset($_GET['url_voltar']) ? $_GET['url_voltar'] : '';

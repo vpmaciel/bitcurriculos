@@ -15,10 +15,10 @@ require_once 'menu.php';
 
 echo $TABLE;
 echo $TR . $TH . 'Erro' . $TH_ . $TR_;
-echo $TR . $TD . '<p class="erro">' . $array_erro[$_GET['e']]. '</p>'  . $TD_ . $TR_;
+echo $TR . $TD . '<span class="erro">' . $array_erro[$_GET['e']]. '</span>'  . $TD_ . $TR_;
 
 if (isset($_GET['msg'])) {
-    echo $TR . $TD . '<p class="erro">' . $_GET['msg']. '</p>'  . $TD_ . $TR_;
+    echo $TR . $TD . '<span class="erro">' . $_GET['msg']. '</span>'  . $TD_ . $TR_;
 }
 
 $MSG = '<script>setTimeout(function() { window.history.back(); }, 10000);</script>';
