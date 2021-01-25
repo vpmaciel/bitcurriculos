@@ -5,7 +5,10 @@ var cer_ano_obtencao = document.getElementById('cer_ano_obtencao').value;
 
 
 function validar_form(){
-    document.getElementById('demo').innerHTML=Date();
+    document.getElementById('cer_id').innerHTML=Date();
+    document.getElementById('cer_certificacao').innerHTML=Date();
+    document.getElementById('cer_instituicao').innerHTML=Date();
+    document.getElementById('cer_ano_obtencao').innerHTML=Date();
     return false;
     if (isNaN(cer_ano_obtencao)){
         alert("oi");
