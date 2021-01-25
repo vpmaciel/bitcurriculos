@@ -19,7 +19,7 @@ echo $DIV_MAIN;
 
 require_once 'menu.php';
 
-$FORM = '<form action="../controller/certificacao.php" method="get">';
+$FORM = '<form action="../controller/certificacao.php" method="get" autocomplete="off" onsubmit="false">';
 
 echo $FORM;
 if (isset($_GET['certificacao_model'])) {
