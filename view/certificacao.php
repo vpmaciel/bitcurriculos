@@ -47,7 +47,7 @@ echo $TR . $TD . $LABEL . 'Ano de obtenção' . '<span id="msg_cer_ano_obtencao"
 $certificacao_model['cer_ano_obtencao'] = isset($_GET['certificacao_model']) ? $certificacao_model_get['cer_ano_obtencao'] : '';
 $INPUT = '<input type="number" id="cer_ano_obtencao" name="cer_ano_obtencao" value="' . $certificacao_model['cer_ano_obtencao'] .'">';
 echo $TR. $TD . $INPUT . $TD_ . $TR_;
-echo '<script>'. require_once('certificacao.js') .'</script>';
+
 echo $TR. $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
 $SUBMIT = '<button type="button" id="btn_salvar" class="botao">Salvar</button>';
@@ -61,7 +61,7 @@ echo $DIV_;
 
 echo $DIV_;
 
-
+echo '<script src="certificacao.js" ></script>';
 
 echo $BODY_;
 

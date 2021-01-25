@@ -50,7 +50,7 @@ p {
 }
 table, th, td {	
 	table-layout: fixed;
-	width: 50%;
+	width: 80%;
 	border-collapse: collapse;		
 }
 th, td {	
