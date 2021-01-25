@@ -19,7 +19,7 @@ echo $DIV_MAIN;
 
 require_once 'menu.php';
 
-$FORM = '<form action="../controller/certificacao.php" method="get" autocomplete="off" onsubmit="false">';
+$FORM = '<form action="../controller/certificacao.php" method="get" id="formulario" autocomplete="off">';
 
 echo $FORM;
 if (isset($_GET['certificacao_model'])) {
@@ -50,7 +50,7 @@ echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR. $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
-$SUBMIT = '<button type="button" id="btn_salvar" class="botao">Salvar</button>';
+$SUBMIT = '<button id="btn_salvar" class="botao">Salvar</button>';
 echo $TR. $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;

@@ -3,6 +3,7 @@ var cer_certificacao = document.getElementById('cer_certificacao');
 var cer_instituicao = document.getElementById('cer_instituicao');
 var cer_ano_obtencao = document.getElementById('cer_ano_obtencao');
 var botao_salvar = document.getElementById('btn_salvar');
+var enviar = document.getElementById('formulario');
 botao_salvar.addEventListener("click", function(event) {
     event.preventDefault();
     var campos_validos = true;
@@ -19,7 +20,8 @@ botao_salvar.addEventListener("click", function(event) {
         campos_validos = false;
     }    
 
-    if(!campos_validos) {
+    if(!campos_validos) {        
         return;
     }
+    enviar.submit();
 });
