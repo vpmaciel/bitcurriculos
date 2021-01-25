@@ -11,7 +11,7 @@ echo $DOCTYPE;
 echo $HTML;
 echo $HEAD;
 require_once 'cabecalho.php';
-echo '<script src="certificacao.js"></script>';
+
 echo $HEAD_;
 echo $BODY;
 
@@ -19,7 +19,7 @@ echo $DIV_MAIN;
 
 require_once 'menu.php';
 
-$FORM = '<form action="../controller/certificacao.php" method="get" onsubmit="return validar_form()">';
+$FORM = '<form action="../controller/certificacao.php" method="get">';
 
 echo $FORM;
 if (isset($_GET['certificacao_model'])) {
@@ -27,7 +27,7 @@ if (isset($_GET['certificacao_model'])) {
 }
 
 echo $TABLE;
-echo $TR . $TH . 'Certificação<span id="msg_cer_certificacao"></span>' . $TH_ . $TR_;
+echo $TR . $TH . 'Certificação' . $TH_ . $TR_;
 
 $certificacao_model['cer_id'] = isset($_GET['certificacao_model']) ? $certificacao_model_get['cer_id'] : '';
 $INPUT = '<input type="hidden" id="cer_id" name="cer_id"  value="' . $certificacao_model['cer_id'] .'">';
@@ -50,7 +50,7 @@ echo $TR. $TD . $INPUT . $TD_ . $TR_;
 
 echo $TR. $TD . $LABEL . '&nbsp;' . $LABEL_ . $TD_ . $TR_; 
 
-$SUBMIT = '<button id="salvar" class="botao">Salvar</button>';
+$SUBMIT = '<button id="btn_salvar" class="botao">Salvar</button>';
 echo $TR. $TD . $SUBMIT . $TD_ . $TR_;
 
 echo $TABLE_;
@@ -60,6 +60,8 @@ echo $FORM_;
 echo $DIV_;
 
 echo $DIV_;
+
+echo '<script src="certificacao.js"></script>';
 
 echo $BODY_;
 
