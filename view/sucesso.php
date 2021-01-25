@@ -14,8 +14,8 @@ echo $DIV_MAIN;
 
 require_once 'menu.php';
 
-echo $TABLE;
-echo $TR . $TH . 'Sucesso'  . $TH_ . $TR_; 
+
+echo $H1 . 'Sucesso'  . $H1_; 
 
 echo '<span class="sucesso">' . 'Operação realizada com sucesso !'. '</span><br>';
 
@@ -28,8 +28,6 @@ $url = isset($_GET['url_voltar']) ? $_GET['url_voltar'] : '';
 if (isset($_GET['url_voltar'])) {
     header( "refresh:5;url= $url.php" );
 }
-
-echo $TABLE_;
 
 echo $DIV_;
 
