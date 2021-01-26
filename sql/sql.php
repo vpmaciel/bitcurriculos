@@ -334,7 +334,7 @@ function verificarSQL($valor) {
 ####################################################################################################
 
 function remover_caracteres($valor) {
-    $remover = array("\\", "'", "\"", "or", "and", "\r\n", "\n", "\r");
+    $remover = array("\\", "'", "\"", "\r\n", "\n", "\r");
     $retorno = str_replace($remover, "", $valor);
     return trim($retorno);
 }
