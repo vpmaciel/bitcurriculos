@@ -17,7 +17,7 @@ echo $H1 . 'Erro' . $H1_;
 echo '<span class="erro">' . $array_erro[$_GET['e']]. '</span>';
 
 if (isset($_GET['msg'])) {
-    echo '<span class="erro">' . $_GET['msg']. '</span>';
+    echo '<br><br><span class="erro">' . $_GET['msg']. '</span>';
 }
 
 $MSG = '<script>setTimeout(function() { window.history.back(); }, 5000);</script>';

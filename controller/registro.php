@@ -10,10 +10,10 @@ $usuario_model = usuario_model();
 $usuario_model['usu_email'] = $_POST['usu_email'];
 
 $condicao['usu_email'] = $_POST['usu_email'];
-$resultado = numero_registros('usuario', $condicao);
+$resultado = retornar_numero_registros('usuario', $condicao);
 
 if ($resultado != 0) {
-	header('location: ..\view\erro.php?e=OPN&msg="E-mail já cadastrado ou inválido !"');
+	header('location: ..\view\erro.php?e=OPN&msg=E-mail já cadastrado ou inválido !');
 	exit;
 } else {
 	
