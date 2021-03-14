@@ -23,7 +23,7 @@ if ($resultado_retornar_numero_registros == 0) {
 	}
 
 	if ($resultado_selecionar == TRUE) {
-		if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'BitCurriculos', 'Sua Senha', $usuario_model['usu_senha'])) {
+		if (smtpmailer('vpmaciel@live.com', 'vpmaciel@gmail.com', 'BitCurriculos', 'Sua Senha', $usuario_model['usu_senha'], null)) {
 			header("location:..\\view\\sucesso.php?msg=Sua senha é foi enviada para seu e-mail !");
 			exit;
 		}
