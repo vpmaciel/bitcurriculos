@@ -13,5 +13,5 @@ echo '<div class="menu"><a href="../view/idioma_lista.php">Idiomas</a></div>';
 echo '<div class="menu"><a href="../view/habilidade_lista.php">Habilidades</a></div>';
 echo '<div class="menu"><a href="../view/vagas.php">Pesquisar Vagas</a></div>';
 echo '<div class="menu"><a href="../view/curriculo.php">Exibir Currículo</a></div>';
-echo '<div class="menu"><a href="../view/publica_vaga_lista.php">Vagas</a></div>';
+echo '<div class="menu"><a href="../view/publica_vaga_lista.php">Publicar Vagas</a></div>';
 echo '</div>';

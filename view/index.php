@@ -30,30 +30,6 @@ echo $DIV_;
 
 echo $DIV_;
 
-class foo {
-
-    public $bar;
-    public function __get($name) {
-
-        echo "Get:$name";
-        return $this->$name;
-    }
-
-    public function __set($name, $value) {
-
-        echo "Set:$name to $value";
-        $this->$name = $value;
-    }
-}
-
-
-$foo = new foo();
-
-echo $foo->bar;
-$foo->bar = 'Vicente';
-
-echo "[$foo->bar]";
-
 echo $BODY_;
 	
 echo $HTML_;
